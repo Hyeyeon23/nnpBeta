@@ -1,26 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Model1 } from './components/Scene';
+import { Can } from './components/Can'
+import { SimpleCan } from './components/SimpleCan'
+import { Soup } from './components/Soup'
 
 
 function App() {
+  const [image, setImage] = useState('/sample.png'); // 기본 이미지 상태
+  console.log("image", image)
+  // 이미지 파일을 선택하는 함수
+  const handleImageChange = (e) => {
+    const file = e.target.files[0]; // 선택된 파일
+    if (file) {
+      const url = URL.createObjectURL(file); // 파일을 URL로 변환
+      setImage(url); // 이미지 상태 업데이트
+
+      console.log(url);
+    }
+  }
 
   return (
     <div className='justify-content-center text-center pt-5' >
       <h1>Three.js Test</h1>
       <div className='mt-4'>
-        <Canvas style={{ height: "76vh"}}>        
+        <Canvas style={{ height: "76vh" }}>
           <OrbitControls autoRotate={true} />
           <mesh>
-            <ambientLight intensity={1} />
+            <ambientLight intensity={3} />
             {/* <directionalLight position={[-1, 0, 1]} intensity={0.5} />
             <boxGeometry args={[4, 4 ,4]} />
             <meshStandardMaterial attach="material" color="yellow" /> */}
 
-            <Model1></Model1>
+            {/* <Model1></Model1> */}
+            {/* <Can></Can> */}
+            {/* <SimpleCan></SimpleCan> */}
+            <Soup imageSrc={image}></Soup>
+            {/* Soup 컴포넌트에 이미지 URL을 prop으로 전달 */}
+            {/* {image && <Soup image={image} />} */}
           </mesh>
         </Canvas>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+          style={{ position: 'absolute', top: 20, left: 20, zIndex: 1 }}
+        />
       </div>
     </div>
   )

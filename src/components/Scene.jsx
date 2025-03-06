@@ -13,13 +13,13 @@ import * as THREE from 'three'
 export function Model1(props) {
   const { nodes, materials } = useGLTF('/scene.gltf')
 
-  
+
   useEffect(() => {
     const texture = materials.lambert4?.map  // 기존 텍스처 가져오기
-    
+
 
     if (texture) {
-    
+
       texture.image = null  // 기존 이미지를 null로 설정하여 초기화
       texture.image = new Image()  // 새로운 이미지 객체 생성
       texture.image.src = '/sample.png'  // 새로운 이미지 경로 지정
@@ -29,7 +29,7 @@ export function Model1(props) {
     }
   }, [materials])
 
-  
+
 
   return (
     <group {...props} dispose={null}>
