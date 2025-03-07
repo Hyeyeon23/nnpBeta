@@ -5,6 +5,7 @@ import { Model1 } from './components/Scene';
 import { Can } from './components/Can'
 import { SimpleCan } from './components/SimpleCan'
 import { Soup } from './components/Soup'
+import { PACK1000 } from './components/PACK1000';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     <div className='justify-content-center text-center pt-5' >
       <h1>Three.js Test</h1>
       <div className='mt-4'>
-        <Canvas style={{ height: "76vh" }}>
+        <Canvas style={{ height: "76vh", backgroundColor: "grey" }}  camera={{ position: [0, 5, 10], fov: 50 }}>
           <OrbitControls autoRotate={true} />
           <mesh>
             <ambientLight intensity={3} />
@@ -36,9 +37,9 @@ function App() {
             {/* <Model1></Model1> */}
             {/* <Can></Can> */}
             {/* <SimpleCan></SimpleCan> */}
-            <Soup imageSrc={image}></Soup>
-            {/* Soup 컴포넌트에 이미지 URL을 prop으로 전달 */}
-            {/* {image && <Soup image={image} />} */}
+            {/* <Soup imageSrc={image}></Soup> */}
+
+            <PACK1000 imageSrc={image}></PACK1000>
           </mesh>
         </Canvas>
         <input
