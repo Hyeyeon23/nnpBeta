@@ -10,6 +10,8 @@ import { PACK1000 } from './components/PACK1000';
 
 function App() {
   const [image, setImage] = useState('/sample.png'); // 기본 이미지 상태
+  const [color1, setColor1] = useState(null);
+
   console.log("image", image)
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
@@ -18,15 +20,20 @@ function App() {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       setImage(url); // 이미지 상태 업데이트
 
-      console.log(url);
+      console.log("handleImageChange = " , url);
     }
+  }
+
+  const handleColor1Change = (e) => {
+    console.log("handleColor1Change = ", e.target.value)
+    setColor1(e.target.value)  
   }
 
   return (
     <div className='justify-content-center text-center pt-5' >
       <h1>Three.js Test</h1>
       <div className='mt-4'>
-        <Canvas style={{ height: "76vh", backgroundColor: "grey" }}  camera={{ position: [0, 5, 10], fov: 50 }}>
+        <Canvas style={{ height: "76vh", backgroundColor: "grey" }} camera={{ position: [0, 5, 10], fov: 50 }}>
           <OrbitControls autoRotate={true} />
           <mesh>
             <ambientLight intensity={3} />
@@ -39,7 +46,7 @@ function App() {
             {/* <SimpleCan></SimpleCan> */}
             {/* <Soup imageSrc={image}></Soup> */}
 
-            <PACK1000 imageSrc={image}></PACK1000>
+            <PACK1000 imageSrc={image} color1={color1} ></PACK1000>
           </mesh>
         </Canvas>
         <input
@@ -48,6 +55,8 @@ function App() {
           onChange={handleImageChange}
           style={{ position: 'absolute', top: 20, left: 20, zIndex: 1 }}
         />
+        <label for="colorPicker" style={{ position: 'absolute', top: 60, left: 90, zIndex: 1 }}>날개 색</label>
+        <input type="color" id="colorPicker" onChange={handleColor1Change} style={{ position: 'absolute', top: 60, left: 20, zIndex: 1 }}/>
       </div>
     </div>
   )
