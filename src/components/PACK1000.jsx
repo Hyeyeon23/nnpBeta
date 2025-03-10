@@ -17,14 +17,14 @@ export function PACK1000({ imageSrc, color1, ...props }) {
 
   // 특정 매터리얼에 텍스처 적용
   useEffect(() => {
-    
+
     if (imageSrc !== '/sample.png') {
       if (materials.Material) {
         materials.Material.map = texture
         materials.Material.needsUpdate = true // 텍스처 적용 후 업데이트 필요
       }
     }
-  
+
     if (color1) {
       // 날개 
       if (materials['매테리얼.001']) {
@@ -44,10 +44,11 @@ export function PACK1000({ imageSrc, color1, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.큐브001.geometry} material={materials.Material} position={[-0.022, 1.865, -0.007]} scale={[0.836, 2, 0.836]} />
-      <mesh geometry={nodes.실린더003.geometry} material={materials.매테리얼} position={[-0.054, 3.814, 0.002]} rotation={[0, 0, 0.131]} scale={[0.396, 0.106, 0.396]} />
-      <mesh geometry={nodes.평면.geometry} material={materials['매테리얼.001']} position={[-0.023, 3.063, 0.841]} rotation={[-Math.PI / 2, 0, 0]} scale={[-0.737, 0.537, 0.537]} />
-      <mesh geometry={nodes.평면001.geometry} material={materials['매테리얼.001']} position={[-0.023, 3.063, -0.853]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[0.737, 0.537, 0.537]} />
+      <mesh castShadow receiveShadow geometry={nodes.큐브001.geometry} material={materials.Material} position={[-0.022, 1.865, -0.007]} scale={[0.836, 2, 0.836]} />
+      <mesh castShadow receiveShadow geometry={nodes.실린더003.geometry} material={materials.매테리얼} position={[-0.054, 3.814, 0.002]} rotation={[0, 0, 0.131]} scale={[0.396, 0.106, 0.396]} />
+      <mesh castShadow receiveShadow geometry={nodes.평면.geometry} material={materials['매테리얼.001']} position={[-0.023, 3.063, 0.841]} rotation={[-Math.PI / 2, 0, 0]} scale={[-0.737, 0.537, 0.537]} />
+      <mesh castShadow receiveShadow geometry={nodes.평면001.geometry} material={materials['매테리얼.001']} position={[-0.023, 3.063, -0.853]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[0.737, 0.537, 0.537]} />
+     
     </group>
   )
 }

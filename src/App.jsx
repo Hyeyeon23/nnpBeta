@@ -20,23 +20,33 @@ function App() {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       setImage(url); // 이미지 상태 업데이트
 
-      console.log("handleImageChange = " , url);
+      console.log("handleImageChange = ", url);
     }
   }
 
   const handleColor1Change = (e) => {
     console.log("handleColor1Change = ", e.target.value)
-    setColor1(e.target.value)  
+    setColor1(e.target.value)
   }
 
   return (
     <div className='justify-content-center text-center pt-5' >
       <h1>Three.js Test</h1>
       <div className='mt-4'>
-        <Canvas style={{ height: "76vh", backgroundColor: "grey" }} camera={{ position: [0, 5, 10], fov: 50 }}>
+
+        <Canvas style={{ height: "76vh", backgroundColor: "lightgray" }} camera={{ position: [3, 2, 15], fov: 50 }} shadows>
           <OrbitControls autoRotate={true} />
           <mesh>
-            <ambientLight intensity={3} />
+            <ambientLight intensity={1} />
+            <directionalLight
+              position={[100, 100, 100]}
+              intensity={0.3}
+              castShadow
+
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+            />
+
             {/* <directionalLight position={[-1, 0, 1]} intensity={0.5} />
             <boxGeometry args={[4, 4 ,4]} />
             <meshStandardMaterial attach="material" color="yellow" /> */}
@@ -47,8 +57,22 @@ function App() {
             {/* <Soup imageSrc={image}></Soup> */}
 
             <PACK1000 imageSrc={image} color1={color1} ></PACK1000>
+            {/* 그림자를 받을 평면 메쉬 추가 */}
+            <mesh
+              receiveShadow  // 그림자 받기
+              position={[0, 0, 0]}  // 바닥 위치 (모두 0은 원점을 의미 )
+              rotation={[-Math.PI / 2, 0, 0]}  // 회전각 (현재 수평회전)
+              scale={[3, 3, 3]}  // 바닥 크기
+            >
+              
+              <circleGeometry args={[5, 32]} />  // 반지름, 세그먼트값(부드럽게정도)
+              <meshStandardMaterial color="" roughness={0.9} metalness={0} opacity={0.8} transparent={true} />  // 메쉬 재질
+            </mesh>
           </mesh>
         </Canvas>
+
+
+
         <input
           type="file"
           accept="image/*"
@@ -56,7 +80,7 @@ function App() {
           style={{ position: 'absolute', top: 20, left: 20, zIndex: 1 }}
         />
         <label for="colorPicker" style={{ position: 'absolute', top: 60, left: 90, zIndex: 1 }}>날개 색</label>
-        <input type="color" id="colorPicker" onChange={handleColor1Change} style={{ position: 'absolute', top: 60, left: 20, zIndex: 1 }}/>
+        <input type="color" id="colorPicker" onChange={handleColor1Change} style={{ position: 'absolute', top: 60, left: 20, zIndex: 1 }} />
       </div>
     </div>
   )
