@@ -34,17 +34,17 @@ function App() {
       <h1>Three.js Test</h1>
       <div className='mt-4'>
 
-        <Canvas style={{ height: "76vh", backgroundColor: "lightgray" }} camera={{ position: [3, 2, 15], fov: 50 }} shadows>
+        <Canvas style={{ height: "86vh", backgroundColor: "whitesmoke" }} camera={{ position: [3, 2, 15], fov: 35 }} shadows> // fov 낮으면 줌인 높으면 줌 아웃
           <OrbitControls autoRotate={true} />
           <mesh>
-            <ambientLight intensity={1} />
+            <ambientLight intensity={1.7} />
             <directionalLight
               position={[100, 100, 100]}
-              intensity={0.3}
+              intensity={0.4}
               castShadow
-
               shadow-mapSize-width={1024}
               shadow-mapSize-height={1024}
+              shadow-bias={-0.0005} // 그림자 더 강하게 
             />
 
             {/* <directionalLight position={[-1, 0, 1]} intensity={0.5} />
@@ -57,7 +57,7 @@ function App() {
             {/* <Soup imageSrc={image}></Soup> */}
 
             <PACK1000 imageSrc={image} color1={color1} ></PACK1000>
-            {/* 그림자를 받을 평면 메쉬 추가 */}
+            {/* 그림자가 드리워질 바닥 메쉬 추가 */}
             <mesh
               receiveShadow  // 그림자 받기
               position={[0, 0, 0]}  // 바닥 위치 (모두 0은 원점을 의미 )
@@ -66,7 +66,8 @@ function App() {
             >
               
               <circleGeometry args={[5, 32]} />  // 반지름, 세그먼트값(부드럽게정도)
-              <meshStandardMaterial color="" roughness={0.9} metalness={0} opacity={0.8} transparent={true} />  // 메쉬 재질
+              <meshStandardMaterial color="#FFFFFF" roughness={0.8} metalness={0} opacity={0.4} transparent={true} />  // 메쉬 재질 
+              {/* roghness = 거칠기/ metalness = 금속성 정도 opacity 낮을수록 투명해짐 transparent 투명여부 */}
             </mesh>
           </mesh>
         </Canvas>
