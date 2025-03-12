@@ -6,6 +6,7 @@ import { Can } from './components/Can'
 import { SimpleCan } from './components/SimpleCan'
 import { Soup } from './components/Soup'
 import { PACK1000 } from './components/PACK1000';
+import { PACK1000_WOOD } from './components/PACK1000_WOOD';
 
 
 function App() {
@@ -39,12 +40,14 @@ function App() {
           <mesh>
             <ambientLight intensity={1.7} />
             <directionalLight
-              position={[100, 100, 100]}
-              intensity={0.4}
+              position={[40, 50, 30]} // 빛의 위기 x오른y위쪽z뒤쪽
+              intensity={0.1}
               castShadow
-              shadow-mapSize-width={1024}
-              shadow-mapSize-height={1024}
-              shadow-bias={-0.0005} // 그림자 더 강하게 
+              shadow-camera-near={0.1}  // 그림자를 만들기 시작하는 최소 거리 - 값이 작을수록 그림자 시작 위치가 물체랑 딱 붙어서 시작
+              shadow-camera-far={100} // 그림자를 만들수 있는  최대 거리 
+              shadow-mapSize-width={2048}
+              shadow-mapSize-height={2048}
+              shadow-bias={-0.0002} // 그림자 더 강하게 
             />
 
             {/* <directionalLight position={[-1, 0, 1]} intensity={0.5} />
@@ -56,8 +59,11 @@ function App() {
             {/* <SimpleCan></SimpleCan> */}
             {/* <Soup imageSrc={image}></Soup> */}
 
-            <PACK1000 imageSrc={image} color1={color1} ></PACK1000>
-            {/* 그림자가 드리워질 바닥 메쉬 추가 */}
+            {/* <PACK1000 imageSrc={image} color1={color1} ></PACK1000> */}
+            <PACK1000_WOOD imageSrc={image} color1={color1} ></PACK1000_WOOD>
+            
+            {/* 그림자가 드리워질 바닥 메쉬 추가 1안 - 위에있는 물체와 한몸 같은*/}
+            {/*
             <mesh
               receiveShadow  // 그림자 받기
               position={[0, 0, 0]}  // 바닥 위치 (모두 0은 원점을 의미 )
@@ -66,8 +72,19 @@ function App() {
             >
               
               <circleGeometry args={[5, 32]} />  // 반지름, 세그먼트값(부드럽게정도)
-              <meshStandardMaterial color="#FFFFFF" roughness={0.8} metalness={0} opacity={0.4} transparent={true} />  // 메쉬 재질 
-              {/* roghness = 거칠기/ metalness = 금속성 정도 opacity 낮을수록 투명해짐 transparent 투명여부 */}
+              <meshStandardMaterial color="#FFFFFF" roughness={0.8} metalness={0} opacity={0.1} transparent={true} />  // 메쉬 재질 
+              {/* roghness = 거칠기/ metalness = 금속성 정도 opacity 낮을수록 투명해짐 transparent 투명여부 
+            </mesh>
+           
+
+            {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane 추가 */}
+            <mesh receiveShadow position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 3, 3]}>
+              <planeGeometry args={[10, 10]} />
+              <shadowMaterial opacity={0.1} transparent={true}  />  {/* opacity 낮을 수록 연한 그림자 */}
+            </mesh>
+            <mesh position={[0, 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 3, 3]} renderOrder={2}>
+              <circleGeometry args={[5, 32]} />
+              <meshStandardMaterial color="#F8F8F8" roughness={0.9} metalness={0} opacity={0.1} transparent={true} />
             </mesh>
           </mesh>
         </Canvas>
