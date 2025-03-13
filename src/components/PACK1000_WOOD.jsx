@@ -4,28 +4,71 @@ Command: npx gltfjsx@6.5.3 PACK1000_WOOD.gltf
 */
 
 import React, { useEffect } from 'react'
-import { useGLTF, useTexture } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { TextureLoader, Color, SRGBColorSpace } from 'three'
+import * as THREE from 'three';
+
+
 
 export function PACK1000_WOOD({ imageSrc, color1, ...props }) {
-  const { nodes, materials } = useGLTF('/PACK1000_WOOD.gltf')
+  const { scene, nodes, materials } = useGLTF("/PACK1000_WOOD.gltf");
+
+  console.log("materials = ", materials);
+  // 텍스쳐 이름을 바탕으로 텍스쳐를 찾아서 교체하는 함수
+  const updateTexture = (nodes, textureName, newTextureUrl) => {
+    const loader = new THREE.TextureLoader();
+    loader.load(newTextureUrl, (newTexture) => {
+      for (const key in nodes) {
+        const node = nodes[key];
+        if (node.material && node.material.map) {
+          if (node.material.map.name === textureName) {
+            console.log("Found texture:", node.material.map.image);
+            // 새 텍스쳐로 교체해준 다음에도 계속 같은 이름 값으로 찾을 수 있게 
+            newTexture.name = textureName;
+            // 새 텍스쳐로 교체
+            node.material.map = newTexture;
+            node.material.needsUpdate = true; // 텍스쳐 변경을 반영하기 위해 필요
+          }
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+
+    if (scene) {
+      // scene이 존재하는 경우, scene 내의 모든 메쉬들에 castShadow 적용
+      scene.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true; // 그림자 생성
+          child.receiveShadow = true; // 그림자 받기
+        }
+      });
+    }
+    if (imageSrc !== '/sample.png') {
+      updateTexture(nodes, "사이즈 조절 채소육수.jpg", imageSrc);
+    }
 
 
-  // 텍스처 로드 (예시로 '/path/to/texture.jpg' 경로를 사용)
-  // const texture = useTexture(imageSrc)
-  //texture.colorSpace = SRGBColorSpace // 일반적인 텍스처에는 이게 적절함
+    if (color1) {
+      // 날개 
+      if (materials['매테리얼.002']) {
+        materials['매테리얼.002'].color = new Color(color1)
+        materials['매테리얼.002'].needsUpdate = true
+      }
 
-  // 특정 매터리얼에 텍스처 적용
-  
 
-  return (
-    <group {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.평면002.geometry} material={materials['매테리얼.002']} position={[-1.036, 3.642, -0.487]} rotation={[-1.56, -0.001, -1.636]} scale={[0.737, 0.537, 0.537]} />
-      <mesh castShadow receiveShadow geometry={nodes.평면003.geometry} material={materials['매테리얼.002']} position={[0.679, 3.642, -0.376]} rotation={[-1.558, -0.001, 1.506]} scale={[-0.737, 0.537, 0.537]} />
-      <mesh castShadow receiveShadow geometry={nodes.실린더001.geometry} material={materials.material} position={[-0.2, 4.369, -0.184]} rotation={[0, 1.506, 0.131]} scale={[0.396, 0.106, 0.396]} />
-      <mesh castShadow receiveShadow geometry={nodes.큐브002.geometry} material={materials['매테리얼.004']} position={[-0.183, 2.399, -0.415]} rotation={[0, 1.506, 0]} scale={[0.819, 2.15, 0.819]} />
-    </group>
-  )
+      // 날개 
+      if (materials['materials.material']) {
+        materials['materials.material'].color = new Color('white');
+        materials['materials.material'].needsUpdate = true
+      }
+    }
+
+  }, [imageSrc, nodes, color1, materials, scene]); // imageSrc 또는 nodes가 변경될 때마다 텍스쳐 업데이트
+
+
+  return <primitive object={scene} {...props} castShadow />;
 }
 
 useGLTF.preload('/PACK1000_WOOD.gltf')
