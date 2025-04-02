@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fragile Boxes
+* source:	https://sketchfab.com/3d-models/fragile-boxes-aa8e9bcc2add4eadba138de4ceaba364
+* author:	hishamhamid🦊 (https://sketchfab.com/hishamhaizz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fragile Boxes" (https://sketchfab.com/3d-models/fragile-boxes-aa8e9bcc2add4eadba138de4ceaba364) by hishamhamid🦊 (https://sketchfab.com/hishamhaizz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
