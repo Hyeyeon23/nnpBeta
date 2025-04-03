@@ -3,18 +3,17 @@
   <head>
     <script>
       var fullPath = window.location.pathname;
-      var repoName = "/nnpBeta"; // 여기에 GitHub Pages의 리포지토리 이름 입력
+      var repoName = "/nnpBeta"; // 깃헙리포넴
 
+      // 사실상 기본 경로에 해당하지만, 브라우저에서는 pathname으로 인식하는 리포네임 삭제
       var cleanPath = fullPath.startsWith(repoName)
         ? fullPath.replace(repoName, "")
         : fullPath;
 
-      console.log("pathname", cleanPath);
-      // 원래 URL을 sessionStorage에 저장
+      // 원래 경로 브라우저 세션 스토리지 영역에 저장 
       sessionStorage.setItem("redirectPath", cleanPath);
-
-      sessionStorage.setItem("redirectPath", cleanPath); // 원래 경로 저장
-      window.location.replace(repoName + "/"); // index.html로 이동
+      // 기본 호스팅 페이지로 이동 
+      window.location.replace(repoName + "/"); // index 페이지로 이동 => 인덱스에서 sessionStorage 체크헤서 라우팅 할거임
     </script>
   </head>
   <body>
