@@ -34,7 +34,7 @@ const Sample = () => {
       <h1>
         <img src="./logo_nnp.png" style={{ width: "150px" }} className="mx-2" />
 
-        자연과사람들 3D 모델링t
+        자연과사람들 3D 모델링
       </h1>
       <div className="mt-4 pb-4 canvas-container">
         <Canvas
