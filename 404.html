@@ -5,13 +5,17 @@
       var pathname = window.location.pathname;
       var repoName = "/nnpBeta"; // 여기에 GitHub Pages의 리포지토리 이름 입력
 
+      if (pathname.indexOf("nnpBeta")) {
+        pathname.slice(0, 7);
+      }
+
+      console.log("pathname", pathname);
       // 원래 URL을 sessionStorage에 저장
       sessionStorage.setItem("redirectPath", pathname);
       // 현재 URL에서 리포지토리 이름이 포함된 경우, index.html로 리디렉트
       if (pathname.startsWith(repoName)) {
         var newUrl = repoName + "/";
         history.replaceState(null, "", pathname);
-        console.log("newUrl => ", newUrl);
         window.location.replace(newUrl);
       }
     </script>
