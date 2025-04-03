@@ -2,7 +2,15 @@
 <html>
 <head>
     <script>
-        window.location.replace("/repo-name" + window.location.pathname + window.location.search);
+        var pathname = window.location.pathname;
+        var repoName = "/nnpBeta";  // 여기에 GitHub Pages의 리포지토리 이름 입력
+
+        // 현재 URL에서 리포지토리 이름이 포함된 경우, index.html로 리디렉트
+        if (pathname.startsWith(repoName)) {
+            var newUrl = repoName + "/index.html";
+            history.replaceState(null, "", pathname);
+            window.location.replace(newUrl);
+        }
     </script>
 </head>
 <body>
