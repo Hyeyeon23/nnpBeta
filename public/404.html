@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <script>
-        var pathname = window.location.pathname;
-        var repoName = "/nnpBeta";  // 여기에 GitHub Pages의 리포지토리 이름 입력
+      var pathname = window.location.pathname;
+      var repoName = "/nnpBeta"; // 여기에 GitHub Pages의 리포지토리 이름 입력
 
-        // 현재 URL에서 리포지토리 이름이 포함된 경우, index.html로 리디렉트
-        if (pathname.startsWith(repoName)) {
-            var newUrl = repoName + "/index.html";
-            history.replaceState(null, "", pathname);
-            window.location.replace(newUrl);
-        }
+      // 원래 URL을 sessionStorage에 저장
+      sessionStorage.setItem("redirectPath", pathname);
+      // 현재 URL에서 리포지토리 이름이 포함된 경우, index.html로 리디렉트
+      if (pathname.startsWith(repoName)) {
+        var newUrl = repoName + "/index.html";
+        history.replaceState(null, "", pathname);
+        window.location.replace(newUrl);
+      }
     </script>
-</head>
-<body>
-  Redirecting...
-</body>
+  </head>
+  <body>
+    Redirecting...
+  </body>
 </html>
