@@ -11,6 +11,7 @@
       if (pathname.startsWith(repoName)) {
         var newUrl = repoName + "/";
         history.replaceState(null, "", pathname);
+        console.log("newUrl => ", newUrl);
         window.location.replace(newUrl);
       }
     </script>
