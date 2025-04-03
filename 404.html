@@ -9,7 +9,7 @@
         ? fullPath.replace(repoName, "")
         : fullPath;
 
-      console.log("pathname", pathname);
+      console.log("pathname", cleanPath);
       // 원래 URL을 sessionStorage에 저장
       sessionStorage.setItem("redirectPath", cleanPath);
 
