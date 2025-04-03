@@ -9,11 +9,11 @@ Title: Can-soup
 
 import React, { useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useCustomGLTF } from "../hooks/useCustomGLTF";
 
 export function Soup({ imageSrc, ...props }) {
 
-  const { nodes, materials } = useGLTF('/soup.gltf')
-
+  const { nodes, materials } = useCustomGLTF('soup.gltf')
 
   useEffect(() => {
     if (imageSrc) {

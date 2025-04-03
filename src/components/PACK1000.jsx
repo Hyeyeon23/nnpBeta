@@ -6,10 +6,11 @@ Command: npx gltfjsx@6.5.3 result.gltf
 import React, { useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { TextureLoader, Color, SRGBColorSpace } from 'three'
+import { useCustomGLTF } from "../hooks/useCustomGLTF";
 
 export function PACK1000({ imageSrc, color1, ...props }) {
 
-  const { nodes, materials } = useGLTF('/result.gltf')
+  const { nodes, materials } = useCustomGLTF('result.gltf')
 
   // 텍스처 로드 (예시로 '/path/to/texture.jpg' 경로를 사용)
   const texture = useTexture(imageSrc)

@@ -9,9 +9,10 @@ import { useGLTF } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader, DoubleSide } from "three";
+import { useCustomGLTF } from "../hooks/useCustomGLTF";
 
 export function SimpleCan(props) {
-  const { scene } = useGLTF('/can.gltf')
+  const { scene } = useCustomGLTF('/can.gltf')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
 

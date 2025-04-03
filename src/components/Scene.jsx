@@ -9,9 +9,10 @@ Title: Fragile Boxes
 import React, { useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
-
+import { useCustomGLTF } from "../hooks/useCustomGLTF";
 export function Model1(props) {
-  const { nodes, materials } = useGLTF('/scene.gltf')
+
+  const { nodes, materials } = useCustomGLTF('scene.gltf')
 
 
   useEffect(() => {

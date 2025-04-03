@@ -7,11 +7,11 @@ import React, { useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { TextureLoader, Color, SRGBColorSpace } from 'three'
 import * as THREE from 'three';
-
+import { useCustomGLTF } from "../hooks/useCustomGLTF";
 
 
 export function PACK1000_WOOD({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useGLTF("/PACK1000_WOOD.gltf");
+  const { scene, nodes, materials } = useCustomGLTF("PACK1000_WOOD.gltf");
 
   console.log("materials = ", materials);
   // 텍스쳐 이름을 바탕으로 텍스쳐를 찾아서 교체하는 함수
