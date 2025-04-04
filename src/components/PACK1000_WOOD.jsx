@@ -22,9 +22,12 @@ export function PACK1000_WOOD({ imageSrc, color1, ...props }) {
         const node = nodes[key];
         if (node.material && node.material.map) {
           if (node.material.map.name === textureName) {
+          
+            newTexture.colorSpace = "srgb";
+            
             console.log("Found texture:", node.material.map.image);
             // 새 텍스쳐로 교체해준 다음에도 계속 같은 이름 값으로 찾을 수 있게 
-            newTexture.name = textureName;
+            newTexture.name = textureName;          
             // 새 텍스쳐로 교체
             node.material.map = newTexture;
             node.material.needsUpdate = true; // 텍스쳐 변경을 반영하기 위해 필요
