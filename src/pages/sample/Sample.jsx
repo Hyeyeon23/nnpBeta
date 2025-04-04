@@ -15,19 +15,26 @@ const Sample = () => {
   const [pin, setPin] = useState(5);
   const [horizon, setHorizon] = useState(1.5);
   const [color1, setColor1] = useState(null);
+  const [loadSpin, setLoadSpin] = useState(false);
 
   console.log("image", image);
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
     const file = e.target.files[0]; // 선택된 파일
+
     if (file) {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       setImage(url); // 이미지 상태 업데이트
 
       console.log("handleImageChange = ", url);
     }
+
+    setLoadSpin(false);
   };
 
+  const displaySpin = () => {
+    setLoadSpin(true);
+  };
   const handleColor1Change = (e) => {
     console.log("handleColor1Change = ", e.target.value);
     setColor1(e.target.value);
@@ -39,6 +46,15 @@ const Sample = () => {
         <img src="./logo_nnp.png" style={{ width: "150px" }} className="mx-2" />
         자연과사람들 3D 모델링
       </h1>
+      {loadSpin && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-50"
+          style={{ zIndex: 1050 }}
+        >
+          <div className="spinner-border" role="status"></div>
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      )}
       <div className="mt-4 pb-4 canvas-container">
         <Canvas
           camera={{ position: [0, 3, 10], fov: 45 }}
@@ -72,7 +88,10 @@ const Sample = () => {
           />
           <mesh position={[0, -1.1, 0]} castShadow>
             {/* <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD> */}
-            <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
+            <PACK1000_Lightless
+              imageSrc={image}
+              color1={color1}
+            ></PACK1000_Lightless>
           </mesh>
           <mesh>
             {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -108,6 +127,7 @@ const Sample = () => {
           type="file"
           accept="image/*"
           onChange={handleImageChange}
+          onClick={displaySpin}
           style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
         />
         <label

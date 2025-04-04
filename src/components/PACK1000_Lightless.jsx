@@ -12,82 +12,60 @@ import { useCustomGLTF } from "../hooks/useCustomGLTF";
 export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   const { scene, nodes, materials } = useCustomGLTF("PACK1000_Lightless.glb");
 
-  // textures.forEach((texture) => {
-  //   console.log("Texture name:", texture.name);
-  //   console.log("Image src:", texture.image?.src);
-  //   console.log("Mipmap name (if any):", texture.mipmaps?.[0]?.name);
-  // });
-
-  /* scene.traverse((child) => {
-    if (child.isMesh) {
-      console.log(`Mesh Name: ${child.name}`);
-      console.log(`Material:`, child.material);
-      if (child.material.map) {
-        console.log(`Texture File:`, child.material.map);
-      } else {
-        console.log("❌ No texture found!");
+  if (scene) {
+    // scene이 존재하는 경우, scene 내의 모든 메쉬들에 castShadow 적용
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true; // 그림자 생성
+        child.receiveShadow = true; // 그림자 받기
       }
+    });
+  }
+
+  const targetMeshes = [];
+  scene.traverse((child) => {
+    if (
+      child.isMesh &&
+      child.material &&
+      child.material.map &&
+      child.material.map.name === "사이즈-조절-채소육수"
+    ) {
+      targetMeshes.push(child);
     }
-  }); */
-  console.log("materials = ", materials);
+  });
 
-  const loadImageBitmapTexture = async (imageUrl) => {
-    const response = await fetch(imageUrl);
-    const blob = await response.blob();
-    const imageBitmap = await createImageBitmap(blob);
-
-    const texture = new THREE.Texture(imageBitmap);
-    texture.needsUpdate = true;
-
-    return texture;
-  };
-
+  const loader = new THREE.TextureLoader();
   // 텍스쳐 이름을 바탕으로 텍스쳐를 찾아서 교체하는 함수
   const updateTexture = (textureName, imageSrc) => {
-    const loader = new THREE.TextureLoader();
-    loader.load(imageSrc, (newTexture) => {
-      scene.traverse((child) => {
-        if (child.isMesh) {
-          // 기존 텍스처가 있던 메시에만 적용
-          if (child.material && child.material.map) {
-            const map = child.material.map;
-            console.log("map = ", map);
-            console.log("newMap = ", newTexture);
-            if (map.name === textureName) {
-              // 설정들 복사
-              newTexture.encoding = map.encoding;
-              newTexture.wrapS = map.wrapS;
-              newTexture.wrapT = map.wrapT;
-              newTexture.repeat.copy(map.repeat);
-              newTexture.offset.copy(map.offset);
-              newTexture.anisotropy = map.anisotropy;
-              newTexture.flipY = map.flipY;
-              newTexture.center.copy(map.center);
-              newTexture.colorSpace = "srgb"
 
-              // 새 텍스쳐로 교체해준 다음에도 계속 같은 이름 값으로 찾을 수 있게
-              newTexture.name = textureName;
-              child.material.map = newTexture;
-              child.material.needsUpdate = true;
-            }
-          }
-        }
+    loader.load(imageSrc, (newTexture) => {
+      targetMeshes.forEach((child) => {
+        const map = child.material.map;
+
+        // 설정들 복사
+        newTexture.encoding = map.encoding;
+        newTexture.wrapS = map.wrapS;
+        newTexture.wrapT = map.wrapT;
+        newTexture.repeat.copy(map.repeat);
+        newTexture.offset.copy(map.offset);
+        newTexture.anisotropy = map.anisotropy;
+        newTexture.flipY = map.flipY;
+        newTexture.center.copy(map.center);
+        newTexture.colorSpace = "srgb";
+
+        newTexture.anisotropy = Math.min(map.anisotropy, 4);
+
+        // 새 텍스쳐로 교체해준 다음에도 계속 같은 이름 값으로 찾을 수 있게
+        newTexture.name = textureName;
+        child.material.map = newTexture;
+        child.material.needsUpdate = true;
       });
     });
+
   };
   useEffect(() => {
-    console.log("외부 변환값 in = ", imageSrc);
-    if (scene) {
-      // scene이 존재하는 경우, scene 내의 모든 메쉬들에 castShadow 적용
-      scene.traverse((child) => {
-        if (child.isMesh) {
-          child.castShadow = true; // 그림자 생성
-          child.receiveShadow = true; // 그림자 받기
-        }
-      });
-    }
     if (imageSrc !== "/sample.png") {
-      console.log("이미지 소스가 기본이 아닐떄 ");
+      console.log("new image upload");
       updateTexture("사이즈-조절-채소육수", imageSrc);
     }
 
@@ -104,7 +82,7 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
         materials["materials.material"].needsUpdate = true;
       }
     }
-  }, [imageSrc, nodes, color1, materials, scene]); // imageSrc 또는 nodes가 변경될 때마다 텍스쳐 업데이트
+  }, [imageSrc, nodes, color1, materials]); // imageSrc 또는 nodes가 변경될 때마다 텍스쳐 업데이트
 
   return <primitive object={scene} {...props} castShadow />;
 }
