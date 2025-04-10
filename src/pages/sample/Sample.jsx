@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Model1 } from "../../components/Scene";
@@ -67,70 +67,75 @@ const Sample = () => {
           style={{ backgroundColor: "white" }}
           shadows
         >
-          {/* 화면 움직이는 거  */}
-          <OrbitControls minDistance={2} maxDistance={10} />
-          {/* <ambientLight intensity={1} /> */}
-          {/* 핀조명 */}
-          <directionalLight position={[10, 10, 10]} intensity={pin} />
-          {/* 그림자 만드는 강렬한 수평의 빛  */}
-          <directionalLight
-            position={[5, 6, 8]} // 빛의 위치를 물체 위로 조정
-            intensity={horizon} // 너무 강하면 그림자가 날아감
-            castShadow
-            shadow-mapSize-width={1024} // 그림자 품질 조정
-            shadow-mapSize-height={1024}
-            shadow-camera-near={0.5} // 조명 카메라 범위 조정
-            shadow-camera-far={200}
-            shadow-camera-left={-10} // 그림자가 너무 작으면 범위를 키워야 함
-            shadow-camera-right={10}
-            shadow-camera-top={10}
-            shadow-camera-bottom={-10}
-          />
-          {/* 반대쪽에서 약한 빛 추가 */}
-          <directionalLight
-            position={[-5, 3, -8]} // 기존 빛의 반대 방향
-            intensity={1.5} // 약한 빛
-            color={"#ffffff"} // 빛 색상 (조정 가능)
-          />
-          <mesh position={[0, -1.1, 0]} castShadow>
-            {model === "PACK1000_WOOD" && (
-              <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>
-            )}
-            {model === "PACK1000_Lightless" && (
-              <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
-            )}
-            {model === "PACK200_mid" && (
-              <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>
-            )}
-          </mesh>
-          <mesh>
-            {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
-            <mesh
-              receiveShadow
-              position={[0, -1.01, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-              scale={[3, 3, 3]}
-            >
-              <planeGeometry args={[10, 10]} />
-              <shadowMaterial opacity={0.4} transparent={true} /> // opacity
-              낮을 수록 연한 그림자
+          <Suspense fallback={null}>
+            {/* 화면 움직이는 거  */}
+            <OrbitControls minDistance={2} maxDistance={10} />
+            {/* <ambientLight intensity={1} /> */}
+            {/* 핀조명 */}
+            <directionalLight position={[10, 10, 10]} intensity={pin} />
+            {/* 그림자 만드는 강렬한 수평의 빛  */}
+            <directionalLight
+              position={[5, 6, 8]} // 빛의 위치를 물체 위로 조정
+              intensity={horizon} // 너무 강하면 그림자가 날아감
+              castShadow
+              shadow-mapSize-width={1024} // 그림자 품질 조정
+              shadow-mapSize-height={1024}
+              shadow-camera-near={0.5} // 조명 카메라 범위 조정
+              shadow-camera-far={200}
+              shadow-camera-left={-10} // 그림자가 너무 작으면 범위를 키워야 함
+              shadow-camera-right={10}
+              shadow-camera-top={10}
+              shadow-camera-bottom={-10}
+            />
+            {/* 반대쪽에서 약한 빛 추가 */}
+            <directionalLight
+              position={[-5, 3, -8]} // 기존 빛의 반대 방향
+              intensity={1.5} // 약한 빛
+              color={"#ffffff"} // 빛 색상 (조정 가능)
+            />
+            <mesh position={[0, -1.1, 0]} castShadow>
+              {model === "PACK1000_WOOD" && (
+                <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>
+              )}
+              {model === "PACK1000_Lightless" && (
+                <PACK1000_Lightless
+                  imageSrc={image}
+                  color1={color1}
+                ></PACK1000_Lightless>
+              )}
+              {model === "PACK200_mid" && (
+                <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>
+              )}
             </mesh>
-            <mesh
-              position={[0, -1, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-              scale={[3, 3, 3]}
-              renderOrder={2}
-            >
-              <circleGeometry args={[5, 32]} />
-              <meshStandardMaterial
-                color="F8F8F8"
-                roughness={0.9}
-                metalness={0}
-                opacity={0.7}
-                transparent={true}
-              />
+            <mesh>
+              {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
+              <mesh
+                receiveShadow
+                position={[0, -1.01, 0]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={[3, 3, 3]}
+              >
+                <planeGeometry args={[10, 10]} />
+                <shadowMaterial opacity={0.4} transparent={true} /> // opacity
+                낮을 수록 연한 그림자
+              </mesh>
+              <mesh
+                position={[0, -1, 0]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={[3, 3, 3]}
+                renderOrder={2}
+              >
+                <circleGeometry args={[5, 32]} />
+                <meshStandardMaterial
+                  color="F8F8F8"
+                  roughness={0.9}
+                  metalness={0}
+                  opacity={0.7}
+                  transparent={true}
+                />
+              </mesh>
             </mesh>
-          </mesh>
+          </Suspense>
         </Canvas>
 
         <input
