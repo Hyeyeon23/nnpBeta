@@ -9,9 +9,8 @@ import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../hooks/useCustomGLTF";
 
-export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
-
-  const { scene, nodes, materials } = useCustomGLTF("PACK1000_Lightless.glb");
+export function PACK200_mid({ imageSrc, color1, ...props }) {
+  const { scene, nodes, materials } = useCustomGLTF("PACK200_mid.glb");
   const loader = new THREE.TextureLoader();
 
   /* 그림자 받기 */
@@ -28,11 +27,13 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   /* 사진 설정 있는 객체 조회 (단 한번 실행) */
   const targetMeshes = [];
   scene.traverse((child) => {
+    //console.log("child = ", child);
+    console.log("child.material = ", child.material);
     if (
       child.isMesh &&
       child.material &&
       child.material.map &&
-      child.material.map.name === "사이즈-조절-채소육수"
+      child.material.map.name === "베지밀B"
     ) {
       targetMeshes.push(child);
     }
@@ -41,7 +42,6 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   /* 이미지 변경 */
   // 텍스쳐 이름을 바탕으로 텍스쳐를 찾아서 교체하는 함수
   const updateTexture = (textureName, imageSrc) => {
-
     loader.load(imageSrc, (newTexture) => {
       targetMeshes.forEach((child) => {
         const map = child.material.map;
@@ -65,13 +65,12 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
         child.material.needsUpdate = true;
       });
     });
-
   };
-  
+
   useEffect(() => {
     if (imageSrc !== "/sample.png") {
       console.log("new image upload");
-      updateTexture("사이즈-조절-채소육수", imageSrc);
+      updateTexture("베지밀B", imageSrc);
     }
 
     if (color1) {
@@ -92,4 +91,4 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   return <primitive object={scene} {...props} castShadow />;
 }
 
-useGLTF.preload("/PACK1000_Lightless.glb");
+useGLTF.preload("/PACK200_mid.glb");

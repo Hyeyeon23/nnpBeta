@@ -9,6 +9,7 @@ import { PACK1000 } from "../../components/PACK1000";
 import { PACK1000_WOOD } from "../../components/PACK1000_WOOD";
 import Progressive from "../../components/sample/Progressive";
 import { PACK1000_Lightless } from "../../components/PACK1000_Lightless";
+import { PACK200_mid } from "../../components/PACK200_mid";
 
 const Sample = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -16,6 +17,7 @@ const Sample = () => {
   const [horizon, setHorizon] = useState(1.5);
   const [color1, setColor1] = useState(null);
   const [loadSpin, setLoadSpin] = useState(false);
+  const [model, setModel] = useState("PACK1000_Lightless");
 
   console.log("image", image);
   // 이미지 파일을 선택하는 함수
@@ -40,6 +42,10 @@ const Sample = () => {
     setColor1(e.target.value);
   };
 
+  const handleSelectModel = (e) => {
+    e.preventDefault();
+    setModel(e.target.value);
+  };
   return (
     <div className="justify-content-center text-center pt-5">
       <h1>
@@ -87,11 +93,15 @@ const Sample = () => {
             color={"#ffffff"} // 빛 색상 (조정 가능)
           />
           <mesh position={[0, -1.1, 0]} castShadow>
-            {/* <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD> */}
-            <PACK1000_Lightless
-              imageSrc={image}
-              color1={color1}
-            ></PACK1000_Lightless>
+            {model === "PACK1000_WOOD" && (
+              <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>
+            )}
+            {model === "PACK1000_Lightless" && (
+              <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
+            )}
+            {model === "PACK200_mid" && (
+              <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>
+            )}
           </mesh>
           <mesh>
             {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -162,6 +172,15 @@ const Sample = () => {
           min={-4}
           max={3}
         ></Progressive>
+        <select
+          style={{ position: "absolute", top: 190, left: 20, zIndex: 1 }}
+          onChange={handleSelectModel}
+        >
+          <option value="PACK1000_Lightless">PACK1000_Lightless</option>
+          <option value="PACK1000_WOOD">PACK1000_WOOD</option>
+          <option value="PACK200_mid">PACK200_mid</option>
+          <option value=""></option>
+        </select>
       </div>
     </div>
   );
