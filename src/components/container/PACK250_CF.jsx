@@ -9,12 +9,12 @@ import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
-export function PACK200_CF({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("PACK200_CF.glb");
+export function PACK250_CF({ imageSrc, color1, ...props }) {
+  const { scene, nodes, materials } = useCustomGLTF("PACK250_CF.glb");
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = -1.2 
+  scene.position.y = -0.34
 
   /* 그림자 받기 */
   if (scene) {
@@ -36,7 +36,7 @@ export function PACK200_CF({ imageSrc, color1, ...props }) {
       child.isMesh &&
       child.material &&
       child.material.map &&
-      child.material.map.name === "영양케어200"
+      child.material.map.name === "프로틴밀250"
     ) {
       targetMeshes.push(child);
     }
@@ -73,20 +73,20 @@ export function PACK200_CF({ imageSrc, color1, ...props }) {
   useEffect(() => {
     if (imageSrc !== "/sample.png") {
       console.log("new image upload");
-      updateTexture("베지밀B", imageSrc);
+      updateTexture("프로틴밀250", imageSrc);
     }
 
     if (color1) {
       // 날개1
-      if (materials["매테리얼.006"]) {
-        materials["매테리얼.006"].color = new Color(color1);
-        materials["매테리얼.006"].needsUpdate = true;
+      if (materials["매테리얼.001"]) {
+        materials["매테리얼.001"].color = new Color(color1);
+        materials["매테리얼.001"].needsUpdate = true;
       }
 
       // 날개2
-      if (materials["매테리얼.007"]) {
-        materials["매테리얼.007"].color = new Color(color1);
-        materials["매테리얼.007"].needsUpdate = true;
+      if (materials["매테리얼.005"]) {
+        materials["매테리얼.005"].color = new Color(color1);
+        materials["매테리얼.005"].needsUpdate = true;
       }
 
       // 뚜껑주변
@@ -100,4 +100,4 @@ export function PACK200_CF({ imageSrc, color1, ...props }) {
   return <primitive object={scene} {...props} castShadow />;
 }
 
-useGLTF.preload("/PACK200_CF.glb");
+useGLTF.preload("/PACK250_CF.glb");

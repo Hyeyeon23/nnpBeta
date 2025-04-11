@@ -6,6 +6,7 @@ import Progressive from "../../components/sample/Progressive";
 import { PACK1000_Lightless } from "../../components/container/PACK1000_Lightless";
 import { PACK200_mid } from "../../components/container/PACK200_mid";
 import { PACK200_CF } from "../../components/container/PACK200_CF";
+import { PACK250_CF } from "../../components/container/PACK250_CF";
 
 
 const Sample = () => {
@@ -19,16 +20,22 @@ const Sample = () => {
   console.log("image", image);
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
-    const file = e.target.files[0]; // 선택된 파일
+    const file = e.target.files?.[0]; // 선택된 파일
+
+    if(!file){
+      console.log("이미지 선택 취소 ")
+      setLoadSpin(false);
+      return;
+    }
 
     if (file) {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       setImage(url); // 이미지 상태 업데이트
 
       console.log("handleImageChange = ", url);
+      setLoadSpin(false);
     }
 
-    setLoadSpin(false);
   };
 
   const displaySpin = () => {
@@ -105,6 +112,9 @@ const Sample = () => {
               )}
               {model === "PACK200_CF" && (
                 <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>
+              )}
+              {model === "PACK250_CF" && (
+                <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>
               )}
             </mesh>
             <mesh>
@@ -185,6 +195,7 @@ const Sample = () => {
           <option value="PACK1000_WOOD">PACK1000_WOOD</option>
           <option value="PACK200_mid">PACK200_mid</option>
           <option value="PACK200_CF">PACK200_CF</option>
+          <option value="PACK250_CF">PACK250_CF</option>
         </select>
       </div>
     </div>
