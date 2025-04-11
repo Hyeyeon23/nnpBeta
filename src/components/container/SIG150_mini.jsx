@@ -9,12 +9,12 @@ import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
-export function SIG120_mini({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("SIG120_mini.glb");
+export function SIG150_mini({ imageSrc, color1, ...props }) {
+  const { scene, nodes, materials } = useCustomGLTF("SIG150_mini.glb");
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = -0.8;
+  scene.position.y = -0.3;
 
   /* 그림자 받기 */
   if (scene) {
@@ -26,7 +26,6 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
         // 이상하게 귀퉁이에 음영지는 현상 제거용 (export시 무슨 smooth 설정이 잘못되서 생긴 현상이라 재계산을 해줘야 하는 원리라고 한다. )
         child.geometry.computeVertexNormals();
       }
-      
     });
   }
 
@@ -39,10 +38,11 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
       child.isMesh &&
       child.material &&
       child.material.map &&
-      child.material.map.name === "에브릿"
+      child.material.map.name === "프로틴케어미니"
     ) {
       targetMeshes.push(child);
     }
+    
   });
 
   /* 이미지 변경 */
@@ -76,7 +76,7 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
   useEffect(() => {
     if (imageSrc !== "/sample.png") {
       console.log("new image upload");
-      updateTexture("에브릿", imageSrc);
+      updateTexture("프로틴케어미니", imageSrc);
     }
 
     if (color1) {
@@ -91,4 +91,4 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
   return <primitive object={scene} {...props} castShadow />;
 }
 
-useGLTF.preload("/SIG120_mini.glb");
+useGLTF.preload("/SIG150_mini.glb");

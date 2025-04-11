@@ -8,6 +8,7 @@ import { PACK200_mid } from "../../components/container/PACK200_mid";
 import { PACK200_CF } from "../../components/container/PACK200_CF";
 import { PACK250_CF } from "../../components/container/PACK250_CF";
 import { SIG120_mini } from "../../components/container/SIG120_mini";
+import { SIG150_mini } from "../../components/container/SIG150_mini";
 
 const Sample = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -126,6 +127,9 @@ const Sample = () => {
               {model === "SIG120_mini" && (
                 <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>
               )}
+              {model === "SIG150_mini" && (
+                <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>
+              )}
             </mesh>
             <mesh>
               {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -215,6 +219,7 @@ const Sample = () => {
           <option value="PACK200_CF">PACK200_CF</option>
           <option value="PACK250_CF">PACK250_CF</option>
           <option value="SIG120_mini">SIG120_mini</option>
+          <option value="SIG150_mini">SIG150_mini</option>
         </select>
       </div>
     </div>
