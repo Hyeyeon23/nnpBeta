@@ -229,17 +229,17 @@ const Sample = () => {
           style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
           onChange={handleSelectModel}
         >
-          <option value="PACK1000_Lightless">PACK1000_Lightless</option>
-          <option value="PACK1000_WOOD">PACK1000_WOOD</option>
-          <option value="PACK200_mid">PACK200_mid</option>
-          <option value="PACK200_CF">PACK200_CF</option>
-          <option value="PACK250_CF">PACK250_CF</option>
-          <option value="SIG120_mini">SIG120_mini</option>
-          <option value="SIG150_mini">SIG150_mini</option>
-          <option value="SIG200_mid">SIG200_mid</option>
-          <option value="CAN175">CAN175</option>
-          <option value="CAN200">CAN200</option>
-          <option value="CAN238">CAN238</option>
+          <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
+          {/* <option value="PACK1000_WOOD">PACK1000_WOOD</option> */}
+          <option value="PACK200_mid">테트라_200ml_mid (베지밀비)</option>
+          <option value="PACK200_CF">테트라_200ml_compact_flex (영양케어)</option>
+          <option value="PACK250_CF">테트라_250ml_compact_flex (프로틴밀)</option>
+          <option value="SIG120_mini">SIG_120ml_mini (에브릿)</option>
+          <option value="SIG150_mini">SIG_150ml_mini (프로틴케어미니)</option>
+          <option value="SIG200_mid">SIG_200ml_mid (베지밀비)</option>
+          <option value="CAN175">CAN_175ml (사과드링크)</option>
+          <option value="CAN200">CAN_200ml (마일케어구수한맛)</option>
+          <option value="CAN238">CAN_238ml (방방곡곡식혜)</option>
         </select>
       </div>
     </div>
