@@ -7,7 +7,7 @@ import { PACK1000_Lightless } from "../../components/container/PACK1000_Lightles
 import { PACK200_mid } from "../../components/container/PACK200_mid";
 import { PACK200_CF } from "../../components/container/PACK200_CF";
 import { PACK250_CF } from "../../components/container/PACK250_CF";
-
+import { SIG120_mini } from "../../components/container/SIG120_mini";
 
 const Sample = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -22,25 +22,32 @@ const Sample = () => {
   const handleImageChange = (e) => {
     const file = e.target.files?.[0]; // 선택된 파일
 
-    if(!file){
-      console.log("이미지 선택 취소 ")
-      setLoadSpin(false);
-      return;
-    }
-
     if (file) {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       setImage(url); // 이미지 상태 업데이트
 
       console.log("handleImageChange = ", url);
-      setLoadSpin(false);
     }
+    setLoadSpin(false);
 
+    e.target.value = "";
   };
 
-  const displaySpin = () => {
-    setLoadSpin(true);
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file); // 파일을 URL로 변환
+      setImage(url); // 이미지 상태 업데이트
+
+      console.log("handleImageChange = ", url);
+    }
   };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
   const handleColor1Change = (e) => {
     console.log("handleColor1Change = ", e.target.value);
     setColor1(e.target.value);
@@ -116,6 +123,9 @@ const Sample = () => {
               {model === "PACK250_CF" && (
                 <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>
               )}
+              {model === "SIG120_mini" && (
+                <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>
+              )}
             </mesh>
             <mesh>
               {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -148,13 +158,21 @@ const Sample = () => {
           </Suspense>
         </Canvas>
 
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          onClick={displaySpin}
-          style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
-        />
+        <div
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+          className="bg-bg-dark-subtle text-light-emphasis text-xl-center form-control-lg"
+          style={{
+            position: "absolute",
+            top: 190,
+            left: 20,
+            zIndex: 1,
+            border: "2px dashed #ccc",
+            padding: "20px",            
+          }}
+        >
+          image drag and drop
+        </div>
         <label
           for="colorPicker"
           style={{ position: "absolute", top: 60, left: 90, zIndex: 1 }}
@@ -188,7 +206,7 @@ const Sample = () => {
           max={3}
         ></Progressive>
         <select
-          style={{ position: "absolute", top: 190, left: 20, zIndex: 1 }}
+          style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
           onChange={handleSelectModel}
         >
           <option value="PACK1000_Lightless">PACK1000_Lightless</option>
@@ -196,6 +214,7 @@ const Sample = () => {
           <option value="PACK200_mid">PACK200_mid</option>
           <option value="PACK200_CF">PACK200_CF</option>
           <option value="PACK250_CF">PACK250_CF</option>
+          <option value="SIG120_mini">SIG120_mini</option>
         </select>
       </div>
     </div>
