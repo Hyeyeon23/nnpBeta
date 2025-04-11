@@ -1,15 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Model1 } from "../../components/Scene";
-import { Can } from "../../components/Can";
-import { SimpleCan } from "../../components/SimpleCan";
-import { Soup } from "../../components/Soup";
-import { PACK1000 } from "../../components/PACK1000";
-import { PACK1000_WOOD } from "../../components/PACK1000_WOOD";
+import { PACK1000_WOOD } from "../../components/container/PACK1000_WOOD";
 import Progressive from "../../components/sample/Progressive";
-import { PACK1000_Lightless } from "../../components/PACK1000_Lightless";
-import { PACK200_mid } from "../../components/PACK200_mid";
+import { PACK1000_Lightless } from "../../components/container/PACK1000_Lightless";
+import { PACK200_mid } from "../../components/container/PACK200_mid";
+import { PACK200_CF } from "../../components/container/PACK200_CF";
+
 
 const Sample = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -106,6 +103,9 @@ const Sample = () => {
               {model === "PACK200_mid" && (
                 <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>
               )}
+              {model === "PACK200_CF" && (
+                <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>
+              )}
             </mesh>
             <mesh>
               {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -184,7 +184,7 @@ const Sample = () => {
           <option value="PACK1000_Lightless">PACK1000_Lightless</option>
           <option value="PACK1000_WOOD">PACK1000_WOOD</option>
           <option value="PACK200_mid">PACK200_mid</option>
-          <option value=""></option>
+          <option value="PACK200_CF">PACK200_CF</option>
         </select>
       </div>
     </div>

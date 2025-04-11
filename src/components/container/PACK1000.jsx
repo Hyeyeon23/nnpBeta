@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.5.3 result.gltf
 import React, { useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { TextureLoader, Color, SRGBColorSpace } from 'three'
-import { useCustomGLTF } from "../hooks/useCustomGLTF";
+import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function PACK1000({ imageSrc, color1, ...props }) {
 

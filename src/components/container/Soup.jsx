@@ -9,7 +9,7 @@ Title: Can-soup
 
 import React, { useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useCustomGLTF } from "../hooks/useCustomGLTF";
+import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function Soup({ imageSrc, ...props }) {
 

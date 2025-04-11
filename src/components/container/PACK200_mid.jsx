@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
-import { useCustomGLTF } from "../hooks/useCustomGLTF";
+import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function PACK200_mid({ imageSrc, color1, ...props }) {
   const { scene, nodes, materials } = useCustomGLTF("PACK200_mid.glb");
