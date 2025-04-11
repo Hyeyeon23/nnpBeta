@@ -9,6 +9,10 @@ import { PACK200_CF } from "../../components/container/PACK200_CF";
 import { PACK250_CF } from "../../components/container/PACK250_CF";
 import { SIG120_mini } from "../../components/container/SIG120_mini";
 import { SIG150_mini } from "../../components/container/SIG150_mini";
+import { SIG200_mid } from "../../components/container/SIG200_mid";
+import { CAN175 } from "../../components/container/CAN175";
+import { CAN200 } from "../../components/container/CAN200";
+import { CAN238 } from "../../components/container/CAN238";
 
 const Sample = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -130,6 +134,18 @@ const Sample = () => {
               {model === "SIG150_mini" && (
                 <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>
               )}
+              {model === "SIG200_mid" && (
+                <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>
+              )}
+              {model === "CAN175" && (
+                <CAN175 imageSrc={image} color1={color1}></CAN175>
+              )}
+              {model === "CAN200" && (
+                <CAN200 imageSrc={image} color1={color1}></CAN200>
+              )}
+              {model === "CAN238" && (
+                <CAN238 imageSrc={image} color1={color1}></CAN238>
+              )}
             </mesh>
             <mesh>
               {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
@@ -220,6 +236,10 @@ const Sample = () => {
           <option value="PACK250_CF">PACK250_CF</option>
           <option value="SIG120_mini">SIG120_mini</option>
           <option value="SIG150_mini">SIG150_mini</option>
+          <option value="SIG200_mid">SIG200_mid</option>
+          <option value="CAN175">CAN175</option>
+          <option value="CAN200">CAN200</option>
+          <option value="CAN238">CAN238</option>
         </select>
       </div>
     </div>

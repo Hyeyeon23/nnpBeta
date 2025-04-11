@@ -9,9 +9,12 @@ import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
-export function PACK200_mid({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("PACK200_mid.glb");
+export function SIG200_mid({ imageSrc, color1, ...props }) {
+  const { scene, nodes, materials } = useCustomGLTF("SIG200_mid.glb");
   const loader = new THREE.TextureLoader();
+
+  // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
+  scene.position.y = 0.02;
 
   /* 그림자 받기 */
   if (scene) {
@@ -39,7 +42,6 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
     ) {
       targetMeshes.push(child);
     }
-    
   });
 
   /* 이미지 변경 */
@@ -94,4 +96,4 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
   return <primitive object={scene} {...props} castShadow />;
 }
 
-useGLTF.preload("/PACK200_mid.glb");
+useGLTF.preload("/SIG200_mid.glb");

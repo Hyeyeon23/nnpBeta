@@ -9,9 +9,12 @@ import { TextureLoader, Color, SRGBColorSpace } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
-export function PACK200_mid({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("PACK200_mid.glb");
+export function CAN175({ imageSrc, color1, ...props }) {
+  const { scene, nodes, materials } = useCustomGLTF("CAN175.glb");
   const loader = new THREE.TextureLoader();
+
+  // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
+  scene.position.y = -0.3;
 
   /* 그림자 받기 */
   if (scene) {
@@ -20,7 +23,7 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
       if (child.isMesh) {
         child.castShadow = true; // 그림자 생성
         child.receiveShadow = true; // 그림자 받기
-        // 이상하게 귀퉁이에 음영지는 현상 z제거용 (export시 무슨 smooth 설정이 잘못되서 생긴 현상이라 재계산을 해줘야 하는 원리라고 한다. )
+        // 이상하게 귀퉁이에 음영지는 현상 제거용 (export시 무슨 smooth 설정이 잘못되서 생긴 현상이라 재계산을 해줘야 하는 원리라고 한다. )
         child.geometry.computeVertexNormals();
       }
     });
@@ -30,12 +33,12 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
   const targetMeshes = [];
   scene.traverse((child) => {
     //console.log("child = ", child);
-    console.log("child.material = ", child.material);
+    console.log("[[search]] child.material = ", child.material);
     if (
       child.isMesh &&
       child.material &&
       child.material.map &&
-      child.material.map.name === "베지밀B"
+      child.material.map.name === "자연과사람들-사과-캔-230523"
     ) {
       targetMeshes.push(child);
     }
@@ -73,20 +76,14 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
   useEffect(() => {
     if (imageSrc !== "/sample.png") {
       console.log("new image upload");
-      updateTexture("베지밀B", imageSrc);
+      updateTexture("자연과사람들-사과-캔-230523", imageSrc);
     }
 
     if (color1) {
-      // 날개
+      // 뚜껑
       if (materials["매테리얼.002"]) {
         materials["매테리얼.002"].color = new Color(color1);
         materials["매테리얼.002"].needsUpdate = true;
-      }
-
-      // 날개
-      if (materials["materials.material"]) {
-        materials["materials.material"].color = new Color("white");
-        materials["materials.material"].needsUpdate = true;
       }
     }
   }, [imageSrc, nodes, color1, materials]); // imageSrc 또는 nodes가 변경될 때마다 텍스쳐 업데이트
@@ -94,4 +91,4 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
   return <primitive object={scene} {...props} castShadow />;
 }
 
-useGLTF.preload("/PACK200_mid.glb");
+useGLTF.preload("/CAN175.glb");
