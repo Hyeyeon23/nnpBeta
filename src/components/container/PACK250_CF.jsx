@@ -14,7 +14,7 @@ export function PACK250_CF({ imageSrc, color1, ...props }) {
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = -0.34
+  scene.position.y = 0.06;
 
   /* 그림자 받기 */
   if (scene) {
@@ -32,12 +32,7 @@ export function PACK250_CF({ imageSrc, color1, ...props }) {
   scene.traverse((child) => {
     //console.log("child = ", child);
     console.log("[[search]] child.material = ", child.material);
-    if (
-      child.isMesh &&
-      child.material &&
-      child.material.map &&
-      child.material.map.name === "프로틴밀250"
-    ) {
+    if (child.isMesh && child.material && child.material.map && child.material.map.name === "프로틴밀250") {
       targetMeshes.push(child);
     }
   });
