@@ -75,7 +75,7 @@ const Header = () => {
       <div className="bg"></div>
       <div className="wView">
         <h1 className="logo">
-          <a href="./index.html" title="정식품 CI"></a>
+          <a href="javascript:void(0);" title="정식품 CI"></a>
         </h1>
         <nav id="gnb">
           <ul>
@@ -87,52 +87,52 @@ const Header = () => {
                 <div className="inner">
                   <ul className="gnb_depth2">
                     <li className="gbg01">
-                      <a href="./01_21_greetings.html">자연과사람들 소개</a>
+                      <a href="javascript:void(0)">자연과사람들 소개</a>
                       <ul className="gnb_depth3">
                         <li>
-                          <a href="./01_21_greetings.html">인사말</a>
+                          <a href="javascript:void(0)">인사말</a>
                         </li>
                         <li>
-                          <a href="./01_22_profile.html">회사연혁</a>
+                          <a href="javascript:void(0)">회사연혁</a>
                         </li>
                         <li>
-                          <a href="./01_08.html">비젼</a>
+                          <a href="javascript:void(0)">비젼</a>
                         </li>
                         <li>
-                          <a href="./01_08.html">오시는길</a>
+                          <a href="javascript:void(0)">오시는길</a>
                         </li>
                       </ul>
                     </li>
                     <li className="gbg02">
-                      <a href="./01_31_dcfMedia.html">관련사</a>
+                      <a href="javascript:void(0)">관련사</a>
                       <ul className="gnb_depth3">
                         <li>
-                          <a href="./01_41_press.html">정식품</a>
+                          <a href="javascript:void(0)">정식품</a>
                         </li>
                         <li>
-                          <a href="./01_31_dcfMedia.html">오쎄</a>
+                          <a href="javascript:void(0)">오쎄</a>
                         </li>
                         <li>
-                          <a href="/company/contest">(재단)혜춘장학회</a>
+                          <a href="javascript:void(0)">(재단)혜춘장학회</a>
                         </li>
                       </ul>
                     </li>
                     <li className="gbg03">
-                      <a href="./01_52_esg.html">식품안전인증현황</a>
+                      <a href="javascript:void(0)">식품안전인증현황</a>
                       <ul className="gnb_depth3">
                         <li>
-                          <a href="./01_52_esg.html">HACCP</a>
+                          <a href="javascript:void(0)">HACCP</a>
                         </li>
                         <li>
-                          <a href="./01_53_env.html">FSSC 22000</a>
+                          <a href="javascript:void(0)">FSSC 22000</a>
                         </li>
                         <li>
-                          <a href="./01_51_csr.html">인증서</a>
+                          <a href="javascript:void(0)">인증서</a>
                         </li>
                       </ul>
                     </li>
                     <li className="gbg04">
-                      <a href="./01_52_esg.html">채용정보</a>
+                      <a href="javascript:void(0)">채용정보</a>
                     </li>
                   </ul>
                 </div>
@@ -140,20 +140,20 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="./02_21_productList.html" className="f_pp">
+              <a href="javascript:void(0)" className="f_pp">
                 Business
               </a>
               <div className="depth02_menu_wrap">
                 <div className="inner">
                   <ul className="gnb_depth2">
                     <li className="gbg01">
-                      <a href="./02_11_brand.html">제품유형</a>
+                      <a href="javascript:void(0)">제품유형</a>
                     </li>
                     <li className="gbg05">
-                      <a href="./02_21_productList.html">팩 용기유형</a>
+                      <a href="javascript:void(0)">팩 용기유형</a>
                     </li>
                     <li className="gbg06">
-                      <a href="./02_21_productList.html">캔 용기유형</a>
+                      <a href="javascript:void(0)">캔 용기유형</a>
                     </li>
                     <li className="gbg04">
                       <a href="https://www.edaymall.com" target="_blank" rel="noopener noreferrer">
@@ -166,33 +166,33 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="./03_12_rndIntroduce.html" id="gnbTarget" className="f_pp">
+              <a href="javascript:void(0)" id="gnbTarget" className="f_pp">
                 Brand
               </a>
               <div className="depth02_menu_wrap">
                 <div className="inner">
                   <ul className="gnb_depth2">
                     <li className="gbg01">
-                      <a href="./03_11_greetingsPhD.html">WIZUS</a>
+                      <a href="javascript:void(0)">WIZUS</a>
                       <ul className="gnb_depth3">
                         <li>
-                          <a href="./03_11_greetingsPhD.html">녹차</a>
+                          <a href="javascript:void(0)">녹차</a>
                         </li>
                         <li>
-                          <a href="./03_12_rndIntroduce.html">레몬</a>
+                          <a href="javascript:void(0)">레몬</a>
                         </li>
                       </ul>
                     </li>
                     <li className="gbg02">
-                      <a href="./03_31_haccp.html">건강담은</a>
+                      <a href="javascript:void(0)">건강담은</a>
                       <ul className="gnb_depth3">
                         <li>
-                          <a href="./03_31_haccp.html">식혜</a>
+                          <a href="javascript:void(0)">식혜</a>
                         </li>
                       </ul>
                     </li>
                     <li className="gbg03">
-                      <a href="./03_31_haccp.html">자연과사람들이 만든</a>
+                      <a href="javascript:void(0)">자연과사람들이 만든</a>
                     </li>
                   </ul>
                 </div>
@@ -200,20 +200,20 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="./04_11_communication.html" className="f_pp">
+              <a href="javascript:void(0)" className="f_pp">
                 CS
               </a>
               <div className="depth02_menu_wrap">
                 <div className="inner">
                   <ul className="gnb_depth2">
                     <li className="gbg01">
-                      <a href="/webzine">자주 묻는 질문</a>
+                      <a href="javascript:void(0)">자주 묻는 질문</a>
                     </li>
                     <li className="gbg02">
-                      <a href="./04_45_event.html">1:1문의</a>
+                      <a href="javascript:void(0)">1:1문의</a>
                     </li>
                     <li className="gbg03">
-                      <a href="/vegemilBaby/index">고객의 소리</a>
+                      <a href="javascript:void(0)">고객의 소리</a>
                     </li>
                   </ul>
                 </div>
@@ -225,10 +225,10 @@ const Header = () => {
         <div className="header-right">
           <ul className="sub_area">
             <li>
-              <a href="/member/login">로그인</a>
+              <a href="javascript:void(0)">로그인</a>
             </li>
             <li>
-              <a href="/member/join">회원가입</a>
+              <a href="javascript:void(0)">회원가입</a>
             </li>
             <li>
               <div className="custom-sel">
@@ -246,16 +246,16 @@ const Header = () => {
                   <dl className="full_box">
                     <dd>
                       <p className="full_logo">
-                        <a href="./index.html">
+                        <a href="javascript:void(0)">
                           <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png" alt="정식품 CI" />
                         </a>
                       </p>
                       <ul className="full-header-right">
                         <li>
-                          <a href="/member/login">로그인</a>
+                          <a href="javascript:void(0)">로그인</a>
                         </li>
                         <li>
-                          <a href="/member/join">회원가입</a>
+                          <a href="javascript:void(0)">회원가입</a>
                         </li>
                         <li>
                           <div className="custom-sel gray">

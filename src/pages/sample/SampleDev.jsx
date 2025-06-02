@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
+import { SketchPicker } from "react-color";
 import { Canvas, useThree } from "@react-three/fiber";
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
 import { Environment, OrbitControls } from "@react-three/drei";
@@ -74,8 +75,6 @@ const SampleDev = () => {
     setModel(e.target.value);
   };
 
-  // 다운로드 exporter
-
   // 게이지 바 코드
   const updatePercent = (clientX) => {
     const rect = percent.current.getBoundingClientRect();
@@ -114,15 +113,18 @@ const SampleDev = () => {
     isDragging.current = false;
   };
 
-  // 다운로드 기능
+  // 다운로드 exporter
   function exportGLB(group) {
     const exporter = new GLTFExporter();
+    // exporter.parse(대상객체, 콜백함수, 옵션)
     exporter.parse(
       group,
       (result) => {
+        // ArrayBuffer형식 glb
         if (result instanceof ArrayBuffer) {
           saveArrayBuffer(result, "model.glb");
         } else {
+          //binarty: false , gltf 형식 json 문자열
           const output = JSON.stringify(result, null, 2);
           saveString(output, "model.gltf");
         }
@@ -131,24 +133,27 @@ const SampleDev = () => {
     );
   }
 
+  // 바이너리 데이터를 blob -> 다운로드
   function saveArrayBuffer(buffer, filename) {
     const blob = new Blob([buffer], { type: "application/octet-stream" });
     saveBlob(blob, filename);
   }
 
+  // 문자열 데이터를 blob -> 다운로드
   function saveString(text, filename) {
     const blob = new Blob([text], { type: "text/plain" });
     saveBlob(blob, filename);
   }
-
+  // 다운로드 함수 (링크생성 - 클릭이벤트자동 - url 해제 )
   function saveBlob(blob, filename) {
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = filename;
+    const link = document.createElement("a"); // 임시 url로 변환
+    link.href = URL.createObjectURL(blob); // blob을 가리키는 가짜 링크 생성
+    link.download = filename; // 파일이름 세팅
     link.click();
-    URL.revokeObjectURL(link.href);
+    URL.revokeObjectURL(link.href); // 메모리 정리
   }
 
+  // 디은 버튼에 걸린 이벤트
   const handleDownload = () => {
     if (groupRef.current) {
       exportGLB(groupRef.current);
@@ -234,7 +239,7 @@ const SampleDev = () => {
           {/* 캔버스 끝 */}
           <div className=" pack_btn_left text-start">
             <h5 className="f18 fw300 black ">용기</h5>
-            <select className="mt-10 black w-auto" onChange={handleSelectModel}>
+            <select className="mt-10 black w-auto " onChange={handleSelectModel}>
               <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
               {/* <option value="PACK1000_WOOD">PACK1000_WOOD</option> */}
               <option value="PACK200_mid">테트라_200ml_mid (베지밀비)</option>
@@ -272,7 +277,7 @@ const SampleDev = () => {
                 border: "2px dashed #ccc",
                 padding: "20px",
               }}>
-              image drag and drop
+              <h5>image drag and drop</h5>
             </div>
           </div>
           <div className="pack_btn_footer">
