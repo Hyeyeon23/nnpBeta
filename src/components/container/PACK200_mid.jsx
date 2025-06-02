@@ -31,15 +31,9 @@ export function PACK200_mid({ imageSrc, color1, ...props }) {
   scene.traverse((child) => {
     //console.log("child = ", child);
     console.log("child.material = ", child.material);
-    if (
-      child.isMesh &&
-      child.material &&
-      child.material.map &&
-      child.material.map.name === "베지밀B"
-    ) {
+    if (child.isMesh && child.material && child.material.map && child.material.map.name === "베지밀B") {
       targetMeshes.push(child);
     }
-    
   });
 
   /* 이미지 변경 */

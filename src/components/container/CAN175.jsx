@@ -14,7 +14,7 @@ export function CAN175({ imageSrc, color1, ...props }) {
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = -0.3;
+  scene.position.y = 0;
 
   /* 그림자 받기 */
   if (scene) {
@@ -42,7 +42,6 @@ export function CAN175({ imageSrc, color1, ...props }) {
     ) {
       targetMeshes.push(child);
     }
-    
   });
 
   /* 이미지 변경 */

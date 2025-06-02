@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { PACK1000_WOOD } from "../../components/container/PACK1000_WOOD";
-import Progressive from "../../components/sample/Progressive";
 import { PACK1000_Lightless } from "../../components/container/PACK1000_Lightless";
 import { PACK200_mid } from "../../components/container/PACK200_mid";
 import { PACK200_CF } from "../../components/container/PACK200_CF";
@@ -16,18 +16,20 @@ import { CAN238 } from "../../components/container/CAN238";
 import { images3d } from "../../utils/imagesImport";
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
+import { saveAs } from "file-saver";
 
 const SampleDev = () => {
+  const groupRef = useRef();
+
   // 캔버스 샘플링 기능 관련
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
-  const [pin, setPin] = useState(5); // 핀조명 밝기
+  const [pin, setPin] = useState(1); // 핀조명 밝기
   const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
   const [color1, setColor1] = useState(null);
   const [loadSpin, setLoadSpin] = useState(false);
   const [model, setModel] = useState("PACK1000_Lightless");
 
   // 게이지 관련
-
   const percent = useRef("50");
   const isDragging = useRef(false);
 
@@ -72,6 +74,8 @@ const SampleDev = () => {
     setModel(e.target.value);
   };
 
+  // 다운로드 exporter
+
   // 게이지 바 코드
   const updatePercent = (clientX) => {
     const rect = percent.current.getBoundingClientRect();
@@ -109,6 +113,48 @@ const SampleDev = () => {
   const handleTouchEnd = () => {
     isDragging.current = false;
   };
+
+  // 다운로드 기능
+  function exportGLB(group) {
+    const exporter = new GLTFExporter();
+    exporter.parse(
+      group,
+      (result) => {
+        if (result instanceof ArrayBuffer) {
+          saveArrayBuffer(result, "model.glb");
+        } else {
+          const output = JSON.stringify(result, null, 2);
+          saveString(output, "model.gltf");
+        }
+      },
+      { binary: true }
+    );
+  }
+
+  function saveArrayBuffer(buffer, filename) {
+    const blob = new Blob([buffer], { type: "application/octet-stream" });
+    saveBlob(blob, filename);
+  }
+
+  function saveString(text, filename) {
+    const blob = new Blob([text], { type: "text/plain" });
+    saveBlob(blob, filename);
+  }
+
+  function saveBlob(blob, filename) {
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(link.href);
+  }
+
+  const handleDownload = () => {
+    if (groupRef.current) {
+      exportGLB(groupRef.current);
+    }
+  };
+
   return (
     <>
       <Header></Header>
@@ -147,27 +193,31 @@ const SampleDev = () => {
                 shadow-camera-top={10}
                 shadow-camera-bottom={-10}
               />
+              {/* 환경 조명 */}
+              <Environment preset="forest" />
               {/* 반대쪽에서 약한 빛 추가 */}
               <directionalLight
                 position={[-5, 3, -8]} // 기존 빛의 반대 방향
                 intensity={1.5} // 약한 빛
                 color={"#ffffff"} // 빛 색상 (조정 가능)
               />
-              <mesh position={[0, -1.1, 0]} castShadow>
-                {model === "PACK1000_WOOD" && <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>}
-                {model === "PACK1000_Lightless" && (
-                  <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
-                )}
-                {model === "PACK200_mid" && <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>}
-                {model === "PACK200_CF" && <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>}
-                {model === "PACK250_CF" && <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>}
-                {model === "SIG120_mini" && <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>}
-                {model === "SIG150_mini" && <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>}
-                {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>}
-                {model === "CAN175" && <CAN175 imageSrc={image} color1={color1}></CAN175>}
-                {model === "CAN200" && <CAN200 imageSrc={image} color1={color1}></CAN200>}
-                {model === "CAN238" && <CAN238 imageSrc={image} color1={color1}></CAN238>}
-              </mesh>
+              <group name="target" ref={groupRef}>
+                <mesh position={[0, -1.1, 0]} castShadow>
+                  {model === "PACK1000_WOOD" && <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>}
+                  {model === "PACK1000_Lightless" && (
+                    <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
+                  )}
+                  {model === "PACK200_mid" && <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>}
+                  {model === "PACK200_CF" && <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>}
+                  {model === "PACK250_CF" && <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>}
+                  {model === "SIG120_mini" && <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>}
+                  {model === "SIG150_mini" && <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>}
+                  {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>}
+                  {model === "CAN175" && <CAN175 imageSrc={image} color1={color1}></CAN175>}
+                  {model === "CAN200" && <CAN200 imageSrc={image} color1={color1}></CAN200>}
+                  {model === "CAN238" && <CAN238 imageSrc={image} color1={color1}></CAN238>}
+                </mesh>
+              </group>
               <mesh>
                 {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
                 <mesh receiveShadow position={[0, -1.01, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 3, 3]}>
@@ -197,6 +247,7 @@ const SampleDev = () => {
               <option value="CAN200">CAN_200ml (마일케어구수한맛)</option>
               <option value="CAN238">CAN_238ml (방방곡곡식혜)</option>
             </select>
+
             <div
               className="slider-container mt-10"
               ref={percent}
@@ -211,6 +262,17 @@ const SampleDev = () => {
                 <div className="slider-fill" style={{ width: `${pin * 10}%` }}></div>
                 <div className="slider-thumb" style={{ left: `${pin * 10}%` }}></div>
               </div>
+            </div>
+            <div
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              className="bg-bg-dark-subtle text-light-emphasis text-xl-center form-control-lg mt-4"
+              style={{
+                zIndex: 1,
+                border: "2px dashed #ccc",
+                padding: "20px",
+              }}>
+              image drag and drop
             </div>
           </div>
           <div className="pack_btn_footer">
@@ -246,7 +308,7 @@ const SampleDev = () => {
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={handleDownload}>
                   <img src={images3d["btn_3d_save.png"]} alt="save" />
                 </button>
               </li>

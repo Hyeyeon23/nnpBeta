@@ -14,7 +14,7 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = -0.8;
+  scene.position.y = 0.06;
 
   /* 그림자 받기 */
   if (scene) {
@@ -26,7 +26,6 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
         // 이상하게 귀퉁이에 음영지는 현상 제거용 (export시 무슨 smooth 설정이 잘못되서 생긴 현상이라 재계산을 해줘야 하는 원리라고 한다. )
         child.geometry.computeVertexNormals();
       }
-      
     });
   }
 
@@ -35,12 +34,7 @@ export function SIG120_mini({ imageSrc, color1, ...props }) {
   scene.traverse((child) => {
     //console.log("child = ", child);
     console.log("[[search]] child.material = ", child.material);
-    if (
-      child.isMesh &&
-      child.material &&
-      child.material.map &&
-      child.material.map.name === "에브릿"
-    ) {
+    if (child.isMesh && child.material && child.material.map && child.material.map.name === "에브릿") {
       targetMeshes.push(child);
     }
   });
