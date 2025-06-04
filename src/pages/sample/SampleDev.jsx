@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { SketchPicker } from "react-color";
+import { ChromePicker } from "react-color";
 import { Canvas, useThree } from "@react-three/fiber";
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
 import { Environment, OrbitControls } from "@react-three/drei";
@@ -17,7 +17,6 @@ import { CAN238 } from "../../components/container/CAN238";
 import { images3d } from "../../utils/imagesImport";
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
-import { saveAs } from "file-saver";
 
 const SampleDev = () => {
   const groupRef = useRef();
@@ -28,6 +27,7 @@ const SampleDev = () => {
   const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
   const [color1, setColor1] = useState(null);
   const [loadSpin, setLoadSpin] = useState(false);
+  const [camPosition, setCamPosition] = useState([0, 3, 10]);
   const [model, setModel] = useState("PACK1000_Lightless");
 
   // 게이지 관련
@@ -153,11 +153,28 @@ const SampleDev = () => {
     URL.revokeObjectURL(link.href); // 메모리 정리
   }
 
-  // 디은 버튼에 걸린 이벤트
+  // 다운로드 버튼에 걸린 이벤트
   const handleDownload = () => {
     if (groupRef.current) {
       exportGLB(groupRef.current);
     }
+  };
+
+  const handleChangeCameraPostion = (position) => {
+    console.log("handleChangeCameraPostion = ", position);
+    setCamPosition(position);
+  };
+
+  // 카메라 업데이터 생성
+  const CameraUpdater = ({ cameraPosition }) => {
+    const { camera } = useThree();
+
+    useEffect(() => {
+      camera.position.set(...cameraPosition);
+      camera.lookAt(0, 0, 0); // 필요 시 타겟을 지정
+    }, [cameraPosition, camera]);
+
+    return null;
   };
 
   return (
@@ -178,6 +195,7 @@ const SampleDev = () => {
         )}
         <div className="pb-4 canvas-container pack_wrap" style={{ position: "relative" }}>
           <Canvas camera={{ position: [0, 3, 10], fov: 60 }} style={{ backgroundColor: "#F8F8F8" }} shadows>
+            <CameraUpdater cameraPosition={camPosition} />
             <Suspense fallback={null}>
               {/* 화면 움직이는 거  */}
               <OrbitControls minDistance={2} maxDistance={10} />
@@ -279,36 +297,45 @@ const SampleDev = () => {
               }}>
               <h5>image drag and drop</h5>
             </div>
+            <div>
+              <ChromePicker
+                disableAlpha={true}
+                color={color1 ?? { r: 0, g: 0, b: 0, a: 1 }} // color1이 null이거나 undifined 일 때만 후자 설정 적용
+                onChange={(c) => {
+                  setColor1(c.hex);
+                  console.log(color1);
+                }}></ChromePicker>
+            </div>
           </div>
           <div className="pack_btn_footer">
             <ul>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
                   <img src={images3d["btn_3d_01.png"]} alt="정면" />
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([0, 0, -10])}>
                   <img src={images3d["btn_3d_02.png"]} alt="뒷면" />
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([10, 0, 0])}>
                   <img src={images3d["btn_3d_03.png"]} alt="오른쪽" />
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([-10, 0, 0])}>
                   <img src={images3d["btn_3d_04.png"]} alt="왼쪽" />
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([0, 10, 0])}>
                   <img src={images3d["btn_3d_05.png"]} alt="탑" />
                 </button>
               </li>
               <li>
-                <button type="button">
+                <button type="button" onClick={() => handleChangeCameraPostion([0, -10, 0])}>
                   <img src={images3d["btn_3d_06.png"]} alt="바닥" />
                 </button>
               </li>
