@@ -226,7 +226,7 @@ const SampleDev = () => {
           <div className="pack_btn_footer">
             <ul>
               <li>
-                <button type="button" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
+                <button type="button" className="btn_3d_01 on" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
                   <img src={images3d["btn_3d_01.png"]} alt="정면" />
                 </button>
               </li>
