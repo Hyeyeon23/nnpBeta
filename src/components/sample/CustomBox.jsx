@@ -1,17 +1,48 @@
 import React, { useRef, useState } from "react";
 import { SketchPicker } from "react-color";
 import { images3d } from "../../utils/imagesImport";
-const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDrop }) => {
+const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDrop, handleImageChange }) => {
   const [paletteOpen, setPaletteOpen] = useState(false);
+
   // 게이지 관련
   const sliderRef = useRef(null);
   const [value1, setValue1] = useState(20); // 초기값
   const [value2, setValue2] = useState(60); // 초기값
 
+  // 날개 색상 스포이드 픽 컬러
+  const [pickedColor, setPickedColor] = useState(1);
+
   const updateSliderBackground = (e) => {
     const val = e.target.value;
     setValue1(val);
     e.target.style.setProperty("--val", `${val}%`);
+  };
+
+  /* 
+    날개 색상 스포이드 color picking 기능 
+  */
+  const handleEyeDropperClick = async () => {
+    if (!window.EyeDropper) {
+      alert("이 브라우저는 EyeDropper API를 지원하지 않습니다.");
+      return;
+    }
+
+    const eyeDropper = new window.EyeDropper();
+    try {
+      const result = await eyeDropper.open();
+      setPickedColor(result.sRGBHex);
+      setColor1(result.sRGBHex);
+    } catch (error) {
+      console.log("스포이드 취소 또는 실패", error);
+    }
+  };
+
+  const handleStaticColorClick = (color) => {
+    setColor1(color);
+  };
+
+  const handlePreventDefault = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -65,23 +96,47 @@ const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDr
       <div className="packColor">
         <p className="f18 fw500 black mt40">팩 날개 색상</p>
         <div className="container_color mt10">
-          <div className="eyedropper" id="eyedropper">
+          <div
+            className="eyedropper"
+            id="eyedropper"
+            onClick={handleEyeDropperClick}
+            style={{ backgroundColor: pickedColor }}>
             <img src={images3d["color.png"]} alt="eyedropper icon" />
           </div>
           <div className="color-palette">
-            <div className="color-box" style={{ background: "#ff3f7e" }} data-color="#ff3f7e"></div>
-            <div className="color-box" style={{ background: "#ffca28" }} data-color="#ffca28"></div>
-            <div className="color-box" style={{ background: "#00d96f" }} data-color="#00d96f"></div>
-            <div className="color-box" style={{ background: "#4285f4" }} data-color="#4285f4"></div>
-            <div className="color-box" style={{ background: "#a14eff" }} data-color="#a14eff"></div>
+            <div
+              className="color-box"
+              style={{ background: "#ff3f7e" }}
+              data-color="#ff3f7e"
+              onClick={() => handleStaticColorClick("#ff3f7e")}></div>
+            <div
+              className="color-box"
+              style={{ background: "#ffca28" }}
+              data-color="#ffca28"
+              onClick={() => handleStaticColorClick("#ffca28")}></div>
+            <div
+              className="color-box"
+              style={{ background: "#00d96f" }}
+              data-color="#00d96f"
+              onClick={() => handleStaticColorClick("#00d96f")}></div>
+            <div
+              className="color-box"
+              style={{ background: "#4285f4" }}
+              data-color="#4285f4"
+              onClick={() => handleStaticColorClick("#4285f4")}></div>
+            <div
+              className="color-box"
+              style={{ background: "#a14eff" }}
+              data-color="#a14eff"
+              onClick={() => handleStaticColorClick("#a14eff")}></div>
           </div>
         </div>
       </div>
       {/* 팩날개  끝 */}
       <div class="wView">
         <p class="f18 fw500 black mt40 clear mt80m">파일 첨부</p>
-        <div id="drop-area" class="mt10">
-          <input type="file" id="fileElem" accept="image/*" hidden />
+        <div id="drop-area" class="mt10" onDrop={handleDrop} onDragOver={handlePreventDefault}>
+          <input type="file" id="fileElem" accept="image/*" onChange={handleImageChange} hidden />
           <label for="fileElem" id="drop-label">
             <img src={images3d["file.png"]} alt="upload icon" />
           </label>

@@ -31,6 +31,9 @@ const SampleDev = () => {
   const [camPosition, setCamPosition] = useState([0, 3, 10]);
   const [model, setModel] = useState("PACK1000_Lightless");
 
+  // 물체각 및 다운로드 컴포넌트 on class 부여 state
+  const [poseOn, setPoseOn] = useState(1);
+
   console.log("image", image);
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
@@ -119,9 +122,10 @@ const SampleDev = () => {
     }
   };
 
-  const handleChangeCameraPostion = (position) => {
+  const handleChangeCameraPostion = (position, idx) => {
     console.log("handleChangeCameraPostion = ", position);
     setCamPosition(position);
+    setPoseOn(idx);
   };
 
   // 카메라 업데이터 생성
@@ -232,48 +236,51 @@ const SampleDev = () => {
                     color1={color1}
                     setColor1={setColor1}
                     handleSelectModel={handleSelectModel}
-                    handleDrop={handleDrop}>
+                    handleDrop={handleDrop}
+                    handleImageChange={handleImageChange}>
                     {" "}
                   </CustomBox>
                   <div className="pack_btn_footer wView">
-                    {/* <ul>
-                    <li>
-                      <button type="button">
-                        <div className="btn_3d_01 on"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
-                        <div className="btn_3d_02"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([0, 0, -10])}>
-                        <div className="btn_3d_03"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([10, 0, 0])}>
-                        <div className="btn_3d_04"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([-10, 0, 0])}>
-                        <div className="btn_3d_05"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([0, 10, 0])}>
-                        <div className="btn_3d_06"></div>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" onClick={() => handleChangeCameraPostion([0, -10, 0])}>
-                        <div className="btn_3d_07"></div>
-                      </button>
-                    </li>
-                  </ul> */}
                     <ul>
+                      <li>
+                        <button type="button">
+                          <div
+                            className={`btn_3d_01 ${poseOn === 1 ? "on" : ""}`}
+                            onClick={() => handleChangeCameraPostion([0, 3, 10], 1)}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={() => handleChangeCameraPostion([0, 0, -10], 2)}>
+                          <div className={`btn_3d_02 ${poseOn === 2 ? "on" : ""}`}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={() => handleChangeCameraPostion([10, 0, 0], 3)}>
+                          <div className={`btn_3d_03 ${poseOn === 3 ? "on" : ""}`}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={() => handleChangeCameraPostion([-10, 0, 0], 4)}>
+                          <div className={`btn_3d_04 ${poseOn === 4 ? "on" : ""}`}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={() => handleChangeCameraPostion([0, 10, 0], 5)}>
+                          <div className={`btn_3d_05 ${poseOn === 5 ? "on" : ""}`}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={() => handleChangeCameraPostion([0, -10, 0], 6)}>
+                          <div className={`btn_3d_06 ${poseOn === 6 ? "on" : ""}`}></div>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" onClick={handleDownload}>
+                          <div className="btn_3d_07"></div>
+                        </button>
+                      </li>
+                    </ul>
+                    {/* <ul>
                       <li>
                         <button type="button" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
                           <img src={images3d["btn_3d_01.png"]} alt="정면" />
@@ -309,7 +316,7 @@ const SampleDev = () => {
                           <img src={images3d["btn_3d_save.png"]} alt="save" />
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
                 </div>
               </div>
