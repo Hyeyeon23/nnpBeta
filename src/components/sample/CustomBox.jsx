@@ -1,7 +1,17 @@
 import React, { useRef, useState } from "react";
 import { SketchPicker } from "react-color";
 import { images3d } from "../../utils/imagesImport";
-const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDrop, handleImageChange }) => {
+const CustomBox = ({
+  pin,
+  setPin,
+  horizon,
+  setHorizon,
+  color1,
+  setColor1,
+  handleSelectModel,
+  handleDrop,
+  handleImageChange,
+}) => {
   const [paletteOpen, setPaletteOpen] = useState(false);
 
   // 게이지 관련
@@ -12,9 +22,21 @@ const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDr
   // 날개 색상 스포이드 픽 컬러
   const [pickedColor, setPickedColor] = useState(1);
 
-  const updateSliderBackground = (e) => {
+  const updateSliderBackgroundPin = (e) => {
     const val = e.target.value;
     setValue1(val);
+    setPin(parseFloat(scaleFrom100(val, 0, 3).toFixed(2)));
+    console.log("빛값 val= " + val);
+    console.log("빛값 pin = " + pin);
+    e.target.style.setProperty("--val", `${val}%`);
+  };
+
+  const updateSliderBackgroundHorizon = (e) => {
+    const val = e.target.value;
+    setValue2(val);
+    setHorizon(parseFloat(scaleFrom100(val, 0, 10).toFixed(2)));
+    console.log("빛값 = " + val);
+    console.log("빛값 = " + horizon);
     e.target.style.setProperty("--val", `${val}%`);
   };
 
@@ -44,6 +66,18 @@ const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDr
   const handlePreventDefault = (e) => {
     e.preventDefault();
   };
+  const scaleTo100 = (value, minOriginal, maxOriginal) => {
+    const minTarget = 0;
+    const maxTarget = 100;
+
+    return ((value - minOriginal) / (maxOriginal - minOriginal)) * (maxTarget - minTarget) + minTarget;
+  };
+  const scaleFrom100 = (value, minOriginal, maxOriginal) => {
+    const minTarget = 0;
+    const maxTarget = 100;
+
+    return ((value - minTarget) / (maxTarget - minTarget)) * (maxOriginal - minOriginal) + minOriginal;
+  };
 
   return (
     <div className=" pack_btn_left text-start mt-4 pack_ui">
@@ -69,9 +103,10 @@ const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDr
               type="range"
               min="0"
               max="100"
-              value={value1}
+              value={Math.round(scaleTo100(pin, 0, 3))}
               ref={sliderRef}
-              onChange={updateSliderBackground}
+              onChange={updateSliderBackgroundPin}
+              style={{ "--val": `${Math.round(scaleTo100(pin, 0, 3))}%` }}
               className="slider blue-slider"
               id="blueSlider"
             />
@@ -84,9 +119,10 @@ const CustomBox = ({ pin, setPin, color1, setColor1, handleSelectModel, handleDr
               type="range"
               min="0"
               max="100"
-              value={value2}
+              value={Math.round(scaleTo100(horizon, 0, 10))}
               ref={sliderRef}
-              onChange={updateSliderBackground}
+              onChange={updateSliderBackgroundHorizon}
+              style={{ "--val": `${Math.round(scaleTo100(horizon, 0, 10))}%` }}
               className="slider green-slider"
             />
           </div>

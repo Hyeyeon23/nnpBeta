@@ -242,6 +242,8 @@ const SampleDev = () => {
                   <CustomBox
                     pin={pin}
                     setPin={setPin}
+                    horizon={horizon}
+                    setHorizon={setHorizon}
                     color1={color1}
                     setColor1={setColor1}
                     handleSelectModel={handleSelectModel}
@@ -289,43 +291,6 @@ const SampleDev = () => {
                         </button>
                       </li>
                     </ul>
-                    {/* <ul>
-                      <li>
-                        <button type="button" onClick={() => handleChangeCameraPostion([0, 3, 10])}>
-                          <img src={images3d["btn_3d_01.png"]} alt="정면" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" onClick={() => handleChangeCameraPostion([0, 0, -10])}>
-                          <img src={images3d["btn_3d_02.png"]} alt="뒷면" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" onClick={() => handleChangeCameraPostion([10, 0, 0])}>
-                          <img src={images3d["btn_3d_03.png"]} alt="오른쪽" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" onClick={() => handleChangeCameraPostion([-10, 0, 0])}>
-                          <img src={images3d["btn_3d_04.png"]} alt="왼쪽" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" onClick={() => handleChangeCameraPostion([0, 10, 0])}>
-                          <img src={images3d["btn_3d_05.png"]} alt="탑" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button">
-                          <img src={images3d["btn_3d_06.png"]} alt="바닥" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" onClick={handleDownload}>
-                          <img src={images3d["btn_3d_save.png"]} alt="save" />
-                        </button>
-                      </li>
-                    </ul> */}
                   </div>
                 </div>
               </div>
