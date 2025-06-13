@@ -1,30 +1,44 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
-const HeaderMobile = () => {
+import React, { useEffect, useRef } from "react";
+
+const HeaderMobile = ({ accordion = true, open, close }) => {
+  const containerRef = useRef();
+
   useEffect(() => {
-    /* mobileAside Open */
-    function openAside() {
-      document.getElementById("mobileAside").style.width = "70%";
-    }
+    const container = containerRef.current;
+    if (!container) return;
 
-    /* mobileAside Close */
-    function closeAside() {
-      document.getElementById("mobileAside").style.width = "0%";
-    }
+    const items = container.querySelectorAll(".item");
 
-    // 모바일메뉴 vertical
-    $("#verticalType01").collapse({
-      accordion: true, //다열리고 싶을때
-      open: function () {
-        this.addClass("open");
-        this.css({ height: this.children().outerHeight() });
-      },
-      close: function () {
-        this.css({ height: "0px" });
-        this.removeClass("open");
-      },
+    items.forEach((item) => {
+      const trigger = item.querySelector(".trigger");
+      const panel = item.querySelector(".panel");
+
+      trigger.onclick = () => {
+        const isOpen = item.classList.contains("open");
+
+        if (accordion) {
+          items.forEach((other) => {
+            if (other !== item) {
+              other.classList.remove("open");
+              const otherPanel = other.querySelector(".panel");
+              otherPanel.style.height = "0px";
+              close?.call(otherPanel);
+            }
+          });
+        }
+
+        if (!isOpen) {
+          item.classList.add("open");
+          panel.style.height = panel.children[0].offsetHeight + "px";
+          open?.call(panel);
+        } else {
+          item.classList.remove("open");
+          panel.style.height = "0px";
+          close?.call(panel);
+        }
+      };
     });
-  }, []);
+  }, [accordion, open, close]);
   return (
     <div className="mView">
       <div className="m_header">
@@ -74,7 +88,7 @@ const HeaderMobile = () => {
         </ul>
         <div className="mAside-content">
           {/* <!-- vertical --> */}
-          <div id="verticalType01">
+          <div id="verticalType01" ref={containerRef}>
             <div className="ver-title01">
               <p>Company</p>
             </div>

@@ -1,10 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import $ from "jquery";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // 피씨 사이드 네모네모 열고 닫기
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
+  const [isOpenMInner, setIsOepnMInner] = useState(false);
   const containerRef = useRef(null); // 토글할 요소들을 감싸는 부모 DOM 참조
+
+  /**
+   * 모바일 사이즈 네비게이션 토글 기능
+   * 원리는 state 값에 따라서 css에 설정된 class 값 적용/해제
+   * @param {*} key
+   */
+  const handleToggle = (key) => {
+    setIsOepnMInner(isOpenMInner === key ? null : key);
+  };
 
   useEffect(() => {
     function gnbClose() {
@@ -50,19 +60,6 @@ const Header = () => {
           gnbClose();
         });
 
-      // 모바일 메뉴 vertical
-      $("#verticalType01").collapse({
-        accordion: true,
-        open: function () {
-          this.addClass("open");
-          this.css({ height: this.children().outerHeight() });
-        },
-        close: function () {
-          this.css({ height: "0px" });
-          this.removeClass("open");
-        },
-      });
-
       // Floating 설정
       if (!$("#flotingPage").length) return;
 
@@ -73,53 +70,6 @@ const Header = () => {
         snap: true,
       });
     });
-
-    // 모바일 토글을 위하여
-
-    const summaries = document.querySelectorAll("[data-collapse-summary]");
-    const handleClicks = [];
-
-    summaries.forEach((summary) => {
-      const content = summary.nextElementSibling;
-      if (!content) return;
-
-      content.style.overflow = "hidden";
-      content.style.transition = "height 0.3s ease";
-
-      if (summary.classList.contains("open")) {
-        content.style.height = content.scrollHeight + "px";
-      } else {
-        content.style.height = "0px";
-      }
-
-      const handleClick = () => {
-        summaries.forEach((s) => {
-          const c = s.nextElementSibling;
-          if (s === summary) {
-            const isOpen = s.classList.contains("open");
-            if (isOpen) {
-              s.classList.remove("open");
-              c.style.height = "0px";
-            } else {
-              s.classList.add("open");
-              c.style.height = c.scrollHeight + "px";
-            }
-          } else {
-            s.classList.remove("open");
-            c.style.height = "0px";
-          }
-        });
-      };
-
-      summary.addEventListener("click", handleClick);
-      handleClicks.push({ summary, handleClick });
-    });
-
-    return () => {
-      handleClicks.forEach(({ summary, handleClick }) => {
-        summary.removeEventListener("click", handleClick);
-      });
-    };
   }, []);
 
   return (
@@ -677,10 +627,12 @@ const Header = () => {
           <div className="mAside-content">
             {/* <!-- vertical --> */}
             <div id="verticalType01" ref={containerRef}>
-              <div className="ver-title01" data-collapse-summary>
-                <p>Company</p>
+              <div className={`ver-title01 ${isOpenMInner === 1 ? "open" : ""}`} onClick={() => handleToggle(1)}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
+                  <p>Company</p>
+                </a>
               </div>
-              <div>
+              <div className={` ${isOpenMInner === 1 ? "open" : ""}`}>
                 <div className="v_content">
                   <ul className="v_con_ul">
                     <li>
@@ -759,10 +711,12 @@ const Header = () => {
                   </ul>
                 </div>
               </div>
-              <div className="ver-title01" data-collapse-summary>
-                <p>Product</p>
+              <div className={`ver-title01 ${isOpenMInner === 2 ? "open" : ""}`} onClick={() => handleToggle(2)}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
+                  <p>Product</p>
+                </a>
               </div>
-              <div>
+              <div className={`v_content_wrapper ${isOpenMInner === 2 ? "open" : ""}`}>
                 <div className="v_content">
                   <ul className="v_con_ul">
                     <li>
@@ -818,10 +772,12 @@ const Header = () => {
                   </ul>
                 </div>
               </div>
-              <div className="ver-title01" data-collapse-summary>
-                <p>R&D</p>
+              <div className={`ver-title01 ${isOpenMInner === 3 ? "open" : ""}`} onClick={() => handleToggle(3)}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
+                  <p>R&D</p>
+                </a>
               </div>
-              <div>
+              <div className={`v_content_wrapper ${isOpenMInner === 3 ? "open" : ""}`}>
                 <div className="v_content">
                   <ul className="v_con_ul">
                     <li>
@@ -872,10 +828,12 @@ const Header = () => {
                   </ul>
                 </div>
               </div>
-              <div className="ver-title01" style={{ cursor: "pointer" }} data-collapse-summary>
-                <p>Communication</p>
+              <div className={`ver-title01 ${isOpenMInner === 4 ? "open" : ""}`} onClick={() => handleToggle(2)}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
+                  <p>Communication</p>
+                </a>
               </div>
-              <div>
+              <div className={`v_content_wrapper ${isOpenMInner === 4 ? "open" : ""}`}>
                 <div className="v_content">
                   <ul className="v_con_ul">
                     <li>
