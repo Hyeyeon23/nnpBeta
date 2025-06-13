@@ -14,11 +14,12 @@
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
-    "@react-three/drei": "^10.0.3",
+    "@react-three/drei": "^10.2.0",
     "@react-three/fiber": "^9.0.4",
     "bootstrap": "^4.6.0",
     "file-saver": "^2.0.5",
     "gh-pages": "^6.3.0",
+    "html2canvas": "^1.4.1",
     "jquery": "^3.6.0",
     "jquery-collapse": "^1.1.2",
     "react": "^19.0.0",

@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { ChromePicker } from "react-color";
+
 import { Canvas, useThree } from "@react-three/fiber";
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter";
 import { Environment, OrbitControls } from "@react-three/drei";
@@ -21,6 +21,7 @@ import CustomBox from "../../components/sample/CustomBox";
 
 const SampleDev = () => {
   const groupRef = useRef();
+  const canvasRef = useRef(null); // 이미지 다운할 떄 씀
 
   // 캔버스 샘플링 기능 관련
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
@@ -82,8 +83,20 @@ const SampleDev = () => {
     e.preventDefault();
     setModel(e.target.value);
   };
+  //단순 이미지 캡쳐 저장
 
-  // 다운로드 exporter
+  const handleCaptureImg = () => {
+    if (!canvasRef.current) return;
+
+    const dataURL = canvasRef.current.toDataURL("image/jpeg", 1.0);
+
+    const link = document.createElement("a");
+    link.download = "capture.jpg";
+    link.href = dataURL;
+    link.click();
+  };
+
+  // 다운로드 exporter(glb 파일)
   function exportGLB(group) {
     const exporter = new GLTFExporter();
     // exporter.parse(대상객체, 콜백함수, 옵션)
@@ -123,7 +136,7 @@ const SampleDev = () => {
     URL.revokeObjectURL(link.href); // 메모리 정리
   }
 
-  // 다운로드 버튼에 걸린 이벤트
+  // 다운로드 버튼에 걸린 이벤트(GLG 다운)
   const handleDownload = () => {
     if (groupRef.current) {
       exportGLB(groupRef.current);
@@ -170,7 +183,15 @@ const SampleDev = () => {
                   </div>
                 )}
                 <div className="pb-4 canvas-container pack_wrap" style={{ position: "relative" }}>
-                  <Canvas camera={{ position: [0, 3, 10], fov: 60 }} style={{ backgroundColor: "#F8F8F8" }} shadows>
+                  <Canvas
+                    onCreated={({ gl }) => {
+                      gl.setClearColor("#F8F8F8"); // ← 명시적으로 배경 지정
+                      canvasRef.current = gl.domElement;
+                    }}
+                    gl={{ preserveDrawingBuffer: true }}
+                    camera={{ position: [0, 3, 10], fov: 60 }}
+                    style={{ backgroundColor: "#F8F8F8" }}
+                    shadows>
                     <CameraUpdater cameraPosition={camPosition} />
                     <Suspense fallback={null}>
                       {/* 화면 움직이는 거  */}
@@ -286,7 +307,7 @@ const SampleDev = () => {
                         </button>
                       </li>
                       <li>
-                        <button type="button" onClick={handleDownload}>
+                        <button type="button" onClick={handleCaptureImg}>
                           <div className="btn_3d_07"></div>
                         </button>
                       </li>
