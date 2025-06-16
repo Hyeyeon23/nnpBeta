@@ -25,6 +25,17 @@ const SampleDev = () => {
 
   // 캔버스 샘플링 기능 관련
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
+  const [imageTetra1000, setImageTetra1000] = useState(null); // 테트라 1000ml 날개색깔
+  const [imageTetra200mid, setImageTetra200mid] = useState(null); // 테트라 200ml mid 날개색깔
+  const [imageTetra200cf, setImageTetra200cf] = useState(null); // 테트라 200ml cf 날개색깔
+  const [imageTetra250cf, setImageTetra250cf] = useState(null); // 테트라 250ml cf 날개색깔
+  const [imageSig120mini, setImageSig120mini] = useState(null); // 시그니처 120ml mini 날개색깔
+  const [imageSig150mini, setImageSig150mini] = useState(null); // 시그니처 150ml mini 날개색깔
+  const [imageSig200mid, setImageSig200mid] = useState(null); // 시그니처 200ml mid 날개색깔
+  const [imageCan175, setImageCan175] = useState(null); // 캔 175ml 날개색깔
+  const [imageCan200, setImageCan200] = useState(null); // 캔 200ml 날개색깔
+  const [imageCan238, setImageCan238] = useState(null); // 캔 238ml 날개색깔
+
   const [pin, setPin] = useState(1); // 핀조명 밝기
   const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
   const [loadSpin, setLoadSpin] = useState(false);
@@ -53,9 +64,43 @@ const SampleDev = () => {
 
     if (file) {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
-      setImage(url); // 이미지 상태 업데이트
-
       console.log("handleImageChange = ", url);
+
+      switch (model) {
+        case "PACK1000_Lightless":
+          setImageTetra1000(url);
+          break;
+        case "PACK200_mid":
+          setImageTetra200mid(url);
+          break;
+        case "PACK200_CF":
+          setImageTetra200cf(url);
+          break;
+        case "PACK250_CF":
+          setImageTetra250cf(url);
+          break;
+        case "SIG120_mini":
+          setImageSig120mini(url);
+          break;
+        case "SIG150_mini":
+          setImageSig150mini(url);
+          break;
+        case "SIG200_mid":
+          setImageSig200mid(url);
+          break;
+        case "CAN175":
+          setImageCan175(url);
+          break;
+        case "CAN200":
+          setImageCan200(url);
+          break;
+        case "CAN238":
+          setImageCan238(url);
+          break;
+        default:
+          setImage(url); // 이미지 상태 업데이트
+          return false;
+      }
     }
     setLoadSpin(false);
 
@@ -68,12 +113,47 @@ const SampleDev = () => {
    */
   const handleDrop = (e) => {
     e.preventDefault();
+    setCamPosition(camPositionRef.current);
     const file = e.dataTransfer.files[0];
     if (file) {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
-      setImage(url); // 이미지 상태 업데이트
-
       console.log("handleImageChange = ", url);
+
+      switch (model) {
+        case "PACK1000_Lightless":
+          setImageTetra1000(url);
+          break;
+        case "PACK200_mid":
+          setImageTetra200mid(url);
+          break;
+        case "PACK200_CF":
+          setImageTetra200cf(url);
+          break;
+        case "PACK250_CF":
+          setImageTetra250cf(url);
+          break;
+        case "SIG120_mini":
+          setImageSig120mini(url);
+          break;
+        case "SIG150_mini":
+          setImageSig150mini(url);
+          break;
+        case "SIG200_mid":
+          setImageSig200mid(url);
+          break;
+        case "CAN175":
+          setImageCan175(url);
+          break;
+        case "CAN200":
+          setImageCan200(url);
+          break;
+        case "CAN238":
+          setImageCan238(url);
+          break;
+        default:
+          setImage(url); // 이미지 상태 업데이트
+          return false;
+      }
     }
   };
 
@@ -212,13 +292,21 @@ const SampleDev = () => {
    */
   const onCameraMoving = (e) => {
     const { x, y, z } = e.target.object.position;
-    console.log({ x, y, z });
+
     camPositionRef.current = [x, y, z];
   };
+  /**
+   * 수평 조명 세팅(카메라 위치 유지)
+   * @param {*} light
+   */
   const changeHorizonLight = (light) => {
     setCamPosition(camPositionRef.current);
     setHorizon(light);
   };
+  /**
+   * 핀 조명 세팅(카메라 위치 유지)0
+   * @param {} light
+   */
   const changePinLight = (light) => {
     setCamPosition(camPositionRef.current);
     setPin(light);
@@ -295,27 +383,29 @@ const SampleDev = () => {
                             <PACK1000_WOOD imageSrc={image} color1={colorTetra1000}></PACK1000_WOOD>
                           )}
                           {model === "PACK1000_Lightless" && (
-                            <PACK1000_Lightless imageSrc={image} color1={colorTetra1000}></PACK1000_Lightless>
+                            <PACK1000_Lightless imageSrc={imageTetra1000} color1={colorTetra1000}></PACK1000_Lightless>
                           )}
                           {model === "PACK200_mid" && (
-                            <PACK200_mid imageSrc={image} color1={colorTetra200mid}></PACK200_mid>
+                            <PACK200_mid imageSrc={imageTetra200mid} color1={colorTetra200mid}></PACK200_mid>
                           )}
                           {model === "PACK200_CF" && (
-                            <PACK200_CF imageSrc={image} color1={colorTetra200cf}></PACK200_CF>
+                            <PACK200_CF imageSrc={imageTetra200cf} color1={colorTetra200cf}></PACK200_CF>
                           )}
                           {model === "PACK250_CF" && (
-                            <PACK250_CF imageSrc={image} color1={colorTetra250cf}></PACK250_CF>
+                            <PACK250_CF imageSrc={imageTetra250cf} color1={colorTetra250cf}></PACK250_CF>
                           )}
                           {model === "SIG120_mini" && (
-                            <SIG120_mini imageSrc={image} color1={colorSig120mini}></SIG120_mini>
+                            <SIG120_mini imageSrc={imageSig120mini} color1={colorSig120mini}></SIG120_mini>
                           )}
                           {model === "SIG150_mini" && (
-                            <SIG150_mini imageSrc={image} color1={colorSig150mini}></SIG150_mini>
+                            <SIG150_mini imageSrc={imageSig150mini} color1={colorSig150mini}></SIG150_mini>
                           )}
-                          {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={colorSig200mid}></SIG200_mid>}
-                          {model === "CAN175" && <CAN175 imageSrc={image} color1={colorCan175}></CAN175>}
-                          {model === "CAN200" && <CAN200 imageSrc={image} color1={colorCan200}></CAN200>}
-                          {model === "CAN238" && <CAN238 imageSrc={image} color1={colorCan238}></CAN238>}
+                          {model === "SIG200_mid" && (
+                            <SIG200_mid imageSrc={imageSig200mid} color1={colorSig200mid}></SIG200_mid>
+                          )}
+                          {model === "CAN175" && <CAN175 imageSrc={imageCan175} color1={colorCan175}></CAN175>}
+                          {model === "CAN200" && <CAN200 imageSrc={imageCan200} color1={colorCan200}></CAN200>}
+                          {model === "CAN238" && <CAN238 imageSrc={imageCan238} color1={colorCan238}></CAN238>}
                         </mesh>
                       </group>
                       <mesh>
