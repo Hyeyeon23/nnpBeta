@@ -14,8 +14,7 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
-  scene.position.y = 0.08;
-
+  scene.position.y = 0.06;
   /* 그림자 받기 */
   if (scene) {
     // scene이 존재하는 경우, scene 내의 모든 메쉬들에 castShadow 적용

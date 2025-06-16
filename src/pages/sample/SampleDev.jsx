@@ -27,10 +27,21 @@ const SampleDev = () => {
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
   const [pin, setPin] = useState(1); // 핀조명 밝기
   const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
-  const [color1, setColor1] = useState(null);
   const [loadSpin, setLoadSpin] = useState(false);
   const [camPosition, setCamPosition] = useState([0, 3, 10]);
+  const camPositionRef = useRef([0, 3, 10]); // 렌더링 없이 카메라 이동 시 위치만 기억(기타 요소 리렌더링할 때 카메라 위치값 기억 )
   const [model, setModel] = useState("PACK1000_Lightless");
+
+  const [colorTetra1000, setColorTetra1000] = useState(null); // 테트라 1000ml 날개색깔
+  const [colorTetra200mid, setColorTetra200mid] = useState(null); // 테트라 200ml mid 날개색깔
+  const [colorTetra200cf, setColorTetra200cf] = useState(null); // 테트라 200ml cf 날개색깔
+  const [colorTetra250cf, setColorTetra250cf] = useState(null); // 테트라 250ml cf 날개색깔
+  const [colorSig120mini, setColorSig120mini] = useState(null); // 시그니처 120ml mini 날개색깔
+  const [colorSig150mini, setColorSig150mini] = useState(null); // 시그니처 150ml mini 날개색깔
+  const [colorSig200mid, setColorSig200mid] = useState(null); // 시그니처 200ml mid 날개색깔
+  const [colorCan175, setColorCan175] = useState(null); // 캔 175ml 날개색깔
+  const [colorCan200, setColorCan200] = useState(null); // 캔 200ml 날개색깔
+  const [colorCan238, setColorCan238] = useState(null); // 캔 238ml 날개색깔
 
   // 물체각 및 다운로드 컴포넌트 on class 부여 state
   const [poseOn, setPoseOn] = useState(1);
@@ -66,13 +77,48 @@ const SampleDev = () => {
     }
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
-
-  const handleColor1Change = (e) => {
-    console.log("handleColor1Change = ", e.target.value);
-    setColor1(e.target.value);
+  /**
+   * 날개 색깔 바꾸는
+   * @param {} color
+   * @returns
+   */
+  const handleColor1Change = (color) => {
+    console.log("handleColor1Change = ", color);
+    setCamPosition(camPositionRef.current); // 렌더링 트리거용
+    switch (model) {
+      case "PACK1000_Lightless":
+        setColorTetra1000(color);
+        break;
+      case "PACK200_mid":
+        setColorTetra200mid(color);
+        break;
+      case "PACK200_CF":
+        setColorTetra200cf(color);
+        break;
+      case "PACK250_CF":
+        setColorTetra250cf(color);
+        break;
+      case "SIG120_mini":
+        setColorSig120mini(color);
+        break;
+      case "SIG150_mini":
+        setColorSig150mini(color);
+        break;
+      case "SIG200_mid":
+        setColorSig200mid(color);
+        break;
+      case "CAN175":
+        setColorCan175(color);
+        break;
+      case "CAN200":
+        setColorCan200(color);
+        break;
+      case "CAN238":
+        setColorCan238(color);
+        break;
+      default:
+        return false;
+    }
   };
 
   /**
@@ -161,6 +207,22 @@ const SampleDev = () => {
 
     return null;
   };
+  /**
+   * 카메라 이동 위치 기억(렌더링x)
+   */
+  const onCameraMoving = (e) => {
+    const { x, y, z } = e.target.object.position;
+    console.log({ x, y, z });
+    camPositionRef.current = [x, y, z];
+  };
+  const changeHorizonLight = (light) => {
+    setCamPosition(camPositionRef.current);
+    setHorizon(light);
+  };
+  const changePinLight = (light) => {
+    setCamPosition(camPositionRef.current);
+    setPin(light);
+  };
 
   return (
     <>
@@ -201,7 +263,7 @@ const SampleDev = () => {
                     <CameraUpdater cameraPosition={camPosition} />
                     <Suspense fallback={null}>
                       {/* 화면 움직이는 거  */}
-                      <OrbitControls minDistance={2} maxDistance={10} />
+                      <OrbitControls minDistance={2} maxDistance={10} onChange={onCameraMoving} />
                       {/* <ambientLight intensity={1} /> */}
                       {/* 핀조명 */}
                       <directionalLight position={[10, 10, 10]} intensity={pin} />
@@ -230,20 +292,30 @@ const SampleDev = () => {
                       <group name="target" ref={groupRef}>
                         <mesh position={[0, -1.1, 0]} castShadow>
                           {model === "PACK1000_WOOD" && (
-                            <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>
+                            <PACK1000_WOOD imageSrc={image} color1={colorTetra1000}></PACK1000_WOOD>
                           )}
                           {model === "PACK1000_Lightless" && (
-                            <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
+                            <PACK1000_Lightless imageSrc={image} color1={colorTetra1000}></PACK1000_Lightless>
                           )}
-                          {model === "PACK200_mid" && <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>}
-                          {model === "PACK200_CF" && <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>}
-                          {model === "PACK250_CF" && <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>}
-                          {model === "SIG120_mini" && <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>}
-                          {model === "SIG150_mini" && <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>}
-                          {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>}
-                          {model === "CAN175" && <CAN175 imageSrc={image} color1={color1}></CAN175>}
-                          {model === "CAN200" && <CAN200 imageSrc={image} color1={color1}></CAN200>}
-                          {model === "CAN238" && <CAN238 imageSrc={image} color1={color1}></CAN238>}
+                          {model === "PACK200_mid" && (
+                            <PACK200_mid imageSrc={image} color1={colorTetra200mid}></PACK200_mid>
+                          )}
+                          {model === "PACK200_CF" && (
+                            <PACK200_CF imageSrc={image} color1={colorTetra200cf}></PACK200_CF>
+                          )}
+                          {model === "PACK250_CF" && (
+                            <PACK250_CF imageSrc={image} color1={colorTetra250cf}></PACK250_CF>
+                          )}
+                          {model === "SIG120_mini" && (
+                            <SIG120_mini imageSrc={image} color1={colorSig120mini}></SIG120_mini>
+                          )}
+                          {model === "SIG150_mini" && (
+                            <SIG150_mini imageSrc={image} color1={colorSig150mini}></SIG150_mini>
+                          )}
+                          {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={colorSig200mid}></SIG200_mid>}
+                          {model === "CAN175" && <CAN175 imageSrc={image} color1={colorCan175}></CAN175>}
+                          {model === "CAN200" && <CAN200 imageSrc={image} color1={colorCan200}></CAN200>}
+                          {model === "CAN238" && <CAN238 imageSrc={image} color1={colorCan238}></CAN238>}
                         </mesh>
                       </group>
                       <mesh>
@@ -267,12 +339,12 @@ const SampleDev = () => {
                   </Canvas>
                   {/* 캔버스 끝 */}
                   <CustomBox
+                    model={model}
                     pin={pin}
-                    setPin={setPin}
+                    changePinLight={changePinLight}
                     horizon={horizon}
-                    setHorizon={setHorizon}
-                    color1={color1}
-                    setColor1={setColor1}
+                    changeHorizonLight={changeHorizonLight}
+                    handleColor1Change={handleColor1Change}
                     handleSelectModel={handleSelectModel}
                     handleDrop={handleDrop}
                     handleImageChange={handleImageChange}>

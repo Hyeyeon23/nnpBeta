@@ -3,11 +3,11 @@ import { SketchPicker } from "react-color";
 import { images3d } from "../../utils/imagesImport";
 const CustomBox = ({
   pin,
-  setPin,
+  changePinLight,
   horizon,
-  setHorizon,
-  color1,
-  setColor1,
+  changeHorizonLight,
+
+  handleColor1Change,
   handleSelectModel,
   handleDrop,
   handleImageChange,
@@ -28,18 +28,14 @@ const CustomBox = ({
   const updateSliderBackgroundPin = (e) => {
     const val = e.target.value;
     setValue1(val);
-    setPin(parseFloat(scaleFrom100(val, 0, 3).toFixed(2)));
-    console.log("빛값 val= " + val);
-    console.log("빛값 pin = " + pin);
+    changePinLight(parseFloat(scaleFrom100(val, 0, 3).toFixed(2)));
     e.target.style.setProperty("--val", `${val}%`);
   };
 
   const updateSliderBackgroundHorizon = (e) => {
     const val = e.target.value;
     setValue2(val);
-    setHorizon(parseFloat(scaleFrom100(val, 0, 10).toFixed(2)));
-    console.log("빛값 = " + val);
-    console.log("빛값 = " + horizon);
+    changeHorizonLight(parseFloat(scaleFrom100(val, 0, 10).toFixed(2)));
     e.target.style.setProperty("--val", `${val}%`);
   };
 
@@ -56,14 +52,14 @@ const CustomBox = ({
     try {
       const result = await eyeDropper.open();
       setPickedColor(result.sRGBHex);
-      setColor1(result.sRGBHex);
+      handleColor1Change(result.sRGBHex);
     } catch (error) {
       console.log("스포이드 취소 또는 실패", error);
     }
   };
 
   const handleStaticColorClick = (color) => {
-    setColor1(color);
+    handleColor1Change(color);
   };
 
   const handlePreventDefault = (e) => {
