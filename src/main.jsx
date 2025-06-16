@@ -13,4 +13,6 @@ import "./assets/css/vendor/magnific-popup.css";
 import "./assets/css/vendor/fontawesome-pro.css";
 import "./assets/css/vendor/spacing.css";
 
+// import "./assets/scss/utils/_root.scss";
+// import "./assets/scss/theme/_theme.scss";
 createRoot(document.getElementById("root")).render(<App />);

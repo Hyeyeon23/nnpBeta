@@ -14,7 +14,7 @@ import { SIG200_mid } from "../../components/container/SIG200_mid";
 import { CAN175 } from "../../components/container/CAN175";
 import { CAN200 } from "../../components/container/CAN200";
 import { CAN238 } from "../../components/container/CAN238";
-import { images3d } from "../../utils/imagesImport";
+
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
 import CustomBox from "../../components/sample/CustomBox";
@@ -164,12 +164,18 @@ const SampleDev = () => {
 
   return (
     <>
+      <div class="backtotop-wrap cursor-pointer">
+        <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
             <section className="pack_wrap">
-              <div className="justify-content-center text-center">
+              <div className="justify-content-center">
                 {/* <h1>
           <img src="./logo_nnp.png" style={{ width: "150px" }} className="mx-2" />
           자연과사람들 3D 모델링
