@@ -79,9 +79,9 @@ export function PACK250_CF({ imageSrc, color1, ...props }) {
       }
 
       // 날개2
-      if (materials["매테리얼.005"]) {
-        materials["매테리얼.005"].color = new Color(color1);
-        materials["매테리얼.005"].needsUpdate = true;
+      if (materials["매테리얼.002"]) {
+        materials["매테리얼.002"].color = new Color(color1);
+        materials["매테리얼.002"].needsUpdate = true;
       }
 
       // 뚜껑주변

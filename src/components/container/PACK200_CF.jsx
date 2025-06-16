@@ -73,9 +73,9 @@ export function PACK200_CF({ imageSrc, color1, ...props }) {
 
     if (color1) {
       // 날개1
-      if (materials["매테리얼.006"]) {
-        materials["매테리얼.006"].color = new Color(color1);
-        materials["매테리얼.006"].needsUpdate = true;
+      if (materials["매테리얼.001"]) {
+        materials["매테리얼.001"].color = new Color(color1);
+        materials["매테리얼.001"].needsUpdate = true;
       }
 
       // 날개2

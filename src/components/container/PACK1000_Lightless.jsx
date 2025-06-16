@@ -10,9 +10,11 @@ import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
-
   const { scene, nodes, materials } = useCustomGLTF("PACK1000_Lightless.glb");
   const loader = new THREE.TextureLoader();
+
+  // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
+  scene.position.y = 0.08;
 
   /* 그림자 받기 */
   if (scene) {
@@ -28,12 +30,7 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   /* 사진 설정 있는 객체 조회 (단 한번 실행) */
   const targetMeshes = [];
   scene.traverse((child) => {
-    if (
-      child.isMesh &&
-      child.material &&
-      child.material.map &&
-      child.material.map.name === "사이즈-조절-채소육수"
-    ) {
+    if (child.isMesh && child.material && child.material.map && child.material.map.name === "사이즈-조절-채소육수") {
       targetMeshes.push(child);
     }
   });
@@ -41,7 +38,6 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
   /* 이미지 변경 */
   // 텍스쳐 이름을 바탕으로 텍스쳐를 찾아서 교체하는 함수
   const updateTexture = (textureName, imageSrc) => {
-
     loader.load(imageSrc, (newTexture) => {
       targetMeshes.forEach((child) => {
         const map = child.material.map;
@@ -65,9 +61,8 @@ export function PACK1000_Lightless({ imageSrc, color1, ...props }) {
         child.material.needsUpdate = true;
       });
     });
-
   };
-  
+
   useEffect(() => {
     if (imageSrc !== "/sample.png") {
       console.log("new image upload");
