@@ -10,7 +10,7 @@ export default defineConfig({
     include: ["jquery"],
   }, // 제이쿼리 처리 
   build: {
-    sourcemap: true, // JS, CSS 모두 .map 생성
+    sourcemap: false, // JS, CSS 모두 .map 생성
   },
   css: {
     devSourcemap: true, // 개발 시 CSS map 포함
