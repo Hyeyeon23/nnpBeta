@@ -1,40 +1,38 @@
-import React, { useRef, useState } from "react";
-import { SketchPicker } from "react-color";
+import React, { useState } from "react";
 import { images3d } from "../../utils/imagesImport";
+import { scaleFrom100, scaleTo100 } from "../../utils/scaleHelpers";
 const CustomBox = ({
   pin,
   changePinLight,
   horizon,
   changeHorizonLight,
-
   handleColor1Change,
   handleSelectModel,
   handleDrop,
   handleImageChange,
 }) => {
-  const [paletteOpen, setPaletteOpen] = useState(false);
-
-  // 게이지 관련
-  const sliderRef = useRef(null);
-  const [value1, setValue1] = useState(20); // 초기값
-  const [value2, setValue2] = useState(60); // 초기값
-
-  // 모바일 커스텀 박스 오픈 클로즈
+  // 모바일 커스텀 박스 오픈 클로즈 state
   const [isMboxExpanded, setIsMboxExpanded] = useState(false);
 
   // 날개 색상 스포이드 픽 컬러
   const [pickedColor, setPickedColor] = useState(1);
 
+  /**
+   * 핀조명 슬라이드 바 조작 시 값 변환 및 반영
+   * @param {*} e
+   */
   const updateSliderBackgroundPin = (e) => {
     const val = e.target.value;
-    setValue1(val);
     changePinLight(parseFloat(scaleFrom100(val, 0, 3).toFixed(2)));
     e.target.style.setProperty("--val", `${val}%`);
   };
 
+  /**
+   * 수평조명 슬라이드 바 조작 시 값 변환 및 반영
+   * @param {*} e
+   */
   const updateSliderBackgroundHorizon = (e) => {
     const val = e.target.value;
-    setValue2(val);
     changeHorizonLight(parseFloat(scaleFrom100(val, 0, 10).toFixed(2)));
     e.target.style.setProperty("--val", `${val}%`);
   };
@@ -58,26 +56,25 @@ const CustomBox = ({
     }
   };
 
+  /**
+   * 날개 색상 모델별로 바꾸기
+   * @param {} color 선택된 날개 색상
+   */
   const handleStaticColorClick = (color) => {
     handleColor1Change(color);
   };
 
+  /**
+   * 파일 첨부 공간에 드래그시 기본 동작 막음
+   * @param {} e
+   */
   const handlePreventDefault = (e) => {
     e.preventDefault();
   };
-  const scaleTo100 = (value, minOriginal, maxOriginal) => {
-    const minTarget = 0;
-    const maxTarget = 100;
 
-    return ((value - minOriginal) / (maxOriginal - minOriginal)) * (maxTarget - minTarget) + minTarget;
-  };
-  const scaleFrom100 = (value, minOriginal, maxOriginal) => {
-    const minTarget = 0;
-    const maxTarget = 100;
-
-    return ((value - minTarget) / (maxTarget - minTarget)) * (maxOriginal - minOriginal) + minOriginal;
-  };
-
+  /**
+   * 모바일 화면에서 커스텀 박스 노출/히든 토글
+   */
   const handleMobileBoxToggle = () => {
     setIsMboxExpanded((prev) => !prev);
   };
@@ -120,7 +117,6 @@ const CustomBox = ({
                       min="0"
                       max="100"
                       value={Math.round(scaleTo100(pin, 0, 3))}
-                      ref={sliderRef}
                       onChange={updateSliderBackgroundPin}
                       style={{ "--val": `${Math.round(scaleTo100(pin, 0, 3))}%` }}
                       className="slider blue-slider"
@@ -136,7 +132,6 @@ const CustomBox = ({
                       min="0"
                       max="100"
                       value={Math.round(scaleTo100(horizon, 0, 10))}
-                      ref={sliderRef}
                       onChange={updateSliderBackgroundHorizon}
                       style={{ "--val": `${Math.round(scaleTo100(horizon, 0, 10))}%` }}
                       className="slider green-slider"

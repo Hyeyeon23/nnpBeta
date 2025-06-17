@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.5.3 PACK1000_WOOD.gltf
 
 import React, { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
-import { TextureLoader, Color, SRGBColorSpace } from "three";
+import { Color } from "three";
 import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
