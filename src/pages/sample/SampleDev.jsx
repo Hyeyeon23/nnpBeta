@@ -24,6 +24,16 @@ const SampleDev = () => {
   const canvasRef = useRef(null); // 이미지 다운할 떄 씀
 
   // 캔버스 샘플링 기능 관련
+  const [pin, setPin] = useState(1); // 핀조명 밝기
+  const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
+
+  const [camPosition, setCamPosition] = useState([0, 3, 10]);
+  const camPositionRef = useRef([0, 3, 10]); // 렌더링 없이 카메라 이동 시 위치만 기억(기타 요소 리렌더링할 때 카메라 위치값 기억 )
+  const [model, setModel] = useState("PACK1000_Lightless");
+
+  const [loadSpin, setLoadSpin] = useState(false);
+
+  // 모델 별 이미지 state 구분
   const [image, setImage] = useState("/sample.png"); // 기본 이미지 상태
   const [imageTetra1000, setImageTetra1000] = useState(null); // 테트라 1000ml 날개색깔
   const [imageTetra200mid, setImageTetra200mid] = useState(null); // 테트라 200ml mid 날개색깔
@@ -36,13 +46,7 @@ const SampleDev = () => {
   const [imageCan200, setImageCan200] = useState(null); // 캔 200ml 날개색깔
   const [imageCan238, setImageCan238] = useState(null); // 캔 238ml 날개색깔
 
-  const [pin, setPin] = useState(1); // 핀조명 밝기
-  const [horizon, setHorizon] = useState(1.5); // 수평조명 밝기
-  const [loadSpin, setLoadSpin] = useState(false);
-  const [camPosition, setCamPosition] = useState([0, 3, 10]);
-  const camPositionRef = useRef([0, 3, 10]); // 렌더링 없이 카메라 이동 시 위치만 기억(기타 요소 리렌더링할 때 카메라 위치값 기억 )
-  const [model, setModel] = useState("PACK1000_Lightless");
-
+  // 모델별 날개 색깔 state 구분
   const [colorTetra1000, setColorTetra1000] = useState(null); // 테트라 1000ml 날개색깔
   const [colorTetra200mid, setColorTetra200mid] = useState(null); // 테트라 200ml mid 날개색깔
   const [colorTetra200cf, setColorTetra200cf] = useState(null); // 테트라 200ml cf 날개색깔
@@ -54,10 +58,11 @@ const SampleDev = () => {
   const [colorCan200, setColorCan200] = useState(null); // 캔 200ml 날개색깔
   const [colorCan238, setColorCan238] = useState(null); // 캔 238ml 날개색깔
 
-  // 물체각 및 다운로드 컴포넌트 on class 부여 state
-  const [poseOn, setPoseOn] = useState(1);
+  // 물체각도 및 다운로드 컴포넌트에 'on' class 부여 state
+  const [poseOn, setPoseOn] = useState(1); // css 효과
 
   console.log("image", image);
+
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
     const file = e.target.files?.[0]; // 선택된 파일
@@ -209,8 +214,8 @@ const SampleDev = () => {
     e.preventDefault();
     setModel(e.target.value);
   };
-  //단순 이미지 캡쳐 저장
 
+  //단순 이미지 캡쳐 다운로드
   const handleCaptureImg = () => {
     if (!canvasRef.current) return;
 
@@ -262,13 +267,6 @@ const SampleDev = () => {
     URL.revokeObjectURL(link.href); // 메모리 정리
   }
 
-  // 다운로드 버튼에 걸린 이벤트(GLG 다운)
-  const handleDownload = () => {
-    if (groupRef.current) {
-      exportGLB(groupRef.current);
-    }
-  };
-
   // 카메라 포지션 바꾸는 기능(캡쳐위해서)
   const handleChangeCameraPostion = (position, idx) => {
     console.log("handleChangeCameraPostion = ", position);
@@ -287,14 +285,16 @@ const SampleDev = () => {
 
     return null;
   };
+
   /**
-   * 카메라 이동 위치 기억(렌더링x)
+   * 카메라 이동 위치 기억(캠 리렌더링 방지 위해)
    */
   const onCameraMoving = (e) => {
     const { x, y, z } = e.target.object.position;
 
     camPositionRef.current = [x, y, z];
   };
+
   /**
    * 수평 조명 세팅(카메라 위치 유지)
    * @param {*} light
@@ -303,8 +303,9 @@ const SampleDev = () => {
     setCamPosition(camPositionRef.current);
     setHorizon(light);
   };
+
   /**
-   * 핀 조명 세팅(카메라 위치 유지)0
+   * 핀 조명 세팅(카메라 위치 유지)
    * @param {} light
    */
   const changePinLight = (light) => {
@@ -319,7 +320,6 @@ const SampleDev = () => {
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
-
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">
