@@ -227,6 +227,52 @@ const SampleDev = () => {
     link.click();
   };
 
+  // 카메라 포지션 바꾸는 기능(캡쳐위해서)
+  const handleChangeCameraPostion = (position, idx) => {
+    console.log("handleChangeCameraPostion = ", position);
+    setCamPosition(position);
+    setPoseOn(idx);
+  };
+
+  // 카메라 업데이터 생성 카메라 포지션을 바꾸기 위해서
+  const CameraUpdater = ({ cameraPosition }) => {
+    const { camera } = useThree();
+
+    useEffect(() => {
+      camera.position.set(...cameraPosition);
+      camera.lookAt(0, 0, 0);
+    }, [cameraPosition, camera]);
+
+    return null;
+  };
+
+  /**
+   * 카메라 이동 위치 기억(캠 리렌더링 방지 위해)
+   */
+  const onCameraMoving = (e) => {
+    const { x, y, z } = e.target.object.position;
+
+    camPositionRef.current = [x, y, z];
+  };
+  /**
+   * 수평 조명 세팅(카메라 위치 유지)
+   * @param {*} light
+   */
+  const changeHorizonLight = (light) => {
+    setCamPosition(camPositionRef.current);
+    setHorizon(light);
+  };
+  /**
+   * 핀 조명 세팅(카메라 위치 유지)0
+   * @param {} light
+   */
+  const changePinLight = (light) => {
+    setCamPosition(camPositionRef.current);
+    setPin(light);
+  };
+
+  // GLB 파일 다운을 위한 함수 목록인데 언젠간 쓸 수도 있음
+
   // 다운로드 exporter(glb 파일)
   function exportGLB(group) {
     const exporter = new GLTFExporter();
@@ -267,52 +313,6 @@ const SampleDev = () => {
     URL.revokeObjectURL(link.href); // 메모리 정리
   }
 
-  // 카메라 포지션 바꾸는 기능(캡쳐위해서)
-  const handleChangeCameraPostion = (position, idx) => {
-    console.log("handleChangeCameraPostion = ", position);
-    setCamPosition(position);
-    setPoseOn(idx);
-  };
-
-  // 카메라 업데이터 생성 카메라 포지션을 바꾸기 위해서
-  const CameraUpdater = ({ cameraPosition }) => {
-    const { camera } = useThree();
-
-    useEffect(() => {
-      camera.position.set(...cameraPosition);
-      camera.lookAt(0, 0, 0);
-    }, [cameraPosition, camera]);
-
-    return null;
-  };
-
-  /**
-   * 카메라 이동 위치 기억(캠 리렌더링 방지 위해)
-   */
-  const onCameraMoving = (e) => {
-    const { x, y, z } = e.target.object.position;
-
-    camPositionRef.current = [x, y, z];
-  };
-
-  /**
-   * 수평 조명 세팅(카메라 위치 유지)
-   * @param {*} light
-   */
-  const changeHorizonLight = (light) => {
-    setCamPosition(camPositionRef.current);
-    setHorizon(light);
-  };
-
-  /**
-   * 핀 조명 세팅(카메라 위치 유지)
-   * @param {} light
-   */
-  const changePinLight = (light) => {
-    setCamPosition(camPositionRef.current);
-    setPin(light);
-  };
-
   return (
     <>
       <div class="backtotop-wrap cursor-pointer">
@@ -320,6 +320,7 @@ const SampleDev = () => {
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
+
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">

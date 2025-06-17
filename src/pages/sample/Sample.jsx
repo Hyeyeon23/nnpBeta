@@ -71,18 +71,13 @@ const Sample = () => {
       {loadSpin && (
         <div
           className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-50"
-          style={{ zIndex: 1050 }}
-        >
+          style={{ zIndex: 1050 }}>
           <div className="spinner-border" role="status"></div>
           <span className="visually-hidden">Loading...</span>
         </div>
       )}
       <div className="mt-4 pb-4 canvas-container">
-        <Canvas
-          camera={{ position: [0, 3, 10], fov: 45 }}
-          style={{ backgroundColor: "white" }}
-          shadows
-        >
+        <Canvas camera={{ position: [0, 3, 10], fov: 45 }} style={{ backgroundColor: "white" }} shadows>
           <Suspense fallback={null}>
             {/* 화면 움직이는 거  */}
             <OrbitControls minDistance={2} maxDistance={10} />
@@ -110,69 +105,29 @@ const Sample = () => {
               color={"#ffffff"} // 빛 색상 (조정 가능)
             />
             <mesh position={[0, -1.1, 0]} castShadow>
-              {model === "PACK1000_WOOD" && (
-                <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>
-              )}
+              {model === "PACK1000_WOOD" && <PACK1000_WOOD imageSrc={image} color1={color1}></PACK1000_WOOD>}
               {model === "PACK1000_Lightless" && (
-                <PACK1000_Lightless
-                  imageSrc={image}
-                  color1={color1}
-                ></PACK1000_Lightless>
+                <PACK1000_Lightless imageSrc={image} color1={color1}></PACK1000_Lightless>
               )}
-              {model === "PACK200_mid" && (
-                <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>
-              )}
-              {model === "PACK200_CF" && (
-                <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>
-              )}
-              {model === "PACK250_CF" && (
-                <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>
-              )}
-              {model === "SIG120_mini" && (
-                <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>
-              )}
-              {model === "SIG150_mini" && (
-                <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>
-              )}
-              {model === "SIG200_mid" && (
-                <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>
-              )}
-              {model === "CAN175" && (
-                <CAN175 imageSrc={image} color1={color1}></CAN175>
-              )}
-              {model === "CAN200" && (
-                <CAN200 imageSrc={image} color1={color1}></CAN200>
-              )}
-              {model === "CAN238" && (
-                <CAN238 imageSrc={image} color1={color1}></CAN238>
-              )}
+              {model === "PACK200_mid" && <PACK200_mid imageSrc={image} color1={color1}></PACK200_mid>}
+              {model === "PACK200_CF" && <PACK200_CF imageSrc={image} color1={color1}></PACK200_CF>}
+              {model === "PACK250_CF" && <PACK250_CF imageSrc={image} color1={color1}></PACK250_CF>}
+              {model === "SIG120_mini" && <SIG120_mini imageSrc={image} color1={color1}></SIG120_mini>}
+              {model === "SIG150_mini" && <SIG150_mini imageSrc={image} color1={color1}></SIG150_mini>}
+              {model === "SIG200_mid" && <SIG200_mid imageSrc={image} color1={color1}></SIG200_mid>}
+              {model === "CAN175" && <CAN175 imageSrc={image} color1={color1}></CAN175>}
+              {model === "CAN200" && <CAN200 imageSrc={image} color1={color1}></CAN200>}
+              {model === "CAN238" && <CAN238 imageSrc={image} color1={color1}></CAN238>}
             </mesh>
             <mesh>
               {/*  그림자가 드리워질 바닥 메쉬 추가 1안 - 그림자용 Plane + 바닥 plane 더블 구성*/}
-              <mesh
-                receiveShadow
-                position={[0, -1.01, 0]}
-                rotation={[-Math.PI / 2, 0, 0]}
-                scale={[3, 3, 3]}
-              >
+              <mesh receiveShadow position={[0, -1.01, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 3, 3]}>
                 <planeGeometry args={[10, 10]} />
-                <shadowMaterial opacity={0.4} transparent={true} /> // opacity
-                낮을 수록 연한 그림자
+                <shadowMaterial opacity={0.4} transparent={true} /> // opacity 낮을 수록 연한 그림자
               </mesh>
-              <mesh
-                position={[0, -1, 0]}
-                rotation={[-Math.PI / 2, 0, 0]}
-                scale={[3, 3, 3]}
-                renderOrder={2}
-              >
+              <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 3, 3]} renderOrder={2}>
                 <circleGeometry args={[5, 32]} />
-                <meshStandardMaterial
-                  color="F8F8F8"
-                  roughness={0.9}
-                  metalness={0}
-                  opacity={0.7}
-                  transparent={true}
-                />
+                <meshStandardMaterial color="F8F8F8" roughness={0.9} metalness={0} opacity={0.7} transparent={true} />
               </mesh>
             </mesh>
           </Suspense>
@@ -188,15 +143,11 @@ const Sample = () => {
             left: 20,
             zIndex: 1,
             border: "2px dashed #ccc",
-            padding: "20px",            
-          }}
-        >
+            padding: "20px",
+          }}>
           image drag and drop
         </div>
-        <label
-          for="colorPicker"
-          style={{ position: "absolute", top: 60, left: 90, zIndex: 1 }}
-        >
+        <label for="colorPicker" style={{ position: "absolute", top: 60, left: 90, zIndex: 1 }}>
           날개 색
         </label>
         <input
@@ -212,8 +163,7 @@ const Sample = () => {
           left1={20}
           top2={95}
           left2={160}
-          lbl={"핀조명"}
-        ></Progressive>
+          lbl={"핀조명"}></Progressive>
         <Progressive
           value={horizon}
           onChange={setHorizon}
@@ -223,12 +173,8 @@ const Sample = () => {
           left2={160}
           lbl={"수평조명"}
           min={-4}
-          max={3}
-        ></Progressive>
-        <select
-          style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
-          onChange={handleSelectModel}
-        >
+          max={3}></Progressive>
+        <select style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }} onChange={handleSelectModel}>
           <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
           {/* <option value="PACK1000_WOOD">PACK1000_WOOD</option> */}
           <option value="PACK200_mid">테트라_200ml_mid (베지밀비)</option>
