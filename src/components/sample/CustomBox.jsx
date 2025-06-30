@@ -81,7 +81,7 @@ const CustomBox = ({
 
   return (
     <div className={`toggle-container ${isMboxExpanded ? "expanded" : ""}`}>
-      <div className="wrap_btn_mo">
+      <div className="wrap_btn_mo" style={{ width: "10%" }}>
         <div className="fileBtn_mo_only mView">
           <label for="fileElem_mo" id="drop-label-mo">
             <img src={images3d["btn_save_mo.png"]} alt="upload icon" />
