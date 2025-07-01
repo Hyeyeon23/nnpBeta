@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { images3d } from "../../utils/imagesImport";
 import { scaleFrom100, scaleTo100 } from "../../utils/scaleHelpers";
 const CustomBox = ({
@@ -13,10 +13,29 @@ const CustomBox = ({
 }) => {
   // 모바일 커스텀 박스 오픈 클로즈 state
   const [isMboxExpanded, setIsMboxExpanded] = useState(false);
-  const [isPackUIPointerEvents, setIsPackUIPointerEvents] = useState("none");
+  const [isPackUIPointerEvents, setIsPackUIPointerEvents] = useState("auto");
   // 날개 색상 스포이드 픽 컬러
   const [pickedColor, setPickedColor] = useState(1);
+  const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 768px)").matches);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    // 리스너 함수
+    const handler = (event) => {
+      if (!event.matches) {
+        setIsPackUIPointerEvents("auto");
+      } else {
+        setIsPackUIPointerEvents("none");
+      }
+    };
+
+    // 이벤트 리스너 등록 (최신 표준)
+    mediaQuery.addEventListener("change", handler);
+
+    // cleanup
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
   /**
    * 핀조명 슬라이드 바 조작 시 값 변환 및 반영
    * @param {*} e
@@ -76,11 +95,13 @@ const CustomBox = ({
    * 모바일 화면에서 커스텀 박스 노출/히든 토글
    */
   const handleMobileBoxToggle = () => {
-    setIsMboxExpanded((prev) => {
-      const next = !prev;
-      setIsPackUIPointerEvents(next ? "auto" : "none");
-      return next;
-    });
+    if (isMobile) {
+      setIsMboxExpanded((prev) => {
+        const next = !prev;
+        setIsPackUIPointerEvents(next ? "auto" : "none");
+        return next;
+      });
+    }
   };
 
   return (
