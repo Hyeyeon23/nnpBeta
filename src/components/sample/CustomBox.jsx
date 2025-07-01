@@ -13,7 +13,7 @@ const CustomBox = ({
 }) => {
   // 모바일 커스텀 박스 오픈 클로즈 state
   const [isMboxExpanded, setIsMboxExpanded] = useState(false);
-
+  const [isPackUIPointerEvents, setIsPackUIPointerEvents] = useState("none");
   // 날개 색상 스포이드 픽 컬러
   const [pickedColor, setPickedColor] = useState(1);
 
@@ -76,24 +76,32 @@ const CustomBox = ({
    * 모바일 화면에서 커스텀 박스 노출/히든 토글
    */
   const handleMobileBoxToggle = () => {
-    setIsMboxExpanded((prev) => !prev);
+    setIsMboxExpanded((prev) => {
+      const next = !prev;
+      setIsPackUIPointerEvents(next ? "auto" : "none");
+      return next;
+    });
   };
 
   return (
     <div className={`toggle-container ${isMboxExpanded ? "expanded" : ""}`}>
-      <div className="wrap_btn_mo" style={{ width: "10%" }}>
-        <div className="fileBtn_mo_only mView">
+      <div
+        className="wrap_btn_mo"
+        style={{
+          pointerEvents: "none",
+        }}>
+        <div className="fileBtn_mo_only mView" style={{ pointerEvents: "auto" }}>
           <label for="fileElem_mo" id="drop-label-mo">
             <img src={images3d["btn_save_mo.png"]} alt="upload icon" />
           </label>
           <input type="file" id="fileElem_mo" accept="image/*" onChange={handleImageChange} hidden />
         </div>
-        <button className="toggle-btn mView" onClick={handleMobileBoxToggle}>
+        <button className="toggle-btn mView" onClick={handleMobileBoxToggle} style={{ pointerEvents: "auto" }}>
           +
         </button>
         <div className="toggle-box">
           <div className="toggle-content">
-            <div className="pack_ui">
+            <div className="pack_ui" style={{ pointerEvents: isPackUIPointerEvents }}>
               <p className="f18 fw500 black">용기</p>
               <select className="mt-10 black w-auto " onChange={handleSelectModel}>
                 <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
