@@ -33,6 +33,10 @@ const CustomBox = ({
     // 이벤트 리스너 등록 (최신 표준)
     mediaQuery.addEventListener("change", handler);
 
+    if (isMobile) {
+      setIsPackUIPointerEvents("none");
+    }
+
     // cleanup
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
