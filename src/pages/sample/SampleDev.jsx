@@ -121,8 +121,8 @@ const SampleDev = () => {
     setCamPosition(camPositionRef.current);
     const file = e.dataTransfer.files[0];
     if (file) {
-      const url = URL.createObjectURL(file); // 파일을 URL로 변환
-      console.log("handleImageChange = ", url);
+      const url = URL.createObjectURL(file); // 파일을 URL로 변환(로컬)
+      const savedUrl = console.log("handleImageChange = ", url);
 
       switch (model) {
         case "PACK1000_Lightless":
