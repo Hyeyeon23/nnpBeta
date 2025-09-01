@@ -19,6 +19,7 @@ import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
 import CustomBox from "../../components/sample/CustomBox";
 
+import { imageTransfer } from "../../api/3D";
 const SampleDev = () => {
   const groupRef = useRef();
   const canvasRef = useRef(null); // 이미지 다운할 떄 씀
@@ -71,6 +72,9 @@ const SampleDev = () => {
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       console.log("handleImageChange = ", url);
 
+      const savedUrl = imageTransfer(file);
+      console.log("savedUrl = ", savedUrl);
+
       switch (model) {
         case "PACK1000_Lightless":
           setImageTetra1000(url);
@@ -121,8 +125,15 @@ const SampleDev = () => {
     setCamPosition(camPositionRef.current);
     const file = e.dataTransfer.files[0];
     if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("파일 크기가 5MB를 초과합니다.");
+        return; // 함수 중단
+      }
+
       const url = URL.createObjectURL(file); // 파일을 URL로 변환(로컬)
-      const savedUrl = console.log("handleImageChange = ", url);
+
+      const savedUrl = imageTransfer(file);
+      console.log("savedUrl = ", savedUrl);
 
       switch (model) {
         case "PACK1000_Lightless":

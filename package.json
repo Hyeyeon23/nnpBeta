@@ -16,6 +16,7 @@
     "@radix-ui/react-accordion": "^1.2.11",
     "@react-three/drei": "^10.2.0",
     "@react-three/fiber": "^9.0.4",
+    "axios": "^1.11.0",
     "bootstrap": "^4.6.0",
     "file-saver": "^2.0.5",
     "gh-pages": "^6.3.0",
