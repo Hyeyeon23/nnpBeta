@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/common/footer";
+import Kakao from "../components/sns/Kakao";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ const Main = () => {
         <h4> .... </h4>
         <div>
           <Link to={"/sample"}> 용기시안 </Link>
+        </div>
+        <div>
+          <Kakao></Kakao>
         </div>
       </div>
       <Footer></Footer>
