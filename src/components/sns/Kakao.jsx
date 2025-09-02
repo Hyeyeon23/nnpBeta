@@ -15,7 +15,7 @@ function Kakao() {
   };
 
   return (
-    <div>
+    <div className="mt-5 pt-5 pb-5">
       <button onClick={loginWithKakao}>
         <img
           src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"

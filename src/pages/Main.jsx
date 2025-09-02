@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/common/footer";
 import Kakao from "../components/sns/Kakao";
+import Naver from "../components/sns/Naver";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Main = () => {
         </div>
         <div>
           <Kakao></Kakao>
+          <Naver></Naver>
         </div>
       </div>
       <Footer></Footer>
