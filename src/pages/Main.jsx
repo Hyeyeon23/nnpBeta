@@ -25,7 +25,7 @@ const Main = () => {
         <h1>Main</h1>
         <h4> .... </h4>
         <div>
-          <Link to={"/sample"}> 용기시안 </Link>
+          <Link to={"/dev"}> 용기시안 </Link>
         </div>
         <div>
           <Kakao></Kakao>

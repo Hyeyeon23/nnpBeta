@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { loginWithKakao } from "../../api/SnsLogin";
 
 function Kakao() {
   useEffect(() => {
@@ -7,12 +8,6 @@ function Kakao() {
       console.log("Kakao SDK 초기화 완료");
     }
   }, []);
-
-  const loginWithKakao = () => {
-    window.Kakao.Auth.authorize({
-      redirectUri: "http://localhost:8080/auth/kakao/redirect", // 실제 Redirect URI 입력
-    });
-  };
 
   return (
     <div className="mt-5 pt-5 pb-5">

@@ -1,4 +1,4 @@
-import { naverLogin } from "../../api/naverLogin";
+import { naverLogin } from "../../api/SnsLogin";
 const Naver = () => {
   /* const naverlogin = () => {
     //naverLogin();
