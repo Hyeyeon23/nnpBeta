@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../pages/Main";
+import NNP from "../pages/nnp";
 import Sample from "../pages/sample/Sample";
 import Waiting from "../pages/waiting";
 import SampleDev from "../pages/sample/SampleDev";
@@ -14,7 +15,8 @@ const root = createBrowserRouter(
       path: "/",
       element: (
         <Suspense fallback={Loading}>
-          <Main></Main>
+          {/* <Main></Main> */}
+          <NNP></NNP>
         </Suspense>
       ),
       //<Suspense>는 **로딩 중일 때 표시할 UI (fallback 속성)**를 지정하는 역할을 함.
