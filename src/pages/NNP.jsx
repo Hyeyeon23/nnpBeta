@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Header from "../components/common/Header";
-
+import Footer from "../components/common/footer";
+import CustomInquiry from "../components/customer/CustomInquiry";
 const NNP = () => {
   const [rotate, setRotate] = useState(false);
 
@@ -157,208 +158,8 @@ const NNP = () => {
                 </div>
               </div>
             </section>
-            <section className="contant1100">
-              <div className="row">
-                <div className="col-lg-8">
-                  <p className="f70 fw600 grayn1 lh120">맞춤 상담</p>
-                  <p className="f70 fw600 grayn1 lh120 main_cs">
-                    <img className="" src="common/imgs/common/main_cs.png" style={{ paddingBottom: "30px" }} />{" "}
-                    요청해보세요
-                  </p>
-                  <p className="f80 fw900 grayn1 italic f_pp lh100">Custom product.</p>
-                </div>
-                <div className="col-lg-4">
-                  <p className="f22 fw400 grayn1 lh170 mt100">
-                    복잡한 상담은 이제 그만!
-                    <br />
-                    원하시는 조건을 선택해주시면
-                    <br />
-                    담당자가 직접 확인 후<br />
-                    맞춤 상담을 도와드립니다.
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section className="contant1100 pb100 csBox mb100 mt100">
-              <div className="section">
-                <p className="f22 fw400">상담 유형</p>
-                <div className="radio-group mt20">
-                  <div className="radio-button oembutton">OEM</div>
-                  <div className="radio-button oembutton">ODM</div>
-                  <div className="radio-button oembutton">수출 문의</div>
-                  <div className="radio-button oembutton">기타</div>
-                </div>
-              </div>
-
-              <div className="section">
-                <p className="f22 fw400 mt50">용기 유형</p>
-                <div className="radio-group mt20">
-                  <div className="radio-button green iconBG09">
-                    <span className="sig120"></span>
-                    <br />
-                    SIG
-                    <br />
-                    120ml
-                  </div>
-                  <div className="radio-button green iconBG10">
-                    <span className="sig150"></span>
-                    <br />
-                    SIG
-                    <br />
-                    150ml
-                  </div>
-                  <div className="radio-button green">
-                    <span className="tetra200"></span>
-                    <br />
-                    Tetra Pak
-                    <br />
-                    200ml
-                  </div>
-                  <div className="radio-button green iconBG02">
-                    <span className="sig200"></span>
-                    <br />
-                    SIG
-                    <br />
-                    200ml
-                  </div>
-                  <div className="radio-button green iconBG03">
-                    <span className="tetra1000"></span>
-                    <br />
-                    Tetra Pak
-                    <br />
-                    1000ml
-                  </div>
-                  <div className="radio-button green iconBG04">
-                    <span className="tetra200Com"></span>
-                    <br />
-                    Tetra Pak 200ml
-                    <br />
-                    Compack Flex
-                  </div>
-                  <div className="radio-button green iconBG05">
-                    <span className="tetra250Com"></span>
-                    <br />
-                    Tetra Pak 250ml
-                    <br />
-                    Compack Flex
-                  </div>
-                  <div className="radio-button green iconBG06">
-                    <span className="can175"></span>
-                    <br />
-                    Can
-                    <br />
-                    175ml
-                  </div>
-                  <div className="radio-button green iconBG07">
-                    <span className="can200"></span>
-                    <br />
-                    Can
-                    <br />
-                    200ml
-                  </div>
-                  <div className="radio-button green iconBG07">
-                    <span className="can250"></span>
-                    <br />
-                    Can
-                    <br />
-                    250ml
-                  </div>
-                  <div className="radio-button green iconBG08">
-                    <span className="can238"></span>
-                    <br />
-                    Can
-                    <br />
-                    238ml
-                  </div>
-                  <div className="radio-button green iconBG08">
-                    <span className="can340"></span>
-                    <br />
-                    Can
-                    <br />
-                    340ml
-                  </div>
-                </div>
-              </div>
-
-              <div id="moreSection">
-                <div className="section">
-                  <p className="f22 fw400 mt50">발주량</p>
-                  <div className="radio-group mt20">
-                    <div className="radio-button">200,000 이상 *MOQ</div>
-                    <div className="radio-button">500,000 이상</div>
-                    <div className="radio-button">1,000,000 이상</div>
-                  </div>
-                </div>
-
-                <div className="section">
-                  <p className="f22 fw400 mt50">레시피</p>
-                  <div className="radio-group mt20">
-                    <div className="radio-button green">있음</div>
-                    <div className="radio-button green">없음</div>
-                  </div>
-                </div>
-
-                <div className="section">
-                  <p className="f22 fw400 mt50">상담 내용</p>
-                  <textarea className="mt20 order_textarea" placeholder="문의사항에 대한 내용을 작성해 주세요." />
-                </div>
-
-                <div className="section">
-                  <p className="f22 fw400 mt50">업체명</p>
-                  <input
-                    className="mt20 order_input"
-                    type="text"
-                    style={{ width: "100%", padding: "8px" }}
-                    placeholder="ex. (주)자연과사람들 영업부"
-                  />
-                </div>
-
-                <div className="section">
-                  <p className="f22 fw400 mt50">연락처</p>
-                  <input
-                    className="mt20 order_input"
-                    type="text"
-                    style={{ width: "100%", padding: "8px" }}
-                    placeholder="ex. 02-123-4567"
-                  />
-                </div>
-
-                <div className="section">
-                  <p className="f22 fw400 mt50">이메일</p>
-                  <input
-                    className="mt20 order_input"
-                    type="email"
-                    style={{ width: "100%", padding: "8px" }}
-                    placeholder="ex. support@innp.co.kr"
-                  />
-                </div>
-
-                <center>
-                  <button type="button" className="nnp-btn rr-btn mt50">
-                    <span>
-                      <i className="fa-regular fa-arrow-right"></i>
-                    </span>
-                    닫기
-                  </button>{" "}
-                  &nbsp;&nbsp;
-                  <button type="submit" className="nnp-btn rr-btn mt50">
-                    <span>
-                      <i className="fa-regular fa-arrow-right"></i>
-                    </span>
-                    보내기
-                  </button>
-                </center>
-              </div>
-
-              <center>
-                <button type="button" className="nnp-btn rr-btn mt50">
-                  <span>
-                    <i className="fa-regular fa-arrow-right"></i>
-                  </span>
-                  More
-                </button>
-              </center>
-            </section>
+            {/* 맞춤상담 컴포넌트 */}
+            <CustomInquiry></CustomInquiry>
 
             <section
               className="project-section__area tp-btn-trigger-2 project-section body-bg section-space-bottom-160 section-space-top-110"
@@ -569,7 +370,249 @@ const NNP = () => {
                 </div>
               </div>
             </div>
+            <div className="brand-section__area brand-section bg-white mt100">
+              <div className="container">
+                <div className="swiper sk-logo-slide__active">
+                  <div className="swiper-wrapper">
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_01.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_02.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_03.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_04.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_05.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_06.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_07.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_08.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_09.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_10.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_12.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_13.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_14.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_15.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_16.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_17.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_18.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_19.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="brand-section__logo">
+                        <img src="common/imgs/main/client_20.jpg" alt="코카콜라" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section className="team-section__area team-section overflow-hidden body-bg section-space-top-140 section-space-bottom-160 fade-wrapper">
+              <div className="team-section">
+                <div className="container">
+                  <div className="section-2__title-wrapper team-title hero">
+                    <h2 className="f64 lh120 fw500 grayn01 _split_text">
+                      건강한 원칙,
+                      <br />
+                      믿을 수 있는 브랜드
+                    </h2>
+                    <a href="team.html" className="title-btn rr-btn btn-transparent">
+                      <span>
+                        <i className="fa-regular fa-arrow-right"></i>
+                      </span>
+                      View Brand
+                    </a>
+                  </div>
+                  <div className="team-section__wrapper">
+                    <div className="team-section__border__shape team-section__border__shape-1"></div>
+                    <div className="team-section__border__shape team-section__border__shape-2"></div>
+                    <div className="team-section__border__shape team-section__border__shape-3"></div>
+                    <div className="team-section__border__shape team-section__border__shape-4"></div>
+                    <div className="team-section__border__shape team-section__border__shape-5"></div>
+                    <div className="row mb-minus-30">
+                      <div className="col-lg-4 col-md-6">
+                        <div className="team-section__item fade-top mb-30">
+                          <div className="team-section__thumb">
+                            <img src="common/imgs/main/main_brand01.jpg" alt="image not found" />
+                          </div>
+                          <div className="team-section__content">
+                            <h3 className="team-section__title">
+                              <a href="team-details.html">WIZUS</a>
+                            </h3>
+                            <p className="team-section__position">맛있게 즐기는 스포츠 프로틴 드링크!</p>
+                          </div>
+                          <div className="team-section__social">
+                            <a href="team-details.html">
+                              <svg
+                                width="25"
+                                height="26"
+                                viewBox="0 0 25 26"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M5.65625 19.6562L19.2327 6.0798"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                                <path
+                                  d="M7.92188 6.08008L19.2356 6.08008L19.2356 17.3938"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 col-md-6">
+                        <div className="team-section__item fade-top mb-30">
+                          <div className="team-section__thumb">
+                            <img src="common/imgs/main/main_brand02.jpg" alt="image not found" />
+                          </div>
+                          <div className="team-section__content">
+                            <h3 className="team-section__title">
+                              <a href="team-details.html">방방곡곡</a>
+                            </h3>
+                            <p className="team-section__position">단맛은 줄이고, 전통의 맛은 그대로</p>
+                          </div>
+                          <div className="team-section__social">
+                            <a href="team-details.html">
+                              <svg
+                                width="25"
+                                height="26"
+                                viewBox="0 0 25 26"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M5.65625 19.6562L19.2327 6.0798"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                                <path
+                                  d="M7.92188 6.08008L19.2356 6.08008L19.2356 17.3938"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 col-md-6">
+                        <div className="team-section__item fade-top mb-30">
+                          <div className="team-section__thumb">
+                            <img src="common/imgs/main/main_brand03.jpg" alt="image not found" />
+                          </div>
+                          <div className="team-section__content">
+                            <h3 className="team-section__title">
+                              <a href="team-details.html">자연과사람들이 만든</a>
+                            </h3>
+                            <p className="team-section__position">신선한 과일의 풍부한 맛과 향을 담은 드링크</p>
+                          </div>
+                          <div className="team-section__social">
+                            <a href="team-details.html">
+                              <svg
+                                width="25"
+                                height="26"
+                                viewBox="0 0 25 26"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M5.65625 19.6562L19.2327 6.0798"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                                <path
+                                  d="M7.92188 6.08008L19.2356 6.08008L19.2356 17.3938"
+                                  stroke="#fff"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </main>
+          <Footer></Footer>
         </div>
       </div>
     </>
