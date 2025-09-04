@@ -74,7 +74,7 @@ const Header = () => {
 
   return (
     <>
-      <div id="header" className="white" style={{ height: "90px" }}>
+      <div id="header" className="white">
         <div className="bg"></div>
         <div className="wView">
           <h1 className="logo">
@@ -83,119 +83,114 @@ const Header = () => {
           <nav id="gnb">
             <ul>
               <li>
-                <a href="./01_01.html" id="gnbTarget" className="f_pp">
+                <a href="./01_01.html" id="gnbTarget" onclick="oneDepMenu()" class="f_pp">
                   Company
                 </a>
-                <div className="depth02_menu_wrap">
-                  <div className="inner">
-                    <ul className="gnb_depth2">
-                      <li className="gbg01">
-                        <a href="javascript:void(0)">자연과사람들 소개</a>
-                        <ul className="gnb_depth3">
+                <div class="depth02_menu_wrap">
+                  <div class="inner">
+                    <ul class="gnb_depth2">
+                      <li class="gbg01">
+                        <a href="./01_21_greetings.html">자연과사람들 소개</a>
+                        <ul class="gnb_depth3">
                           <li>
-                            <a href="javascript:void(0)">인사말</a>
+                            <a href="./01_21_greetings.html">인사말</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">회사연혁</a>
+                            <a href="./01_22_profile.html">회사연혁</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">비젼</a>
+                            <a href="./01_08.html">비젼</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">오시는길</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="gbg02">
-                        <a href="javascript:void(0)">관련사</a>
-                        <ul className="gnb_depth3">
-                          <li>
-                            <a href="javascript:void(0)">정식품</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">오쎄</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">(재단)혜춘장학회</a>
+                            <a href="./01_08.html">오시는길</a>
                           </li>
                         </ul>
                       </li>
-                      <li className="gbg03">
-                        <a href="javascript:void(0)">식품안전인증현황</a>
-                        <ul className="gnb_depth3">
+                      <li class="gbg02">
+                        <a href="./01_31_dcfMedia.html">관련사</a>
+                        <ul class="gnb_depth3">
                           <li>
-                            <a href="javascript:void(0)">HACCP</a>
+                            <a href="./01_41_press.html">정식품</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">FSSC 22000</a>
+                            <a href="./01_31_dcfMedia.html">오쎄</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">인증서</a>
+                            <a href="/company/contest">(재단)혜춘장학회</a>
                           </li>
                         </ul>
                       </li>
-                      <li className="gbg04">
-                        <a href="javascript:void(0)">채용정보</a>
+                      <li class="gbg03">
+                        <a href="./01_52_esg.html">식품안전인증현황</a>
+                        <ul class="gnb_depth3">
+                          <li>
+                            <a href="./01_52_esg.html">HACCP</a>
+                          </li>
+                          <li>
+                            <a href="./01_53_env.html">FSSC 22000</a>
+                          </li>
+                          <li>
+                            <a href="./01_51_csr.html">인증서</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="gbg04">
+                        <a href="./01_52_esg.html">채용정보</a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
-
               <li>
-                <a href="javascript:void(0)" className="f_pp">
+                <a href="./02_21_productList.html" onclick="oneDepMenu()" class="f_pp">
                   Business
                 </a>
-                <div className="depth02_menu_wrap">
-                  <div className="inner">
-                    <ul className="gnb_depth2">
-                      <li className="gbg01">
-                        <a href="javascript:void(0)">제품유형</a>
+                <div class="depth02_menu_wrap">
+                  <div class="inner">
+                    <ul class="gnb_depth2">
+                      <li class="gbg05">
+                        <a href="./02_11_brand.html">제품유형</a>
                       </li>
-                      <li className="gbg05">
-                        <a href="javascript:void(0)">팩 용기유형</a>
+                      <li class="gbg06">
+                        <a href="./02_21_productList.html">용기유형</a>
                       </li>
-                      <li className="gbg06">
-                        <a href="javascript:void(0)">캔 용기유형</a>
-                      </li>
-                      <li className="gbg04">
-                        <a href="https://www.edaymall.com" target="_blank" rel="noopener noreferrer">
-                          R&amp;D
+                      <li class="gbg07">
+                        <a href="https://www.edaymall.com" target="_blacnk">
+                          R&D
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
-
               <li>
-                <a href="javascript:void(0)" id="gnbTarget" className="f_pp">
+                <a href="./03_12_rndIntroduce.html" id="gnbTarget" onclick="oneDepMenu()" class="f_pp">
                   Brand
                 </a>
-                <div className="depth02_menu_wrap">
-                  <div className="inner">
-                    <ul className="gnb_depth2">
-                      <li className="gbg01">
-                        <a href="javascript:void(0)">WIZUS</a>
-                        <ul className="gnb_depth3">
+                <div class="depth02_menu_wrap">
+                  <div class="inner">
+                    <ul class="gnb_depth2">
+                      <li class="gbg08">
+                        <a href="./03_11_greetingsPhD.html">WIZUS</a>
+                        <ul class="gnb_depth3">
                           <li>
-                            <a href="javascript:void(0)">녹차</a>
+                            <a href="./03_11_greetingsPhD.html">녹차</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)">레몬</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="gbg02">
-                        <a href="javascript:void(0)">건강담은</a>
-                        <ul className="gnb_depth3">
-                          <li>
-                            <a href="javascript:void(0)">식혜</a>
+                            <a href="./03_12_rndIntroduce.html">레몬</a>
                           </li>
                         </ul>
                       </li>
-                      <li className="gbg03">
-                        <a href="javascript:void(0)">자연과사람들이 만든</a>
+                      <li class="gbg09">
+                        <a href="./03_31_haccp.html">건강담은</a>
+                        <ul class="gnb_depth3">
+                          <li>
+                            <a href="./03_31_haccp.html">식혜</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="gbg10">
+                        <a href="./03_31_haccp.html">자연과사람들이 만든</a>
                       </li>
                     </ul>
                   </div>
@@ -203,373 +198,42 @@ const Header = () => {
               </li>
 
               <li>
-                <a href="javascript:void(0)" className="f_pp">
+                <a href="./04_11_communication.html" onclick="oneDepMenu()" class="f_pp">
                   CS
                 </a>
-                <div className="depth02_menu_wrap">
-                  <div className="inner">
-                    <ul className="gnb_depth2">
-                      <li className="gbg01">
-                        <a href="javascript:void(0)">자주 묻는 질문</a>
+                <div class="depth02_menu_wrap">
+                  <div class="inner">
+                    <ul class="gnb_depth2">
+                      <li class="gbg11">
+                        <a href="/webzine">자주 묻는 질문</a>
                       </li>
-                      <li className="gbg02">
-                        <a href="javascript:void(0)">1:1문의</a>
+
+                      <li class="gbg12">
+                        <a href="./04_45_event.html">1:1문의</a>
                       </li>
-                      <li className="gbg03">
-                        <a href="javascript:void(0)">고객의 소리</a>
+                      <li class="gbg13">
+                        <a href="/vegemilBaby/index">고객의 소리</a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
             </ul>
+            <div class="pack3D">
+              <a href="https://hyeyeon23.github.io/nnpBeta/dev" onclick="oneDepMenu()" class="f_pp">
+                <span>pack3D</span>
+              </a>
+            </div>
           </nav>
 
           <div className="header-right">
-            <ul className="sub_area">
+            <ul class="sub_area">
               <li>
-                <a href="javascript:void(0)">로그인</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">회원가입</a>
-              </li>
-              <li>
-                <div className="custom-sel">
+                <div class="custom-sel ">
                   <select>
-                    <option value="KOR">KOR</option>
                     <option value="ENG">ENG</option>
-                    <option value="VIET">VIET</option>
+                    <option value="KOR">KOR</option>
                   </select>
-                </div>
-              </li>
-              <li>
-                <span className="btn_fullMenu" onClick={() => setIsOpen(true)}></span>
-                <div id="myNav" className="overlay" style={{ height: isOpen ? "100%" : "0%" }}>
-                  <div className="overlay-content">
-                    <dl className="full_box">
-                      <dd>
-                        <p className="full_logo">
-                          <a href="javascript:void(0)">
-                            <img
-                              src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png"
-                              alt="정식품 CI"
-                            />
-                          </a>
-                        </p>
-                        <ul className="full-header-right">
-                          <li>
-                            <a href="javascript:void(0)">로그인</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">회원가입</a>
-                          </li>
-                          <li>
-                            <div className="custom-sel gray">
-                              <select>
-                                <option value="KOR">KOR</option>
-                                <option value="ENG">ENG</option>
-                              </select>
-                            </div>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0);" className="closebtn" onClick={() => setIsOpen(false)}>
-                              <img
-                                src="https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_close.png"
-                                alt="닫기버튼"
-                              />
-                            </a>
-                          </li>
-                        </ul>
-                      </dd>
-                      <dd class="full_dep">
-                        <div class="fd_title">
-                          <li class="f30 f_pp white lh100">Company</li>
-                        </div>
-                        <ul>
-                          <li>
-                            <a href="/company/heritige">창업주 기념관</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/company/info">기업 정보</a>
-                          </li>
-                          <li>
-                            <a href="/company/greetings">대표이사 인사말</a>
-                          </li>
-                          <li>
-                            <a href="/company/profile">프로필</a>
-                          </li>
-                          <li>
-                            <a href="/company/value">가치체계</a>
-                          </li>
-                          <li>
-                            <a href="/company/history">연혁</a>
-                          </li>
-                          <li>
-                            <a href="/company/nnp">관련사</a>
-                          </li>
-                          <li>
-                            <a href="/company/finance">공시</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/company/media">홍보센터</a>
-                          </li>
-                          <li>
-                            <a href="/company/mediaNews">보도자료</a>
-                          </li>
-                          <li>
-                            <a href="/company/media">미디어</a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/company/esg">ESG</a>
-                          </li>
-                          <li>
-                            <a href="/company/esg">비젼</a>
-                          </li>
-                          <li>
-                            <a href="/company/env">환경경영</a>
-                          </li>
-                          <li>
-                            <a href="/company/csr">사회공헌활동</a>
-                          </li>
-                          <li>
-                            <a href="/company/eth">윤리경영</a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/rnd/factory">청주공장</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/factory">청주공장 소개</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/factoryTour">견학 신청</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/tourReview">견학 후기</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/company/agency">전국 영업소</a>
-                          </li>
-                        </ul>
-                      </dd>
-                      <dd class="full_dep">
-                        <div class="fd_title">
-                          <li class="f30 f_pp white lh100">Product</li>
-                        </div>
-                        <ul>
-                          <li>
-                            <a href="/brandStory/vegemil">브랜드 스토리</a>
-                          </li>
-                          <li>
-                            <a href="/brandStory/vegemil">베지밀</a>
-                          </li>
-                          <li>
-                            <a href="/brandStory/greenbia">그린비아</a>
-                          </li>
-                          <li>
-                            <a href="/brandStory/recipe">간단요리사</a>
-                          </li>
-                          <li>
-                            <a href="/brandStory/simcheonsoo">심천수</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/product/list">제품 소개</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/product/cook">쿡앤쿡 레시피</a>
-                          </li>
-                          <li>
-                            <a href="/product/cook">베지밀 레시피 </a>
-                          </li>
-                          <li>
-                            <a href="/beanSoup/list" target="_blank">
-                              간단요리사 레시피 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/beanSoupRecipe/index" target="_blank">
-                              콩국물 레시피 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="https://www.edaymall.com" target="_blacnk">
-                              공식 쇼핑몰
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.edaymall.com" target="_blacnk">
-                              이데이몰 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                        </ul>
-                      </dd>
-                      <dd class="full_dep">
-                        <div class="fd_title">
-                          <li class="f30 f_pp white lh100">R&D</li>
-                        </div>
-                        <ul>
-                          <li>
-                            <a href="/rnd/phd">중앙연구소</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/phd">연구소장 인사말</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/Introduce">연구소 소개</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/devWork">R&D 활동</a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/rnd/patent">특허 및 연구논문</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/rnd/haccp">식품안전인증현황</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/haccp">HACCP 인증</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/fssc">FSSC 22000 인증</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/halal">HALAL 인증</a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/rnd/ccm">일반인증현황</a>
-                          </li>
-                          <li>
-                            <a href="/communication/ccm">CCM 인증</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/epd">환경성적표지 인증</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/iso">ISO 45001 인증</a>
-                          </li>
-                        </ul>
-                      </dd>
-                      <dd class="full_dep">
-                        <div class="fd_title">
-                          <li class="f30 f_pp white lh100">Communication</li>
-                        </div>
-                        <ul>
-                          <li>
-                            <a href="/webzine">정식품 웹진</a>
-                          </li>
-                          <li>
-                            <a href="/webzine">웹진 바로가기</a>
-                          </li>
-                          <li>
-                            <a href="/webzine/subscribe">웹진 신청</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="https://www.instagram.com/vegemil.official/" target="_blank">
-                              SNS{" "}
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.instagram.com/vegemil.official/" target="_blank">
-                              정식품 인스타그램 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.instagram.com/vegemil_baby/" target="_blank">
-                              영&middot;유아식 인스타그램 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.facebook.com/vegemilgood" target="_blank">
-                              정식품 페이스북 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://blog.naver.com/vegemilstory" target="_blank">
-                              정식품 블로그 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.youtube.com/user/vegemilgood" target="_blank">
-                              정식품 유튜브 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/event/list">이벤트</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="/vegemilBaby/index">베지밀 영&middot;유아식</a>
-                          </li>
-                          <li>
-                            <a href="/vegemilBaby/sample" target="_blank">
-                              샘플신청 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/vegemilBaby/event_review_best" target="_blank">
-                              후기 이벤트 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/vegemilBaby/model" target="_blank">
-                              아기달력모델 <span class="ico_arrow_gray"></span>
-                            </a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/communication/cp">공정거래(CP)</a>
-                          </li>
-                        </ul>
-
-                        <ul>
-                          <li>
-                            <a href="/communication/voc">고객문의</a>
-                          </li>
-                          <li>
-                            <a href="/communication/voc">고객의 소리</a>
-                          </li>
-                          <li>
-                            <a href="/faq/list">자주 묻는 질문</a>
-                          </li>
-                          <li>
-                            <a href="/communication/ask">1:1문의</a>
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
-                  </div>
                 </div>
               </li>
             </ul>
