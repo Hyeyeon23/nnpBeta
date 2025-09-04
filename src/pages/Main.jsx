@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/common/footer";
 import Kakao from "../components/sns/Kakao";
 import Naver from "../components/sns/Naver";
+import Header from "../components/common/Header";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -21,7 +22,16 @@ const Main = () => {
 
   return (
     <>
-      <div className="container text-center bg-light ">
+      <div class="backtotop-wrap cursor-pointer">
+        <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+
+      <Header></Header>
+      <div
+        className="container text-center bg-light"
+        style={{ marginTop: 90, marginBottom: 10, paddingTop: 10, paddingBottom: 600 }}>
         <h1>Main</h1>
         <h4> .... </h4>
         <div>
