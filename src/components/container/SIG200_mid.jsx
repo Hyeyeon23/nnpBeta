@@ -10,7 +10,7 @@ import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function SIG200_mid({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("SIG200_mid.glb");
+  const { scene, nodes, materials } = useCustomGLTF("/containers/SIG200_mid.glb");
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절

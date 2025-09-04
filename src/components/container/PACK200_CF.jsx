@@ -10,7 +10,7 @@ import * as THREE from "three";
 import { useCustomGLTF } from "../../hooks/useCustomGLTF";
 
 export function PACK200_CF({ imageSrc, color1, ...props }) {
-  const { scene, nodes, materials } = useCustomGLTF("PACK200_CF.glb");
+  const { scene, nodes, materials } = useCustomGLTF("/containers/PACK200_CF.glb");
   const loader = new THREE.TextureLoader();
 
   // 외부 기본 캔버스 바닥에 맞게 물체 위치 상하 조절
