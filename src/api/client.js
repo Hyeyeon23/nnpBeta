@@ -1,0 +1,13 @@
+/* 고객 사용 api */
+import axiosInstance from "../utils/axios";
+
+export const postInquiry = async (body) => {
+
+    try {
+        const response = await axiosInstance.post("/inquiry/client/post", body);
+        return response.data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+

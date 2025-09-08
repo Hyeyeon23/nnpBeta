@@ -28,6 +28,7 @@
     "react-collapse": "^5.1.1",
     "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.62.0",
     "react-range": "^1.10.0",
     "react-router-dom": "^7.3.0",
     "three": "^0.174.0"
