@@ -120,7 +120,7 @@ const SampleDev = () => {
    * 사진 드롭 시 적용
    * @param {} e
    */
-  const handleDrop = (e) => {
+  const handleDrop = async (e) => {
     e.preventDefault();
     setCamPosition(camPositionRef.current);
     const file = e.dataTransfer.files[0];
@@ -130,10 +130,12 @@ const SampleDev = () => {
         return; // 함수 중단
       }
 
-      const url = URL.createObjectURL(file); // 파일을 URL로 변환(로컬)
+      const urlLocal = URL.createObjectURL(file); // 파일을 URL로 변환(로컬)
 
-      const savedUrl = imageTransfer(file);
-      console.log("savedUrl = ", savedUrl);
+      const url = await imageTransfer(file);
+      console.log("savedUrl = ", url);
+
+      // catch Error에서 잡지 못한 에러가 url에 있을때 (undefined..) 체크
 
       switch (model) {
         case "PACK1000_Lightless":
@@ -497,9 +499,9 @@ const SampleDev = () => {
               </div>
             </section>
           </main>
+          <Footer></Footer>
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 };
