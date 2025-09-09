@@ -11,6 +11,7 @@ const NNP = () => {
     // 마운트 시 회전 시작
     setRotate(true);
   }, []);
+
   return (
     <>
       <Header></Header>

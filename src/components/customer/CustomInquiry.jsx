@@ -1,6 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CustomInquiry = () => {
+  const [type, setType] = useState(""); // 현재 선택된 값
+  const [container, setContainer] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [recipe, setRecipe] = useState("");
+  const [quantityType, setQuantityType] = useState("a");
+  const [quantityTypes, setQuantityTypes] = useState({
+    a: [`200,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `1,000,000 이상`],
+    b: [`10만개 이상`, `10만개 이상`, `30만개 이상`],
+    c: [`50,000 이상 <span class="f14">*MOQ</span>`, `100,000 이상`, `300,000 이상`, `500,000 이상`],
+    d: [`150,000 이상 <span class="f14">*MOQ</span>`, `300,000 이상`, `500,000 이상`, `1,000,000 이상`],
+    f: [`500,000 이상 <span class="f14">*MOQ</span>`, `700,000 이상`, `1,000,000 이상`, `1,500,000 이상`],
+    g: [`200,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
+    h: [`450,000 이상 <span class="f14">*MOQ</span>`, `700,000 이상`, `1,000,000 이상`, `1,500,000 이상`],
+    i: [`330,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
+    j: [`240,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
+  });
+
+  const types = ["OEM", "ODM", "수출 문의", "기타"];
+  const containers = [
+    { value: "SIG120", display: '<span class="sig120"></span><br>SIG <br>120ml', iconClass: "iconBG09", dataType: "a" },
+    { value: "SIG150", display: '<span class="sig150"></span><br>SIG <br>150ml', iconClass: "iconBG10", dataType: "a" },
+    {
+      value: "TETRA200",
+      display: '<span class="tetra200"></span><br>Tetra Pak <br>200ml',
+      iconClass: "",
+      dataType: "a",
+    },
+    { value: "SIG200", display: '<span class="sig200"></span><br>SIG <br>200ml', iconClass: "iconBG02", dataType: "c" },
+    {
+      value: "TETRA1000",
+      display: '<span class="tetra1000"></span><br>Tetra Pak <br>1000ml',
+      iconClass: "iconBG03",
+      dataType: "c",
+    },
+    {
+      value: "TETRA_CF200",
+      display: '<span class="tetra200Com"></span><br>Tetra Pak 200ml <br>Compack Flex',
+      iconClass: "iconBG04",
+      dataType: "d",
+    },
+    {
+      value: "TETRA_CF250",
+      display: '<span class="tetra250Com"></span><br>Tetra Pak 250ml <br>Compack Flex',
+      iconClass: "iconBG05",
+      dataType: "d",
+    },
+    { value: "CAN175", display: '<span class="can175"></span><br>Can <br>175ml', iconClass: "iconBG06", dataType: "f" },
+    { value: "CAN200", display: '<span class="can200"></span><br>Can <br>200ml', iconClass: "iconBG07", dataType: "g" },
+    { value: "CAN250", display: '<span class="can250"></span><br>Can <br>250ml', iconClass: "iconBG07", dataType: "h" },
+    { value: "CAN238", display: '<span class="can238"></span><br>Can <br>238ml', iconClass: "iconBG08", dataType: "i" },
+    { value: "CAN340", display: '<span class="can340"></span><br>Can <br>340ml', iconClass: "iconBG08", dataType: "j" },
+  ];
+  const quantities = [];
+
+  const pickContainer = (container, quantityType) => {
+    console.log(container, quantityType);
+    setContainer(container);
+    setQuantityType(quantityType);
+  };
   return (
     <>
       <section className="contant1100">
@@ -28,118 +87,59 @@ const CustomInquiry = () => {
         <div className="section">
           <p className="f22 fw400">상담 유형</p>
           <div className="radio-group mt20">
-            <div className="radio-button oembutton">OEM</div>
-            <div className="radio-button oembutton">ODM</div>
-            <div className="radio-button oembutton">수출 문의</div>
-            <div className="radio-button oembutton">기타</div>
+            {types.map((element) => (
+              <div
+                key={element}
+                className={`radio-button oembutton ${type === element ? "active" : ""}`}
+                onClick={() => setType(element)}>
+                {element}
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="section">
           <p className="f22 fw400 mt50">용기 유형</p>
           <div className="radio-group mt20">
-            <div className="radio-button green iconBG09">
-              <span className="sig120"></span>
-              <br />
-              SIG
-              <br />
-              120ml
-            </div>
-            <div className="radio-button green iconBG10">
-              <span className="sig150"></span>
-              <br />
-              SIG
-              <br />
-              150ml
-            </div>
-            <div className="radio-button green">
-              <span className="tetra200"></span>
-              <br />
-              Tetra Pak
-              <br />
-              200ml
-            </div>
-            <div className="radio-button green iconBG02">
-              <span className="sig200"></span>
-              <br />
-              SIG
-              <br />
-              200ml
-            </div>
-            <div className="radio-button green iconBG03">
-              <span className="tetra1000"></span>
-              <br />
-              Tetra Pak
-              <br />
-              1000ml
-            </div>
-            <div className="radio-button green iconBG04">
-              <span className="tetra200Com"></span>
-              <br />
-              Tetra Pak 200ml
-              <br />
-              Compack Flex
-            </div>
-            <div className="radio-button green iconBG05">
-              <span className="tetra250Com"></span>
-              <br />
-              Tetra Pak 250ml
-              <br />
-              Compack Flex
-            </div>
-            <div className="radio-button green iconBG06">
-              <span className="can175"></span>
-              <br />
-              Can
-              <br />
-              175ml
-            </div>
-            <div className="radio-button green iconBG07">
-              <span className="can200"></span>
-              <br />
-              Can
-              <br />
-              200ml
-            </div>
-            <div className="radio-button green iconBG07">
-              <span className="can250"></span>
-              <br />
-              Can
-              <br />
-              250ml
-            </div>
-            <div className="radio-button green iconBG08">
-              <span className="can238"></span>
-              <br />
-              Can
-              <br />
-              238ml
-            </div>
-            <div className="radio-button green iconBG08">
-              <span className="can340"></span>
-              <br />
-              Can
-              <br />
-              340ml
-            </div>
+            {containers.map((element) => (
+              <div
+                data-type={element.dataType}
+                onClick={() => pickContainer(element.value, element.dataType)}
+                key={element.value}
+                className={`radio-button green ${element.iconClass}  ${container === element.value ? "active" : ""}`}
+                dangerouslySetInnerHTML={{ __html: element.display }}></div>
+            ))}
           </div>
         </div>
 
         <div id="moreSection">
           <div className="section">
             <p className="f22 fw400 mt50">발주량</p>
-            <div className="radio-group mt20">
-              <div className="radio-button">200,000 이상 *MOQ</div>
-              <div className="radio-button">500,000 이상</div>
-              <div className="radio-button">1,000,000 이상</div>
+            <div className="radio-group mt20" id="moq">
+              {quantityTypes[quantityType]?.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`radio-button ${quantity === item ? "active" : ""}`}
+                  data-group="moq"
+                  data-type={quantityType}
+                  onClick={() => setQuantity(item)}>
+                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="section">
             <p className="f22 fw400 mt50">레시피</p>
             <div className="radio-group mt20">
-              <div className="radio-button green">있음</div>
-              <div className="radio-button green">없음</div>
+              <div className={`radio-button green ${recipe === true ? "active" : ""}`} onClick={() => setRecipe(true)}>
+                있음
+              </div>
+              <div
+                className={`radio-button green ${recipe === false ? "active" : ""}`}
+                onClick={() => setRecipe(false)}>
+                없음
+              </div>
             </div>
           </div>
 

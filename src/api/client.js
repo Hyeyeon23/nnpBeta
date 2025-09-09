@@ -4,7 +4,7 @@ import axiosInstance from "../utils/axios";
 export const postInquiry = async (body) => {
 
     try {
-        const response = await axiosInstance.post("/inquiry/client/post", body);
+        const response = await axiosInstance.post("/client/inquiry/post", body);
         return response.data;
     } catch (error) {
         console.log(error)
