@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
 import { useForm } from "react-hook-form";
-import { Color } from "three";
+
 import { postInquiry } from "../../api/client";
 
 const Contact = () => {

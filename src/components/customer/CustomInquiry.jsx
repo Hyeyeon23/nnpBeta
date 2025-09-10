@@ -1,10 +1,55 @@
 import React, { useState } from "react";
-
+import { set, useForm } from "react-hook-form";
+import { postBizConsulting } from "../../api/client";
 const CustomInquiry = () => {
-  const [type, setType] = useState(""); // 현재 선택된 값
-  const [container, setContainer] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [recipe, setRecipe] = useState("");
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    setValue,
+    reset,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setValue("type", type);
+    setValue("container", container);
+    setValue("quantity", quantity);
+    setValue("hasRecipe", hasRecipe);
+    console.log(type, container, quantity, hasRecipe);
+    console.log("제출시도");
+    console.log("data = ", data);
+    const resp = await postBizConsulting(data);
+
+    if (resp.msg == "Success") {
+      alert("문의가 접수되었습니다.");
+      reset(data);
+    }
+  };
+
+  const [isMore, setIsMore] = useState(false); // 더 보기 버튼 토글 기능
+
+  const [type, setType] = useState(""); // 상담 유형
+  const [container, setContainer] = useState(""); // 용기 유형
+  const [quantity, setQuantity] = useState(""); // 수량 밴드
+  const [hasRecipe, setHasRecipe] = useState(""); // 레시피 유무
+
+  const pickHiddenValue = (name, element) => {
+    switch (name) {
+      case "type":
+        setType(element);
+        break;
+      case "quantity":
+        setQuantity(element);
+        break;
+      case "hasRecipe":
+        setHasRecipe(element);
+        break;
+      default:
+    }
+    setValue(name, element);
+  };
+
+  // quantity 선택지 렌더링 위한 state
   const [quantityType, setQuantityType] = useState("a");
   const [quantityTypes, setQuantityTypes] = useState({
     a: [`200,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `1,000,000 이상`],
@@ -17,8 +62,9 @@ const CustomInquiry = () => {
     i: [`330,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
     j: [`240,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
   });
-
+  // 상담유형종류
   const types = ["OEM", "ODM", "수출 문의", "기타"];
+  // 용기 종류
   const containers = [
     { value: "SIG120", display: '<span class="sig120"></span><br>SIG <br>120ml', iconClass: "iconBG09", dataType: "a" },
     { value: "SIG150", display: '<span class="sig150"></span><br>SIG <br>150ml', iconClass: "iconBG10", dataType: "a" },
@@ -55,8 +101,10 @@ const CustomInquiry = () => {
   ];
   const quantities = [];
 
+  /* 컨테이너 선택 시  */
   const pickContainer = (container, quantityType) => {
     console.log(container, quantityType);
+    setValue("container", container);
     setContainer(container);
     setQuantityType(quantityType);
   };
@@ -86,20 +134,27 @@ const CustomInquiry = () => {
       <section className="contant1100 pb100 csBox mb100 mt100">
         <div className="section">
           <p className="f22 fw400">상담 유형</p>
+          <input {...register("type", { required: true })} type="hidden" />
           <div className="radio-group mt20">
             {types.map((element) => (
               <div
                 key={element}
                 className={`radio-button oembutton ${type === element ? "active" : ""}`}
-                onClick={() => setType(element)}>
+                onClick={() => pickHiddenValue("type", element)}>
                 {element}
               </div>
             ))}
           </div>
+          {errors.type && (
+            <p role="alert" className="ms-3 text-info text-sm">
+              필수 항목입니다. 선택해주세요.
+            </p>
+          )}
         </div>
 
         <div className="section">
           <p className="f22 fw400 mt50">용기 유형</p>
+          <input {...register("container", { required: true })} type="hidden" />
           <div className="radio-group mt20">
             {containers.map((element) => (
               <div
@@ -110,11 +165,17 @@ const CustomInquiry = () => {
                 dangerouslySetInnerHTML={{ __html: element.display }}></div>
             ))}
           </div>
+          {errors.container && (
+            <p role="alert" className="ms-3 text-info text-sm">
+              필수 항목입니다. 선택해주세요.
+            </p>
+          )}
         </div>
 
-        <div id="moreSection">
+        <div id="moreSection" className={`${isMore === false ? "hidden" : ""}`}>
           <div className="section">
             <p className="f22 fw400 mt50">발주량</p>
+            <input {...register("quantity", { required: true })} type="hidden" />
             <div className="radio-group mt20" id="moq">
               {quantityTypes[quantityType]?.map((item, idx) => (
                 <div
@@ -122,30 +183,57 @@ const CustomInquiry = () => {
                   className={`radio-button ${quantity === item ? "active" : ""}`}
                   data-group="moq"
                   data-type={quantityType}
-                  onClick={() => setQuantity(item)}>
+                  onClick={() => pickHiddenValue("quantity", item)}>
                   <span dangerouslySetInnerHTML={{ __html: item }} />
                 </div>
               ))}
             </div>
+            {errors.quantity && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                필수 항목입니다. 선택해주세요.
+              </p>
+            )}
           </div>
 
           <div className="section">
             <p className="f22 fw400 mt50">레시피</p>
+            <input {...register("hasRecipe", { required: true })} type="hidden" />
             <div className="radio-group mt20">
-              <div className={`radio-button green ${recipe === true ? "active" : ""}`} onClick={() => setRecipe(true)}>
+              <div
+                className={`radio-button green ${hasRecipe === "true" ? "active" : ""}`}
+                onClick={() => pickHiddenValue("hasRecipe", "true")}>
                 있음
               </div>
               <div
-                className={`radio-button green ${recipe === false ? "active" : ""}`}
-                onClick={() => setRecipe(false)}>
+                className={`radio-button green ${hasRecipe === "false" ? "active" : ""}`}
+                onClick={() => pickHiddenValue("hasRecipe", "false")}>
                 없음
               </div>
             </div>
+            {errors.hasRecipe && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                레시피 유무를 선택해주세요.
+              </p>
+            )}
           </div>
 
           <div className="section">
             <p className="f22 fw400 mt50">상담 내용</p>
-            <textarea className="mt20 order_textarea" placeholder="문의사항에 대한 내용을 작성해 주세요." />
+            <textarea
+              className="mt20 order_textarea"
+              placeholder="문의사항에 대한 내용을 작성해 주세요."
+              {...register("content", {
+                required: { value: true, message: "문의사항에 대한 내용을 작성해주세요." },
+                minLength: { value: 10, message: "내용은 10자 이상 입력해주세요" },
+                maxLength: { value: 300, message: "내용은 300자 이하로 입력해주세요." },
+              })}
+              aria-invalid={errors.content ? "true" : "false"}
+            />
+            {errors.content && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                {errors.content.message}
+              </p>
+            )}
           </div>
 
           <div className="section">
@@ -155,7 +243,17 @@ const CustomInquiry = () => {
               type="text"
               style={{ width: "100%", padding: "8px" }}
               placeholder="ex. (주)자연과사람들 영업부"
+              {...register("comp", {
+                required: "  업체명은 필수 입력 항목입니다.",
+                maxLength: { value: 20, message: "업체명은 20자 이하로 입력해주세요." },
+              })}
+              aria-invalid={errors.comp ? "true" : "false"}
             />
+            {errors.comp && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                {errors.comp.message}
+              </p>
+            )}
           </div>
 
           <div className="section">
@@ -165,7 +263,14 @@ const CustomInquiry = () => {
               type="text"
               style={{ width: "100%", padding: "8px" }}
               placeholder="ex. 02-123-4567"
+              {...register("phone", { required: "연락처를 필수 입력 항목입니다. ", pattern: "" })}
+              aria-invalid={errors.phone ? "true" : "false"}
             />
+            {errors.phone && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                {errors.phone.message}
+              </p>
+            )}
           </div>
 
           <div className="section">
@@ -175,18 +280,31 @@ const CustomInquiry = () => {
               type="email"
               style={{ width: "100%", padding: "8px" }}
               placeholder="ex. support@innp.co.kr"
+              {...register("email", {
+                required: "이메일 주소를 입력해주세요",
+                pattern: {
+                  value: "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/",
+                  message: "이메일 형식을 체크해주세요.",
+                },
+              })}
+              aria-invalid={errors.mail ? "true" : "false"}
             />
+            {errors.email && (
+              <p role="alert" className="ms-3 text-info text-sm">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
-          <center>
-            <button type="button" className="nnp-btn rr-btn mt50">
+          <center className={`${isMore === false ? "hidden" : ""}`}>
+            <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
               <span>
                 <i className="fa-regular fa-arrow-right"></i>
               </span>
               닫기
             </button>{" "}
             &nbsp;&nbsp;
-            <button type="submit" className="nnp-btn rr-btn mt50">
+            <button type="submit" className="nnp-btn rr-btn mt50" onClick={handleSubmit(onSubmit)}>
               <span>
                 <i className="fa-regular fa-arrow-right"></i>
               </span>
@@ -195,8 +313,8 @@ const CustomInquiry = () => {
           </center>
         </div>
 
-        <center>
-          <button type="button" className="nnp-btn rr-btn mt50">
+        <center className={`${isMore === true ? "hidden" : ""}`}>
+          <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
             <span>
               <i className="fa-regular fa-arrow-right"></i>
             </span>

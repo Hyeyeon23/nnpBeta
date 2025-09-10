@@ -11,3 +11,13 @@ export const postInquiry = async (body) => {
     }
 }
 
+export const postBizConsulting = async (body) => {
+    try {
+        const response = await axiosInstance.post("/client/consulting/post", body);
+        return response.data;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
