@@ -127,7 +127,7 @@ const SampleDev = () => {
     if (file) {
       if (file.size > 5 * 1024 * 1024) {
         alert("파일 크기가 5MB를 초과합니다.");
-        return; // 함수 중단
+        return;
       }
 
       const urlLocal = URL.createObjectURL(file); // 파일을 URL로 변환(로컬)
