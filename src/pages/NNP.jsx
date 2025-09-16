@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { useEffect } from "react";
+
 import Header from "../components/common/Header";
 import Footer from "../components/common/footer";
 import CustomInquiry from "../components/customer/CustomInquiry";
 const NNP = () => {
-  const [rotate, setRotate] = useState(false);
-
   useEffect(() => {
-    // 마운트 시 회전 시작
-    setRotate(true);
-  }, []);
+    /**
+     * 동영상 로드후 재생 보장
+     */
+    const timer = setTimeout(() => {
+      const video = document.querySelector(".title-video");
+      if (video) {
+        video.muted = true; // 정책 충족
+        video.play().catch((err) => console.error("Autoplay error:", err));
+      }
+    }, 500); // DOM 다 그려지고 ScrollTrigger 적용된 후
 
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <Header></Header>
@@ -35,7 +42,7 @@ const NNP = () => {
                         <span className="arrow">
                           <img
                             id="rotating-arrow"
-                            className={rotate ? "rotate" : ""}
+                            className="rotate"
                             src="common/imgs/shapes/main_onstop.png"
                             alt="arrow"
                           />

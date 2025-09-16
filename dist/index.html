@@ -2,12 +2,35 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/nnpBeta/innplogo.png" />
+    <link rel="icon" type="image/svg+xml" href="/innplogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.6/kakao.min.js"
+      integrity="sha384-WAtVcQYcmTO/N+C1N+1m6Gp8qxh+3NlnP7X1U7qP6P5dQY/MsRBNTh+e1ahJrkEm"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+      charset="utf-8"
+    ></script>
+    <!--실제 퍼블리싱 css -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="common/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="common/css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="common/css/vendor/odometer.min.css" />
+    <!-- 숫자카운팅 -->
+    <link rel="stylesheet" href="common/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="common/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="common/css/vendor/fontawesome-pro.css" />
+    <link rel="stylesheet" href="common/css/vendor/spacing.css" />
+    <link rel="stylesheet" href="common/css/main.css" />
+    <link href="common/css/style.css" rel="stylesheet" />
+    <link href="common/css/reset.css" rel="stylesheet" />
+
     <title>자연과 사람들 개발</title>
-    <script type="module" crossorigin src="/nnpBeta/assets/index-QihIobVG.js"></script>
-    <link rel="stylesheet" crossorigin href="/nnpBeta/assets/index-TS9j04Qx.css">
+    <script type="module" crossorigin src="/assets/index-lMHVCwTH.js"></script>
   </head>
   <style>
     /* 부모 div가 100% 크기로 늘어나도록 설정 */
@@ -28,30 +51,67 @@
   <body>
     <div id="root"></div>
 
-    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+    <!-- Quick-->
+    <div id="scroll-percentage">
+      <a href="https://hyeyeon23.github.io/nnpBeta/dev"
+        ><img src="./common/imgs/common/quick01.png" alt="3d바로가기"
+      /></a>
+      <a href="./3d.html"><img src="./common/imgs/common/quick02.png" alt="고객센터" /></a>
+      <span id="scroll-percentage-value" class="mt10"></span>
+    </div>
     <!-- JS here -->
-
-    <script src="/nnpBeta/static/js/vendor/chroma.min.js"></script>
-    <script src="/nnpBeta/static/js/plugins/waypoints.min.js"></script>
-    <script src="/nnpBeta/static/js/plugins/meanmenu.min.js"></script>
-    <script src="/nnpBeta/static/js/plugins/swiper.min.js"></script>
-    <script src="/nnpBeta/static/js/plugins/gsap.js"></script>
-    <script src="/nnpBeta/static/js/plugins/ScrollToPlugin.js"></script>
-    <script src="/nnpBeta/static/js/plugins/ScrollTrigger.js"></script>
-    <script src="/nnpBeta/static/js/plugins/ScrollSmoother.js"></script>
-    <script src="/nnpBeta/static/js/plugins/SplitText.js"></script>
-    <script src="/nnpBeta/static/js/plugins/wow.js"></script>
-    <script src="/nnpBeta/static/js/vendor/magnific-popup.min.js"></script>
-    <script src="/nnpBeta/static/js/vendor/type.js"></script>
-    <script src="/nnpBeta/static/js/vendor/vanilla-tilt.js"></script>
-    <script src="/nnpBeta/static/js/plugins/nice-select.min.js"></script>
-    <script src="/nnpBeta/static/js/vendor/odometer.min.js"></script>
-    <script src="/nnpBeta/static/js/vendor/jarallax.min.js"></script>
-    <script src="/nnpBeta/static/js/vendor/jquery-ui.min.js"></script>
-    <!--  -->
-    <script src="/nnpBeta/static/js/plugins/parallax-scroll.js"></script>
-    <script src="/nnpBeta/static/js/plugins/jquery.countdown.min.js"></script>
-    <script src="/nnpBeta/static/js/plugins/isotope-docs.min.js"></script>
-    <script src="/nnpBeta/static/js/main.js"></script>
+    <!-- 샘플 제작 당시에 넣었던 js 목록 -->
+    <!-- <script src="/static/js/vendor/chroma.min.js"></script>
+    <script src="/static/js/plugins/waypoints.min.js"></script>
+    <script src="/static/js/plugins/meanmenu.min.js"></script>
+    <script src="/static/js/plugins/swiper.min.js"></script>
+    <script src="/static/js/plugins/gsap.js"></script>
+    <script src="/static/js/plugins/ScrollToPlugin.js"></script>
+    <script src="/static/js/plugins/ScrollTrigger.js"></script>
+    <script src="/static/js/plugins/ScrollSmoother.js"></script>
+    <script src="/static/js/plugins/SplitText.js"></script>
+    <script src="/static/js/plugins/wow.js"></script>
+    <script src="/static/js/vendor/magnific-popup.min.js"></script>
+    <script src="/static/js/vendor/type.js"></script>
+    <script src="/static/js/vendor/vanilla-tilt.js"></script>
+    <script src="/static/js/plugins/nice-select.min.js"></script>
+    <script src="/static/js/vendor/odometer.min.js"></script>
+    <script src="/static/js/vendor/jarallax.min.js"></script>
+    <script src="/static/js/vendor/jquery-ui.min.js"></script>
+    
+    <script src="/static/js/plugins/parallax-scroll.js"></script>
+    <script src="/static/js/plugins/jquery.countdown.min.js"></script>
+    <script src="/static/js/plugins/isotope-docs.min.js"></script>
+    <script src="/static/js/main.js"></script> -->
+    <!-- 실제 퍼블리싱에 포함된 목록 
+        main.js 이상함  
+    -->
+    <script src="common/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="common/js/vendor/chroma.min.js"></script>
+    <script src="common/js/plugins/waypoints.min.js"></script>
+    <!-- 스크롤 반응 애니메이션 : mian.js연동되어 있는 부분 주석처리 -->
+    <script src="common/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="common/js/plugins/meanmenu.min.js"></script>
+    <script src="common/js/plugins/swiper.min.js"></script>
+    <script src="common/js/plugins/gsap.js"></script>
+    <script src="common/js/plugins/ScrollSmoother.js"></script>
+    <script src="common/js/plugins/ScrollToPlugin.js"></script>
+    <script src="common/js/plugins/ScrollTrigger.js"></script>
+    <script src="common/js/plugins/SplitText.js"></script>
+    <script src="common/js/plugins/wow.js"></script>
+    <script src="common/js/vendor/magnific-popup.min.js"></script>
+    <script src="common/js/vendor/type.js"></script>
+    <script src="common/js/vendor/vanilla-tilt.js"></script>
+    <script src="common/js/plugins/nice-select.min.js"></script>
+    <script src="common/js/vendor/odometer.min.js"></script>
+    <!-- 숫자카운트 -->
+    <script src="common/js/vendor/jarallax.min.js"></script>
+    <script src="common/js/vendor/jquery-ui.min.js"></script>
+    <!--<script src="common/js/vendor/jquery.counterup.min.js"></script>-->
+    <script src="common/js/plugins/parallax-scroll.js"></script>
+    <script src="common/js/plugins/jquery.countdown.min.js"></script>
+    <script src="common/js/plugins/isotope-docs.min.js"></script>
+    <!-- <script src="common/js/vendor/ajax-form.js"></script> -->
+    <!-- <script src="common/js/main.js"></script> -->
   </body>
 </html>

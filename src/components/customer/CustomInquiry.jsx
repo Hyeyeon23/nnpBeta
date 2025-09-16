@@ -2,36 +2,40 @@ import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { postBizConsulting } from "../../api/client";
 const CustomInquiry = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    setValue,
-    reset,
-  } = useForm();
-
-  const onSubmit = async (data) => {
-    setValue("type", type);
-    setValue("container", container);
-    setValue("quantity", quantity);
-    setValue("hasRecipe", hasRecipe);
-    console.log(type, container, quantity, hasRecipe);
-    console.log("제출시도");
-    console.log("data = ", data);
-    const resp = await postBizConsulting(data);
-
-    if (resp.msg == "Success") {
-      alert("문의가 접수되었습니다.");
-      reset(data);
-    }
-  };
-
   const [isMore, setIsMore] = useState(false); // 더 보기 버튼 토글 기능
 
   const [type, setType] = useState(""); // 상담 유형
   const [container, setContainer] = useState(""); // 용기 유형
   const [quantity, setQuantity] = useState(""); // 수량 밴드
   const [hasRecipe, setHasRecipe] = useState(""); // 레시피 유무
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    setValue,
+    reset,
+  } = useForm({
+    defaultValues: { content: "", comp: "", phone: "", email: "" },
+  });
+
+  const onSubmit = async (data) => {
+    setValue("type", type);
+    setValue("container", container);
+    setValue("quantity", quantity);
+    setValue("hasRecipe", hasRecipe);
+
+    console.log("<onSubmit> data = ", data);
+    const resp = await postBizConsulting(data);
+
+    if (resp.msg == "Success") {
+      alert("문의가 접수되었습니다.");
+      reset();
+      setType("");
+      setContainer("");
+      setQuantity("");
+      setHasRecipe("");
+    }
+  };
 
   const pickHiddenValue = (name, element) => {
     switch (name) {
@@ -63,7 +67,24 @@ const CustomInquiry = () => {
     j: [`240,000 이상 <span class="f14">*MOQ</span>`, `500,000 이상`, `700,000 이상`, `1,000,000 이상`],
   });
   // 상담유형종류
-  const types = ["OEM", "ODM", "수출 문의", "기타"];
+  const types = [
+    {
+      name: "OEM",
+      value: "OEM",
+    },
+    {
+      name: "ODM",
+      value: "ODM",
+    },
+    {
+      name: "수출 문의",
+      value: "EXPORT",
+    },
+    {
+      name: "기타",
+      value: "ETC",
+    },
+  ];
   // 용기 종류
   const containers = [
     { value: "SIG120", display: '<span class="sig120"></span><br>SIG <br>120ml', iconClass: "iconBG09", dataType: "a" },
@@ -138,10 +159,10 @@ const CustomInquiry = () => {
           <div className="radio-group mt20">
             {types.map((element) => (
               <div
-                key={element}
-                className={`radio-button oembutton ${type === element ? "active" : ""}`}
-                onClick={() => pickHiddenValue("type", element)}>
-                {element}
+                key={element.value}
+                className={`radio-button oembutton ${type === element.value ? "active" : ""}`}
+                onClick={() => pickHiddenValue("type", element.value)}>
+                {element.name}
               </div>
             ))}
           </div>
@@ -222,6 +243,7 @@ const CustomInquiry = () => {
             <textarea
               className="mt20 order_textarea"
               placeholder="문의사항에 대한 내용을 작성해 주세요."
+              defaultValue=""
               {...register("content", {
                 required: { value: true, message: "문의사항에 대한 내용을 작성해주세요." },
                 minLength: { value: 10, message: "내용은 10자 이상 입력해주세요" },
