@@ -51,9 +51,11 @@ const root = createBrowserRouter(
     {
       path: "/onlyosse",
       element: (
-        <Suspense fallback={Loading}>
-          <Sample></Sample>
-        </Suspense>
+        <Layout>
+          <Suspense fallback={Loading}>
+            <Sample></Sample>
+          </Suspense>
+        </Layout>
       ),
     },
     {
@@ -73,13 +75,11 @@ const root = createBrowserRouter(
       ),
     },
     {
-      path: "/sample",
+      path: "*",
       element: (
-        <Layout>
-          <Suspense fallback={Loading}>
-            <Waiting></Waiting>
-          </Suspense>
-        </Layout>
+        <Suspense fallback={Loading}>
+          <Waiting></Waiting>
+        </Suspense>
       ),
     },
   ],
