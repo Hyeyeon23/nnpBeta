@@ -134,13 +134,19 @@ const Header = () => {
                           <a href="">관련사</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="">정식품</a>
+                              <a href="#!" onClick={() => linkTo("/company/chung")}>
+                                정식품
+                              </a>
                             </li>
                             <li>
-                              <a href="">오쎄</a>
+                              <a href="#!" onClick={() => linkTo("/company/osse")}>
+                                오쎄
+                              </a>
                             </li>
                             <li>
-                              <a href="">(재단)혜춘장학회</a>
+                              <a href="#!" onClick={() => linkTo("/company/hyechun")}>
+                                (재단)혜춘장학회
+                              </a>
                             </li>
                           </ul>
                         </li>

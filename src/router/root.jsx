@@ -18,6 +18,10 @@ import AboutLayout from "../components/layout/AboutLayout";
 import Chung from "../pages/company/Chung";
 import Osse from "../pages/company/Osse";
 import Hyechun from "../pages/company/Hyechun";
+import CertificationLayout from "../components/layout/CertificationLayout";
+import Fssc from "../pages/certification/Fssc";
+import Haccp from "../pages/certification/Haccp";
+import Document from "../pages/certification/Document";
 
 const Loading = <div>Loading..</div>;
 //const Sample = lazy(() => import("../pages/sample/sample")); // lazy는 해당 모듈이 필요할때만 동적으로 로드하는 기능, Main 컴포넌트를 초기 번들에 포함하지 않고, 사용자가 해당 페이지에 접근할 때 비동기적으로 로드됨, 초기 로딩 속도를 줄이고 성능 최적화 효과가 있음
@@ -100,6 +104,15 @@ const root = createBrowserRouter(
         { path: "chung", Component: Chung },
         { path: "osse", Component: Osse },
         { path: "hyechun", Component: Hyechun },
+      ],
+    },
+    {
+      path: "certification",
+      Component: CertificationLayout,
+      children: [
+        { path: "fssc", Component: Fssc },
+        { path: "haccp", Component: Haccp },
+        { path: "document", Component: Document },
       ],
     },
     {
