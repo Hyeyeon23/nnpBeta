@@ -373,7 +373,7 @@ ul {
 p {
   font-size: var(--rr-fs-p);
   font-weight: var(--rr-fw-normal);
-  color: var(--rr-text-body);
+  /* color: var(--rr-text-body); */
   line-height: var(--rr-lh-p);
   margin-bottom: 0;
 }
@@ -408,9 +408,11 @@ button {
 }
 
 img {
+	/*
   width: 100%;
   height: auto;
   object-fit: cover;
+  */
 }
 
 button:hover {
@@ -1362,7 +1364,7 @@ section {
   padding: 5px 33px 5px 5px;
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 16px; 
 }
 .title-btn span {
   background: var(--rr-text-primary);
@@ -9843,6 +9845,8 @@ body .ui-tooltip {
     text-align: center;
   }
 }
+
+
 .about-section__thumb img {
   width: inherit;
   border-radius: 10px;
@@ -9866,16 +9870,17 @@ body .ui-tooltip {
 }
 .about-section__right__content {
   max-width: 294px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 34px rgba(69, 48, 48, 0.14);
+ 
+  
   border-radius: 10px;
-  padding: 40px;
-  padding-bottom: 35px;
+  padding: 0px;
+  padding-bottom: 0;
   position: absolute;
   right: 0;
   top: -84px;
   z-index: 1;
 }
+.about-section__right__content img {border-radius:10px; box-shadow: 0px 4px 34px rgba(69, 48, 48, 0.14);}
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .about-section__right__content {
     padding: 30px;
@@ -10007,22 +10012,22 @@ body .ui-tooltip {
     height: auto;
   }
 }
-.portfolio-section__item.item-1 {
-  grid-column: 1/3;
+.portfolio-section__item.item-1 { 
+  grid-column: 1/4;
 }
 .portfolio-section__item.item-2 {
-  grid-column: 3/10;
+  grid-column: 4/10;
   grid-row: 1/3;
 }
 .portfolio-section__item.item-3 {
   grid-column: 10/12;
 }
 .portfolio-section__item.item-4 {
-  grid-column: 1/3;
+  grid-column: 1/4;
   grid-row: 2;
 }
 .portfolio-section__item.item-4 .portfolio-section__content {
-  background: #453030;
+ 
 }
 .portfolio-section__item.item-4 .portfolio-section__content h4 {
   color: var(--rr-common-white);
@@ -10044,7 +10049,7 @@ body .ui-tooltip {
   object-fit: cover;
 }
 .portfolio-section__content {
-  background: #EEE7DF;
+  background: #fff;
   padding: 30px 40px;
   padding-top: 40px;
 }
@@ -10289,7 +10294,7 @@ body .ui-tooltip {
   font-size: 70px;
   font-weight: 500;
   line-height: 1;
-  text-transform: uppercase;
+ 
   color: #B1A18F;
   position: relative;
   text-align: start;
@@ -11922,7 +11927,7 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   margin-bottom: 0;
 }
 .team-section__item {
-  background: #ECECEC;
+  background-color:rgba(0, 0, 0, 0.1);
   padding: 65px 40px;
   padding-bottom: 42px;
   position: relative;
@@ -12143,6 +12148,8 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
   transition: 0.3s all ease-in-out;
+  width:350px; 
+ 
 }
 @media (max-width: 575px) {
   .award-section__title {
@@ -12189,6 +12196,8 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   line-height: 1;
   color: rgba(69, 48, 48, 0.7);
   text-transform: uppercase;
+  line-height:170%;
+  width:100%
 }
 @media (max-width: 575px) {
   .award-section__subtitle {
@@ -12244,9 +12253,16 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
 .award-section__item:hover .award-section__link span i {
   transform: rotate(0);
 }
-.award-section__item.item-2 .award-section__title-box {
-  column-gap: 184px;
-}
+
+.award-section__item .award-section__title-box {column-gap: 100px;}
+.award-section__item.item-1 .award-section__title-box {column-gap: 100px;}
+.award-section__item.item-2 .award-section__title-box {column-gap: 100px;}
+
+
+
+
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .award-section__item.item-2 .award-section__title-box {
     column-gap: 74px;
@@ -12258,7 +12274,7 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   }
 }
 .award-section__item.item-3 .award-section__title-box {
-  column-gap: 308px;
+  column-gap: 100px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .award-section__item.item-3 .award-section__title-box {
@@ -12271,7 +12287,7 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   }
 }
 .award-section__item.item-4 .award-section__title-box {
-  column-gap: 278px;
+  column-gap: auto;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .award-section__item.item-4 .award-section__title-box {
@@ -12285,6 +12301,7 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
 }
 
 .award-section__item .rr-hover-reveal-bg {
+
   position: absolute;
   top: 0;
   left: 0;
@@ -12303,6 +12320,8 @@ background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 
   -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    border-radius:20px;
+  overflow:hidden;
 }
 .award-section__item:hover .rr-hover-reveal-bg {
   opacity: 1;

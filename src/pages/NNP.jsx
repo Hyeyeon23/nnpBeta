@@ -166,6 +166,194 @@ const NNP = () => {
                 </div>
               </div>
             </section>
+
+            <section className="pb100 mb100 bg_graph services-section__area services-section section-space">
+              <div className="section contant1100">
+                <p className="f64 fw600 grayn1 lh120">
+                  아이디어를 <br />
+                  3D로 만나보세요
+                </p>
+                <p className="gray02 f45 fw500 mt50">Pack3D</p>
+
+                <div className="row align-items-center flex-lg-row mt50 idea">
+                  <div className="col-md-5">
+                    <div className="services__content__wrapper">
+                      <div className="tab-content" id="v-pills-tabContent">
+                        <div
+                          className="tab-pane fade show active"
+                          id="v-pills-home"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-home-tab"
+                          tabIndex={0}>
+                          <img src="common/imgs/main/idea01.png" alt="도면 다운로드" />
+                        </div>
+                        <div
+                          className="tab-pane fade"
+                          id="v-pills-profile"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-profile-tab"
+                          tabIndex={0}>
+                          <img src="common/imgs/main/idea02.png" alt="도면 다운로드" />
+                        </div>
+                        <div
+                          className="tab-pane fade"
+                          id="v-pills-messages"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-messages-tab"
+                          tabIndex={0}>
+                          <img src="common/imgs/main/idea03.png" alt="도면 다운로드" />
+                        </div>
+                        <div
+                          className="tab-pane fade"
+                          id="v-pills-settings"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-settings-tab"
+                          tabIndex={0}>
+                          <img src="common/imgs/main/idea04.png" alt="도면 다운로드" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-md-7">
+                    <div className="services__tab__wrapper">
+                      <div className="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div
+                          className="nav-link active"
+                          id="v-pills-home-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#v-pills-home"
+                          role="tab"
+                          aria-controls="v-pills-home"
+                          aria-selected="true">
+                          <div className="services__tab__title f27 fw500 grayn1">
+                            <b>01 도면 다운로드</b>
+                            <br />
+                            <p className="f20 fw400 grayn1 mt20">
+                              용기에 맞는 도면 파일을 <br className="mView" />
+                              다운로드해 주세요.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          className="nav-link"
+                          id="v-pills-profile-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#v-pills-profile"
+                          role="tab"
+                          aria-controls="v-pills-profile"
+                          aria-selected="false">
+                          <div className="services__tab__title f27 fw500 grayn1">
+                            <b>02 패키지 디자인하기</b>
+                            <br />
+                            <p className="f20 fw400 grayn1 mt20">
+                              나만의 아이디어가 담긴 <br className="mView" />
+                              패키지 디자인을 완성해 주세요.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          className="nav-link"
+                          id="v-pills-messages-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#v-pills-messages"
+                          role="tab"
+                          aria-controls="v-pills-messages"
+                          aria-selected="false">
+                          <div className="services__tab__title f27 fw500 grayn1">
+                            <b>03 3D에 적용해보기</b>
+                            <br />
+                            <p className="f20 fw400 grayn1 mt20">
+                              완성한 디자인을 3D 패키지에 <br className="mView" />
+                              입혀보며 실감나게 확인해보세요.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          className="nav-link"
+                          id="v-pills-settings-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#v-pills-settings"
+                          role="tab"
+                          aria-controls="v-pills-settings"
+                          aria-selected="false">
+                          <div className="services__tab__title f27 fw500 grayn1">
+                            <b>04 문의하기</b>
+                            <br />
+                            <p className="f20 fw400 grayn1 mt20">
+                              3D 패키지를 기반으로 <br className="mView" />
+                              맞춤 상담을 진행합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt50 idea_thumb">
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb01.jpg" alt="" />
+                  </div>
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb02.jpg" alt="" />
+                  </div>
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb03.jpg" alt="" />
+                  </div>
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb04.jpg" alt="" />
+                  </div>
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb05.jpg" alt="" />
+                  </div>
+                  <div className="col-md-4">
+                    <img src="common/imgs/main/idea_thumb06.jpg" alt="" />
+                  </div>
+
+                  <div className="col-md-12 center">
+                    <div className="project-section__content mt50">
+                      <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
+                        <a
+                          href="#"
+                          className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
+                          <span className="tp-btn-circle-text-2 text-left">
+                            3D{" "}
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M4.24268 13.3843L13.0108 4.61615"
+                                stroke="white"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M4.52539 4.61621H13.0107V13.1015"
+                                stroke="white"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            <br /> 시작하기
+                          </span>
+                          <i className="tp-btn-circle-dot"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* 맞춤상담 컴포넌트 */}
             <CustomInquiry></CustomInquiry>
 

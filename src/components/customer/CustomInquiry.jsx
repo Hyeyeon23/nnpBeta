@@ -136,7 +136,7 @@ const CustomInquiry = () => {
           <div className="col-lg-8">
             <p className="f70 fw600 grayn1 lh120">맞춤 상담</p>
             <p className="f70 fw600 grayn1 lh120 main_cs">
-              <img className="" src="common/imgs/common/main_cs.png" style={{ paddingBottom: "30px" }} /> 요청해보세요
+              <img src="common/imgs/common/main_cs.png" style={{ paddingBottom: "30px" }} /> 요청해보세요
             </p>
             <p className="f80 fw900 grayn1 italic f_pp lh100">Custom product.</p>
           </div>
@@ -179,6 +179,7 @@ const CustomInquiry = () => {
           <div className="radio-group mt20">
             {containers.map((element) => (
               <div
+                data-group="containerType"
                 data-type={element.dataType}
                 onClick={() => pickContainer(element.value, element.dataType)}
                 key={element.value}
@@ -219,13 +220,15 @@ const CustomInquiry = () => {
           <div className="section">
             <p className="f22 fw400 mt50">레시피</p>
             <input {...register("hasRecipe", { required: true })} type="hidden" />
-            <div className="radio-group mt20">
+            <div className="radio-group mt20" id="recipe">
               <div
+                data-group="recipe"
                 className={`radio-button green ${hasRecipe === "true" ? "active" : ""}`}
                 onClick={() => pickHiddenValue("hasRecipe", "true")}>
                 있음
               </div>
               <div
+                data-group="recipe"
                 className={`radio-button green ${hasRecipe === "false" ? "active" : ""}`}
                 onClick={() => pickHiddenValue("hasRecipe", "false")}>
                 없음
