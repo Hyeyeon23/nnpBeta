@@ -600,12 +600,14 @@
         linksCursor = $("a, .swiper-nav, button, .cursor-effect"),
         crossCursor = $(".cross-cursor");
 
-    $(window).on("mousemove", function (e) {
-        cursor.css({
-            transform: "translate(" + (e.clientX - 15) + "px," + (e.clientY - 15) + "px)",
-            visibility: "inherit",
-        });
-    });
+    // 스크롤 이상현상 아래  주석 처리하니꺄ㅏ 사라짐 
+
+    // $(window).on("mousemove", function (e) {
+    //     cursor.css({
+    //         transform: "translate(" + (e.clientX - 15) + "px," + (e.clientY - 15) + "px)",
+    //         visibility: "inherit",
+    //     });
+    // });
 
     // Page Scroll Percentage
     function scrollTopPercentage() {

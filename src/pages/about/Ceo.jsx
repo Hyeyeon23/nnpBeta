@@ -27,7 +27,7 @@ const Ceo = () => {
               <p className="f52 fw600 grayn1 lh160">
                 자연과 사람을
                 <br />
-                <img style={{ verticalAlign: "bottom" }} src="../common/imgs/company/people.png" alt="" /> 소중히 여긴다
+                <img style={{ verticalAlign: "bottom" }} src="/common/imgs/company/people.png" alt="" /> 소중히 여긴다
                 <br />
               </p>
               <p className="f52 fw600 grayn2 f_pp italic lh160">Nature & People</p>
@@ -47,12 +47,12 @@ const Ceo = () => {
         <div className="portfolio-section__wrapper contant1520">
           <div className="portfolio-section__item item-1">
             <div className="portfolio-section__thumb">
-              <img src="../common/imgs/company/ceo01.jpg" alt="image not found" />
+              <img src="/common/imgs/company/ceo01.jpg" alt="image not found" />
             </div>
           </div>
           <div className="portfolio-section__item item-2">
             <div className="portfolio-section__thumb">
-              <img src="../common/imgs/company/ceo02.jpg" alt="image not found" />
+              <img src="/common/imgs/company/ceo02.jpg" alt="image not found" />
             </div>
           </div>
           <div className="portfolio-section__item item-3">
@@ -91,7 +91,7 @@ const Ceo = () => {
           </div>
           <div className="portfolio-section__item item-5">
             <div className="portfolio-section__thumb">
-              <img src="../common/imgs/company/ceo03.jpg" alt="image not found" />
+              <img src="/common/imgs/company/ceo03.jpg" alt="image not found" />
             </div>
           </div>
         </div>
