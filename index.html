@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/innplogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--오시는 길 지도 렌더링 -->
+    <script
+      charset="UTF-8"
+      class="daum_roughmap_loader_script"
+      src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"
+    ></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
     <script
       src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.6/kakao.min.js"
@@ -20,6 +26,7 @@
     <link rel="stylesheet" href="common/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="common/css/vendor/animate.min.css" />
     <link rel="stylesheet" href="common/css/vendor/odometer.min.css" />
+    <link rel="stylesheet" href="odometer-theme-default.css" />
     <!-- 숫자카운팅 -->
     <link rel="stylesheet" href="common/css/plugins/swiper.min.css" />
     <link rel="stylesheet" href="common/css/vendor/magnific-popup.css" />
@@ -81,33 +88,35 @@
     <!-- 실제 퍼블리싱에 포함된 목록 
         main.js 이상함  
     -->
-    <script src="common/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="common/js/vendor/chroma.min.js"></script>
-    <script src="common/js/plugins/waypoints.min.js"></script>
+
+    <!-- <script src="common/js/vendor/jquery-3.7.1.min.js"></script> -->
+    <!-- <script src="common/js/vendor/chroma.min.js"></script> -->
+
     <!-- 스크롤 반응 애니메이션 : mian.js연동되어 있는 부분 주석처리 -->
-    <script src="common/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="common/js/plugins/meanmenu.min.js"></script>
-    <script src="common/js/plugins/swiper.min.js"></script>
-    <script src="common/js/plugins/gsap.js"></script>
-    <script src="common/js/plugins/ScrollSmoother.js"></script>
-    <script src="common/js/plugins/ScrollToPlugin.js"></script>
-    <script src="common/js/plugins/ScrollTrigger.js"></script>
-    <script src="common/js/plugins/SplitText.js"></script>
-    <script src="common/js/plugins/wow.js"></script>
-    <script src="common/js/vendor/magnific-popup.min.js"></script>
-    <script src="common/js/vendor/type.js"></script>
-    <script src="common/js/vendor/vanilla-tilt.js"></script>
-    <script src="common/js/plugins/nice-select.min.js"></script>
-    <script src="common/js/vendor/odometer.min.js"></script>
-    <!-- 숫자카운트 -->
-    <script src="common/js/vendor/jarallax.min.js"></script>
-    <script src="common/js/vendor/jquery-ui.min.js"></script>
+    <!-- <script src="common/js/vendor/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="common/js/plugins/meanmenu.min.js"></script> -->
+    <!-- <script src="common/js/plugins/swiper.min.js"></script> -->
+    <!-- <script src="common/js/plugins/gsap.js"></script> -->
+    <!-- <script src="common/js/plugins/ScrollSmoother.js"></script> -->
+    <!-- <script src="common/js/plugins/ScrollToPlugin.js"></script> -->
+    <!-- <script src="common/js/plugins/ScrollTrigger.js"></script> -->
+    <!-- <script src="common/js/plugins/SplitText.js"></script> -->
+    <!-- <script src="common/js/plugins/wow.js"></script> -->
+    <!-- <script src="common/js/vendor/magnific-popup.min.js"></script> -->
+    <!-- <script src="common/js/vendor/type.js"></script> -->
+    <!-- <script src="common/js/vendor/vanilla-tilt.js"></script> -->
+    <!-- <script src="common/js/plugins/nice-select.min.js"></script> -->
+
+    <!-- <script src="common/js/vendor/jarallax.min.js"></script> -->
+    <!-- <script src="common/js/vendor/jquery-ui.min.js"></script> -->
     <!--<script src="common/js/vendor/jquery.counterup.min.js"></script>-->
-    <script src="common/js/plugins/parallax-scroll.js"></script>
-    <script src="common/js/plugins/jquery.countdown.min.js"></script>
-    <script src="common/js/plugins/isotope-docs.min.js"></script>
+    <!-- <script src="common/js/plugins/parallax-scroll.js"></script> -->
+    <!-- <script src="common/js/plugins/jquery.countdown.min.js"></script> -->
+    <!-- <script src="common/js/plugins/isotope-docs.min.js"></script> -->
     <!-- <script src="common/js/vendor/ajax-form.js"></script> -->
     <!-- <script src="common/js/main.js"></script> -->
+    <!-- <script src="common/js/vendor/odometer.min.js"></script> -->
+    <!-- <script src="common/js/plugins/waypoints.min.js"></script> -->
     <!-- Quick-->
     <div id="scroll-percentage">
       <a href="https://hyeyeon23.github.io/nnpBeta/dev"

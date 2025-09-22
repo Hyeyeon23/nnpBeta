@@ -1,8 +1,23 @@
-import React from "react";
-import Header from "../../components/common/Header";
-import Footer from "../../components/common/footer";
+import { useEffect, useState } from "react";
+import Odometer from "react-odometerjs";
 
 const Ceo = () => {
+  /**
+   * published 에서 odometer 애니메이션 효과가 제대로 적용되지 않아
+   * react-odometerjs lib install 하여, 따로 구현함
+   */
+  const [capital, setCapital] = useState(0);
+  const [revenue, setRevenue] = useState(0);
+
+  useEffect(() => {
+    // 컴포넌트 마운트 후 애니메이션 시작
+    const timer = setTimeout(() => {
+      setCapital(44); // data-count 값
+      setRevenue(671);
+    }, 500); // preloader fadeOut 후 시점과 맞춰 조정
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <section>
@@ -44,9 +59,15 @@ const Ceo = () => {
             <div className="portfolio-section__content">
               <span>Our Capital</span>
               <div>
-                <span className="odometer f120 fw600 f_pp" data-count="44">
+                {/* <span className="odometer f120 fw600 f_pp odometer-auto-theme" data-count="44">
                   0
-                </span>
+                </span> */}
+                <Odometer
+                  value={capital}
+                  format="d"
+                  duration={3000} // 3초 애니메이션
+                  className="odometer f120 fw600 f_pp odometer-auto-theme"
+                />
                 <span className="f40 fw600">억원</span>
               </div>
             </div>
@@ -55,9 +76,15 @@ const Ceo = () => {
             <div className="portfolio-section__content bg_gra">
               <span>Company Revenue</span>
               <div>
-                <span className="odometer f120 fw600 white f_pp" data-count="671">
+                {/* <span className="f120 fw600 white f_pp odometer odometer-auto-theme" data-count="671">
                   0
-                </span>
+                </span>  */}
+                <Odometer
+                  value={revenue}
+                  format="d"
+                  duration={3000} // 3초 애니메이션
+                  className="f120 fw600 white f_pp odometer odometer-auto-theme"
+                />
                 <span className="white f40 fw600">억원</span>
               </div>
             </div>

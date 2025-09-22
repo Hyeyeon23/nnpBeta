@@ -46,22 +46,6 @@ const root = createBrowserRouter(
       ),
     },
     {
-      path: "/faq",
-      element: (
-        <Suspense fallback={Loading}>
-          <Faq></Faq>
-        </Suspense>
-      ),
-    },
-    {
-      path: "/contact",
-      element: (
-        <Suspense fallback={Loading}>
-          <Contact></Contact>
-        </Suspense>
-      ),
-    },
-    {
       path: "/onlyosse",
       element: (
         <Layout>
@@ -89,7 +73,11 @@ const root = createBrowserRouter(
     },
     {
       path: "about",
-      Component: AboutLayout,
+      element: (
+        <Suspense fallback={Loading}>
+          <AboutLayout></AboutLayout>
+        </Suspense>
+      ),
       children: [
         { path: "ceo", Component: Ceo },
         { path: "vision", Component: Vision },
@@ -99,7 +87,11 @@ const root = createBrowserRouter(
     },
     {
       path: "company",
-      Component: CompanyLayout,
+      element: (
+        <Suspense fallback={Loading}>
+          <CompanyLayout></CompanyLayout>
+        </Suspense>
+      ),
       children: [
         { path: "chung", Component: Chung },
         { path: "osse", Component: Osse },
@@ -113,6 +105,27 @@ const root = createBrowserRouter(
         { path: "fssc", Component: Fssc },
         { path: "haccp", Component: Haccp },
         { path: "document", Component: Document },
+      ],
+    },
+    {
+      path: "cs",
+      children: [
+        {
+          path: "contact",
+          element: (
+            <Suspense fallback={Loading}>
+              <Contact />
+            </Suspense>
+          ),
+        },
+        {
+          path: "faq",
+          element: (
+            <Suspense fallback={Loading}>
+              <Faq />
+            </Suspense>
+          ),
+        },
       ],
     },
     {

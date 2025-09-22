@@ -94,7 +94,7 @@ const Header = () => {
           <div className="bg"></div>
           <div className="wView">
             <h1 className="logo">
-              <a href="" title="정식품 CI"></a>
+              <a href="#!" title="정식품 CI"></a>
             </h1>
             <nav id="gnb">
               <ul>
@@ -151,16 +151,22 @@ const Header = () => {
                           </ul>
                         </li>
                         <li className="gbg03">
-                          <a href="">식품안전인증현황</a>
+                          <a href="#!">식품안전인증현황</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="">HACCP</a>
+                              <a href="#!" onClick={() => linkTo("/certification/haccp")}>
+                                HACCP
+                              </a>
                             </li>
                             <li>
-                              <a href="">FSSC 22000</a>
+                              <a href="#!" onClick={() => linkTo("/certification/fssc")}>
+                                FSSC 22000
+                              </a>
                             </li>
                             <li>
-                              <a href="">인증서</a>
+                              <a href="#!" onClick={() => linkTo("/certification/document")}>
+                                인증서
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -234,10 +240,14 @@ const Header = () => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg11">
-                          <a href="">자주 묻는 질문</a>
+                          <a href="#!" onClick={() => linkTo("/cs/faq")}>
+                            자주 묻는 질문
+                          </a>
                         </li>
                         <li className="gbg12">
-                          <a href="">1:1문의</a>
+                          <a href="#!" onClick={() => linkTo("/cs/contact")}>
+                            1:1문의
+                          </a>
                         </li>
                       </ul>
                     </div>

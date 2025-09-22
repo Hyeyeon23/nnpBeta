@@ -73,7 +73,9 @@ const AboutLayout = () => {
                               </a>
                             </li>
                             <li className={`f20 ${section === "road" ? "active" : ""}`}>
-                              <a href="#!">오시는 길</a>
+                              <a href="#!" onClick={() => linkToSub("road")}>
+                                오시는 길
+                              </a>
                             </li>
                           </ul>
                         </div>
@@ -87,9 +89,9 @@ const AboutLayout = () => {
             </section>
             <Outlet></Outlet>
           </main>
+          <Footer></Footer>
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 };

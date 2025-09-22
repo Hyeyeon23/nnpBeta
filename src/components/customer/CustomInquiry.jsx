@@ -176,7 +176,7 @@ const CustomInquiry = () => {
         <div className="section">
           <p className="f22 fw400 mt50">용기 유형</p>
           <input {...register("container", { required: true })} type="hidden" />
-          <div className="radio-group mt20">
+          <div className="radio-group mt20" id="containerType">
             {containers.map((element) => (
               <div
                 data-group="containerType"
