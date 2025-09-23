@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Haccp = () => {
+  useEffect(() => {
+    const initHoverReveal = () => {
+      const hoveritem = document.querySelectorAll(".rr-hover-reveal-item");
+
+      hoveritem.forEach((item) => {
+        const moveImage = (e) => {
+          const rect = item.getBoundingClientRect();
+          const x = e.clientX - rect.x;
+          const y = e.clientY - rect.y;
+          if (item.children[1]) {
+            item.children[1].style.transform = `translate(${x}px, ${y}px)`;
+          }
+        };
+
+        const handleMouseLeave = () => {
+          if (item.children[1]) {
+            item.children[1].style.transform = ``; // 초기화
+          }
+        };
+
+        item.addEventListener("mousemove", moveImage);
+        item.addEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+
+    initHoverReveal(); // 렌더 후 호출
+  }, []);
   return (
     <>
       <section className="contant1100 mt200">
@@ -63,7 +90,7 @@ const Haccp = () => {
                     date: "2014.05.30",
                     title: "환자용 식품",
                     subtitle: "HACCP 인증을 통해 환자 맞춤 영양식의 <br/>안전성과 품질을 보장합니다.",
-                    bg: "../common/imgs/company/haccp01.jpg",
+                    bg: "/common/imgs/company/haccp01.jpg",
                     alt: "환자용식품",
                   },
                   {
@@ -71,7 +98,7 @@ const Haccp = () => {
                     title: "축산물가공품 3개유형",
                     subtitle:
                       "우유류, 가공유류, 아이스크림 믹스류 등 축산물 가공 전 제품에 HACCP을 적용하여 위생을 철저히 관리합니다.",
-                    bg: "../common/imgs/company/haccp02.jpg",
+                    bg: "/common/imgs/company/haccp02.jpg",
                     alt: "축산물가공품 3개유형",
                   },
                   {
@@ -79,7 +106,7 @@ const Haccp = () => {
                     title: "음료류 5개유형",
                     subtitle:
                       "가공두유, 두류가공품, 과채주스, 혼합음료 등 다양한 음료류의 HACCP 지정으로 균일하고 안전한 제품을 제공합니다.",
-                    bg: "../common/imgs/company/haccp03.jpg",
+                    bg: "/common/imgs/company/haccp03.jpg",
                     alt: "음료류 5개유형",
                   },
                   {
@@ -87,49 +114,49 @@ const Haccp = () => {
                     title: "커피",
                     subtitle:
                       "원료 선별부터 제조 전 과정까지 HACCP 관리로 위생적이고 신뢰할 수 있는 커피 제품을 생산합니다.",
-                    bg: "../common/imgs/company/haccp04.jpg",
+                    bg: "/common/imgs/company/haccp04.jpg",
                     alt: "커피",
                   },
                   {
                     date: "2017.11.24",
                     title: "원액두유",
                     subtitle: "HACCP 인증 원액두유로 두유 시장의 품질 기준을 제시합니다.",
-                    bg: "../common/imgs/company/haccp05.jpg",
+                    bg: "/common/imgs/company/haccp05.jpg",
                     alt: "원액두유",
                   },
                   {
                     date: "2018.01.17",
                     title: "기타가공품",
                     subtitle: "다양한 가공식품군에도 HACCP 체계를 적용해 안전성을 확보했습니다.",
-                    bg: "../common/imgs/company/haccp06.jpg",
+                    bg: "/common/imgs/company/haccp06.jpg",
                     alt: "기타가공품",
                   },
                   {
                     date: "2019.05.27",
                     title: "체중조절용 조제식품",
                     subtitle: "체중조절용 조제식품 전 제품 HACCP 인증으로 균형 잡힌 영양과 안전을 함께 제공합니다.",
-                    bg: "../common/imgs/company/haccp07.jpg",
+                    bg: "/common/imgs/company/haccp07.jpg",
                     alt: "체중조절용 조제식품",
                   },
                   {
                     date: "2020.02.24",
                     title: "액상차",
                     subtitle: "원료 보관부터 포장까지 철저한 HACCP 관리로 위생적이고 안전한 액상차를 제공합니다.",
-                    bg: "../common/imgs/company/haccp08.jpg",
+                    bg: "/common/imgs/company/haccp08.jpg",
                     alt: "액상차",
                   },
                   {
                     date: "2021.03.25",
                     title: "곡류가공품",
                     subtitle: "곡류 가공 전 과정에 HACCP 시스템을 적용하여 믿을 수 있는 품질을 보장합니다.",
-                    bg: "../common/imgs/company/haccp09.jpg",
+                    bg: "/common/imgs/company/haccp09.jpg",
                     alt: "곡류가공품",
                   },
                   {
                     date: "2021.05.27",
                     title: "소스",
                     subtitle: "소스류 또한 HACCP 관리 체계에 따라 안전하고 청결하게 제조합니다.",
-                    bg: "../common/imgs/company/haccp10.jpg",
+                    bg: "/common/imgs/company/haccp10.jpg",
                     alt: "소스",
                   },
                 ].map((item, index) => (
@@ -151,7 +178,11 @@ const Haccp = () => {
                         </div>
                       </div>
                     </a>
-                    <div className="rr-hover-reveal-bg" data-background={item.bg} alt={item.alt}></div>
+                    <div
+                      className="rr-hover-reveal-bg"
+                      style={{ backgroundImage: `url(${item.bg})` }}
+                      data-background={item.bg}
+                      alt={item.alt}></div>
                   </div>
                 ))}
               </div>

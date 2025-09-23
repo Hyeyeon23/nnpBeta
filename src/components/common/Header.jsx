@@ -94,7 +94,7 @@ const Header = () => {
           <div className="bg"></div>
           <div className="wView">
             <h1 className="logo">
-              <a href="#!" title="정식품 CI"></a>
+              <a href="/" title="정식품 CI"></a>
             </h1>
             <nav id="gnb">
               <ul>
@@ -185,7 +185,9 @@ const Header = () => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg05">
-                          <a href="">제품유형</a>
+                          <a href="#!" onClick={() => linkTo("/business/products")}>
+                            제품유형
+                          </a>
                         </li>
                         <li className="gbg06">
                           <a href="">용기유형</a>
@@ -363,72 +365,84 @@ const Header = () => {
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        <a href="/company/heritige">창업주 기념관</a>
-                      </li>
-                      <li>
-                        <a href="/company/info">기업정보</a>
+                        <a onClick={() => linkTo("/about/ceo")}>자연과 사람들 소개</a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/company/greetings">대표이사 인사말</a>
+                            <a href="#!" onClick={() => linkTo("/about/ceo")}>
+                              인사말
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/company/profile">프로필</a>
+                            <a href="#!" onClick={() => linkTo("/about/history")}>
+                              회사연혁
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/company/value">가치체계</a>
+                            <a href="#!" onClick={() => linkTo("/about/vision")}>
+                              비전
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/company/history">연혁</a>
-                          </dd>
-                          <dd>
-                            <a href="/company/nnp">관련사</a>
-                          </dd>
-                          <dd>
-                            <a href="/company/finance">공시</a>
+                            <a href="#!" onClick={() => linkTo("/about/road")}>
+                              오시는 길
+                            </a>
                           </dd>
                         </dl>
                       </li>
                       <li>
-                        <a href="/company/info">홍보센터</a>
+                        <a href="#!" onClick={() => linkTo("/company/chung")}>
+                          관련사
+                        </a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/company/mediaNews">보도자료</a>
+                            <a href="#!" onClick={() => linkTo("/company/chung")}>
+                              정식품
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/company/media">미디어</a>
-                          </dd>
-                        </dl>
-                      </li>
-                      {/* <!-- 2024-12-24(3) --> */}
-                      <li>
-                        <a href="/company/csr">ESG</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/rnd/esg">비젼</a>
+                            <a href="#!" onClick={() => linkTo("/company/osse")}>
+                              오쎄
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/rnd/env">환경경영</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/csr">사회공헌활동</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/eth">윤리경영</a>
+                            <a href="#!" onClick={() => linkTo("/company/hyechun")}>
+                              (재단)혜춘장학회
+                            </a>
                           </dd>
                         </dl>
                       </li>
                       {/* <!-- 2024-12-24(3) --> */}
                       <li>
-                        <a href="/rnd/factory">청주공장</a>
+                        <a href="#!" onClick={() => linkTo("/certification/haccp")}>
+                          식품안전인증현황
+                        </a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/rnd/factory">청주공장 소개</a>
+                            <a href="#!" onClick={() => linkTo("/certification/haccp")}>
+                              haccp
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/rnd/factoryTour">견학 신청</a>
+                            <a href="#!" onClick={() => linkTo("/certification/fssc")}>
+                              fssc22000
+                            </a>
                           </dd>
                           <dd>
-                            <a href="/rnd/tourReview">견학 후기</a>
+                            <a href="#!" onClick={() => linkTo("/certification/document")}>
+                              인증서
+                            </a>
+                          </dd>
+                        </dl>
+                      </li>
+                      {/* <!-- 2024-12-24(3) --> */}
+                      <li>
+                        <a href="#!">채용정보</a>
+                        <dl className="v_con_dl">
+                          <dd>
+                            <a href="#!">채용정보</a>
+                          </dd>
+                          <dd>
+                            <a href="#!">채용정보</a>
                           </dd>
                         </dl>
                       </li>

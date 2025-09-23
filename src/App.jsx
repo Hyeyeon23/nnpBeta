@@ -29,11 +29,11 @@ function App() {
       "/common/js/vendor/odometer.min.js",
       "/common/js/plugins/isotope-docs.min.js",
       "/common/js/plugins/ScrollTrigger.js",
-      "/common/js/main.js",
 
       "/common/js/vendor/imagesloaded.pkgd.min.js",
       "/common/js/vendor/text-animation.min.js",
       "/common/js/vendor/scripts.js",
+      "/common/js/main.js",
     ];
 
     scripts.forEach((src) => {

@@ -27,6 +27,12 @@ const CompanyLayout = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    if (window.initAnimation) {
+      console.log("??");
+      window.initAnimation(); // 렌더링 시 재호출
+    }
+  }, []); // []: 컴포넌트 마운트 시 한 번 실행
 
   const location = useLocation();
   const navigate = useNavigate();

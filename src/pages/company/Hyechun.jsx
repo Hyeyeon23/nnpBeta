@@ -61,7 +61,7 @@ const Hyechun = () => {
             <div className="col-lg-6">
               <div className="mt30m">
                 <video className="video-container round20" autoPlay loop playsInline muted style={{ width: "100%" }}>
-                  <source src="http://www.osse.co.kr/img/main/conceptmotion_600.mp4" type="video/mp4" />
+                  <source src="https://www.osse.co.kr/img/main/conceptmotion_600.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Hyechun = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_point.jpg" alt="" />
+                  <img src="/common/imgs/company/load_point.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">주소</p>
@@ -83,7 +83,7 @@ const Hyechun = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_call.jpg" alt="" />
+                  <img src="/common/imgs/company/load_call.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">TEL/FAX</p>

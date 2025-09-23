@@ -346,6 +346,12 @@
 	  @media (prefers-reduced-motion: reduce) {
 		.crossfade img { animation: none; }
 	  }
+
+	/*--------------
+		MAIN > 신뢰
+	--------------*/
+	 .experience-section .experience__border {border:0}
+	 .experience-section .experience__wrapper {bordeR:0}
 	/* --------------
 			3d
 	--------------- */
@@ -594,12 +600,48 @@
 	.services__tab__title span.f20 {font-size:20px; background:none}
 	.services-section .services__tab__wrapper.type .nav-link.active .services__tab__title {color:#333}
     .services-section .services__tab__wrapper.type .nav-link .services__tab__title {color:#ccc}
-	span.cb01 {background:#7BBD33; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px}
-	.product .f18.grayn1.mt10 { min-height:50px }
-
+	span.cb01 {background:#7BBD33; border:1px solid #7BBD33; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px}
+	span.cb02 {background:#fff; border:1px solid #ECECEC; color:#707070; padding:2px 6px; border-radius:5px; font-size:13px}
+	span.cb03 {background:#00ABF7; border:1px solid #00ABF7; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px}
+	span.cb04 {background:#5A07A4; border:1px solid #5A07A4; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 혼합음료 */
+	span.cb05 {background:#EB5F0C; border:1px solid #EB5F0C; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 과채주스*/
+	span.cb06 {background:#6B4B33; border:1px solid #6B4B33; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 커피 */
+	span.cb07 {background:#F6E6B9; border:1px solid #F6E6B9; color:#707070; padding:2px 6px; border-radius:5px; font-size:13px} /* 가공두유 */
+	span.cb08 {background:#00ABF7; border:1px solid #00ABF7; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 환자용식품 */
+	span.cb09 {background:#C10000; border:1px solid #C10000; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px}
+	span.cb10 {background:#076420; border:1px solid #076420; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 가공유 */
+	span.cb11 {background:#30A51F; border:1px solid #30A51F; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 과채음료*/
+	span.cb12 {background:#FBDEF0; border:1px solid #FBDEF0; color:#707070; padding:2px 6px; border-radius:5px; font-size:13px} /* 파티클음료 */
+	span.cb13 {background:#EBB505; border:1px solid #EBB505; color:#fff; padding:2px 6px; border-radius:5px; font-size:13px} /* 추출음료 */
+	.product .f18.grayn1.mt10 { min-height:50px;  display: -webkit-box;
+  -webkit-line-clamp: 2;         /* 줄 수 고정 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4em;            /* 줄 높이 고정 */
+  max-height: calc(1.4em * 2);   /* line-height × 줄 수 */ }
+	.blog10__filter.mt70 button.active {background:linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%); display:inline-block; padding:1px 10px; color:#fff; border-radius:9px } 
+	.blog10__filter.mt70 button {margin-right:40px; font-weight:500}
 	
- 
+	/* --------------
+		제품유형
+	--------------- */
+	.subTop_product {background: url(../../common/imgs/business/subTop_product.jpg) no-repeat scroll 0 0; background-size:cover;}
+	.proTBox {background:#ECECEC; border-radius:30px; padding:40px 50px;position:relative}
+	.proTBox img { border-radius:30px;max-width:360px; }
+	.proTBox .col-md-6:nth-child(2) {text-align:right; }
 
+	.cardBox {position:relative; background:#ECECEC; border-radius:30px; padding:50px 30px }
+	.cardBox img {max-width:250px; width:100%; border-radius:30px}
+	.cardBox-img {text-align:right;}
+	.cardLeft {width:60%;}
+	.cardRight {width:40%}
+	.more {border:1px solid #333; font-size:14px; padding:2px 15px; border-radius:30px; background:#fff}
+	.keyword {border:1px solid #333; padding:3px 10px; border-radius:20px; margin-right:5px}
+	.cardWrap a:hover .cardBox {background:#333333; background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%)}
+	.cardWrap a:hover .cardBox p {color:#fff !important}
+	.cardWrap a:hover .cardBox .keyword {color:#fff !important; border:1px solid #fff}
+	.cardWrap a:hover .cardBox .more {background:#fff; color:#333; border:1px solid #fff}
 }
 
 
@@ -1020,6 +1062,39 @@
 	.flex > div:first-child {order:2}
 	.flex > div:nth-child(2) {order:1}
 	span.cb01 {background:#7BBD33; color:#fff; padding:5px 10px}
+
+
+	span.cb01 {background:#7BBD33; border:1px solid #7BBD33; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px}
+	span.cb02 {background:#fff; border:1px solid #ECECEC; color:#707070; padding:1px 4px; border-radius:3px; font-size:11px}
+	span.cb03 {background:#00ABF7; border:1px solid #00ABF7; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px}
+	span.cb04 {background:#5A07A4; border:1px solid #5A07A4; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 혼합음료 */
+	span.cb05 {background:#EB5F0C; border:1px solid #EB5F0C; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 과채주스*/
+	span.cb06 {background:#6B4B33; border:1px solid #6B4B33; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 커피 */
+	span.cb07 {background:#F6E6B9; border:1px solid #F6E6B9; color:#707070; padding:1px 4px; border-radius:3px; font-size:11px} /* 가공두유 */
+	span.cb08 {background:#00ABF7; border:1px solid #00ABF7; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px}/* 환자용식품 */
+	span.cb09 {background:#C10000; border:1px solid #C10000; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px}
+	span.cb10 {background:#076420; border:1px solid #076420; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 가공유 */
+	span.cb11 {background:#30A51F; border:1px solid #30A51F; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 과채음료*/
+	span.cb12 {background:#FBDEF0; border:1px solid #FBDEF0; color:#707070; padding:1px 4px; border-radius:3px; font-size:11px} /* 파티클음료 */
+	span.cb13 {background:#EBB505; border:1px solid #EBB505; color:#fff; padding:1px 4px; border-radius:3px; font-size:11px} /* 추출음료 */
+	.product .f18.grayn1.mt10 {}
+	.blog1__item br {display:none}
+	.row.product {}
+	.row.product .col-4 {padding:0 5px}
+	.row.product.grid {bordeR:1px solid #f9f9f9}
+	.blog10__filter {display:block}
+	.blog1__item-thumb img {border-radius:10px}
+	.blog10__filter.mt70 button.active {background:linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%); display:inline-block; padding:1px 5px; color:#fff; border-radius:4px;  } 
+	.blog10__filter.mt70 button {margin-right:20px; font-weight:500; font-size:14px}
+
+	/* --------------
+		제품유형
+	--------------- */
+	.cardWrap {padding:0 20px;  padding-top:70px}
+	.cardBox {padding:30px 20px; border-radius:15px}
+	.cardBox img { border-radius:15px}
+	.cardBox .more {font-size:12px; display:block; text-align:center; max-width:80px; margin-top:10px; line-height:110%; padding:7px 10px}
+	.keyword {border:1px solid #333; padding:3px 10px; border-radius:15px; margin-right:2px; font-size:11px}
 	
 
 
@@ -1038,6 +1113,8 @@
 	/* 768 subMenu */
 	.subMenu p.btnSubLeft {display: none;}
 	.subMenu p.btnSubRight {display: none;}
+
+
 	
 
 	

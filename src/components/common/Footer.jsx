@@ -27,7 +27,7 @@ const Footer = () => {
               <div className="footer__widget">
                 <div className="footer__logo mb-20">
                   <a href="index.html">
-                    <img src="../common/imgs/logo/logo_nnp_white.png" alt="logo not found" />
+                    <img src="/common/imgs/logo/logo_nnp_white.png" alt="logo not found" />
                   </a>
                 </div>
               </div>
