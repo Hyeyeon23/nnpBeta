@@ -4,6 +4,7 @@ import Header from "../../components/common/Header";
 import { useForm } from "react-hook-form";
 
 import { postInquiry } from "../../api/client";
+import FooterReact from "../../components/common/FooterReact";
 
 const Contact = () => {
   const {
@@ -176,7 +177,7 @@ const Contact = () => {
               <div class="sk-child sk-bounce3"></div>
             </div>
           </div>
-          <Footer></Footer>
+          <FooterReact></FooterReact>
         </div>
       </div>
     </>

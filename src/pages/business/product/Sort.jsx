@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../../../components/common/footer";
+import FooterReact from "../../../components/common/FooterReact";
 import Header from "../../../components/common/Header";
-import { Navigate, useLocation, useParams } from "react-router-dom";
+import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { jarallax } from "jarallax";
-
+import { animateScroll as scroll } from "react-scroll";
 const Sort = () => {
   const { type } = useParams();
   const [data, setData] = useState(null);
-
+  const navigate = useNavigate();
+  useEffect(() => {}, []);
+  useEffect(() => {
+    scroll.scrollToTop({
+      duration: 500, // 애니메이션 속도
+      smooth: true, // 부드럽게 이동
+    });
+  }, [type]);
   const datas = {
     soy: {
       crumble: "두유액",
@@ -18,6 +25,12 @@ const Sort = () => {
         pre: "/common/imgs/business/pro01_02.jpg",
         mid: "/common/imgs/business/pro01_03.jpg",
         last: "/common/imgs/business/pro01_04.jpg",
+      },
+      alt: {
+        hero: "대두와 두유",
+        pre: "두유병과 곡물들",
+        mid: "정식품 베지밀 에이 비 제품",
+        last: "매일두유",
       },
       descs: {
         sec01: `오랜 시간 사랑받은 식물성음료
@@ -43,6 +56,12 @@ const Sort = () => {
         mid: "/common/imgs/business/pro02_03.jpg",
         last: "/common/imgs/business/pro02_04.jpg",
       },
+      alt: {
+        hero: "대두와 두유",
+        pre: "두유병과 곡물들",
+        mid: "정식품 베지밀 에이 비 제품",
+        last: "매일두유",
+      },
       descs: {
         sec01: `빠른 흡수부터 느린 소화까지<br>맞춤형 고단백 음료`,
         sec02: `변화하는 소비자의 라이프스타일에 맞춰 고단백·저당 콘셉트의 단백질 음료를 제조하고 있습니다. 
@@ -59,6 +78,12 @@ const Sort = () => {
         pre: "/common/imgs/business/pro03_02.jpg",
         mid: "/common/imgs/business/pro03_03.jpg",
         last: "/common/imgs/business/pro03_04.jpg",
+      },
+      alt: {
+        hero: "대두와 두유",
+        pre: "두유병과 곡물들",
+        mid: "정식품 베지밀 에이 비 제품",
+        last: "매일두유",
       },
       descs: {
         sec01: `환자식 &middot; 시니어용 음료<br>균형 잡힌 영양설계`,
@@ -79,6 +104,12 @@ const Sort = () => {
         mid: "/common/imgs/business/pro04_03.jpg",
         last: "/common/imgs/business/pro04_04.jpg",
       },
+      alt: {
+        hero: "파티클 있는 음료와 과일들",
+        pre: "두유병과 곡물들",
+        mid: "정식품 베지밀 에이 비 제품",
+        last: "매일두유",
+      },
       descs: {
         sec01: `알갱이가 들어가 <br>씹는 재미가 더해진 RTD 음료<br>코코넛젤리, 알로에 등`,
         sec02: `파티클 음료는 젊은 소비자층을 중심으로 새로운 식감과 이색적인 즐거움을 제공하는 카테고리입니다. 
@@ -97,6 +128,12 @@ const Sort = () => {
         pre: "/common/imgs/business/pro05_02.jpg",
         mid: "/common/imgs/business/pro05_03.jpg",
         last: "/common/imgs/business/pro05_04.jpg",
+      },
+      alt: {
+        hero: "파티클 있는 음료와 과일들",
+        pre: "두유병과 곡물들",
+        mid: "정식품 베지밀 에이 비 제품",
+        last: "매일두유",
       },
       descs: {
         sec01: `밥알이 살아있는 전통 식혜<br>저당 &middot; 저칼로리로 더욱 건강하게`,
@@ -117,6 +154,12 @@ const Sort = () => {
         mid: "/common/imgs/business/pro06_03.jpg",
         last: "/common/imgs/business/pro06_04.jpg",
       },
+      alt: {
+        hero: "파티클 있는 음료와 과일들",
+        pre: "풀무원 요리육수 전골",
+        mid: "반죽에 토마토소스",
+        last: "담백한 채소육수와 요리",
+      },
       descs: {
         sec01: `활용도 높은 액상 육수<br>외식 &middot; HMR &middot; 급식 등 대용량`,
         sec02: `소스와 육수는 외식업, 급식, 가정간편식(HMR) 각 분야에서 다양한 요리에 두루 활용됩니다. 자연과사람들은 액상 소스와 육수를 통해 조리의 편의성과 맛의 완성도를 높입니다.`,
@@ -134,6 +177,12 @@ const Sort = () => {
         pre: "/common/imgs/business/pro07_02.jpg",
         mid: "/common/imgs/business/pro07_03.jpg",
         last: "/common/imgs/business/pro07_04.jpg",
+      },
+      alt: {
+        hero: "파티클 있는 음료와 과일들",
+        pre: "유제품을 만드는 과정",
+        mid: "파스퇴르 무항생제 바른목장스",
+        last: "바나나맛 우유",
       },
       descs: {
         sec01: `다양한 용량의 멸균 우유<br>상온 보관으로 오래오래`,
@@ -154,6 +203,12 @@ const Sort = () => {
         mid: "/common/imgs/business/pro08_03.jpg",
         last: "/common/imgs/business/pro08_04.jpg",
       },
+      alt: {
+        hero: "다양한 주스류 생산이 가능합니다.",
+        pre: "유제품을 만드는 과정",
+        mid: "파스퇴르 무항생제 바른목장스",
+        last: "바나나맛 우유",
+      },
       descs: {
         sec01: `맛과 건강을 고려한 과채주스<br>과일&middot;채소 혼합 가능`,
         sec02: `과일과 채소 원료를 바탕으로 브랜드 콘셉트에 맞는 다양한 레시피를 구현합니다. 요청사항을 폭넓게 반영할 수 있으며, 좋은 제품을 위해 함께 검토하고 신뢰할 수 있는 품질을 제공합니다.`,
@@ -173,6 +228,12 @@ const Sort = () => {
         pre: "/common/imgs/business/pro09_02.jpg",
         mid: "/common/imgs/business/pro09_03.jpg",
         last: "/common/imgs/business/pro09_04.jpg",
+      },
+      alt: {
+        hero: "커피를 로스팅하는 모습",
+        pre: "유제품을 만드는 과정",
+        mid: "파스퇴르 무항생제 바른목장스",
+        last: "바나나맛 우유",
       },
       descs: {
         sec01: `블랙&middot;라떼 등 다채로운 레시피<br>RTD 형태 맞춤 생산`,
@@ -217,6 +278,7 @@ const Sort = () => {
       default:
         setData(null);
     }
+
     // <main.js 재실행>라우트 변경 시마다
     const reloadMainScript = () => {
       const mainScript = document.createElement("script");
@@ -239,8 +301,31 @@ const Sort = () => {
     return cleanup;
   }, [type]);
 
+  useEffect(() => {
+    // <main.js 재실행>라우트 변경 시마다
+    const reloadMainScript = () => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "/common/js/main.js";
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+
+      return () => {
+        if (mainScript && document.body.contains(mainScript)) {
+          document.body.removeChild(mainScript);
+        }
+      };
+    };
+
+    // main.js 재로드
+    const cleanup = reloadMainScript();
+
+    // <main.js 재실행>
+
+    return cleanup;
+  }, [data]);
+
   const linkToSub = (sub) => {
-    Navigate("/business/product/" + sub);
+    navigate("/business/product/" + sub);
   };
   console.log(data);
   return (
@@ -283,7 +368,8 @@ const Sort = () => {
               <div
                 className="about-section__thumb__wrapper-img jarallax"
                 data-background={data?.heroImg}
-                alt="대두와 두유"
+                speed={0.2}
+                alt={data?.alt.hero}
               />
             </div>
           </section>
@@ -304,17 +390,17 @@ const Sort = () => {
               <div className="row mb-minus-30 mt50 mt30m">
                 <div className="col-lg-12">
                   <div className="mb-30">
-                    {data && <img className="img100" src={data?.images.pre} alt="두유병과 곡물들" />}
+                    {data && <img className="img100" src={data?.images.pre} alt={data?.alt.pre} />}
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="mb-30">
-                    <img className="img100" src={data?.images.mid} alt="정식품 베지밀 에이,비 제품" />
+                    <img className="img100" src={data?.images.mid} alt={data?.alt.mid} />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="mb-30">
-                    <img className="img100" src={data?.images.last} alt="메일두유" />
+                    <img className="img100" src={data?.images.last} alt={data?.alt.last} />
                   </div>
                 </div>
                 <div className="col-md-12 mt70">
@@ -331,7 +417,7 @@ const Sort = () => {
             <div className="swiper testmonial2-slide-active">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <a href="product02.html">
+                  <a href="#!" onClick={() => linkToSub("protein")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">단백질 음료 생산</p>
@@ -352,7 +438,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product03.html">
+                  <a onClick={() => linkToSub("balance")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">균형영양식 생산</p>
@@ -373,7 +459,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product04.html">
+                  <a onClick={() => linkToSub("particle")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">파티클 생산</p>
@@ -394,7 +480,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product05.html">
+                  <a href="#!" onClick={() => linkToSub("sikhye")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">식혜 생산</p>
@@ -415,7 +501,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product06.html">
+                  <a href="#!" onClick={() => linkToSub("sauce")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">소스 생산</p>
@@ -436,7 +522,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product07.html">
+                  <a href="#!" onClick={() => linkToSub("sterilized")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">멸균유 생산</p>
@@ -457,7 +543,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product08.html">
+                  <a href="#!" onClick={() => linkToSub("juice")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">주스 생산</p>
@@ -478,7 +564,7 @@ const Sort = () => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="product09.html">
+                  <a href="#!" onClick={() => linkToSub("coffee")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">커피 생산</p>
@@ -514,7 +600,7 @@ const Sort = () => {
             </div>
           </section>
         </main>
-        <Footer></Footer>
+        <FooterReact></FooterReact>
       </div>
     </>
   );

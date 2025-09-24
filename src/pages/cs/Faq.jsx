@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
+import FooterReact from "../../components/common/FooterReact";
 
 const Faq = () => {
   return (
@@ -136,7 +137,7 @@ const Faq = () => {
                                   적용하고 있으며, 자세한 내용은 상담을 통해 안내해 드리고 있습니다.
                                   <br />
                                   *메인화면에 용기별 발주관련 문의사항이 있습니다.{" "}
-                                  <a href="./index.html">
+                                  <a href="/">
                                     <span className="btn01 mt50 f13">메인바로가기</span>
                                   </a>
                                 </p>
@@ -247,7 +248,7 @@ const Faq = () => {
                                   디자인으로 발주가 진행됩니다.
                                 </p>
                                 <p style={{ maxWidth: "600px" }} className="mt20">
-                                  <img className="img100" src="./common/imgs/common/faq01.jpg" alt="" />
+                                  <img className="img100" src="/common/imgs/common/faq01.jpg" alt="" />
                                 </p>
                               </div>
                             </div>
@@ -260,7 +261,7 @@ const Faq = () => {
               </div>
             </section>
           </main>
-          <Footer></Footer>
+          <FooterReact></FooterReact>
         </div>
       </div>
     </>

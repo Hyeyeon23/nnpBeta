@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../../components/common/Header";
 import Footer from "../../../components/common/footer";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,29 @@ const Product = () => {
   const linkToSub = (sub) => {
     navigate("/business/product/" + sub);
   };
+
+  useEffect(() => {
+    // <main.js 재실행>라우트 변경 시마다
+    const reloadMainScript = () => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "/common/js/main.js";
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+
+      return () => {
+        if (mainScript && document.body.contains(mainScript)) {
+          document.body.removeChild(mainScript);
+        }
+      };
+    };
+
+    // main.js 재로드
+    const cleanup = reloadMainScript();
+
+    // <main.js 재실행>
+
+    return cleanup;
+  }, [location]);
 
   return (
     <>
