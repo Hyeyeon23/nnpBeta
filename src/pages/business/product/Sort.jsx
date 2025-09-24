@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../../components/common/footer";
 import Header from "../../../components/common/Header";
-import { useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import { jarallax } from "jarallax";
 
 const Sort = () => {
@@ -217,8 +217,31 @@ const Sort = () => {
       default:
         setData(null);
     }
+    // <main.js 재실행>라우트 변경 시마다
+    const reloadMainScript = () => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "/common/js/main.js";
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+
+      return () => {
+        if (mainScript && document.body.contains(mainScript)) {
+          document.body.removeChild(mainScript);
+        }
+      };
+    };
+
+    // main.js 재로드
+    const cleanup = reloadMainScript();
+
+    // <main.js 재실행>
+
+    return cleanup;
   }, [type]);
 
+  const linkToSub = (sub) => {
+    Navigate("/business/product/" + sub);
+  };
   console.log(data);
   return (
     <>

@@ -54,16 +54,16 @@ const Document = () => {
                   <div className="col-lg-4 col-md-6" key={idx}>
                     <div className="team-section__item mb-30">
                       <div className="team-section__thumb">
-                        <img src={`../common/imgs/company/${item.img}`} alt="haccp인증마크" />
+                        <img src={`/common/imgs/company/${item.img}`} alt="haccp인증마크" />
                       </div>
                       <div className="team-section__content">
                         <h3 className="team-section__title">
-                          <a href={`../common/imgs/company/${item.img}`}>{item.title}</a>
+                          <a href={`/common/imgs/company/${item.img}`}>{item.title}</a>
                         </h3>
                         <p className="team-section__position">{item.desc}</p>
                       </div>
                       <div className="team-section__social">
-                        <a href={`../common/imgs/company/${item.img}`}>
+                        <a href={`/common/imgs/company/${item.img}`}>
                           <svg
                             width="25"
                             height="26"

@@ -11,7 +11,7 @@ const Chung = () => {
               <br />이 몸 바치고저
             </p>
             <p className="mt50 family_dcf_logo">
-              <img src="../common/imgs/company/dcf05.png" alt="DCF Logo" />
+              <img src="/common/imgs/company/dcf05.png" alt="DCF Logo" />
             </p>
           </div>
           <div className="col-lg-6">
@@ -30,18 +30,18 @@ const Chung = () => {
         </div>
 
         <div className="row familyBox_top">
-          <div className="col-lg-4 mt100 wow bounceInLeft" data-wow-delay="1.5s">
+          <div className="col-lg-4 mt100 wow bounceInLeft" data-wow-delay="0.5s">
             <img
               className="mt100 img100"
-              src="../common/imgs/company/dcf01.png"
+              src="/common/imgs/company/dcf01.png"
               alt="엄마와아이의 다정한모습, 행복한 가족모습"
             />
           </div>
-          <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="2s">
-            <img className="img100" src="../common/imgs/company/dcf02.jpg" alt="베지밀에이,비, 뼈에좋은칼슘두유3종" />
+          <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="1s">
+            <img className="img100" src="/common/imgs/company/dcf02.jpg" alt="베지밀에이,비, 뼈에좋은칼슘두유3종" />
           </div>
-          <div className="col-lg-3 mt100 wow bounceInRight wView" data-wow-delay="3.5s">
-            <img className="mt200 img100" src="../common/imgs/company/dcf03.jpg" alt="현미경사진" />
+          <div className="col-lg-3 mt100 wow bounceInRight wView" data-wow-delay="1.5s">
+            <img className="mt200 img100" src="/common/imgs/company/dcf03.jpg" alt="현미경사진" />
           </div>
         </div>
       </section>
@@ -52,7 +52,7 @@ const Chung = () => {
             <div className="col-lg-6">
               <div>
                 <p className="family_logo_dcf">
-                  <img src="../common/imgs/company/dcf05.png" alt="정식품 CI" />
+                  <img src="/common/imgs/company/dcf05.png" alt="정식품 CI" />
                 </p>
                 <p className="f16 grayn1 mt30 lh200">
                   우리나라 두유 역사의 첫 장을 연 ㈜정식품은 1973년 설립 이래 한국 및 세계의 두유 산업을 선도해온 Global
@@ -71,7 +71,7 @@ const Chung = () => {
             </div>
             <div className="col-lg-6">
               <div className="mt30m">
-                <img className="round20" src="../common/imgs/company/company06.jpg" alt="" />
+                <img className="round20" src="/common/imgs/company/company06.jpg" alt="" />
               </div>
             </div>
 
@@ -82,7 +82,7 @@ const Chung = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_point.jpg" alt="" />
+                  <img src="/common/imgs/company/load_point.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">주소</p>
@@ -98,7 +98,7 @@ const Chung = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_call.jpg" alt="" />
+                  <img src="/common/imgs/company/load_call.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">TEL/FAX</p>
@@ -110,7 +110,7 @@ const Chung = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_map.jpg" alt="" />
+                  <img src="/common/imgs/company/load_map.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">오시는 길</p>
@@ -126,7 +126,7 @@ const Chung = () => {
             <div className="col-md-4">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_point.jpg" alt="" />
+                  <img src="/common/imgs/company/load_point.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">주소</p>
@@ -141,7 +141,7 @@ const Chung = () => {
             <div className="col-md-4">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_call.jpg" alt="" />
+                  <img src="/common/imgs/company/load_call.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">TEL/FAX</p>
@@ -153,7 +153,7 @@ const Chung = () => {
             <div className="col-md-4">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_map.jpg" alt="" />
+                  <img src="/common/imgs/company/load_map.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">고객상담실 / 수신자 요금 부담</p>

@@ -21,7 +21,7 @@ const Fssc = () => {
             </div>
             <div className="col-lg-6">
               <p className="text-right">
-                <img src="../common/imgs/company/FSSC.jpg" alt="haccp인증마크" />
+                <img src="/common/imgs/company/FSSC.jpg" alt="haccp인증마크" />
               </p>
             </div>
           </div>
@@ -47,10 +47,10 @@ const Fssc = () => {
             <div className="col-md-6">
               <ul className="fsscMark">
                 <li>
-                  <img src="../common/imgs/company/FSSC02.jpg" alt="IAF인증마크" />
+                  <img src="/common/imgs/company/FSSC02.jpg" alt="IAF인증마크" />
                 </li>
                 <li>
-                  <img src="../common/imgs/company/FSSC03.jpg" alt="FSSC 22000 인증마크" />
+                  <img src="/common/imgs/company/FSSC03.jpg" alt="FSSC 22000 인증마크" />
                 </li>
               </ul>
             </div>
@@ -73,13 +73,13 @@ const Fssc = () => {
 
           <div className="row lineTop mt100 pt100">
             <div className="col-md-4 col-4">
-              <img src="../common/imgs/company/FSSC04.jpg" alt="" />
+              <img src="/common/imgs/company/FSSC04.jpg" alt="" />
             </div>
             <div className="col-md-4 col-4">
-              <img src="../common/imgs/company/FSSC05.jpg" alt="" />
+              <img src="/common/imgs/company/FSSC05.jpg" alt="" />
             </div>
             <div className="col-md-4 col-4">
-              <img src="../common/imgs/company/FSSC06.jpg" alt="" />
+              <img src="/common/imgs/company/FSSC06.jpg" alt="" />
             </div>
           </div>
         </div>

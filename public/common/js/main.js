@@ -595,7 +595,11 @@
 
 
     // Custom Cursor
-    $("body").append('<div class="mt-cursor"></div>');
+    //   $("body").append('<div class="mt-cursor"></div>');
+    // .mt-cursor 요소가 없으면 추가 있으면 패스
+    if (!$('.mt-cursor').length) {
+        $("body").append('<div class="mt-cursor"></div>');
+    }
     var cursor = $(".mt-cursor"),
         linksCursor = $("a, .swiper-nav, button, .cursor-effect"),
         crossCursor = $(".cross-cursor");

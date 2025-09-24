@@ -1,9 +1,74 @@
-import React from "react";
-
+import React, { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { Power2 } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 const Vision = () => {
+  const containerRef = useRef();
+
+  useGSAP(
+    () => {
+      // 첫 번째 타입의 이미지 애니메이션
+      document.querySelectorAll(".img_anim_reveal-React").forEach((element) => {
+        const image = element.querySelector("img");
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top 70%",
+          },
+        });
+
+        tl.set(element, {
+          autoAlpha: 1,
+        })
+          .from(element, {
+            xPercent: -200,
+            duration: 1.5,
+            ease: Power2.out,
+          })
+          .from(image, {
+            xPercent: 100,
+            scale: 1.3,
+            duration: 1.5,
+            delay: -1.5,
+            ease: Power2.out,
+          });
+      });
+
+      // 두 번째 타입의 이미지 애니메이션
+      document.querySelectorAll(".img_anim_reveal-2-React").forEach((element) => {
+        const image = element.querySelector("img");
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top 70%",
+          },
+        });
+
+        tl.set(element, {
+          autoAlpha: 1,
+        })
+          .from(element, {
+            xPercent: 220,
+            duration: 1.5,
+            ease: Power2.out,
+          })
+          .from(image, {
+            xPercent: 100,
+            scale: 1.2,
+            duration: 1.5,
+            delay: -1.5,
+            ease: Power2.out,
+          });
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
     <>
-      <section>
+      <section ref={containerRef}>
         <div className="contant1160 mt100">
           <div className="row">
             <div className="col-lg-12">
@@ -26,11 +91,11 @@ const Vision = () => {
             <div className="col-md-6">
               <div className="about-section__left">
                 <div className="about-section__left__wrapper">
-                  <div className="about-section__thumb text-end img_anim_reveal">
-                    <img src="../common/imgs/company/vision03.jpg" alt="image not found" className="image-1" />
+                  <div className="about-section__thumb text-end img_anim_reveal-React">
+                    <img src="/common/imgs/company/vision03.jpg" alt="image not found" className="image-1" />
                   </div>
-                  <div className="about-section__thumb img_anim_reveal">
-                    <img src="../common/imgs/company/vision04.jpg" alt="image not found" className="image-1" />
+                  <div className="about-section__thumb img_anim_reveal-React">
+                    <img src="/common/imgs/company/vision04.jpg" alt="image not found" className="image-1" />
                   </div>
                 </div>
               </div>
@@ -38,12 +103,12 @@ const Vision = () => {
             <div className="col-md-6">
               <div className="about-section__right">
                 <div className="about-section__right__wrapper p-relative">
-                  <div className="about-section__thumb img_anim_reveal-2">
-                    <img src="../common/imgs/company/vision02.jpg" alt="image not found" className="image-1" />
+                  <div className="about-section__thumb img_anim_reveal-2-React">
+                    <img src="/common/imgs/company/vision02.jpg" alt="image not found" className="image-1" />
                   </div>
-                  <div className="about-section__right__content img_anim_reveal-2">
+                  <div className="about-section__right__content img_anim_reveal-2-React">
                     <div className="about-section__right__count">
-                      <img src="../common/imgs/company/vision01.jpg" alt="image not found" className="image-1" />
+                      <img src="/common/imgs/company/vision01.jpg" alt="image not found" className="image-1" />
                     </div>
                   </div>
                 </div>

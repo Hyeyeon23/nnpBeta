@@ -2,40 +2,61 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/footer";
+import FooterReact from "../common/FooterReact";
 
 const CompanyLayout = () => {
-  useEffect(() => {
-    const roundNav = document.getElementById("roundNav");
-    if (!roundNav) return;
-
-    const lnb = roundNav.offsetTop;
-
-    const handleScroll = () => {
-      if (window.scrollY >= lnb) {
-        roundNav.classList.add("fixed");
-      } else {
-        roundNav.classList.remove("fixed");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // 초기 체크 (화면이 이미 스크롤된 상태일 수 있음)
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  useEffect(() => {
-    if (window.initAnimation) {
-      console.log("??");
-      window.initAnimation(); // 렌더링 시 재호출
-    }
-  }, []); // []: 컴포넌트 마운트 시 한 번 실행
-
   const location = useLocation();
   const navigate = useNavigate();
+  useEffect(() => {
+    // <main.js 재실행>라우트 변경 시마다
+    const reloadMainScript = () => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "/common/js/main.js";
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+
+      return () => {
+        if (mainScript && document.body.contains(mainScript)) {
+          document.body.removeChild(mainScript);
+        }
+      };
+    };
+
+    // main.js 재로드
+    const cleanup = reloadMainScript();
+
+    // <main.js 재실행>
+
+    return cleanup;
+  }, [location]);
+
+  // 스크롤 관련 로직을 위한 별도의 useEffect
+  useEffect(() => {
+    // DOM이 완전히 로드된 후 실행되도록 setTimeout 사용
+    const timer = setTimeout(() => {
+      const roundNav = document.getElementById("roundNav");
+      if (!roundNav) return;
+
+      const lnb = roundNav.offsetTop;
+
+      const handleScroll = () => {
+        if (window.scrollY >= lnb) {
+          roundNav.classList.add("fixed");
+        } else {
+          roundNav.classList.remove("fixed");
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // 초기 체크
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, 100); // 100ms 딜레이
+
+    return () => clearTimeout(timer);
+  }, []); // 컴포넌트 마운트 시에만 실행
 
   const section = location.pathname.split("/").pop(); // "vision" 또는 "ceo"
 
@@ -89,7 +110,7 @@ const CompanyLayout = () => {
             </section>
             <Outlet></Outlet>
           </main>
-          <Footer></Footer>
+          <FooterReact key={section}></FooterReact>
         </div>
       </div>
     </>

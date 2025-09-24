@@ -52,7 +52,9 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">01</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/soy">두유액</a>
+                          <a href="#!" onClick={() => linkToSub("soy")}>
+                            두유액
+                          </a>
                         </h3>
                       </div>
                       <div className="breadcrumb-section__text breadcrumb-text-2">
@@ -78,7 +80,7 @@ const Product = () => {
                         <img src="/common/imgs/main/main_p01.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/soy" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("soy")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -92,14 +94,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">03</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/balance">균형영양식</a>
+                          <a href="#!" onClick={() => linkToSub("balance")}>
+                            균형영양식
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p03.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/balance" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("balance")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -113,14 +117,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">05</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/sikhye">식혜</a>
+                          <a href="#!" onClick={() => linkToSub("sikhye")}>
+                            식혜
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p05.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/sikhye" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("sikhye")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -134,14 +140,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">07</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/sterilized">멸균유</a>
+                          <a href="#!" onClick={() => linkToSub("sterilized")}>
+                            멸균유
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p07.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/sterilized" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("sterilized")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -171,14 +179,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">02</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/protein">단백질 음료</a>
+                          <a href="#!" onClick={() => linkToSub("protein")}>
+                            단백질 음료
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p02.jpg" alt="단배질팩" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/protein" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("protein")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -192,14 +202,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">04</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/particle">파티클</a>
+                          <a href="#!" onClick={() => linkToSub("particle")}>
+                            파티클
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p04.jpg" alt="유리잔에 파티클이 있는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/particle" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("particle")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -213,14 +225,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">06</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/sauce">소스</a>
+                          <a href="#!" onClick={() => linkToSub("sauce")}>
+                            소스
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p06.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/sauce" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("sauce")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -234,14 +248,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">08</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/juice">주스</a>
+                          <a href="#!" onClick={() => linkToSub("juice")}>
+                            주스
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p08.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/juice" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("juice")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -255,14 +271,16 @@ const Product = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">09</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/coffee">커피</a>
+                          <a href="#!" onClick={() => linkToSub("coffee")}>
+                            커피
+                          </a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="/common/imgs/main/main_p09.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="/business/product/coffee" className="title-btn rr-btn">
+                        <a href="#!" onClick={() => linkToSub("coffee")} className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
