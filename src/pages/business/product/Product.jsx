@@ -30,7 +30,7 @@ const Product = () => {
     // <main.js 재실행>
 
     return cleanup;
-  }, [location]);
+  }, []);
 
   return (
     <>

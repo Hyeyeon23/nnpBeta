@@ -8,13 +8,16 @@ const Sort = () => {
   const { type } = useParams();
   const [data, setData] = useState(null);
   const navigate = useNavigate();
-  useEffect(() => {}, []);
   useEffect(() => {
+    // 기존 jarallax destroy
+    jarallax(document.querySelectorAll(".jarallax"), "destroy");
+
     scroll.scrollToTop({
       duration: 500, // 애니메이션 속도
       smooth: true, // 부드럽게 이동
     });
-  }, [type]);
+  }, [location.pathname]); // 경로 변경될 때마다 실행
+
   const datas = {
     soy: {
       crumble: "두유액",
@@ -300,29 +303,6 @@ const Sort = () => {
 
     return cleanup;
   }, [type]);
-
-  useEffect(() => {
-    // <main.js 재실행>라우트 변경 시마다
-    const reloadMainScript = () => {
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
-
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    };
-
-    // main.js 재로드
-    const cleanup = reloadMainScript();
-
-    // <main.js 재실행>
-
-    return cleanup;
-  }, [data]);
 
   const linkToSub = (sub) => {
     navigate("/business/product/" + sub);
