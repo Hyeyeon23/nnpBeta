@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const linkTo = (link) => {
+    navigate(link);
+  };
+
   return (
     <footer>
       <section className="footer heading-bg overflow-hidden p-relative z-1">
@@ -26,7 +33,7 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <div className="footer__widget">
                 <div className="footer__logo mb-20">
-                  <a href="index.html">
+                  <a href="/">
                     <img src="/common/imgs/logo/logo_nnp_white.png" alt="logo not found" />
                   </a>
                 </div>
@@ -42,17 +49,17 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="service.html">
+                      <a href="#!" onClick={() => linkTo("/business/products")}>
                         <i className="fa-solid fa-period"></i>제품유형
                       </a>
                     </li>
                     <li>
-                      <a href="service.html">
+                      <a href="#!" onClick={() => linkTo("/business/containers")}>
                         <i className="fa-solid fa-period"></i>용기유형
                       </a>
                     </li>
                     <li>
-                      <a href="service.html">
+                      <a href="#!" onClick={() => linkTo("")}>
                         <i className="fa-solid fa-period"></i>RnD
                       </a>
                     </li>
@@ -70,17 +77,17 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="about-us.html">
+                      <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
                         <i className="fa-solid fa-period"></i>WIZUS
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
                         <i className="fa-solid fa-period"></i>자연담은
                       </a>
                     </li>
                     <li>
-                      <a href="service-details.html">
+                      <a href="#!" onClick={() => linkTo("/brand/pb")}>
                         <i className="fa-solid fa-period"></i>자연과사람들이만든
                       </a>
                     </li>
@@ -103,12 +110,12 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="#!" onClick={() => linkTo("/cs/faq")}>
                         <i className="fa-solid fa-period"></i>1:1문의
                       </a>
                     </li>
                     <li>
-                      <a href="service-details.html">
+                      <a href="#!" onClick={() => linkTo("/cs/contact")}>
                         <i className="fa-solid fa-period"></i>고객의 소리
                       </a>
                     </li>
@@ -126,22 +133,22 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="about-us.html">
+                      <a href="https://www.vegemil.co.kr">
                         <i className="fa-solid fa-period"></i>정식품
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="https://www.osse.co.kr">
                         <i className="fa-solid fa-period"></i>오쎄
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="https://www.edaymall.com">
                         <i className="fa-solid fa-period"></i>이데이몰
                       </a>
                     </li>
                     <li>
-                      <a href="service-details.html">
+                      <a href="https://www.hcsf.co.kr/">
                         <i className="fa-solid fa-period"></i>혜춘장학회
                       </a>
                     </li>
@@ -162,8 +169,10 @@ const Footer = () => {
               <div className="person">
                 <ul>
                   <li>
-                    <a href="#">이용약관</a>{" "}
-                    <a href="#" className="fw600">
+                    <a href="#!" onClick={() => linkTo("")}>
+                      이용약관
+                    </a>{" "}
+                    <a href="#!" onClick={() => linkTo("")} className="fw600">
                       개인정보처리방침
                     </a>
                   </li>

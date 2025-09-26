@@ -12,7 +12,7 @@ const Osse = () => {
               for Customers
             </p>
             <p className="mt50 family_dcf_logo">
-              <img src="../common/imgs/company/osse01.png" alt="OSSE Logo" />
+              <img src="/common/imgs/company/osse01.png" alt="OSSE Logo" />
             </p>
           </div>
           <div className="col-lg-5">
@@ -27,15 +27,15 @@ const Osse = () => {
           <div className="col-lg-3 mt100 wow bounceInLeft wView" data-wow-delay="0.5s">
             <img
               className="mt70 img100"
-              src="../common/imgs/company/osse02.jpg"
+              src="/common/imgs/company/osse02.jpg"
               alt="이데이몰 밸런스루트관 모바일이미지"
             />
           </div>
           <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="1s">
-            <img className="img100" src="../common/imgs/company/osse03.jpg" alt="런드리서핑 제품" />
+            <img className="img100" src="/common/imgs/company/osse03.jpg" alt="런드리서핑 제품" />
           </div>
           <div className="col-lg-4 mt100 wow bounceInRight" data-wow-delay="1.5s">
-            <img className="mt30 img100" src="../common/imgs/company/osse04.png" alt="택배상자와 수야무" />
+            <img className="mt30 img100" src="/common/imgs/company/osse04.png" alt="택배상자와 수야무" />
           </div>
         </div>
       </section>
@@ -78,7 +78,7 @@ const Osse = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_point.jpg" alt="" />
+                  <img src="/common/imgs/company/load_point.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">주소</p>
@@ -90,7 +90,7 @@ const Osse = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_call.jpg" alt="" />
+                  <img src="/common/imgs/company/load_call.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">TEL/FAX</p>

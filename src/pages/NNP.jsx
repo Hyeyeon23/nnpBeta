@@ -47,7 +47,7 @@ const NNP = () => {
                           />
                         </span>
                         <span className="video">
-                          <a className="video-popup">
+                          <a className="video-popup" style={{ paddingRight: "14px" }}>
                             <video
                               className="title-video"
                               data-delay="1.9"
@@ -111,6 +111,7 @@ const NNP = () => {
                 </div>
               </div>
             </section>
+            {/* 2025-09-23 멸균오버, 캔오버, 버튼링크 */}
             <section className="experience__area experience-section mt100">
               <div className="container">
                 <div className="row align-items-center experience__border">
@@ -122,7 +123,10 @@ const NNP = () => {
                       </p>
                       <span className="_split_text">Equipment</span>
                       <br />
-                      <button type="submit" className="nnp-btn rr-btn mt100">
+                      <button
+                        type="submit"
+                        className="nnp-btn rr-btn mt100"
+                        onClick={() => (window.location.href = "/business/containers")}>
                         <span>
                           <i className="fa-regular fa-arrow-right"></i>
                         </span>
@@ -130,21 +134,33 @@ const NNP = () => {
                       </button>
                     </div>
                   </div>
-
                   <div className="col-xl-8 col-lg-8">
                     <div className="experience__wrapper">
                       <div className="experience__item">
                         <h3 className="experience-title">멸균팩 제품</h3>
                         <div className="experience-thumb return" style={{ position: "relative" }}>
-                          <img className="img100" src="common/imgs/common/main_pack.jpg" alt="image not found" />
+                          <a href="/business/containers">
+                            <img
+                              className="img100"
+                              src="/common/imgs/common/main_pack.jpg"
+                              alt="image not found"
+                              onMouseOver={(e) => (e.currentTarget.src = "common/imgs/common/main_pack_06.jpg")}
+                              onMouseOut={(e) => (e.currentTarget.src = "common/imgs/common/main_pack.jpg")}
+                            />
+                          </a>
                         </div>
                       </div>
-
                       <div className="experience__item">
                         <h3 className="experience-title">캔 제품</h3>
                         <div className="experience-thumb return">
-                          <a href="#">
-                            <img src="common/imgs/common/main_can.jpg" alt="image not found" />
+                          <a href="/business/containers">
+                            <img
+                              className="img100"
+                              src="common/imgs/common/main_can.jpg"
+                              alt="image not found"
+                              onMouseOver={(e) => (e.currentTarget.src = "common/imgs/common/main_can_05.jpg")}
+                              onMouseOut={(e) => (e.currentTarget.src = "common/imgs/common/main_can.jpg")}
+                            />
                           </a>
                         </div>
                       </div>
@@ -153,6 +169,8 @@ const NNP = () => {
                 </div>
               </div>
             </section>
+            {/* //2025-09-23 멸균오버, 캔오버, 버튼링크 */}
+
             <section className="heading-slide  section-space-top-140 heading-section-pb-160">
               <div className="swiper heading-slide__active">
                 <div className="swiper-wrapper">
@@ -166,7 +184,10 @@ const NNP = () => {
               </div>
             </section>
 
-            <section className="pb100 mb100 bg_graph services-section__area services-section section-space">
+            <section
+              className="pb100 bg_graph services-section__area services-section section-space"
+              style={{ borderTop: "1px solid #f3f3f3" }}>
+              {/* 2025-09-23 mb100, 스타일추가 */}
               <div className="section contant1100">
                 <p className="f64 fw600 grayn1 lh120">
                   아이디어를 <br />
@@ -183,7 +204,7 @@ const NNP = () => {
                           id="v-pills-home"
                           role="tabpanel"
                           aria-labelledby="v-pills-home-tab"
-                          tabIndex={0}>
+                          tabindex="0">
                           <img src="common/imgs/main/idea01.png" alt="도면 다운로드" />
                         </div>
                         <div
@@ -191,7 +212,7 @@ const NNP = () => {
                           id="v-pills-profile"
                           role="tabpanel"
                           aria-labelledby="v-pills-profile-tab"
-                          tabIndex={0}>
+                          tabindex="0">
                           <img src="common/imgs/main/idea02.png" alt="도면 다운로드" />
                         </div>
                         <div
@@ -199,7 +220,7 @@ const NNP = () => {
                           id="v-pills-messages"
                           role="tabpanel"
                           aria-labelledby="v-pills-messages-tab"
-                          tabIndex={0}>
+                          tabindex="0">
                           <img src="common/imgs/main/idea03.png" alt="도면 다운로드" />
                         </div>
                         <div
@@ -207,7 +228,7 @@ const NNP = () => {
                           id="v-pills-settings"
                           role="tabpanel"
                           aria-labelledby="v-pills-settings-tab"
-                          tabIndex={0}>
+                          tabindex="0">
                           <img src="common/imgs/main/idea04.png" alt="도면 다운로드" />
                         </div>
                       </div>
@@ -294,30 +315,108 @@ const NNP = () => {
                 </div>
 
                 <div className="row mt50 idea_thumb">
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb01.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb01.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb01_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb01.jpg")}
+                    />
                   </div>
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb02.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb02.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb02_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb02.jpg")}
+                    />
                   </div>
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb03.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb03.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb03_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb03.jpg")}
+                    />
                   </div>
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb04.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb04.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb04_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb04.jpg")}
+                    />
                   </div>
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb05.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb05.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb05_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb05.jpg")}
+                    />
                   </div>
-                  <div className="col-md-4">
-                    <img src="common/imgs/main/idea_thumb06.jpg" alt="" />
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb06.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb06_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb06.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb07.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb07_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb07.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb08.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb08_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb08.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb09.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb09_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb09.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb10.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb10_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb10.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb11.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb11_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb11.jpg")}
+                    />
+                  </div>
+                  <div className="col-md-3">
+                    <img
+                      src="common/imgs/main/idea_thumb12.jpg"
+                      alt="image not found"
+                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb12_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb12.jpg")}
+                    />
                   </div>
 
                   <div className="col-md-12 center">
                     <div className="project-section__content mt50">
                       <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
                         <a
-                          href="#"
+                          href="/dev"
                           className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
                           <span className="tp-btn-circle-text-2 text-left">
                             3D{" "}
@@ -330,16 +429,16 @@ const NNP = () => {
                               <path
                                 d="M4.24268 13.3843L13.0108 4.61615"
                                 stroke="white"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                               />
                               <path
                                 d="M4.52539 4.61621H13.0107V13.1015"
                                 stroke="white"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                               />
                             </svg>
                             <br /> 시작하기
@@ -353,12 +452,10 @@ const NNP = () => {
               </div>
             </section>
 
-            {/* 맞춤상담 컴포넌트 */}
-            <CustomInquiry></CustomInquiry>
-
             <section
-              className="project-section__area tp-btn-trigger-2 project-section body-bg section-space-bottom-160 section-space-top-110"
-              style={{ border: "1px solid #e7e7e7" }}>
+              className="project-section__area tp-btn-trigger-2 project-section body-bg section-space-bottom-160"
+              style={{ border: "1px solid #e7e7e7", marginTop: "-6px" }}>
+              {/* 2025-09-23 스타일 추가 */}
               <div className="container">
                 <div className="section__title-wrapper-2 text-center">
                   <div className="section__title-wrapper-2-title">
@@ -366,28 +463,26 @@ const NNP = () => {
                     <div className="fw200 f_pp f60 italic mt0 nnptitle">There’s a Thoughtful Partner.</div>
                   </div>
                 </div>
-
                 <div className="project-section__shape__wrap">
                   <div className="project-section__border__shape"></div>
                   <div className="project-section__border__shape"></div>
                   <div className="project-section__border__shape"></div>
                   <div className="project-section__border__shape"></div>
                 </div>
-
                 <div className="row">
                   <div className="col-md-6">
                     <div className="project-section__item margin-bottom margin-right">
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">01</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">두유액 생산</a>
+                          <a href="/business/product/soy">두유액</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="common/imgs/main/main_p01.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/soy" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -400,14 +495,34 @@ const NNP = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">03</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">균형영양식</a>
+                          <a href="/business/product/balance">균형영양식</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="common/imgs/main/main_p03.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/balance" className="title-btn rr-btn">
+                          <span>
+                            <i className="fa-regular fa-arrow-right"></i>
+                          </span>
+                          More Details
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="project-section__item margin-bottom margin-right">
+                      <div className="project-section__title__wrap hero">
+                        <span className="project-section__number">05</span>
+                        <h3 className="project-section__title _split_text">
+                          <a href="/business/product/sikhye">식혜</a>
+                        </h3>
+                      </div>
+                      <div className="project-section__thumb">
+                        <img src="common/imgs/main/main_p05.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
+                      </div>
+                      <div className="project-section__btn">
+                        <a href="/business/product/sikhye" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -418,16 +533,16 @@ const NNP = () => {
 
                     <div className="project-section__item margin-right">
                       <div className="project-section__title__wrap hero">
-                        <span className="project-section__number">05</span>
+                        <span className="project-section__number">07</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">식혜</a>
+                          <a href="/business/product/sterilized">멸균유</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p05.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
+                        <img src="common/imgs/main/main_p07.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/sterilized" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -447,7 +562,7 @@ const NNP = () => {
                       </p>
                       <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
                         <a
-                          href="#"
+                          href="/business/products"
                           className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
                           <span className="tp-btn-circle-text-2">
                             See{" "}
@@ -472,8 +587,7 @@ const NNP = () => {
                                 strokeLinejoin="round"
                               />
                             </svg>
-                            <br />
-                            all Service
+                            <br /> all Service
                           </span>
                           <i className="tp-btn-circle-dot"></i>
                         </a>
@@ -486,14 +600,14 @@ const NNP = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">02</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">단백질</a>
+                          <a href="/business/product/protein">단백질 음료</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="common/imgs/main/main_p02.jpg" alt="단배질팩" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/protein" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -506,14 +620,14 @@ const NNP = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">04</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">파티클</a>
+                          <a href="/business/product/particle">파티클</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="common/imgs/main/main_p04.jpg" alt="유리잔에 파티클이 있는 모습" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/particle" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -526,14 +640,54 @@ const NNP = () => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">06</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="project-details.html">육수</a>
+                          <a href="/business/product/sauce">소스</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
                         <img src="common/imgs/main/main_p06.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
-                        <a href="project-details.html" className="title-btn rr-btn">
+                        <a href="/business/product/sauce" className="title-btn rr-btn">
+                          <span>
+                            <i className="fa-regular fa-arrow-right"></i>
+                          </span>
+                          More Details
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="project-section__item margin-top margin-left">
+                      <div className="project-section__title__wrap hero">
+                        <span className="project-section__number">08</span>
+                        <h3 className="project-section__title _split_text">
+                          <a href="/business/product/juice">주스</a>
+                        </h3>
+                      </div>
+                      <div className="project-section__thumb">
+                        <img src="common/imgs/main/main_p08.jpg" alt="육수" />
+                      </div>
+                      <div className="project-section__btn">
+                        <a href="/business/product/juice" className="title-btn rr-btn">
+                          <span>
+                            <i className="fa-regular fa-arrow-right"></i>
+                          </span>
+                          More Details
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="project-section__item margin-top margin-left">
+                      <div className="project-section__title__wrap hero">
+                        <span className="project-section__number">09</span>
+                        <h3 className="project-section__title _split_text">
+                          <a href="/business/product/coffee">커피</a>
+                        </h3>
+                      </div>
+                      <div className="project-section__thumb">
+                        <img src="common/imgs/main/main_p09.jpg" alt="커피" />
+                      </div>
+                      <div className="project-section__btn">
+                        <a href="/business/product/coffee" className="title-btn rr-btn">
                           <span>
                             <i className="fa-regular fa-arrow-right"></i>
                           </span>
@@ -545,6 +699,7 @@ const NNP = () => {
                 </div>
               </div>
             </section>
+
             <div className="portfolio__big mb-30 body-bg overflow-hidden section-space-bottom">
               <div className="portfolio__big-inner overflow-hidden p-relative">
                 <img src="common/imgs/main/mainBigbanner.jpg" alt="img not found" />
@@ -677,7 +832,7 @@ const NNP = () => {
                       <br />
                       믿을 수 있는 브랜드
                     </h2>
-                    <a href="team.html" className="title-btn rr-btn btn-transparent">
+                    <a href="/brand/wizus/greenlemon" className="title-btn rr-btn btn-transparent">
                       <span>
                         <i className="fa-regular fa-arrow-right"></i>
                       </span>
@@ -698,12 +853,12 @@ const NNP = () => {
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">
-                              <a href="team-details.html">WIZUS</a>
+                              <a href="/brand/wizus/greenlemon">WIZUS</a>
                             </h3>
                             <p className="team-section__position">맛있게 즐기는 스포츠 프로틴 드링크!</p>
                           </div>
                           <div className="team-section__social">
-                            <a href="team-details.html">
+                            <a href="/brand/wizus/greenlemon">
                               <svg
                                 width="25"
                                 height="26"
@@ -735,12 +890,12 @@ const NNP = () => {
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">
-                              <a href="team-details.html">방방곡곡</a>
+                              <a href="/brand/healthy/sikhye">방방곡곡</a>
                             </h3>
                             <p className="team-section__position">단맛은 줄이고, 전통의 맛은 그대로</p>
                           </div>
                           <div className="team-section__social">
-                            <a href="team-details.html">
+                            <a href="/brand/healthy/sikhye">
                               <svg
                                 width="25"
                                 height="26"
@@ -772,12 +927,12 @@ const NNP = () => {
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">
-                              <a href="team-details.html">자연과사람들이 만든</a>
+                              <a href="/brand/pb">자연과사람들이 만든</a>
                             </h3>
                             <p className="team-section__position">신선한 과일의 풍부한 맛과 향을 담은 드링크</p>
                           </div>
                           <div className="team-section__social">
-                            <a href="team-details.html">
+                            <a href="/brand/pb">
                               <svg
                                 width="25"
                                 height="26"
@@ -806,6 +961,27 @@ const NNP = () => {
                 </div>
               </div>
             </section>
+
+            {/* 맞춤상담 컴포넌트 */}
+            <CustomInquiry></CustomInquiry>
+            {/* FAQ배너 2025-09-23 */}
+            <section>
+              <div className="contant1160 mb200">
+                <a href="/cs/contact">
+                  <img
+                    className="wView"
+                    src="/common/imgs/main/bnr_faq.png"
+                    alt="FAQ에서 못 찾으신 궁금증을 남겨주세요."
+                  />
+                  <img
+                    className="mView"
+                    src="/common/imgs/main/bnr_faq_mo.png"
+                    alt="FAQ에서 못 찾으신 궁금증을 남겨주세요."
+                  />
+                </a>
+              </div>
+            </section>
+            {/* //FAQ배너 2025-09-23 */}
           </main>
           <Footer></Footer>
         </div>

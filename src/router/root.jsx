@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../pages/Main";
 import NNP from "../pages/nnp";
 import Sample from "../pages/sample/Sample";
 import Waiting from "../pages/waiting";
@@ -24,6 +23,14 @@ import Haccp from "../pages/certification/Haccp";
 import Document from "../pages/certification/Document";
 import Product from "../pages/business/product/Product";
 import Sort from "../pages/business/product/Sort";
+import Container from "../pages/business/Container";
+import Wizus from "../pages/brand/Wizus";
+import Healthy from "../pages/brand/Healthy";
+import PB from "../pages/brand/PB";
+import Personal from "../pages/Personal";
+import Terms from "../pages/Terms";
+import AuthPage from "../pages/AuthPage";
+import BrandLayout from "../components/layout/BrandLayout";
 
 const Loading = <div>Loading..</div>;
 // lazy는 해당 모듈이 필요할때만 동적으로 로드하는 기능, Main 컴포넌트를 초기 번들에 포함하지 않고, 사용자가 해당 페이지에 접근할 때 비동기적으로 로드됨, 초기 로딩 속도를 줄이고 성능 최적화 효과가 있음
@@ -42,10 +49,10 @@ const root = createBrowserRouter(
       //<Suspense>는 **로딩 중일 때 표시할 UI (fallback 속성)**를 지정하는 역할을 함.
     },
     {
-      path: "/test",
+      path: "/auth",
       element: (
         <Suspense fallback={Loading}>
-          <Main></Main>
+          <AuthPage></AuthPage>
         </Suspense>
       ),
     },
@@ -115,10 +122,20 @@ const root = createBrowserRouter(
       path: "business",
       children: [
         { path: "products", Component: Product },
+        { path: "containers", Component: Container },
         {
           path: "product/:type",
           Component: Sort,
         },
+      ],
+    },
+    {
+      path: "brand",
+      Component: BrandLayout,
+      children: [
+        { path: "wizus/:type", Component: Wizus },
+        { path: "healthy/:type", Component: Healthy },
+        { path: "pb", Component: PB },
       ],
     },
     {
@@ -141,6 +158,23 @@ const root = createBrowserRouter(
           ),
         },
       ],
+    },
+
+    {
+      path: "/personal",
+      element: (
+        <Suspense fallback={Loading}>
+          <Personal></Personal>
+        </Suspense>
+      ),
+    },
+    {
+      path: "/terms",
+      element: (
+        <Suspense fallback={Loading}>
+          <Terms></Terms>
+        </Suspense>
+      ),
     },
     {
       path: "*",

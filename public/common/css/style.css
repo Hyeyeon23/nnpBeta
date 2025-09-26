@@ -95,6 +95,8 @@
 	li span.level-03 {background:#2b9b2e; padding:1px 10px;border-radius:10px; color:#fff; margin-right:5px; font-size:12px}
 	.pack3D a span{background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%); border-radius:20px; padding:5px 10px; color:#fff}
 	.pack3D {position:absolute; top:35px; right:200px}
+	.pack3D_motion {position:absolute; top:30px; right:150px;  border-radius:30px; display:inline-block; padding:3px 0; width:120px}
+	.pack3D_motion img {width:70%}
 	/* 3000 Default : Gnb */
 	#gnb{width: 100%; height: 90px; text-align: center;  position: relative; }
 	#gnb a{word-break: keep-all; text-decoration: none;}
@@ -352,10 +354,26 @@
 	--------------*/
 	 .experience-section .experience__border {border:0}
 	 .experience-section .experience__wrapper {bordeR:0}
+
+
+	/*--------------
+		terms
+	--------------*/
+	.terms {border:0px solid #ccc; background:#fff; border-radius:10px; padding:24px 20px ; font-size:13px; color:#333; height:400px; overflow-y:scroll; line-height:170%; width:100%; -webkit-box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.05); 
+box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.05);  white-space: pre;   }
+	.terms p {margin-top:30px}
+	.personal_box {position:relative; margin-top:30px}
+	.personal_box li {display:inline-block; width:48%;  margin-bottom:10px; -webkit-box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02); 
+box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
+	.personal_box li button {padding:14px 10px;  background:#fff; display:inline-block; width:100%; border-radius:15px;border:1px solid #f3f3f3;  }
+	.personal_box li button p {font-weight:500; color:#333}
+	.personal_box li button:hover {background:#848484;font-weight:700;}
+	.personal_box li button:hover p {color:#fff; }
+	.personal_box li:nth-child(2n){margin-lefT:20px}
 	/* --------------
 			3d
 	--------------- */
-	.pack_wrap { position:relative; min-height:1000px; background:#f0f2f4 }
+	.pack_wrap { position:relative; min-height:1000px; background:#f0f2f4;  }
 	.pack_wrap .pack_btn_footer {position:absolute; top:85%;left:50%;color:#fff;transform:translate(-50%,-50%);  }
 	.pack_wrap .pack_btn_footer ul {width:auto}
 	.pack_wrap .pack_btn_footer li {display:inline-block; margin:0 5px}
@@ -455,9 +473,11 @@
 	.bg_graph {background: url(../../common/imgs/main/bg_graph_small.gif) repeat scroll 0 0; }
 	.nav-link.active .f30 {/*color:#00AFEF*/color:#000 !important; font-weight:500!important}
 	.nav-link.active b {background:#333; color:#fff; border-radius:50px; padding:5px 20px;  font-weight:500!important }
-	.idea_thumb .col-md-4 {margin-bottom:30px}
+	.idea_thumb .col-md-3 {margin-bottom:30px}
 	.services-section .idea .services__tab__title {font-size:27px}
 
+	.scroll-container {display:flex; flex-wrap:nowrap; overflow-x:auto;}
+	.scroll-container .col-md-3 { flex: 0 0 auto !important;width: auto !important;}
 
 
 	/* --------------
@@ -496,6 +516,38 @@
     .swiper.ourBrandSwiper .swiper-slide img {display: block;width: 100%; height: 100%;object-fit: cover; }
 	.swiper.ourBrandSwiper .swiper-pagination .swiper-pagination-bullet{background:#fff; border:1px solid #00ABF7; width:13px; height:13px; opacity:1}
 	.swiper.ourBrandSwiper .swiper-pagination .swiper-pagination-bullet-active {border:1px solid #00ABF7; background:#00ABF7; opacity:1}
+	.wizus_logo img {width:400px}
+	.sikhye_logo img {width:180px}
+	.banner-2__content__shapes-shape-3 {top:160px}
+
+	.brandCard .project-section-2__item {background:#fff !important;-webkit-box-shadow: 0px -1px 15px 5px rgba(0,0,0,0.03); box-shadow: 0px -1px 15px 5px rgba(0,0,0,0.03); }
+	.wizustag01.project-section-2__tag ul li {color:#FF9100 !important; border:1px solid #FF9100; border-radius:30px; }
+	.wizustag02.project-section-2__tag ul li {color:#1E823C !important; border:1px solid #1E823C; border-radius:30px; }
+	.wizus_icon {position:relative}
+	.wizus_icon ul {vertical-align:middle; margin-top:20px}
+	.wizus_icon ul li {display:inline-block; vertical-align:middle; }
+	.wizus_icon ul li:first-child {width:20%; margin-right:0px; }
+	.wizus_icon ul li:first-child img {max-width:70px; }
+	.wizus_icon ul li:nth-child(2) {width:67%} 
+
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item {position:relative; border:0}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item:hover {background:linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%); }
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item:hover span,
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item:hover h3, 
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item:hover h4 {color:#fff}
+	.rotate-45{
+	display: inline-block;      /* div 회전 시 레이아웃 안정 */
+  transform: rotate(45deg);   /* 오른쪽으로 45도 회전 */
+  transform-origin: center;   /* 회전 중심점 (필요시 top/left/right로 변경 가능) */ border:2px solid red
+	}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item .rr-hover-reveal-bg {width:209px; height:235px}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item .rr-hover-reveal-bg.brand_over03 {width:246px; height:195px}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__link > span {color:#000}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item:hover .award-section__link span{background:#333333}
+	.brand_rotating_box {position:relative}
+	.brand_rotating img {width:140px; position:absolute; left:0; top:-60px; z-index:0}
+	.f80.f_pp.grayn5.lh100 {position:relative}
+	.sikhye_icons {max-width:350px}
 	/* --------------
 		//BRAND
 	--------------- */
@@ -536,8 +588,6 @@
 	.load_ul li:nth-child(2) {width:*} 
 	.load_ul li {display:inline-block;  vertical-align:top; }
 	.load_ul li img {border-radius:15px; border:2px solid #D4D4D4; width:60px}
-
-
 	.load_flex {display: flex;   width: 100%;    padding: 0;margin:0 15px;list-style: none;}
 	.load_flex li.fixed {width: 70px; flex-shrink: 0;}
 	.load_flex li.flexible { flex: 1; min-width: 0; }
@@ -547,14 +597,9 @@
 	.loadLine .col-md-6 ul{ border-right:1px solid #cccc; padding:20px 0}
 	.loadLine .col-md-6:nth-child(3) ul {border-right:0}
 	.loadLine .col-md-12 {border-top:1px solid #cccc; padding:40px 0}
-	
 	#roundNav.fixed{position: fixed !important; left: 0;top: 0;width: 100%; z-index:1000; }
 	#roundNav.fixed .subNav {-webkit-box-shadow: 2px 8px 11px -2px rgba(0,0,0,0.17); box-shadow: 2px 8px 11px -2px rgba(0,0,0,0.17); background:rgb(255,255,255,0.9)}
 	
-	/* --------------
-		//LOAD
-	--------------- */
-
 
 	/* --------------
 		FAMILY
@@ -562,11 +607,24 @@
 	.subTop_family {background: url(../../common/imgs/company/subTop_family.jpg) no-repeat scroll 0 0; background-size:cover;}
 	.familyBox {background:#fff; border-radius:20px;  padding:100px 50px; -webkit-box-shadow: 2px 8px 11px -2px rgba(0,0,0,0.17); box-shadow: 2px 8px 11px -2px rgba(0,0,0,0.17); background:rgb(255,255,255,0.9)}
 	.familyBox .load_ul {margin-top:10px !important}
+
 	/* --------------
-		//FAMILY
+		RECRUIT
 	--------------- */
-
-
+	.subTop_recruit {background: url(../../common/imgs/company/subTop_recruit.jpg) no-repeat scroll 0 0; background-size:cover;}
+	.recruit_t_box {border-bottom:1px solid #ccc; background:#fff; display:inline-block; width:100%; }
+	.recruit_t_box table {width:50%; float:left;}
+	.recruit_t_box table th {text-align:center; padding:15px 0; background:#EEF7FC; color:#333333; border-top:1px solid #707070; border-left:1px solid #CCCCCC; font-size:16px}
+	.recruit_t_box table th:first-child {border-left:0}
+	.recruit_t_box table td:first-child {border-left:0}
+	.recruit_t_box table:nth-child(2) th {border-left:1px solid #ccc}
+	.recruit_t_box table:nth-child(2) td {border-left:1px solid #ccc}
+	.recruit_t_box table td {background:#fff; border-left:1px solid #ccc;  padding:15px; text-align:center; min-height:170px; 
+	font-size:14px; line-height:140%; color:#333333; border-top:1px solid #CCCCCC;}
+	.rec_txt p {width:100%; border-bottom:1px solid #848484 ; padding-bottom:20px; color:#333333; font-size:24px ;font-weight:500}
+	.rec_txt ul {padding-top:10px}
+	.rec_txt ul li {background: url(../../common/imgs/company/dot.jpg) no-repeat scroll 0 13px; padding-left:15px; line-height:170%; font-size:18px}
+	.planning-section__number span {background:none !important; color:red  }
 	/* --------------
 		certification
 	--------------- */
@@ -761,9 +819,14 @@
 	.services-section .idea .services__tab__title {font-size:17px}
 	.idea .col-md-5 {flex: 0 0 auto; width:41.66666667% !important;}
 	.idea .col-md-7 {flex: 0 0 auto; width:58.3333% !important; }
-	.idea_thumb .col-md-4 {flex: 0 0 auto; width:50% !important}
-	
-}
+	.idea_thumb .col-md-3 {flex: 0 0 auto; width:50% !important}
+
+	.scroll-container {display: flex; overflow-x: auto; gap: 10px; /* 이미지 간격 */ padding: 10px; scroll-behavior: smooth;}
+	.scroll-container::-webkit-scrollbar {height: 8px;        /* 가로 스크롤바 높이 */}
+	.scroll-container::-webkit-scrollbar-thumb {background: #ccc; border-radius: 4px;}
+	.item img {height: 200px; border-radius: 10px; /* 모서리 둥글게 */}
+
+
 
 @media (max-width: 992px) {
 	body {border:0px solid red}
@@ -909,6 +972,13 @@
 	
 	/* //aside */
 
+	/*--------------
+		terms
+	--------------*/
+	.terms {border:1px solid #ccc; background:#fff; border-radius:10px; padding:24px 20px ; font-size:11px; color:#333; height:400px; overflow-y:scroll; line-height:170%; width:100%}
+	.personal_box {display:none}
+
+
 
 	/* 3D */
 	.pack_wrap { position:relative; min-height:100vh; background:#f0f2f4;  overflow-x:hidden }
@@ -1010,6 +1080,24 @@
 	--------------- */
 
 	/* --------------
+		RECRUIT
+	--------------- */
+	.subTop_recruit {background: url(../../common/imgs/company/subTop_recruit.jpg) no-repeat scroll 0 0; background-size:cover;}
+	.recruit_t_box {border-bottom:1px solid #ccc; background:#fff; display:inline-block; width:100%; }
+	.recruit_t_box table {width:100%; float:left;}
+	.recruit_t_box table th {font-size:13px}
+
+	.recruit_t_box table:nth-child(2) th {border-left:1px solid #ccc}
+	.recruit_t_box table:nth-child(2) td {border-left:1px solid #ccc}
+	.recruit_t_box table td {font-size:12px; }
+	.rec_txt p {width:100%; border-bottom:1px solid #848484 ; padding-bottom:20px; color:#333333; font-size:24px ;font-weight:500}
+	.rec_txt ul {padding-top:10px}
+	.rec_txt ul li {background: url(../../common/imgs/company/dot.jpg) no-repeat scroll 0 13px; padding-left:15px; line-height:170%; font-size:18px}
+	.planning-section__number span {background:none !important; color:red  }
+
+
+
+	/* --------------
 		BTN
 	--------------- */
 	.title-btn span {width:30px; height:30px}
@@ -1095,6 +1183,15 @@
 	.cardBox img { border-radius:15px}
 	.cardBox .more {font-size:12px; display:block; text-align:center; max-width:80px; margin-top:10px; line-height:110%; padding:7px 10px}
 	.keyword {border:1px solid #333; padding:3px 10px; border-radius:15px; margin-right:2px; font-size:11px}
+
+	/* --------------
+		BRAND
+	--------------- */
+	.wizus_logo img {width:200px}
+	.banner-2__content__shapes-shape-3 {top:160px}
+	.banner-2__area.ourbrand {padding-top:75px}
+	.contant1160 .award-section__wrap.brand_wrap .award-section__item {border-bottom:1px solid #ccc; }
+	
 	
 
 

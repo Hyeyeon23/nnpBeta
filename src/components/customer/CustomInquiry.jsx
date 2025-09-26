@@ -131,12 +131,12 @@ const CustomInquiry = () => {
   };
   return (
     <>
-      <section className="contant1100">
+      <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-8">
             <p className="f70 fw600 grayn1 lh120">맞춤 상담</p>
             <p className="f70 fw600 grayn1 lh120 main_cs">
-              <img src="common/imgs/common/main_cs.png" style={{ paddingBottom: "30px" }} /> 요청해보세요
+              <img src="/common/imgs/common/main_cs.png" style={{ paddingBottom: "30px" }} /> 요청해보세요
             </p>
             <p className="f80 fw900 grayn1 italic f_pp lh100">Custom product.</p>
           </div>

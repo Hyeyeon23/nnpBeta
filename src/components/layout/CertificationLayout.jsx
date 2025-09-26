@@ -106,7 +106,7 @@ const CertificationLayout = () => {
                 </div>
               </div>
             </section>
-            <Outlet></Outlet>
+            <Outlet key={section}></Outlet>
           </main>
           <FooterReact key={section}></FooterReact>
         </div>

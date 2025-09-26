@@ -1,7 +1,9 @@
+
 import axiosInstance from "../utils/axios";
 
 
 export const imageTransfer = async (image) => {
+
 
     try {
         const formData = new FormData();
@@ -16,9 +18,14 @@ export const imageTransfer = async (image) => {
     } catch (error) {
         console.error("업로드 실패:", error);
         if (error.response && error.response.status === 403) {
-            alert("SNS 인증 후 사진을 업로드 해주세요.");
+
+            const go = window.confirm("SNS 인증 후 사진을 업로드 해주세요. 인증 페이지로 이동하시겠습니까?");
+            if (go) {
+                // 로그인으로 이동 — 이전 경로 저장 (로그인 후 리다이렉트용)
+                window.location.href = "/auth";
+            }
             return;
         }
-        alert("서버 사진 업로드에 실패하였습니다.")
+        alert("사진 업로드에 실패하였습니다.[" + error + "]")
     }
 }

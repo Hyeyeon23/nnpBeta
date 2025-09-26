@@ -190,7 +190,9 @@ const Header = () => {
                           </a>
                         </li>
                         <li className="gbg06">
-                          <a href="">용기유형</a>
+                          <a href="#!" onClick={() => linkTo("/business/containers")}>
+                            용기유형
+                          </a>
                         </li>
                         <li className="gbg07">
                           <a href="" target="_blank">
@@ -212,10 +214,9 @@ const Header = () => {
                           <a href="">WIZUS</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="">녹차</a>
-                            </li>
-                            <li>
-                              <a href="">레몬</a>
+                              <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                                녹차/레몬
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -223,12 +224,16 @@ const Header = () => {
                           <a href="">건강담은</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="">식혜</a>
+                              <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
+                                식혜
+                              </a>
                             </li>
                           </ul>
                         </li>
                         <li className="gbg10">
-                          <a href="">자연과사람들이 만든</a>
+                          <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                            자연과사람들이 만든
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -257,7 +262,7 @@ const Header = () => {
                 </li>
               </ul>
               <div className="pack3D">
-                <a href="" onClick={oneDepMenu} className="f_pp">
+                <a href="/dev" onClick={oneDepMenu} className="f_pp">
                   <span>pack3D</span>
                 </a>
               </div>
@@ -267,7 +272,7 @@ const Header = () => {
                 <li>
                   <div className="custom-sel">
                     <select>
-                      <option value="ENG">ENG</option>
+                      {/* <option value="ENG">ENG</option> */}
                       <option value="KOR">KOR</option>
                     </select>
                   </div>
@@ -289,14 +294,14 @@ const Header = () => {
                             <li>
                               <div className="custom-sel gray">
                                 <select>
-                                  <option value="ENG">ENG</option>
+                                  {/* <option value="ENG">ENG</option> */}
                                   <option value="KOR">KOR</option>
                                 </select>
                               </div>
                             </li>
                             <li>
                               <a href="" className="closebtn" onClick={closeNav}>
-                                <img src="common/imgs/common/btn_fullMenu_close.png" alt="닫기버튼" />
+                                <img src="/common/imgs/common/btn_fullMenu_close.png" alt="닫기버튼" />
                               </a>
                             </li>
                           </ul>
@@ -324,7 +329,7 @@ const Header = () => {
                 <div className="custom-sel ">
                   <select id="globalLang" onchange="changeLang();return false">
                     <option value="KOR">KOR</option>
-                    <option value="ENG">ENG</option>
+                    {/* <option value="ENG">ENG</option> */}
                   </select>
                 </div>
               </li>
@@ -446,217 +451,87 @@ const Header = () => {
                           </dd>
                         </dl>
                       </li>
-                      <li>
-                        <a href="/company/agency">전국 영업소</a>
-                      </li>
                     </ul>
                   </div>
                 </div>
                 <div className={`ver-title01 ${isOpenMInner === 2 ? "open" : ""}`} onClick={() => handleToggle(2)}>
                   <a href="#" onClick={(e) => e.preventDefault()}>
-                    <p>Product</p>
+                    <p>Business</p>
                   </a>
                 </div>
                 <div className={`v_content_wrapper ${isOpenMInner === 2 ? "open" : ""}`}>
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        <a href="/brandStory/vegemil">브랜드 스토리</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/brandStory/vegemil">베지밀</a>
-                          </dd>
-                          <dd>
-                            <a href="/brandStory/greenbia">그린비아</a>
-                          </dd>
-                          <dd>
-                            <a href="/brandStory/recipe">간단요리사</a>
-                          </dd>
-                          <dd>
-                            <a href="/brandStory/simcheonsoo">심천수</a>
-                          </dd>
-                        </dl>
-                      </li>
-                      <li>
-                        <a href="/product/list">제품 소개</a>
-                      </li>
-                      <li>
-                        <a href="/product/cook">쿡앤쿡 레시피</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/product/cook">베지밀 레시피</a>
-                          </dd>
-                          <dd>
-                            <a href="/beanSoup/list" target="_blank">
-                              간단요리사레시피 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="/beanSoupRecipe/index" target="_blank">
-                              콩국물 레시피 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                        </dl>
-                      </li>
-                      <li>
-                        <a href="https://www.edaymall.com" target="_blanck">
-                          공식 쇼핑몰
+                        <a href="#!" onClick={() => linkTo("/business/products")}>
+                          제품유형
                         </a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/product/cook" target="_blank">
-                              이데이몰 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                        </dl>
+                      </li>
+                      <li>
+                        <a href="#!" onClick={() => linkTo("/business/containers")}>
+                          용기유형
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div className={`ver-title01 ${isOpenMInner === 3 ? "open" : ""}`} onClick={() => handleToggle(3)}>
                   <a href="#" onClick={(e) => e.preventDefault()}>
-                    <p>R&D</p>
+                    <p>Brand</p>
                   </a>
                 </div>
                 <div className={`v_content_wrapper ${isOpenMInner === 3 ? "open" : ""}`}>
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        <a href="/rnd/phd">중앙연구소</a>
+                        <a href="#" onClick={(e) => e.preventDefault()}>
+                          Wizus
+                        </a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/rnd/phd">연구소장 인사말</a>
+                            <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                              녹차 / 레몬
+                            </a>
                           </dd>
+                        </dl>
+                      </li>
+
+                      <li>
+                        <a href="/rnd/haccp">건강담은</a>
+                        <dl className="v_con_dl">
                           <dd>
-                            <a href="/rnd/Introduce">연구소 소개</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/devWork">R&D 활동</a>
+                            <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
+                              식혜
+                            </a>
                           </dd>
                         </dl>
                       </li>
                       <li>
-                        <a href="/rnd/patent">특허 및 연구논문</a>
-                      </li>
-                      <li>
-                        <a href="/rnd/haccp">식품안전인증현황</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/rnd/haccp">HACCP 인증</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/fssc">FSSC 22000</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/halal">HALAL 인증</a>
-                          </dd>
-                        </dl>
-                      </li>
-                      <li>
-                        <a href="/rnd/ccm">일반인증현황</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/rnd/ccm">CCM 인증</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/epd">환경성적표지 인증</a>
-                          </dd>
-                          <dd>
-                            <a href="/rnd/iso">ISO 45001 인증</a>
-                          </dd>
-                        </dl>
+                        <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                          자연과사람들이 만든
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className={`ver-title01 ${isOpenMInner === 4 ? "open" : ""}`} onClick={() => handleToggle(2)}>
+                <div className={`ver-title01 ${isOpenMInner === 4 ? "open" : ""}`} onClick={() => handleToggle(4)}>
                   <a href="#" onClick={(e) => e.preventDefault()}>
-                    <p>Communication</p>
+                    <p>CS</p>
                   </a>
                 </div>
                 <div className={`v_content_wrapper ${isOpenMInner === 4 ? "open" : ""}`}>
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        <a href="/webzine">정식품 웹진</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/webzine">웹진 바로가기</a>
-                          </dd>
-                          <dd>
-                            <a href="/webzine/subscribe">웹진 신청</a>
-                          </dd>
-                        </dl>
+                        <a href="#!" onClick={() => linkTo("/cs/faq")}>
+                          {" "}
+                          자주 묻는 질문
+                        </a>
                       </li>
                       <li>
-                        <a href="https://www.instagram.com/vegemil.official/">SNS</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="https://www.instagram.com/vegemil.official/" target="_blank">
-                              정식품 인스타그램 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="https://www.instagram.com/vegemil_baby/" target="_blank">
-                              영&middot;유아식 인스타그램 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="https://www.facebook.com/vegemilgood" target="_blank">
-                              정식품 페이스북 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="https://blog.naver.com/vegemilstory" target="_blank">
-                              정식품 블로그 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="https://www.youtube.com/user/vegemilgood" target="_blank">
-                              정식품 유튜브 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                        </dl>
-                      </li>
-                      <li>
-                        <a href="/event/list">이벤트</a>
-                      </li>
-                      <li>
-                        <a href="/vegemilBaby/index">베지밀 영&middot;유아식</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/vegemilBaby/sample" target="_blank">
-                              샘플신청 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="/vegemilBaby/event_review_best" target="_blank">
-                              후기 이벤트 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                          <dd>
-                            <a href="/vegemilBaby/model" target="_blank">
-                              아기달력모델 <span className="ico_arrow_gray"></span>
-                            </a>
-                          </dd>
-                        </dl>
-                      </li>
-                      <li>
-                        <a href="/communication/ccm">공정거래(CP)</a>
-                      </li>
-                      <li>
-                        <a href="/communication/voc">고객문의</a>
-                        <dl className="v_con_dl">
-                          <dd>
-                            <a href="/communication/voc">고객의 소리</a>
-                          </dd>
-                          <dd>
-                            <a href="/faq/list">자주 묻는 질문</a>
-                          </dd>
-                          <dd>
-                            <a href="/communication/ask">1:1문의</a>
-                          </dd>
-                        </dl>
+                        <a href="#!" onClick={() => linkTo("/cs/contact")}>
+                          1:1 문의
+                        </a>
                       </li>
                     </ul>
                   </div>

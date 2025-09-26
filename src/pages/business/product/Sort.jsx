@@ -569,7 +569,7 @@ const Sort = () => {
 
           <section className="">
             <div className="contant1160 mb200">
-              <a href="contact.html">
+              <a href="/cs/contact">
                 <img className="wView" src="/common/imgs/business/cs.png" alt="제품이나 서비스에 대해 문의가 있나요?" />
                 <img
                   className="mView"

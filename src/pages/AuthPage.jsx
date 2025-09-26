@@ -5,7 +5,7 @@ import Kakao from "../components/sns/Kakao";
 import Naver from "../components/sns/Naver";
 import Header from "../components/common/Header";
 
-const Main = () => {
+const AuthPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,13 +30,8 @@ const Main = () => {
 
       <Header></Header>
       <div
-        className="container text-center bg-light"
-        style={{ marginTop: 90, marginBottom: 10, paddingTop: 10, paddingBottom: 600 }}>
-        <h1>Main</h1>
-        <h4> .... </h4>
-        <div>
-          <Link to={"/dev"}> 용기시안 </Link>
-        </div>
+        className="text-center bg-light"
+        style={{ marginTop: 90, marginBottom: 10, paddingTop: 300, paddingBottom: 300 }}>
         <div>
           <Kakao></Kakao>
           <Naver></Naver>
@@ -47,4 +42,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default AuthPage;
