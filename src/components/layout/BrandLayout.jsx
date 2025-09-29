@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import FooterReact from "../common/FooterReact";
 import Header from "../common/Header";
+import BrandHero from "../hero/BrandHero";
 
 const BrandLayout = () => {
   const location = useLocation();
   useEffect(() => {
+    console.log(location);
     const existingScripts = document.querySelectorAll('script[src="/common/js/main.js"]');
 
     // 기존 스크립트 제거
@@ -29,14 +31,17 @@ const BrandLayout = () => {
         document.body.removeChild(mainScript);
       }
     };
-  }, [location]);
+  }, [location.pathname]);
   return (
     <>
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content" className="body-bg">
-          <Outlet></Outlet>
-          <FooterReact></FooterReact>
+          <main>
+            <BrandHero key={location}></BrandHero>
+            <Outlet></Outlet>
+          </main>
+          <FooterReact key={location}></FooterReact>
         </div>
       </div>
     </>

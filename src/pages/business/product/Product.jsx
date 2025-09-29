@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../../components/common/Header";
-import FooterReact from "../../../components/common/FooterReact";
+import Footer from "../../../components/common/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Product = () => {
   const navigate = useNavigate();
@@ -12,28 +10,28 @@ const Product = () => {
     navigate("/business/product/" + sub);
   };
 
-  // useEffect(() => {
-  //   // <main.js 재실행>라우트 변경 시마다
-  //   const reloadMainScript = () => {
-  //     const mainScript = document.createElement("script");
-  //     mainScript.src = "/common/js/main.js";
-  //     mainScript.async = false;
-  //     document.body.appendChild(mainScript);
+  useEffect(() => {
+    // <main.js 재실행>라우트 변경 시마다
+    const reloadMainScript = () => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "/common/js/main.js";
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
 
-  //     return () => {
-  //       if (mainScript && document.body.contains(mainScript)) {
-  //         document.body.removeChild(mainScript);
-  //       }
-  //     };
-  //   };
+      return () => {
+        if (mainScript && document.body.contains(mainScript)) {
+          document.body.removeChild(mainScript);
+        }
+      };
+    };
 
-  //   // main.js 재로드
-  //   const cleanup = reloadMainScript();
+    // main.js 재로드
+    const cleanup = reloadMainScript();
 
-  //   // <main.js 재실행>
+    // <main.js 재실행>
 
-  //   return cleanup;
-  // }, []);
+    return cleanup;
+  }, [location]);
 
   return (
     <>
@@ -75,7 +73,7 @@ const Product = () => {
                   <div className="col-md-6">
                     {/* 01 두유액 */}
                     <div className="project-section__item margin-bottom margin-right">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">01</span>
                         <h3 className="project-section__title _split_text_">
                           <a href="#!" onClick={() => linkToSub("soy")}>
@@ -117,9 +115,9 @@ const Product = () => {
 
                     {/* 03 균형영양식 */}
                     <div className="project-section__item margin-bottom margin-right">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">03</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("balance")}>
                             균형영양식
                           </a>
@@ -140,9 +138,9 @@ const Product = () => {
 
                     {/* 05 식혜 */}
                     <div className="project-section__item margin-bottom margin-right">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">05</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("sikhye")}>
                             식혜
                           </a>
@@ -163,9 +161,9 @@ const Product = () => {
 
                     {/* 07 멸균유 */}
                     <div className="project-section__item margin-right">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">07</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("sterilized")}>
                             멸균유
                           </a>
@@ -202,9 +200,9 @@ const Product = () => {
                   <div className="col-md-6">
                     {/* 02 단백질 음료 */}
                     <div className="project-section__item margin-top margin-left">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">02</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("protein")}>
                             단백질 음료
                           </a>
@@ -225,9 +223,9 @@ const Product = () => {
 
                     {/* 04 파티클 */}
                     <div className="project-section__item margin-top margin-left">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">04</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("particle")}>
                             파티클
                           </a>
@@ -248,9 +246,9 @@ const Product = () => {
 
                     {/* 06 소스 */}
                     <div className="project-section__item margin-top margin-left">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">06</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("sauce")}>
                             소스
                           </a>
@@ -271,9 +269,9 @@ const Product = () => {
 
                     {/* 08 주스 */}
                     <div className="project-section__item margin-top margin-left">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">08</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("juice")}>
                             주스
                           </a>
@@ -294,9 +292,9 @@ const Product = () => {
 
                     {/* 09 커피 */}
                     <div className="project-section__item margin-top margin-left">
-                      <div className="project-section__title__wrap heroRe">
+                      <div className="project-section__title__wrap hero">
                         <span className="project-section__number">09</span>
-                        <h3 className="project-section__title _split_text_re">
+                        <h3 className="project-section__title _split_text">
                           <a href="#!" onClick={() => linkToSub("coffee")}>
                             커피
                           </a>
@@ -321,7 +319,7 @@ const Product = () => {
           </main>
         </div>
       </div>
-      <FooterReact></FooterReact>
+      <Footer></Footer>
     </>
   );
 };

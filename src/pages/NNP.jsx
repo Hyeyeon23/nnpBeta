@@ -42,7 +42,7 @@ const NNP = () => {
                           <img
                             id="rotating-arrow"
                             className="rotate"
-                            src="common/imgs/shapes/main_onstop.png"
+                            src="/common/imgs/shapes/main_onstop.png"
                             alt="arrow"
                           />
                         </span>
@@ -57,7 +57,7 @@ const NNP = () => {
                               muted
                               autoPlay
                               playsInline>
-                              <source src="common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
+                              <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
                             </video>
                           </a>
                           <span className="solutions rr-title-animation f_pp fw800">We set the stage.</span>
@@ -99,15 +99,15 @@ const NNP = () => {
               <div className="row">
                 <div className="col-lg-3 mt100 wow  bounceInLeft" data-wow-delay="0.5s">
                   {" "}
-                  <img className="mt100" src="common/imgs/common/main_op01.jpg" alt="요리육수전골" />{" "}
+                  <img className="mt100" src="/common/imgs/common/main_op01.jpg" alt="요리육수전골" />{" "}
                 </div>
                 <div className="col-lg-5 mt100 wow  bounceInUp" data-wow-delay="1s">
                   {" "}
-                  <img className="" src="common/imgs/common/main_op02.jpg" alt="캔음료" />{" "}
+                  <img className="" src="/common/imgs/common/main_op02.jpg" alt="캔음료" />{" "}
                 </div>
                 <div className="col-lg-4 mt100 wow  bounceInRight" data-wow-delay="1.5s">
                   {" "}
-                  <img className="mt30" src="common/imgs/common/main_op03.png" alt="프로틴밀, 식혜" />{" "}
+                  <img className="mt30" src="/common/imgs/common/main_op03.png" alt="프로틴밀, 식혜" />{" "}
                 </div>
               </div>
             </section>
@@ -144,8 +144,8 @@ const NNP = () => {
                               className="img100"
                               src="/common/imgs/common/main_pack.jpg"
                               alt="image not found"
-                              onMouseOver={(e) => (e.currentTarget.src = "common/imgs/common/main_pack_06.jpg")}
-                              onMouseOut={(e) => (e.currentTarget.src = "common/imgs/common/main_pack.jpg")}
+                              onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/common/main_pack_06.jpg")}
+                              onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/common/main_pack.jpg")}
                             />
                           </a>
                         </div>
@@ -156,10 +156,10 @@ const NNP = () => {
                           <a href="/business/containers">
                             <img
                               className="img100"
-                              src="common/imgs/common/main_can.jpg"
+                              src="/common/imgs/common/main_can.jpg"
                               alt="image not found"
-                              onMouseOver={(e) => (e.currentTarget.src = "common/imgs/common/main_can_05.jpg")}
-                              onMouseOut={(e) => (e.currentTarget.src = "common/imgs/common/main_can.jpg")}
+                              onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/common/main_can_05.jpg")}
+                              onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/common/main_can.jpg")}
                             />
                           </a>
                         </div>
@@ -205,7 +205,7 @@ const NNP = () => {
                           role="tabpanel"
                           aria-labelledby="v-pills-home-tab"
                           tabindex="0">
-                          <img src="common/imgs/main/idea01.png" alt="도면 다운로드" />
+                          <img src="/common/imgs/main/idea01.png" alt="도면 다운로드" />
                         </div>
                         <div
                           className="tab-pane fade"
@@ -213,7 +213,7 @@ const NNP = () => {
                           role="tabpanel"
                           aria-labelledby="v-pills-profile-tab"
                           tabindex="0">
-                          <img src="common/imgs/main/idea02.png" alt="도면 다운로드" />
+                          <img src="/common/imgs/main/idea02.png" alt="도면 다운로드" />
                         </div>
                         <div
                           className="tab-pane fade"
@@ -221,7 +221,7 @@ const NNP = () => {
                           role="tabpanel"
                           aria-labelledby="v-pills-messages-tab"
                           tabindex="0">
-                          <img src="common/imgs/main/idea03.png" alt="도면 다운로드" />
+                          <img src="/common/imgs/main/idea03.png" alt="도면 다운로드" />
                         </div>
                         <div
                           className="tab-pane fade"
@@ -229,7 +229,7 @@ const NNP = () => {
                           role="tabpanel"
                           aria-labelledby="v-pills-settings-tab"
                           tabindex="0">
-                          <img src="common/imgs/main/idea04.png" alt="도면 다운로드" />
+                          <img src="/common/imgs/main/idea04.png" alt="도면 다운로드" />
                         </div>
                       </div>
                     </div>
@@ -317,98 +317,98 @@ const NNP = () => {
                 <div className="row mt50 idea_thumb">
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb01.jpg"
+                      src="/common/imgs/main/idea_thumb01.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb01_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb01.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb02.jpg"
+                      src="/common/imgs/main/idea_thumb02.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb02_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb02.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb03.jpg"
+                      src="/common/imgs/main/idea_thumb03.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb03_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb03.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb04.jpg"
+                      src="/common/imgs/main/idea_thumb04.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb04_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb04.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb05.jpg"
+                      src="/common/imgs/main/idea_thumb05.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb05_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb05.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb06.jpg"
+                      src="/common/imgs/main/idea_thumb06.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb06_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb06.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb07.jpg"
+                      src="/common/imgs/main/idea_thumb07.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb07_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb07.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb08.jpg"
+                      src="/common/imgs/main/idea_thumb08.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb08_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb08.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb09.jpg"
+                      src="/common/imgs/main/idea_thumb09.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb09_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb09.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb10.jpg"
+                      src="/common/imgs/main/idea_thumb10.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb10_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb10.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb11.jpg"
+                      src="/common/imgs/main/idea_thumb11.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb11_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb11.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11.jpg")}
                     />
                   </div>
                   <div className="col-md-3">
                     <img
-                      src="common/imgs/main/idea_thumb12.jpg"
+                      src="/common/imgs/main/idea_thumb12.jpg"
                       alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb12_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "common/imgs/main/idea_thumb12.jpg")}
+                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12_on.jpg")}
+                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12.jpg")}
                     />
                   </div>
 
@@ -479,7 +479,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p01.jpg" alt="유리잔에 두유액이 따르는 모습" />
+                        <img src="/common/imgs/main/main_p01.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/soy" className="title-btn rr-btn">
@@ -499,7 +499,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p03.jpg" alt="유리잔에 두유액이 따르는 모습" />
+                        <img src="/common/imgs/main/main_p03.jpg" alt="유리잔에 두유액이 따르는 모습" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/balance" className="title-btn rr-btn">
@@ -519,7 +519,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p05.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
+                        <img src="/common/imgs/main/main_p05.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/sikhye" className="title-btn rr-btn">
@@ -539,7 +539,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p07.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
+                        <img src="/common/imgs/main/main_p07.jpg" alt="도자기 잔에 잣이 띄워져 있는 식혜" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/sterilized" className="title-btn rr-btn">
@@ -604,7 +604,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p02.jpg" alt="단배질팩" />
+                        <img src="/common/imgs/main/main_p02.jpg" alt="단배질팩" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/protein" className="title-btn rr-btn">
@@ -624,7 +624,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p04.jpg" alt="유리잔에 파티클이 있는 모습" />
+                        <img src="/common/imgs/main/main_p04.jpg" alt="유리잔에 파티클이 있는 모습" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/particle" className="title-btn rr-btn">
@@ -644,7 +644,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p06.jpg" alt="육수" />
+                        <img src="/common/imgs/main/main_p06.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/sauce" className="title-btn rr-btn">
@@ -664,7 +664,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p08.jpg" alt="육수" />
+                        <img src="/common/imgs/main/main_p08.jpg" alt="육수" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/juice" className="title-btn rr-btn">
@@ -684,7 +684,7 @@ const NNP = () => {
                         </h3>
                       </div>
                       <div className="project-section__thumb">
-                        <img src="common/imgs/main/main_p09.jpg" alt="커피" />
+                        <img src="/common/imgs/main/main_p09.jpg" alt="커피" />
                       </div>
                       <div className="project-section__btn">
                         <a href="/business/product/coffee" className="title-btn rr-btn">
@@ -702,7 +702,7 @@ const NNP = () => {
 
             <div className="portfolio__big mb-30 body-bg overflow-hidden section-space-bottom">
               <div className="portfolio__big-inner overflow-hidden p-relative">
-                <img src="common/imgs/main/mainBigbanner.jpg" alt="img not found" />
+                <img src="/common/imgs/main/mainBigbanner.jpg" alt="img not found" />
                 <div className="portfolio__big-inner-box">
                   <b className="portfolio__big-inner-box-item white fff">OEM생산</b>
                 </div>
@@ -726,97 +726,97 @@ const NNP = () => {
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_01.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_01.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_02.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_02.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_03.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_03.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_04.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_04.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_05.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_05.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_06.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_06.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_07.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_07.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_08.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_08.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_09.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_09.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_10.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_10.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_12.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_12.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_13.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_13.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_14.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_14.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_15.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_15.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_16.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_16.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_17.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_17.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_18.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_18.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_19.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_19.jpg" alt="코카콜라" />
                       </div>
                     </div>
                     <div className="swiper-slide">
                       <div className="brand-section__logo">
-                        <img src="common/imgs/main/client_20.jpg" alt="코카콜라" />
+                        <img src="/common/imgs/main/client_20.jpg" alt="코카콜라" />
                       </div>
                     </div>
                   </div>
@@ -849,7 +849,7 @@ const NNP = () => {
                       <div className="col-lg-4 col-md-6">
                         <div className="team-section__item fade-top mb-30">
                           <div className="team-section__thumb">
-                            <img src="common/imgs/main/main_brand01.jpg" alt="image not found" />
+                            <img src="/common/imgs/main/main_brand01.jpg" alt="image not found" />
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">
@@ -886,7 +886,7 @@ const NNP = () => {
                       <div className="col-lg-4 col-md-6">
                         <div className="team-section__item fade-top mb-30">
                           <div className="team-section__thumb">
-                            <img src="common/imgs/main/main_brand02.jpg" alt="image not found" />
+                            <img src="/common/imgs/main/main_brand02.jpg" alt="image not found" />
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">
@@ -923,7 +923,7 @@ const NNP = () => {
                       <div className="col-lg-4 col-md-6">
                         <div className="team-section__item fade-top mb-30">
                           <div className="team-section__thumb">
-                            <img src="common/imgs/main/main_brand03.jpg" alt="image not found" />
+                            <img src="/common/imgs/main/main_brand03.jpg" alt="image not found" />
                           </div>
                           <div className="team-section__content">
                             <h3 className="team-section__title">

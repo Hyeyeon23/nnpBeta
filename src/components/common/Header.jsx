@@ -171,7 +171,7 @@ const Header = () => {
                           </ul>
                         </li>
                         <li className="gbg04">
-                          <a href="">채용정보</a>
+                          <a href="/recruit/info">채용정보</a>
                         </li>
                       </ul>
                     </div>
@@ -185,9 +185,8 @@ const Header = () => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg05">
-                          <a href="#!" onClick={() => linkTo("/business/products")}>
-                            제품유형
-                          </a>
+                          {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
+                          <a href="/business/products">제품유형</a>
                         </li>
                         <li className="gbg06">
                           <a href="#!" onClick={() => linkTo("/business/containers")}>
@@ -463,9 +462,8 @@ const Header = () => {
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        <a href="#!" onClick={() => linkTo("/business/products")}>
-                          제품유형
-                        </a>
+                        {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
+                        <a href="/business/products">제품유형</a>
                       </li>
                       <li>
                         <a href="#!" onClick={() => linkTo("/business/containers")}>
