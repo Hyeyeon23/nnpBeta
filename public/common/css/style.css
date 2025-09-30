@@ -41,7 +41,7 @@
 	.overhidden {overflow:hidden}
 	.clear {clear:both}
 	.ttf {text-transform:none !important}
-	.inlineblock {display:inline-block !important; border:2px solid red} 
+	.inlineblock {display:inline-block !important; } 
 
 	/* display None*/
 	.wView {display:block;   }
@@ -389,7 +389,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.btn_3d_01 {background:#fff url(../../common/imgs/3d/btn_3d_01.png) no-repeat scroll 0 0;background-size: cover;}
 	.btn_3d_02 {background:#fff url(../../common/imgs/3d/btn_3d_02.png) no-repeat scroll 0 0;background-size: cover;}
 	.btn_3d_03 {background:#fff url(../../common/imgs/3d/btn_3d_03.png) no-repeat scroll 0 0;background-size: cover;}
-	.btn_3d_04 {background:#fff url../../common/imgs/3d/btn_3d_04.png) no-repeat scroll 0 0;background-size: cover;}
+	.btn_3d_04 {background:#fff url(../../common/imgs/3d/btn_3d_04.png) no-repeat scroll 0 0;background-size: cover;}
 	.btn_3d_05 {background:#fff url(../../common/imgs/3d/btn_3d_05.png) no-repeat scroll 0 0;background-size: cover;}
 	.btn_3d_06 {background:#fff url(../../common/imgs/3d/btn_3d_06.png) no-repeat scroll 0 0;background-size: cover;}
 	.btn_3d_07 {background:#fff url(../../common/imgs/3d/btn_3d_save.png) no-repeat scroll 0 0;background-size: cover;}
@@ -881,8 +881,8 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	/* -------------
 	    MAIN
 	-------------- */
-	.banner__content h1 {font-size:40px}
-	.solutions.rr-title-animation.f_pp.fw800 {font-size:40px}
+	.banner__content h1 {font-size:35px}
+	.banner__content.mView .solutions.f_pp.fw800 {font-size:35px}
 	.banner__content h1 .video .title-video {height:400px; border-radius:50px;width:100%; max-width:100%}
 	.banner__content h1 .video .title-video video {width:100%}
 	.arrow.mView {display:block} 

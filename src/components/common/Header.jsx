@@ -83,6 +83,12 @@ const Header = ({ color }) => {
     e.preventDefault();
   }; // 링크 이동 막기};
 
+  const preparingAlert = (e) => {
+    e.preventDefault();
+    alert("준비중입니다.");
+    return;
+  };
+
   const closeNav = () => {};
 
   return (
@@ -115,15 +121,14 @@ const Header = ({ color }) => {
                                 인사말
                               </a>
                             </li>
-                            <li>
+                            {/* <li>
                               <a href="#!" onClick={() => linkTo("/about/history")}>
                                 회사연혁
                               </a>
-                            </li>
+                            </li> */}
                             <li>
-                              <a href="#!" onClick={() => linkTo("/about/vision")}>
-                                비젼
-                              </a>
+                              {/* <a href="#!" onClick={() => linkTo("/about/vision")}> */}
+                              <a href="/about/vision">비젼</a>
                             </li>
                             <li>
                               <a href="#!" onClick={() => linkTo("/about/road")}>
@@ -197,7 +202,7 @@ const Header = ({ color }) => {
                           </a>
                         </li>
                         <li className="gbg07">
-                          <a href="" target="_blank" onClick={oneDepMenu}>
+                          <a href="#!" target="_blank" onClick={preparingAlert}>
                             R&D
                           </a>
                         </li>
@@ -268,57 +273,48 @@ const Header = ({ color }) => {
                   </div>
                 </li>
               </ul>
-              <div className="pack3D">
-                <a href="/dev" onClick={oneDepMenu} className="f_pp">
-                  <span>pack3D</span>
-                </a>
-              </div>
             </nav>
             <div className="header-right">
-              <ul className="sub_area">
-                <li>
-                  <div className="custom-sel">
-                    <select>
-                      {/* <option value="ENG">ENG</option> */}
-                      <option value="KOR">KOR</option>
-                    </select>
-                  </div>
-                </li>
-                <li>
-                  <div id="myNav" className="overlay">
-                    <div className="overlay-content">
-                      <dl className="full_box">
-                        <dd>
-                          <p className="full_logo">
-                            <a href="#" onClick={(e) => e.preventDefault()}>
-                              <img
-                                src="https://image.edaymall.com/common/dcf/vegemil/img/ico/logo_w.png"
-                                alt="정식품 CI"
-                              />
-                            </a>
-                          </p>
-                          <ul className="full-header-right">
-                            <li>
-                              <div className="custom-sel gray">
-                                <select>
-                                  {/* <option value="ENG">ENG</option> */}
-                                  <option value="KOR">KOR</option>
-                                </select>
-                              </div>
-                            </li>
-                            <li>
-                              <a href="" className="closebtn" onClick={closeNav}>
-                                <img src="/common/imgs/common/btn_fullMenu_close.png" alt="닫기버튼" />
-                              </a>
-                            </li>
-                          </ul>
-                        </dd>
-                        {/* 이하 메뉴 구조도 동일하게 href="" 처리 */}
-                      </dl>
+              <div className="pack3D_motion">
+                <a href="/dev" className="f_pp">
+                  <span>
+                    <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                  </span>
+                </a>
+              </div>
+              {/*
+                <ul className="sub_area">
+                  <li>
+                    <div className="custom-sel">
+                      <select>
+                        <option value="ENG">ENG</option>
+                        <option value="KOR">KOR</option>
+                      </select>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+                */}
+            </div>
+            <div className="header-right">
+              <div className="pack3D_motion">
+                <a href="/dev" onClick={() => oneDepMenu()} className="f_pp">
+                  <span>
+                    <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                  </span>
+                </a>
+              </div>
+              {/*
+                <ul className="sub_area">
+                  <li>
+                    <div className="custom-sel">
+                      <select>
+                        <option value="ENG">ENG</option>
+                        <option value="KOR">KOR</option>
+                      </select>
+                    </div>
+                  </li>
+                </ul>
+                */}
             </div>
           </div>
         </div>
@@ -332,15 +328,16 @@ const Header = ({ color }) => {
               </a>
             </div>
             <ul className="m_h_right">
+              {/* 
               <li>
                 <div className="custom-sel ">
                   <select id="globalLang" onchange="changeLang();return false">
                     <option value="KOR">KOR</option>
-                    {/* <option value="ENG">ENG</option> */}
+                    <option value="ENG">ENG</option> 
                   </select>
                 </div>
               </li>
-
+              */}
               <li className="btnOpen">
                 <span style={{ cursor: "pointer" }} onClick={() => setIsOpenm(true)}></span>
               </li>
@@ -384,15 +381,14 @@ const Header = ({ color }) => {
                               인사말
                             </a>
                           </dd>
-                          <dd>
+                          {/* <dd>
                             <a href="#!" onClick={() => linkTo("/about/history")}>
                               회사연혁
                             </a>
-                          </dd>
+                          </dd> */}
                           <dd>
-                            <a href="#!" onClick={() => linkTo("/about/vision")}>
-                              비전
-                            </a>
+                            {/*   <a href="#!" onClick={() => linkTo("/about/vision")}> */}
+                            <a href="/about/vision">비전</a>
                           </dd>
                           <dd>
                             <a href="#!" onClick={() => linkTo("/about/road")}>

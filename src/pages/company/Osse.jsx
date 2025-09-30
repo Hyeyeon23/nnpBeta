@@ -47,7 +47,7 @@ const Osse = () => {
           <div className="col-lg-12">
             <img
               className="mt100 img100"
-              src="common/imgs/company/osse01_m.png"
+              src="/common/imgs/company/osse01_m.png"
               alt="엄마와아이의 다정한모습, 행복한 가족모습"
             />
           </div>
@@ -117,7 +117,7 @@ const Osse = () => {
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
-                  <img src="../common/imgs/company/load_cs.jpg" alt="" />
+                  <img src="/common/imgs/company/load_cs.jpg" alt="" />
                 </li>
                 <li className="f16">
                   <p className="fw600 f16 grayn1 mb10">고객상담실 / 수신자 요금 부담</p>

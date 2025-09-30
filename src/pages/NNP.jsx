@@ -34,40 +34,57 @@ const NNP = () => {
               <div className="container custom-container">
                 <div className="row">
                   <div className="col-12">
-                    <div className="banner__content">
+                    <div className="banner__content wView">
                       <h1 className="rr-title-animation f_pp ttf grayn1 fw800">
-                        {" "}
                         <span className="f_pp">You are the star,</span>
-                        <span className="arrow wView inine-block">
-                          <img
-                            id="rotating-arrow"
-                            className="rotate"
-                            src="/common/imgs/shapes/main_onstop.png"
-                            alt="arrow"
-                          />
+                        <span className="arrow inine-block">
+                          <img src="/common/imgs/shapes/main_onstop.png" alt="arrow" className="rotate" />
                         </span>
                         <span className="video">
-                          <a className="video-popup">
-                            <div className="wView">
-                              <video
-                                className="title-video"
-                                data-delay="1.9"
-                                data-offset="100"
-                                data-direction="right"
-                                loop
-                                muted
-                                autoPlay
-                                playsInline>
-                                <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
-                              </video>
-                            </div>
+                          <a className="video-popup" style={{ paddingRight: "15px" }}>
+                            <video
+                              className="title-video"
+                              data-delay="1.9"
+                              data-offset="100"
+                              data-direction="right"
+                              loop
+                              muted
+                              autoPlay
+                              playsInline>
+                              <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
+                            </video>
                           </a>
-                          <span className="solutions rr-title-animation f_pp fw800 ">
-                            <span className="wView">We set the stage.</span>
-                          </span>
+                          <span className="solutions rr-title-animation f_pp fw800">We set the stage.</span>
                         </span>
                         <br />
-                        <span className="brand rr-title-animation f_pp italic wView">Nature & People</span>
+                        <span className="brand rr-title-animation f_pp italic">Nature & People</span>
+                      </h1>
+                    </div>
+
+                    <div className="banner__content mView mb50">
+                      <h1 className="f_pp ttf grayn1 fw800">
+                        <span className="f_pp">You are the star,</span>
+                        <span className="arrow wView inine-block">
+                          <img src="/common/imgs/shapes/main_onstop.png" alt="arrow" className="rotate" />
+                        </span>
+                        <p>
+                          <span className="solutions f_pp fw800">We set the stage.</span>
+                        </p>
+                        <span className="video">
+                          <a className="video-popup">
+                            <video
+                              className="title-video"
+                              data-delay="1.9"
+                              data-offset="100"
+                              data-direction="right"
+                              loop
+                              muted
+                              autoPlay
+                              playsInline>
+                              <source src="/common/imgs/video/1115035_Broadcast_Man_720x402.mp4" type="video/mp4" />
+                            </video>
+                          </a>
+                        </span>
                       </h1>
                     </div>
                   </div>
