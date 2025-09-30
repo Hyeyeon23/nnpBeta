@@ -41,6 +41,7 @@
 	.overhidden {overflow:hidden}
 	.clear {clear:both}
 	.ttf {text-transform:none !important}
+	.inlineblock {display:inline-block !important; border:2px solid red} 
 
 	/* display None*/
 	.wView {display:block;   }
@@ -86,7 +87,7 @@
 	#header h1.logo {position:absolute;top:20px;left:80px; z-index: 100;}
 	#header h1.logo a {display:block;width:150px;height:50px;background:url(https://innp.co.kr/images/main/logo_nnp.png) no-repeat 0 0;background-size:100% ;  }
 	#header h1.logo a img {width:100%}
-	#header .header-right {position:absolute;top:17px;right:80px; z-index: 100;}
+	#header .header-right {position:absolute;top:24px;right:80px; z-index: 100;}
 	#header .header-right ul.sub_area {margin-top:6px; float:right }
 	#header .header-right ul.sub_area > li {display:inline-block; margin-left:20px; vertical-align:middle;  }
 	#header .header-right ul.sub_area li:first-child {margin-left:0}
@@ -216,7 +217,7 @@
 	dl.full_box dd.full_dep ul li a:hover {color:#E3A62C; text-decoration:none}
 	dl.full_box dd.full_dep div.fd_title {width:320px}
 
-	.custom-sel {vertical-align:top;  }
+	.custom-sel {vertical-align:top; margin-left:30px }
 	.custom-sel select {border:0; color:#333; background:none; cursor:pointer;  border-radius:20px; margin-top:0px; }
 	.custom-sel.gray select {border:0; color:#aeaeae; background:none; }
 	.btn_fullMenu {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu.png) ; width:40px;height:40px; display:inline-block;   background-size:40px 40px; position:relative; cursor:pointer;}

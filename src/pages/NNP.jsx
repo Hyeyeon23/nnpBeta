@@ -35,7 +35,7 @@ const NNP = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="banner__content">
-                      <h1 styleName="rr-title-animation f_pp ttf grayn1 fw800">
+                      <h1 className="rr-title-animation f_pp ttf grayn1 fw800">
                         {" "}
                         <span className="f_pp">You are the star,</span>
                         <span className="arrow wView inine-block">
@@ -48,17 +48,19 @@ const NNP = () => {
                         </span>
                         <span className="video">
                           <a className="video-popup">
-                            <video
-                              className="title-video"
-                              data-delay="1.9"
-                              data-offset="100"
-                              data-direction="right"
-                              loop
-                              muted
-                              autoPlay
-                              playsInline>
-                              <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
-                            </video>
+                            <div className="wView">
+                              <video
+                                className="title-video"
+                                data-delay="1.9"
+                                data-offset="100"
+                                data-direction="right"
+                                loop
+                                muted
+                                autoPlay
+                                playsInline>
+                                <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
+                              </video>
+                            </div>
                           </a>
                           <span className="solutions rr-title-animation f_pp fw800 ">
                             <span className="wView">We set the stage.</span>
@@ -79,7 +81,7 @@ const NNP = () => {
                     보이지 않지만,
                     <br />
                     매일 당신 곁에 함께하는
-                    <br class="wView" />
+                    <br className="wView" />
                     음료 회사
                   </p>
                   <p className="gray02 f45 fw500 mt50">Our Product</p>
