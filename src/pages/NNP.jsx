@@ -14,7 +14,7 @@ const NNP = () => {
         video.muted = true; // 정책 충족
         video.play().catch((err) => console.error("Autoplay error:", err));
       }
-    }, 500); // DOM 다 그려지고 ScrollTrigger 적용된 후
+    }, 1000); // DOM 다 그려지고 ScrollTrigger 적용된 후
 
     return () => clearTimeout(timer);
   }, []);
