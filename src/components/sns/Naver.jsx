@@ -1,12 +1,11 @@
 import { naverLogin } from "../../api/SnsLogin";
 const Naver = () => {
-  /* const naverlogin = () => {
-    //naverLogin();
-  }; */
   return (
-    <button id="naver_id_login" className="p-3" onClick={naverLogin}>
-      <img src="/naverlogin.png" alt="Naver Login" style={{ width: "175px", height: "auto" }} className="pb-4" />
-    </button>
+    <p>
+      <a href="#!" onClick={naverLogin}>
+        <img src="/common/imgs/3d/btn_naver.png" alt="네이버로그인" />
+      </a>
+    </p>
   );
 };
 

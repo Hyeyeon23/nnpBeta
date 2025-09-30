@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Odometer from "react-odometerjs";
+import Meta from "../../components/common/Meta";
 
 const Ceo = () => {
   /**
@@ -20,6 +21,7 @@ const Ceo = () => {
   }, []);
   return (
     <>
+      <Meta title={"자연과사람들 인사말"}></Meta>
       <section>
         <div className="contant1160 mb200 mt100">
           <div className="row ">

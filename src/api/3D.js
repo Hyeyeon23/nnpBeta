@@ -16,8 +16,8 @@ export const imageTransfer = async (image) => {
 
         return import.meta.env.VITE_API_URL + "/" + response.data.data;
     } catch (error) {
-        console.error("업로드 실패:", error);
-        if (error.response && error.response.status === 403) {
+        console.error("업로드 실패:", error.response.error);
+        if (error.response && error.response.status === 403 || error.response.status === 401) {
 
             const go = window.confirm("SNS 인증 후 사진을 업로드 해주세요. 인증 페이지로 이동하시겠습니까?");
             if (go) {

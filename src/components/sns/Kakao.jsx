@@ -10,16 +10,11 @@ function Kakao() {
   }, []);
 
   return (
-    <div className="mt-5 pt-5 pb-5">
-      <button onClick={loginWithKakao}>
-        <img
-          src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
-          width="222"
-          alt="카카오 로그인 버튼"
-        />
-      </button>
-      <p id="token-result"></p>
-    </div>
+    <p>
+      <a href="#!" onClick={loginWithKakao}>
+        <img src="/common/imgs/3d/btn_kakao.png" alt="카카오로그인" />
+      </a>
+    </p>
   );
 }
 

@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Power2 } from "gsap";
+import Meta from "../../components/common/Meta";
 gsap.registerPlugin(ScrollTrigger);
 const Vision = () => {
   const containerRef = useRef();
@@ -68,6 +69,7 @@ const Vision = () => {
 
   return (
     <>
+      <Meta title={"자연과사람들 비젼"}></Meta>
       <section ref={containerRef}>
         <div className="contant1160 mt100">
           <div className="row">
@@ -86,15 +88,16 @@ const Vision = () => {
       </section>
 
       <section className="about-section__area about-section section-space-bottom-160 overflow-hidden">
-        <div className="container">
+        {/* 2025-09-29 wView클래스추가, 모바일 DIV추가 */}
+        <div className="container wView">
           <div className="row mt100">
             <div className="col-md-6">
               <div className="about-section__left">
                 <div className="about-section__left__wrapper">
-                  <div className="about-section__thumb text-end img_anim_reveal-React">
+                  <div className="about-section__thumb text-end img_anim_reveal">
                     <img src="/common/imgs/company/vision03.jpg" alt="image not found" className="image-1" />
                   </div>
-                  <div className="about-section__thumb img_anim_reveal-React">
+                  <div className="about-section__thumb img_anim_reveal">
                     <img src="/common/imgs/company/vision04.jpg" alt="image not found" className="image-1" />
                   </div>
                 </div>
@@ -103,10 +106,10 @@ const Vision = () => {
             <div className="col-md-6">
               <div className="about-section__right">
                 <div className="about-section__right__wrapper p-relative">
-                  <div className="about-section__thumb img_anim_reveal-2-React">
+                  <div className="about-section__thumb img_anim_reveal-2">
                     <img src="/common/imgs/company/vision02.jpg" alt="image not found" className="image-1" />
                   </div>
-                  <div className="about-section__right__content img_anim_reveal-2-React">
+                  <div className="about-section__right__content img_anim_reveal-2">
                     <div className="about-section__right__count">
                       <img src="/common/imgs/company/vision01.jpg" alt="image not found" className="image-1" />
                     </div>
@@ -116,6 +119,12 @@ const Vision = () => {
             </div>
           </div>
         </div>
+        <div className="container mView">
+          <div className="row">
+            <img src="/common/imgs/company/vision01_m.png" alt="image not found" className="image-1" />
+          </div>
+        </div>
+        {/* //2025-09-29 wView클래스추가, 모바일 DIV추가 */}
       </section>
 
       <section className="bg_world">

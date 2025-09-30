@@ -6,7 +6,10 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(function (config) {
 
-    config.headers.Authorization = 'Bearer ' + localStorage.getItem('nnpToken');
+    const token = localStorage.getItem('nnpToken');
+    if (token != null) {
+        config.headers.Authorization = 'Bearer ' + localStorage.getItem('nnpToken');
+    }
     return config;
 }, function (error) {
     return Promise.reject(error);

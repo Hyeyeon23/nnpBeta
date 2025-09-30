@@ -9,10 +9,12 @@ const ReceiveApiResponse = () => {
 
     if (token) {
       localStorage.setItem("nnpToken", token);
+
+      window.location.href = "/dev";
     }
   }, []);
 
-  return <div>로그인 완료 중...</div>;
+  return <div></div>;
 };
 
 export default ReceiveApiResponse;

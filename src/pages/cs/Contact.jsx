@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { postInquiry } from "../../api/client";
 import FooterReact from "../../components/common/FooterReact";
+import Meta from "../../components/common/Meta";
 
 const Contact = () => {
   const {
@@ -24,6 +25,7 @@ const Contact = () => {
 
   return (
     <>
+      <Meta title="자연과사람들 1:1문의"></Meta>
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">

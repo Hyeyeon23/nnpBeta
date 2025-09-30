@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Meta from "../../../components/common/Meta";
 import FooterReact from "../../../components/common/FooterReact";
 import Header from "../../../components/common/Header";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { jarallax } from "jarallax";
 import { animateScroll as scroll } from "react-scroll";
+
 const Sort = () => {
   const { type } = useParams();
   const [data, setData] = useState(null);
@@ -20,9 +22,10 @@ const Sort = () => {
 
   const datas = {
     soy: {
+      title: "자연과사람들 두유액",
       crumble: "두유액",
       name: "두유액 생산",
-      keywords: { pre: "콩의 영양을 담은 핵심 원료", mid: "맞춤형 두유액 솔루션", last: "영양소 손실을 최소화" },
+      keywords: { pre: "콩의 영양을 담아", mid: "맞춤형 두유액", last: "우리나라 최소의 두유 기술력" },
       heroImg: "/common/imgs/business/pro01_01.jpg",
       images: {
         pre: "/common/imgs/business/pro01_02.jpg",
@@ -38,9 +41,7 @@ const Sort = () => {
       descs: {
         sec01: `오랜 시간 사랑받은 식물성음료
                     <br />
-                    국내 원조의 기술을 그대로
-                    <br />
-                    고형분 함량 최대 10%`,
+                    국내 원조의 기술을 그대로`,
         sec02: ` 콩 본연의 맛과 영양을 살려내는 두유액 제조 기술을 보유하고 있습니다. 철저한 원재료 선별과 위생적인
                     공정, 차별화된 레시피 개발을 통해 식물성 영양의 가치를 담아 전합니다.`,
         sec03: `자연과사람들은 오랜 경험과 기술력을 바탕으로 <br className="wView" />
@@ -50,6 +51,7 @@ const Sort = () => {
       },
     },
     protein: {
+      title: "자연과사람들 단백질 음료",
       crumble: "단백질",
       name: "단백질 음료 생산",
       keywords: { pre: "#마시는단백질", mid: "#한팩으로", last: "#언제어디서나" },
@@ -73,6 +75,7 @@ const Sort = () => {
       },
     },
     balance: {
+      title: "자연과사람들 균형영양식",
       crumble: "균형영양식",
       name: "균형영양식 생산",
       keywords: { pre: "#영양가득", mid: "#건강습관", last: "#균형설계" },
@@ -98,6 +101,7 @@ const Sort = () => {
       },
     },
     particle: {
+      title: "자연과사람들 파티클",
       crumble: "파티클",
       name: "파티클 생산",
       keywords: { pre: "#씹는즐거움", mid: "#알갱이톡톡", last: "#재미있는식감" },
@@ -123,6 +127,7 @@ const Sort = () => {
       },
     },
     sikhye: {
+      title: "자연과사람들 식혜",
       crumble: "식혜",
       name: "식혜 생산",
       keywords: { pre: "#전통방식", mid: "#당도조절가능", last: "#밥알취향존중" },
@@ -148,6 +153,7 @@ const Sort = () => {
       },
     },
     sauce: {
+      title: "자연과사람들 소스",
       crumble: "소스",
       name: "소스 생산",
       keywords: { pre: "#간편요리", mid: "#HMR", last: "#맛의완성" },
@@ -172,6 +178,7 @@ const Sort = () => {
       },
     },
     sterilized: {
+      title: "자연과사람들 멸균유",
       crumble: "멸균유",
       name: "멸균유 생산",
       keywords: { pre: "#멸균우유", mid: "#신선함그대로", last: "#상온보관" },
@@ -189,7 +196,9 @@ const Sort = () => {
       },
       descs: {
         sec01: `다양한 용량의 멸균 우유<br>상온 보관으로 오래오래`,
-        sec02: `소스와 육수는 외식업, 급식, 가정간편식(HMR) 각 분야에서 다양한 요리에 두루 활용됩니다. 자연과사람들은 액상 소스와 육수를 통해 조리의 편의성과 맛의 완성도를 높입니다.`,
+        sec02: `자연과사람들은 UHT(초고온 멸균) 공정을 통해 안전하고 영양 손실을 최소화한 멸균유를 생산합니다.
+								상온 보관이 가능해 유통과 보관이 편리하며, 장기간 품질을 안정적으로 유지할 수 있습니다.
+								소용량부터 대용량, 급식·외식업까지 다양한 용량 맞춤 생산이 가능합니다.`,
         sec03: `유통&middot;보관이 편리한 멸균유 솔루션으로 파트너사의 다양한 요구에 대응하며, <br class="wView">
 							안전성과 품질을 최우선으로 한 신뢰할 수 있는 공급 체계를 약속합니다. <br class="wView">
 							상온에서도 장기간 보관이 가능해 급식과 외식 산업 전반에서 폭넓게 활용되고, <br class="wView">
@@ -197,6 +206,7 @@ const Sort = () => {
       },
     },
     juice: {
+      title: "자연과사람들 주스",
       crumble: "주스",
       name: "주스 생산",
       keywords: { pre: "#과채음료", mid: "#과채주스", last: "#과일야채블렌딩" },
@@ -223,6 +233,7 @@ const Sort = () => {
       },
     },
     coffee: {
+      title: "자연과사람들 커피",
       crumble: "커피",
       name: "커피 생산",
       keywords: { pre: "#RTD커피", mid: "#편리하게", last: "#다양한맛" },
@@ -310,6 +321,7 @@ const Sort = () => {
   console.log(data);
   return (
     <>
+      <Meta title={data?.title}></Meta>
       <Header></Header>
       <div id="smooth-wrapper" className="body-bg">
         <main>
@@ -326,11 +338,12 @@ const Sort = () => {
                 </a>
               </div>
               <div className="breadcrumb-section__text">
-                <h3 className="breadcrumb-section__title grayn1">{data?.name}</h3>
+                <h3 className="f90 grayn1 fw600 lh120">{data?.name}</h3>
+                {/* 2025-09-29 f90 grayn1 fw600 lh120 클래스수정 */}
               </div>
             </div>
           </section>
-
+          {/* <!-- 20250929 수정--> */}
           <div className="project-client-details__area body-bg section-space-top">
             <div className="container">
               <div className="project-client-details__list">
@@ -342,15 +355,19 @@ const Sort = () => {
               </div>
             </div>
           </div>
-
-          <section className="about-section__area about-section service-details body-bg overflow-hidden">
-            <div className="about-section__thumb__wrapper">
+          {/* <!-- //20250929 수정-->*/}
+          {/* 2025-09-29 section 수정 */}
+          <section className="about-section__area about-section service-details body-bg overflow-hidden ">
+            <div className="about-section__thumb__wrapper wView">
               <div
                 className="about-section__thumb__wrapper-img jarallax"
                 data-background={data?.heroImg}
                 speed={0.2}
                 alt={data?.alt.hero}
               />
+            </div>
+            <div className="mView">
+              <img class="img100 radius20" src={data?.heroImg} alt="두유병과 곡물들" />
             </div>
           </section>
 
@@ -393,9 +410,33 @@ const Sort = () => {
           </section>
 
           {/* testimonial2-area start */}
+          {/* 20250929 수정 */}
           <div className="testimonial2__area section-space mt100 mb50 cardWrap">
             <div className="swiper testmonial2-slide-active">
               <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <a href="#!" onClick={() => linkToSub("soy")}>
+                    <div className="cardBox d-flex">
+                      <div className="cardLeft">
+                        <p className="f40 fw600 grayn1 lh150">두유액 생산</p>
+                        <p className="f23 fw400 grayn1 lh150 mt20">
+                          오랜 시간 사랑받은 식물성음료
+                          <br />
+                          국내 원조의 기술을 그대로
+                          <br />
+                          고형분 함량 최대 10%
+                        </p>
+                        <div className="mt70">
+                          <span className="keyword">#두유액</span> <span className="keyword">#식물성음료</span>
+                        </div>
+                      </div>
+                      <div className="cardRight cardBox-img">
+                        <img src="/common/imgs/business/proT_01.jpg" alt="두유액 생산" />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
                 <div className="swiper-slide">
                   <a href="#!" onClick={() => linkToSub("protein")}>
                     <div className="cardBox d-flex">
@@ -411,7 +452,7 @@ const Sort = () => {
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_02.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_02.jpg" alt="단백질 음료 생산" />
                       </div>
                     </div>
                   </a>
@@ -423,16 +464,16 @@ const Sort = () => {
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">균형영양식 생산</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          환자식&middot;시니어용 음료 <br />
+                          환자식&middot;시니어용 음료
+                          <br />
                           균형 잡힌 영양설계 <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#균형영양식</span>&nbsp;&nbsp;
-                          <span className="keyword">#영양식</span>
+                          <span className="keyword">#균형영양식</span> <span className="keyword">#환자식</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_03.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_03.jpg" alt="균형영양식 생산" />
                       </div>
                     </div>
                   </a>
@@ -453,7 +494,7 @@ const Sort = () => {
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_04.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_04.jpg" alt="파티클 생산" />
                       </div>
                     </div>
                   </a>
@@ -474,7 +515,7 @@ const Sort = () => {
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_05.jpg" alt="식혜" />
+                        <img src="/common/imgs/business/proT_05.jpg" alt="식혜 생산" />
                       </div>
                     </div>
                   </a>
@@ -486,7 +527,8 @@ const Sort = () => {
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">소스 생산</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          활용도 높은 액상 육수 <br />
+                          활용도 높은 액상 육수
+                          <br />
                           외식 &middot; HMR &middot; 급식 등 대용량 <span className="more">More</span>
                         </p>
                         <div className="mt70">
@@ -495,7 +537,7 @@ const Sort = () => {
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_06.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_06.jpg" alt="소스 생산" />
                       </div>
                     </div>
                   </a>
@@ -507,16 +549,17 @@ const Sort = () => {
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">멸균유 생산</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          다양한 용량의 멸균 우유 <br />
+                          다양한 용량의 멸균 우유
+                          <br />
                           상온 보관으로 오래오래 <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#멸균유</span> <span className="keyword">#상온보관</span>{" "}
-                          <span className="keyword">#용량</span>
+                          <span className="keyword">#멸균유</span> <span className="keyword">#가공유</span>{" "}
+                          <span className="keyword">#상온보관</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_07.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_07.jpg" alt="멸균유 생산" />
                       </div>
                     </div>
                   </a>
@@ -528,7 +571,8 @@ const Sort = () => {
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">주스 생산</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          맛과 건강을 고려한 과채주스 <br />
+                          맛과 건강을 고려한 과채주스
+                          <br />
                           과일 &middot; 채소 혼합 가능 <span className="more">More</span>
                         </p>
                         <div className="mt70">
@@ -537,7 +581,7 @@ const Sort = () => {
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_08.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_08.jpg" alt="주스 생산" />
                       </div>
                     </div>
                   </a>
@@ -553,12 +597,12 @@ const Sort = () => {
                           과일 &middot; 채소 혼합 가능 <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#주스</span> <span className="keyword">#과채주스</span>{" "}
-                          <span className="keyword">#맛건강</span>
+                          <span className="keyword">#커피</span> <span className="keyword">#라떼</span>{" "}
+                          <span className="keyword">#RTD</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
-                        <img src="/common/imgs/business/proT_09.jpg" alt="" />
+                        <img src="/common/imgs/business/proT_09.jpg" alt="커피 생산" />
                       </div>
                     </div>
                   </a>
@@ -566,6 +610,7 @@ const Sort = () => {
               </div>
             </div>
           </div>
+          {/* //20250929 수정 */}
 
           <section className="">
             <div className="contant1160 mb200">

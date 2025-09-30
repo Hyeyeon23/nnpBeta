@@ -72,12 +72,6 @@ const PB = () => {
                 <div className="col-md-6">
                   <div className="project-section-2__content">
                     <p className="f40 fw600 grayn1 f_pp lh130">What is Made by NNP?</p>
-                    <p className="f20 fw400 grayn1 mt30 lh150">
-                      우리는 과일을 ‘원료’가 아닌 ‘식재료’로 생각합니다.
-                      <br className="wView" />
-                      좋은 재료는 좋은 사람을 만든다는 믿음 아래, 산지에서 직접 수확한 과일을 첨가물 없이, 정성스럽게
-                      담아냅니다.
-                    </p>
                     <p className="f20 fw400 grayn1 mt40 lh150">
                       농부의 손끝에서 시작되어, 믿을 수 있는 생산시설과 까다로운 품질관리로 이어지는 여정. 그 모든
                       과정에는 사람의 정성과 자연의 순리가 담겨 있습니다.
@@ -273,13 +267,15 @@ const PB = () => {
               <p className="f80 f_pp grayn5 lh100">A Drink for</p>
             </div>
             <div className="col-lg-6 wView">
+              {/* 20250929 수정 */}
               <p className="f20 lh140 grayn1">
-                ‘자연과 사람들’은 시대 변화와 라이프스타일에 맞춘
+                ‘자연과사람들’은 시대 변화와 라이프스타일에 맞춘
                 <br className="wView" />
                 다양한 브랜드 포트폴리오를 통해 폭넓고 자연스러운 음료 경험을
                 <br className="wView" />
                 제공하며, 앞으로도 지속적으로 그 영역을 확장해 나갈 것입니다.
               </p>
+              {/* //20250929 수정 */}
             </div>
           </div>
           <div className="row">

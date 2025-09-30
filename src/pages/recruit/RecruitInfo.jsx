@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
+import Meta from "../../components/common/Meta";
 
 const RecruitInfo = () => {
   return (
     <>
-      <Header></Header>
+      <Meta title={"자연과사람들 채용공고 "}></Meta>
+      <Header color={"white"}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>

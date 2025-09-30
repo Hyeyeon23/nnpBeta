@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ color }) => {
   const [isOpen, setIsOpen] = useState(false); // 피씨 사이드 네모네모 열고 닫기
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
@@ -85,7 +85,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="gray">
+      <header className={color ? color : "gray"}>
         <div id="skipNav">
           <a href="#content">본문 바로가기</a>
         </div>
@@ -189,7 +189,8 @@ const Header = () => {
                           <a href="/business/products">제품유형</a>
                         </li>
                         <li className="gbg06">
-                          <a href="#!" onClick={() => linkTo("/business/containers")}>
+                          <a href="/business/containers">
+                            {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
                             용기유형
                           </a>
                         </li>
@@ -213,9 +214,8 @@ const Header = () => {
                           <a href="">WIZUS</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
-                                녹차/레몬
-                              </a>
+                              {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
+                              <a href="/brand/wizus/greenlemon">녹차/레몬</a>
                             </li>
                           </ul>
                         </li>
@@ -223,14 +223,16 @@ const Header = () => {
                           <a href="">건강담은</a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
+                              <a href="/brand/healthy/sikhye">
+                                {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
                                 식혜
                               </a>
                             </li>
                           </ul>
                         </li>
                         <li className="gbg10">
-                          <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                          <a href="/brand/pb">
+                            {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
                             자연과사람들이 만든
                           </a>
                         </li>
@@ -440,13 +442,10 @@ const Header = () => {
                       </li>
                       {/* <!-- 2024-12-24(3) --> */}
                       <li>
-                        <a href="#!">채용정보</a>
+                        <a href="/recruit/info">채용정보</a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="#!">채용정보</a>
-                          </dd>
-                          <dd>
-                            <a href="#!">채용정보</a>
+                            <a href="/recruit/info">채용정보</a>
                           </dd>
                         </dl>
                       </li>
@@ -466,9 +465,8 @@ const Header = () => {
                         <a href="/business/products">제품유형</a>
                       </li>
                       <li>
-                        <a href="#!" onClick={() => linkTo("/business/containers")}>
-                          용기유형
-                        </a>
+                        {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
+                        <a href="/business/containers">용기유형</a>
                       </li>
                     </ul>
                   </div>
@@ -487,9 +485,8 @@ const Header = () => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
-                              녹차 / 레몬
-                            </a>
+                            {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
+                            <a href="/brand/wizus/greenlemon">녹차 / 레몬</a>
                           </dd>
                         </dl>
                       </li>
@@ -498,16 +495,14 @@ const Header = () => {
                         <a href="/rnd/haccp">건강담은</a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
-                              식혜
-                            </a>
+                            {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                            <a href="/brand/healthy/sikhye">식혜</a>
                           </dd>
                         </dl>
                       </li>
                       <li>
-                        <a href="#!" onClick={() => linkTo("/brand/pb")}>
-                          자연과사람들이 만든
-                        </a>
+                        {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
+                        <a href="/brand/pb">자연과사람들이 만든</a>
                       </li>
                     </ul>
                   </div>

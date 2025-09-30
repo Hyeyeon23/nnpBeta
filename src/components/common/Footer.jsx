@@ -49,17 +49,21 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/business/products")}>
+                      <a href="/business/products">
+                        {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
                         <i className="fa-solid fa-period"></i>제품유형
                       </a>
                     </li>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/business/containers")}>
+                      <a href="/business/containers">
+                        {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
                         <i className="fa-solid fa-period"></i>용기유형
                       </a>
                     </li>
+
                     <li>
-                      <a href="#!" onClick={() => linkTo("")}>
+                      {/* <a href="#!" onClick={() => linkTo("")}> */}
+                      <a href="/business/rnd">
                         <i className="fa-solid fa-period"></i>RnD
                       </a>
                     </li>
@@ -77,17 +81,20 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                      <a href="/brand/wizus/greenlemon">
+                        {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
                         <i className="fa-solid fa-period"></i>WIZUS
                       </a>
                     </li>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
-                        <i className="fa-solid fa-period"></i>자연담은
+                      <a href="/brand/healthy/sikhye">
+                        {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                        <i className="fa-solid fa-period"></i>방방곡곡
                       </a>
                     </li>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                      <a href="/brand/pb">
+                        {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
                         <i className="fa-solid fa-period"></i>자연과사람들이만든
                       </a>
                     </li>
@@ -105,17 +112,14 @@ const Footer = () => {
                 <div className="footer__link">
                   <ul>
                     <li>
-                      <a href="about-us.html">
+                      <a href="/cs/faq">
+                        {/* <a href="#!" onClick={() => linkTo("/cs/faq")}> */}
                         <i className="fa-solid fa-period"></i>자주 묻는 질문
                       </a>
                     </li>
                     <li>
-                      <a href="#!" onClick={() => linkTo("/cs/faq")}>
-                        <i className="fa-solid fa-period"></i>1:1문의
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!" onClick={() => linkTo("/cs/contact")}>
+                      <a href="/cs/contact">
+                        {/* <a href="#!" onClick={() => linkTo("/cs/contact")}> */}
                         <i className="fa-solid fa-period"></i>고객의 소리
                       </a>
                     </li>
@@ -169,12 +173,7 @@ const Footer = () => {
               <div className="person">
                 <ul>
                   <li>
-                    <a href="#!" onClick={() => linkTo("")}>
-                      이용약관
-                    </a>{" "}
-                    <a href="#!" onClick={() => linkTo("")} className="fw600">
-                      개인정보처리방침
-                    </a>
+                    <a href="/terms">이용약관</a> <a href="/personal">개인정보처리방침</a>
                   </li>
                 </ul>
               </div>

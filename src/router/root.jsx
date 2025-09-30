@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import NNP from "../pages/nnp";
 import Sample from "../pages/sample/Sample";
 import Waiting from "../pages/waiting";
@@ -61,16 +61,7 @@ const root = createBrowserRouter(
         </Suspense>
       ),
     },
-    {
-      path: "/onlyosse",
-      element: (
-        <Layout>
-          <Suspense fallback={Loading}>
-            <Sample></Sample>
-          </Suspense>
-        </Layout>
-      ),
-    },
+
     {
       path: "/receiveResult",
       element: (
@@ -193,6 +184,17 @@ const root = createBrowserRouter(
         </Suspense>
       ),
     },
+    /* 옛날 닷넷 주소 변환  */
+    { path: "/kr/Company/Recruit.aspx", element: <Navigate to="/recruit/info" replace /> },
+    { path: "/kr/Product/pd_Asepsis.aspx", element: <Navigate to="/business/containers" replace /> },
+    { path: "/kr/Product/pd_Can.aspx", element: <Navigate to="/business/containers" replace /> },
+    { path: "/kr/Company/Greeting.aspx", element: <Navigate to="/about/ceo" replace /> },
+    { path: "/Company/Info.aspx", element: <Navigate to="/about/ceo" replace /> },
+    { path: "/kr/Company/Road.aspx", element: <Navigate to="/about/road" replace /> },
+    { path: "/kr/Company/Vision.aspx", element: <Navigate to="/about/vision" replace /> },
+    { path: "/kr/Company/Foodsafe.aspx", element: <Navigate to="/certification/haccp" replace /> },
+    /* 임시로 */
+    { path: "    /kr/RnD/History.aspx", element: <Navigate to="/" replace /> },
   ],
   {
     basename: import.meta.env.BASE_URL, // 깃허브 페이지스를 위한 설정

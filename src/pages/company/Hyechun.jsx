@@ -1,8 +1,10 @@
 import React from "react";
+import Meta from "../../components/common/Meta";
 
 const Hyechun = () => {
   return (
     <>
+      <Meta title={"자연과사람들 관련사 (재)혜춘장학회"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-7">
@@ -23,17 +25,34 @@ const Hyechun = () => {
           </div>
         </div>
 
-        <div className="row familyBox_top">
-          <div className="col-lg-3 mt100 wow bounceInLeft wView" data-wow-delay="0.5s">
-            <img className="mt70 img100" src="../common/imgs/company/hcsf02.png" alt="혜춘장학회 이미지1" />
-          </div>
-          <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="1s">
-            <img className="img100" src="../common/imgs/company/hcsf03.jpg" alt="혜춘장학회 이미지2" />
-          </div>
-          <div className="col-lg-4 mt100 wow bounceInRight" data-wow-delay="1.5s">
-            <img className="mt70 img100" src="../common/imgs/company/hcsf04.jpg" alt="혜춘장학회 이미지3" />
+        {/* 2025-09-29 div추가, mView클래스추가 */}
+        <div className="wView">
+          <div className="row familyBox_top">
+            <div className="col-lg-3 mt100 wow bounceInLeft wView" data-wow-delay="0.5s">
+              <img
+                className="mt70 img100"
+                src="/common/imgs/company/hcsf02.png"
+                alt="이데이몰 밸런스루트관 모바일이미지"
+              />
+            </div>
+            <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="0.8s">
+              <img className="img100" src="/common/imgs/company/hcsf03.jpg" alt="런드리서핑 제품" />
+            </div>
+            <div className="col-lg-4 mt100 wow bounceInRight" data-wow-delay="1.1s">
+              <img className="mt70 img100" src="/common/imgs/company/hcsf04.jpg" alt="택배상자와 수야무" />
+            </div>
           </div>
         </div>
+        <div className="row mView">
+          <div className="col-lg-12">
+            <img
+              className="mt100 img100"
+              src="/common/imgs/company/hcsf01_m.png"
+              alt="엄마와아이의 다정한모습, 행복한 가족모습"
+            />
+          </div>
+        </div>
+        {/* //2025-09-29 div추가, mView클래스추가 */}
       </section>
 
       <section>
@@ -60,14 +79,15 @@ const Hyechun = () => {
             </div>
             <div className="col-lg-6">
               <div className="mt30m">
-                <video className="video-container round20" autoPlay loop playsInline muted style={{ width: "100%" }}>
-                  <source src="https://www.osse.co.kr/img/main/conceptmotion_600.mp4" type="video/mp4" />
-                </video>
+                <img
+                  className="video-container round20"
+                  src="/common/imgs/company/hcsf05.jpg"
+                  alt=""
+                  style={{ width: "100%" }}
+                />
               </div>
             </div>
-
             <div className="col-md-12 mt50 mb20"></div>
-
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
@@ -79,7 +99,6 @@ const Hyechun = () => {
                 </li>
               </ul>
             </div>
-
             <div className="col-md-4 mb20">
               <ul className="load_ul">
                 <li>
@@ -92,6 +111,8 @@ const Hyechun = () => {
               </ul>
             </div>
           </div>
+
+          <div className="row"></div>
         </div>
       </section>
     </>

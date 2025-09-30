@@ -1,13 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import FooterReact from "../common/FooterReact";
 import Header from "../common/Header";
 import BrandHero from "../hero/BrandHero";
+import Meta from "../common/Meta";
 
 const BrandLayout = () => {
   const location = useLocation();
+  const [title, setTitle] = useState("자연과 사람들 브랜드");
   useEffect(() => {
     console.log(location);
+
+    switch (location.pathname) {
+      case "/brand/wizus/greenlemon":
+        setTitle("자연과사람들 브랜드 위져스 WIZUS 레몬,녹차");
+        break;
+      case "/brand/healthy/sikhye":
+        setTitle("자연과사람들 브랜드 건강담은 식혜");
+        break;
+      case "/brand/pb":
+        setTitle("자연과사람들 브랜드 자연과사람들이만든");
+        break;
+    }
+
     const existingScripts = document.querySelectorAll('script[src="/common/js/main.js"]');
 
     // 기존 스크립트 제거
@@ -34,6 +49,7 @@ const BrandLayout = () => {
   }, [location.pathname]);
   return (
     <>
+      <Meta title={title}></Meta>
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content" className="body-bg">

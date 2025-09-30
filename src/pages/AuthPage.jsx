@@ -23,23 +23,41 @@ const AuthPage = () => {
 
   return (
     <>
-      <BrandHero></BrandHero>
-      <div class="backtotop-wrap cursor-pointer">
-        <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-      </div>
-
       <Header></Header>
-      <div
-        className="text-center bg-light"
-        style={{ marginTop: 90, marginBottom: 10, paddingTop: 300, paddingBottom: 300 }}>
-        <div>
-          <Kakao></Kakao>
-          <Naver></Naver>
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <main>
+            <section>
+              <div className="contant1100 mt200 mb200">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <p className="center logo3D">
+                      <img src="/common/imgs/3d/3d_logo.jpg" alt="" />
+                    </p>
+                    <p className="grayn1 lh140 f23 fw400 center mt100">
+                      SNS 로그인으로
+                      <br />
+                      간편하게 인증후 이용해 보세요
+                    </p>
+                  </div>
+                  <div className="col-lg-12 mt50 center login_btn_Box">
+                    <Kakao></Kakao>
+                    <Naver></Naver>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+          <div className="loading-form">
+            <div className="sk-three-bounce">
+              <div className="sk-child sk-bounce1"></div>
+              <div className="sk-child sk-bounce2"></div>
+              <div className="sk-child sk-bounce3"></div>
+            </div>
+          </div>
+          <Footer></Footer>
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 };

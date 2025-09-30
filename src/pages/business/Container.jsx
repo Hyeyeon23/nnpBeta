@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
+import Meta from "../../components/common/Meta";
 const Container = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -22,8 +23,8 @@ const Container = () => {
 
   return (
     <>
+      <Meta title={"자연과사람들 용기유형"}></Meta>
       <Header></Header>
-
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>
@@ -74,6 +75,7 @@ const Container = () => {
               </div>
             </section>
 
+            {/* 20250929 수정 */}
             <section className="contant1100 services-section__area services-section section-space">
               <div className="row align-items-center flex-lg-row mt50 flex">
                 <div className="col-md-5">
@@ -84,144 +86,150 @@ const Container = () => {
                         id="tetramid"
                         role="tabpanel"
                         aria-labelledby="tetramid-tab"
-                        tabIndex="0">
-                        <div className="typeBox">
-                          <table cellspacing="0" border="0" className="tyleTable">
-                            <colgroup>
-                              <col width="30%" />
-                              <col width="70%" />
-                            </colgroup>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f22 fw400 grayn1">간편한 빨대 음용</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f40 fw600 mt10 pb20 grayn1">TETRA MID</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>용량(㎖)</th>
-                              <td>190, 200</td>
-                            </tr>
-                            <tr>
-                              <th>MOQ(ea)</th>
-                              <td>180,000</td>
-                            </tr>
-                            <tr>
-                              <th>부자재MOQ</th>
-                              <td>302,000</td>
-                            </tr>
-                            <tr>
-                              <th>포장입수</th>
-                              <td>24입 TRAY, 16입 GIFT</td>
-                            </tr>
-                            <tr>
-                              <th>음용형태</th>
-                              <td>STRW</td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2" className="pt20">
-                                <img src="/common/imgs/business/tertamid.jpg" alt="tertamid" />
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-
-                      <div className="tab-pane fade" id="sig" role="tabpanel" aria-labelledby="sig-tab" tabIndex="0">
-                        <div className="typeBox">
-                          <table cellspacing="0" border="0" className="tyleTable">
-                            <colgroup>
-                              <col width="30%" />
-                              <col width="70%" />
-                            </colgroup>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f22 fw400 grayn1">용량 맞춤 설계</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f40 fw600 mt10 pb20 grayn1">SIG COMBIBLOC</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>용량(㎖)</th>
-                              <td>125, 250</td>
-                            </tr>
-                            <tr>
-                              <th>MOQ(ea)</th>
-                              <td>200,000</td>
-                            </tr>
-                            <tr>
-                              <th>부자재MOQ</th>
-                              <td>
-                                125 : 500,000 / 150 : 570,000
-                                <br />
-                                200 : 460,000 / 250 : 330,000
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>포장입수</th>
-                              <td>24입 TRAY</td>
-                            </tr>
-                            <tr>
-                              <th>음용형태</th>
-                              <td>STRW</td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2" className="pt20">
-                                <img src="/common/imgs/business/sig.jpg" alt="sig" />
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-
-                      <div className="tab-pane fade" id="edge" role="tabpanel" aria-labelledby="edge-tab" tabIndex="0">
+                        tabIndex={0}>
                         <div className="typeBox">
                           <table cellSpacing="0" border="0" className="tyleTable">
                             <colgroup>
                               <col width="30%" />
                               <col width="70%" />
                             </colgroup>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f22 fw400 grayn1">대용량 음료</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f40 fw600 mt10 pb20 grayn1">SIG COMBIBLOC</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>용량(㎖)</th>
-                              <td>950, 1000</td>
-                            </tr>
-                            <tr>
-                              <th>MOQ(ea)</th>
-                              <td>150,000</td>
-                            </tr>
-                            <tr>
-                              <th>부자재MOQ</th>
-                              <td>200 : 289,000 / 250 : 246,000</td>
-                            </tr>
-                            <tr>
-                              <th>포장입수</th>
-                              <td>18입 W/A</td>
-                            </tr>
-                            <tr>
-                              <th>음용형태</th>
-                              <td>CAP</td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2" className="pt20">
-                                <img src="/common/imgs/business/tetra1000.jpg" alt="sig" />
-                              </td>
-                            </tr>
+                            <tbody>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f22 fw400 grayn1">간편한 빨대 음용</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f40 fw600 mt10 pb20 grayn1">TETRA MID</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>용량(㎖)</th>
+                                <td>190, 200</td>
+                              </tr>
+                              <tr>
+                                <th>MOQ(ea)</th>
+                                <td>180,000</td>
+                              </tr>
+                              <tr>
+                                <th>부자재MOQ</th>
+                                <td>302,000</td>
+                              </tr>
+                              <tr>
+                                <th>포장입수</th>
+                                <td>24입 TRAY, 16입 GIFT</td>
+                              </tr>
+                              <tr>
+                                <th>음용형태</th>
+                                <td>STRW</td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2} className="pt20">
+                                  <img src="/common/imgs/business/tertamid.jpg" alt="tertamid" />
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div className="tab-pane fade" id="sig" role="tabpanel" aria-labelledby="sig-tab" tabIndex={0}>
+                        <div className="typeBox">
+                          <table cellSpacing="0" border="0" className="tyleTable">
+                            <colgroup>
+                              <col width="30%" />
+                              <col width="70%" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f22 fw400 grayn1">용량 맞춤 설계</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f40 fw600 mt10 pb20 grayn1">SIG COMBIBLOC</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>용량(㎖)</th>
+                                <td>125 ~ 250</td>
+                              </tr>
+                              <tr>
+                                <th>MOQ(ea)</th>
+                                <td>200,000</td>
+                              </tr>
+                              <tr>
+                                <th>부자재MOQ</th>
+                                <td>
+                                  125 : 500,000 / 150 : 570,000
+                                  <br />
+                                  200 : 460,000 / 250 : 330,000
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>포장입수</th>
+                                <td>24입 TRAY</td>
+                              </tr>
+                              <tr>
+                                <th>음용형태</th>
+                                <td>STRW</td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2} className="pt20">
+                                  <img src="/common/imgs/business/sig.jpg" alt="sig" />
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div className="tab-pane fade" id="edge" role="tabpanel" aria-labelledby="edge-tab" tabIndex={0}>
+                        <div className="typeBox">
+                          <table cellSpacing="0" border="0" className="tyleTable">
+                            <colgroup>
+                              <col width="30%" />
+                              <col width="70%" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f22 fw400 grayn1">대용량 음료</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f40 fw600 mt10 pb20 grayn1">SIG COMBIBLOC</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>용량(㎖)</th>
+                                <td>950, 1000</td>
+                              </tr>
+                              <tr>
+                                <th>MOQ(ea)</th>
+                                <td>50,000</td>
+                              </tr>
+                              <tr>
+                                <th>부자재MOQ</th>
+                                <td>79,000</td>
+                              </tr>
+                              <tr>
+                                <th>포장입수</th>
+                                <td>12입 W/A</td>
+                              </tr>
+                              <tr>
+                                <th>음용형태</th>
+                                <td>CAP</td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2} className="pt20">
+                                  <img src="/common/imgs/business/tetra1000.jpg" alt="sig" />
+                                </td>
+                              </tr>
+                            </tbody>
                           </table>
                         </div>
                       </div>
@@ -231,52 +239,50 @@ const Container = () => {
                         id="tetrape"
                         role="tabpanel"
                         aria-labelledby="tetrape-tab"
-                        tabIndex="0">
+                        tabIndex={0}>
                         <div className="typeBox">
-                          <table cellspacing="0" border="0" className="tyleTable">
+                          <table cellSpacing="0" border="0" className="tyleTable">
                             <colgroup>
                               <col width="30%" />
                               <col width="70%" />
                             </colgroup>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f22 fw400 grayn1">프리미엄 멸균팩</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2">
-                                <p className="f40 fw600 mt10 pb20 grayn1">TETRA P/E</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>용량(㎖)</th>
-                              <td>200, 250</td>
-                            </tr>
-                            <tr>
-                              <th>MOQ(ea)</th>
-                              <td>200,000</td>
-                            </tr>
-                            <tr>
-                              <th>부자재MOQ</th>
-                              <td>
-                                125 : 500,000 / 150 : 570,000
-                                <br />
-                                200 : 460,000 / 250 : 330,000
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>포장입수</th>
-                              <td>24입 TRAY</td>
-                            </tr>
-                            <tr>
-                              <th>음용형태</th>
-                              <td>STRW</td>
-                            </tr>
-                            <tr>
-                              <td colSpan="2" className="pt20">
-                                <img src="/common/imgs/business/tetraPE.jpg" alt="sig" />
-                              </td>
-                            </tr>
+                            <tbody>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f22 fw400 grayn1">프리미엄 멸균팩</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2}>
+                                  <p className="f40 fw600 mt10 pb20 grayn1">TETRA P/E</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>용량(㎖)</th>
+                                <td>200, 250</td>
+                              </tr>
+                              <tr>
+                                <th>MOQ(ea)</th>
+                                <td>150,000</td>
+                              </tr>
+                              <tr>
+                                <th>부자재MOQ</th>
+                                <td>200 : 289,000 / 250 : 246,000</td>
+                              </tr>
+                              <tr>
+                                <th>포장입수</th>
+                                <td>18입 W/A</td>
+                              </tr>
+                              <tr>
+                                <th>음용형태</th>
+                                <td>cap</td>
+                              </tr>
+                              <tr>
+                                <td colSpan={2} className="pt20">
+                                  <img src="/common/imgs/business/tetraPE.jpg" alt="sig" />
+                                </td>
+                              </tr>
+                            </tbody>
                           </table>
                         </div>
                       </div>
@@ -301,6 +307,7 @@ const Container = () => {
                           <span className="f20 fw400 grayn1 mt20">두유 및 단백질음료로 가장 대중적인 사이즈</span>
                         </div>
                       </div>
+
                       <div
                         className="nav-link"
                         id="sig-tab"
@@ -317,6 +324,7 @@ const Container = () => {
                           </span>
                         </div>
                       </div>
+
                       <div
                         className="nav-link"
                         id="edge-tab"
@@ -328,9 +336,10 @@ const Container = () => {
                         <div className="services__tab__title f45 fw600">
                           TETRA EDGE<span className="gra">950, 1000ml</span>
                           <br />
-                          <span className="f20 fw400 grayn1 mt20">대용량 음료 및 요리육수에 사용되는 사이즈 </span>
+                          <span className="f20 fw400 grayn1 mt20">대용량 음료 및 요리육수에 사용되는 사이즈</span>
                         </div>
                       </div>
+
                       <div
                         className="nav-link"
                         id="tetrape-tab"
@@ -342,7 +351,7 @@ const Container = () => {
                         <div className="services__tab__title f45 fw600">
                           TETRA P/E<span className="gra">200, 250ml</span>
                           <br />
-                          <span className="f20 fw400 grayn1 mt20">프리미엄 제품군에 어울리는 용기유형 </span>
+                          <span className="f20 fw400 grayn1 mt20">프리미엄 제품군에 어울리는 용기유형</span>
                         </div>
                       </div>
                     </div>
@@ -350,6 +359,8 @@ const Container = () => {
                 </div>
               </div>
             </section>
+            {/* //20250929 수정 */}
+
             <section className="breadcrumb-section__area breadcrumb-section breadcrumb-section-4 breadcrumb-section-2__space  border-bottom border-top busiType">
               <div className="container">
                 <div className="breadcrumb-section__shape__wrap ">
@@ -527,7 +538,7 @@ const Container = () => {
                 </div>
 
                 <div className="row mb-minus-30 grid product">
-                  <div className="col-lg-3 col-4 grid-item type01">
+                  <div className="col-lg-3 col-4 grid-item type01 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
@@ -539,7 +550,7 @@ const Container = () => {
                         <div className="blog1__item-category">
                           <ul>
                             <li>
-                              <span className="cb01">두유(멸균)</span>
+                              <span className="cb01">두유</span>
                             </li>
                           </ul>
                         </div>
@@ -553,7 +564,7 @@ const Container = () => {
 
                   <div className="col-lg-3 col-4 grid-item type01">
                     <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
+                      <div className="blog1__item-thumb ">
                         <img
                           src="/common/imgs/thum/TetraPack-200ml-mid_서울우유-협동조합(원두밀).jpg"
                           alt="img not found"
@@ -563,7 +574,7 @@ const Container = () => {
                         <div className="blog1__item-category">
                           <ul>
                             <li>
-                              <span className="cb01">두유(멸균)</span>
+                              <span className="cb01">두유</span>
                             </li>
                           </ul>
                         </div>
@@ -578,81 +589,12 @@ const Container = () => {
                   <div className="col-lg-3 col-4 grid-item type01">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img
-                          src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-검은콩.jpg"
-                          alt="img not found"
-                        />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb01">두유(멸균)</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">
-                        자연과사람들
-                        <br />
-                        건강한두유 검은콩
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type01">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img
-                          src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-아호검.jpg"
-                          alt="img not found"
-                        />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb01">두유(멸균)</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">
-                        자연과사람들
-                        <br />
-                        건강한두유 아몬드호두검은콩
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type01">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img
-                          src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-플레인.jpg"
-                          alt="img not found"
-                        />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb01">두유(멸균)</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">
-                        자연과사람들
-                        <br />
-                        건강한두유 플레인
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type01">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
                         <img src="/common/imgs/thum/TetraPack-200ml-mid_파스퇴르.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">유음료</span>
+                            <span className="cb02">멸균우유</span>
                           </li>
                         </ul>
                       </div>
@@ -660,7 +602,7 @@ const Container = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3 col-4 grid-item type04">
+                  <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img src="/common/imgs/thum/200250mLA3CompactFlex케어웰_rth400.jpg" alt="img not found" />
@@ -680,7 +622,7 @@ const Container = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3 col-4 grid-item type04">
+                  <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img src="/common/imgs/thum/200250mLA3-Compact-Flex_케어웰-구수한맛.jpg" alt="img not found" />
@@ -700,7 +642,7 @@ const Container = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3 col-4 grid-item type04">
+                  <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_케어웰-디엠.jpg" alt="img not found" />
@@ -716,7 +658,7 @@ const Container = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3 col-4 grid-item type04">
+                  <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
@@ -945,7 +887,7 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb07">가공두유</span>
+                            <span className="cb01">두유</span>
                           </li>
                         </ul>
                       </div>
@@ -1022,6 +964,175 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">한국엔터랄푸드 케어웰 어드벤스 1000</p>
                     </div>
                   </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_매일두유-99.9.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">매일유업 매일두유 99.9</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-사골.jpg"
+                          alt="img not found"
+                        />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb09">소스(육수)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">풀무원식품 풀무원 요리육수 사골</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-전골.jpg"
+                          alt="img not found"
+                        />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb09">소스(육수)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">풀무원식품 풀무원 요리육수 전골</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-해물.jpg"
+                          alt="img not found"
+                        />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb09">소스(육수)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">풀무원식품 풀무원 요리육수 해물</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_검은콩고칼슘_엣지.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 베지밀 검은콩 두유 고칼슘 팩</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_아몬드와호두_엣지.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 베지밀 아몬드와 호두두유 팩</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_진한콩국물_검은콩.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 진한 콩국물 검은콩</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_진한콩국물.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 진한 콩국물</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_베지밀_에이_엣지.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 담백한 두유 베지밀 에이</p>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 col-4 grid-item type03">
+                    <div className="blog1__item mb-30">
+                      <div className="blog1__item-thumb">
+                        <img src="/common/imgs/thum/TetraPack-1.jpg" alt="img not found" />
+                      </div>
+                      <div className="blog1__item-category mt20">
+                        <ul>
+                          <li>
+                            <span className="cb01">두유</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 달콤한 두유 베지밀 비</p>
+                    </div>
+                  </div>
                   <div className="col-lg-3 col-4 grid-item type03">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1037,7 +1148,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 담백한 채소육수</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type03">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1053,7 +1163,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 시원한 채소육수</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type03">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1069,7 +1178,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 구수한 사골육수</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type03">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1078,14 +1186,13 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">유음료</span>
+                            <span className="cb04">혼합음료</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">동원F&B 그린덴마크 귀리</p>
+                      <p className="f18 grayn1 mt10 mt10m">동원F&amp;B 그린덴마크 귀리</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type03">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1094,11 +1201,11 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">유음료</span>
+                            <span className="cb04">혼합음료</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">동원F&B 그린덴마크 아몬드</p>
+                      <p className="f18 grayn1 mt10 mt10m">동원F&amp;B 그린덴마크 아몬드</p>
                     </div>
                   </div>
 
@@ -1110,14 +1217,13 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">유음료</span>
+                            <span className="cb10">가공유</span>
                           </li>
                         </ul>
                       </div>
                       <p className="f18 grayn1 mt10 mt10m">빙그레 딸기맛우유 MINI</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1126,14 +1232,13 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">유음료</span>
+                            <span className="cb10">가공유</span>
                           </li>
                         </ul>
                       </div>
                       <p className="f18 grayn1 mt10 mt10m">빙그레 바나나맛우유 MINI</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1149,7 +1254,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">청정원 비타 딸기 우유</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1181,7 +1285,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 키즈모아</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1197,7 +1300,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 건강담은야채가득V19</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1213,7 +1315,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">빙그레 따옴오가닉 사과비트</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1232,7 +1333,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">빙그레 따옴오가닉 오렌지브로콜리</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1308,7 +1408,7 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb01">가공두유(멸균)</span>
+                            <span className="cb01">두유</span>
                           </li>
                         </ul>
                       </div>
@@ -1327,46 +1427,11 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb11">과채음료</span>
+                            <span className="cb01">두유</span>
                           </li>
                         </ul>
                       </div>
                       <p className="f18 grayn1 mt10 mt10m">정식품 달콤한베지밀비 검은콩두유</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type02">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img
-                          src="/common/imgs/thum/SIG-Combibloc-mid_타이거슈가-딥초코밀크티.jpg"
-                          alt="img not found"
-                        />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb10">가공유</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">동원F&B 타이거슈가 딥초코밀크티</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type02">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/SIG-Combibloc-mid_타이거슈가-우롱밀크티.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb10">가공유</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">동원F&B 타이거슈가 우롱밀크티</p>
                     </div>
                   </div>
 
@@ -1496,7 +1561,7 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb02">가공두유(멸균)</span>
+                            <span className="cb01">두유</span>
                           </li>
                         </ul>
                       </div>
@@ -1554,7 +1619,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 플러스케어 당뇨식</p>
                     </div>
                   </div>
-
                   <div className="col-lg-3 col-4 grid-item type02">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1625,163 +1689,66 @@ const Container = () => {
                   <div className="col-lg-3 col-4 grid-item type05">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_자연과사람들-사과드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-디엠.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb11">과채음료</span>
+                            <span className="cb08">환자용식품</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">자연과사람들 사과드링크</p>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 디엠</p>
                     </div>
                   </div>
 
                   <div className="col-lg-3 col-4 grid-item type05">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_자연과사람들-포도드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-티에프.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb11">과채음료</span>
+                            <span className="cb08">환자용식품</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">자연과사람들 포도드링크</p>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 티에프</p>
                     </div>
                   </div>
 
                   <div className="col-lg-3 col-4 grid-item type05">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-망고.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-알디.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb11">과채음료</span>
+                            <span className="cb08">환자용식품</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 망고175ml</p>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 그린비아 알디</p>
                     </div>
                   </div>
 
                   <div className="col-lg-3 col-4 grid-item type05">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-매실.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-화이바.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb11">과채음료</span>
+                            <span className="cb08">환자용식품</span>
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 매실</p>
+                      <p className="f18 grayn1 mt10 mt10m">정식품 그린비아 화이바</p>
                     </div>
                   </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-조이애플.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb11">과채음료</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 조이애플</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-조이오렌지.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb11">과채음료</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 조이오렌지</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-조이오렌지-240ml.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb11">과채음료</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 오렌지</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-에센셜-오렌지.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb11">과채음료</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 에센셜 오렌지</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_미닛메이드-망고-240ml.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb11">과채음료</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 미닛메이드 망고</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-3 col-4 grid-item type05">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img src="/common/imgs/thum/200-DIA_조지아-오리지날.jpg" alt="img not found" />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb06">커피</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">코카콜라 조지아 오리지날</p>
-                    </div>
-                  </div>
-
                   <div className="col-lg-3 col-4 grid-item type05">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -1886,7 +1853,7 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb13">추출음료</span>
+                            <span className="cb04">혼합음료</span>
                           </li>
                         </ul>
                       </div>
@@ -1902,7 +1869,7 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb13">추출음료</span>
+                            <span className="cb04">혼합음료</span>
                           </li>
                         </ul>
                       </div>
@@ -1918,13 +1885,14 @@ const Container = () => {
                       <div className="blog1__item-category mt20">
                         <ul>
                           <li>
-                            <span className="cb13">추출음료</span>
+                            <span className="cb04">혼합음료</span>
                           </li>
                         </ul>
                       </div>
                       <p className="f18 grayn1 mt10 mt10m">아워홈 Oh! 우리집 식혜</p>
                     </div>
                   </div>
+                  {/* 20250929 수정 */}
                 </div>
               </div>
             </section>

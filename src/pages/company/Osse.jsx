@@ -1,8 +1,10 @@
 import React from "react";
+import Meta from "../../components/common/Meta";
 
 const Osse = () => {
   return (
     <>
+      <Meta title={"자연과사람들 관련사 오쎄"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-7">
@@ -23,21 +25,34 @@ const Osse = () => {
           </div>
         </div>
 
-        <div className="row familyBox_top">
-          <div className="col-lg-3 mt100 wow bounceInLeft wView" data-wow-delay="0.5s">
-            <img
-              className="mt70 img100"
-              src="/common/imgs/company/osse02.jpg"
-              alt="이데이몰 밸런스루트관 모바일이미지"
-            />
-          </div>
-          <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="1s">
-            <img className="img100" src="/common/imgs/company/osse03.jpg" alt="런드리서핑 제품" />
-          </div>
-          <div className="col-lg-4 mt100 wow bounceInRight" data-wow-delay="1.5s">
-            <img className="mt30 img100" src="/common/imgs/company/osse04.png" alt="택배상자와 수야무" />
+        {/* 2025-09-29 div추가, mView클래스추가 */}
+        <div className="wView">
+          <div className="row familyBox_top">
+            <div className="col-lg-3 mt100 wow bounceInLeft" data-wow-delay="0.5s">
+              <img
+                className="mt70 img100"
+                src="/common/imgs/company/osse02.jpg"
+                alt="이데이몰 밸런스루트관 모바일이미지"
+              />
+            </div>
+            <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="0.8s">
+              <img className="img100" src="/common/imgs/company/osse03.jpg" alt="런드리서핑 제품" />
+            </div>
+            <div className="col-lg-4 mt100 wow bounceInRight" data-wow-delay="1.1s">
+              <img className="mt30 img100" src="/common/imgs/company/osse04.png" alt="택배상자와 수야무" />
+            </div>
           </div>
         </div>
+        <div className="row mView">
+          <div className="col-lg-12">
+            <img
+              className="mt100 img100"
+              src="common/imgs/company/osse01_m.png"
+              alt="엄마와아이의 다정한모습, 행복한 가족모습"
+            />
+          </div>
+        </div>
+        {/* //2025-09-29 div추가, mView클래스추가 */}
       </section>
 
       <section>

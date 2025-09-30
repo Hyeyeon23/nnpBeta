@@ -1,8 +1,10 @@
 import React from "react";
+import Meta from "../../components/common/Meta";
 
 const Fssc = () => {
   return (
     <>
+      <Meta title={"자연과사람들 식품안전인증현황 FSSC 22000"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-12">
@@ -27,15 +29,16 @@ const Fssc = () => {
           </div>
 
           <div className="row">
+            {/* 20250929 수정 */}
             <div className="col-md-12 contant900 pb150">
               <p className="f18 lh170 mt50">
-                당사는 2011년 10월 8일 ISO 22000최초 인증 획득 후 2015년 6월 4일, 8일에 각각 FSSC 22000 및 ISO 9001
+                당사는 2011년 10월 8일 ISO 22000 최초 인증 획득 후 2015년 6월 4일, 8일에 각각 FSSC 22000 및 ISO 9001
                 인증을 획득함으로써 지속적으로 국제적 품질기준을 적용하여 안전한 식품을 생산하고 있습니다.
                 <br />
                 <br />
                 <span className="fw500">
-                  ISO 9001 + HACCP에 대한 통합인증으로 전 세계에 국가를 대표하는 회원기관 (우리나라:산자부 기술
-                  표준원)의 75%이상 찬성으로 2005년 9월 1일부로 발행한 국제 규격의 식품안전 경영시스템입니다.
+                  ISO 9001 + HACCP에 대한 통합인증으로 전 세계에 국가를 대표하는 회원기관(우리나라:산자부 기술 표준원)의
+                  75%이상 찬성으로 2005년 9월 1일부로 발행한 국제 규격의 식품안전 경영시스템입니다.
                 </span>
                 <br />
                 <br />
@@ -43,6 +46,7 @@ const Fssc = () => {
                 접목하여 최고경영자 및 전 직원의 참여하에 체계적으로 식품안전을 관리 및 개선하도록 개발하였습니다.
               </p>
             </div>
+            {/* //20250929 수정 */}
 
             <div className="col-md-6">
               <ul className="fsscMark">

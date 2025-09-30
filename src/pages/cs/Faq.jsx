@@ -2,10 +2,12 @@ import React from "react";
 import Footer from "../../components/common/footer";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
+import Meta from "../../components/common/Meta";
 
 const Faq = () => {
   return (
     <>
+      <Meta title="자연과사람들 자주묻는 질문"></Meta>
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -34,8 +36,10 @@ const Faq = () => {
                         <br />
                         궁금한 점을 빠르게 확인할 수 있습니다.
                       </p>
+
                       <div className="faq-section__faq mt100">
                         <div className="accordion" id="accordionExamplee">
+                          {/* Accordion Item 1 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -62,6 +66,8 @@ const Faq = () => {
                               </div>
                             </div>
                           </div>
+
+                          {/* Accordion Item 2 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -89,6 +95,7 @@ const Faq = () => {
                             </div>
                           </div>
 
+                          {/* Accordion Item 3 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -114,6 +121,7 @@ const Faq = () => {
                             </div>
                           </div>
 
+                          {/* Accordion Item 4 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -144,6 +152,8 @@ const Faq = () => {
                               </div>
                             </div>
                           </div>
+
+                          {/* Accordion Item 5 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -171,6 +181,7 @@ const Faq = () => {
                             </div>
                           </div>
 
+                          {/* Accordion Item 6 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -197,6 +208,7 @@ const Faq = () => {
                             </div>
                           </div>
 
+                          {/* Accordion Item 7 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -225,6 +237,7 @@ const Faq = () => {
                             </div>
                           </div>
 
+                          {/* Accordion Item 8 */}
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button
@@ -249,6 +262,262 @@ const Faq = () => {
                                 </p>
                                 <p style={{ maxWidth: "600px" }} className="mt20">
                                   <img className="img100" src="/common/imgs/common/faq01.jpg" alt="" />
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 9 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse9"
+                                aria-expanded="false"
+                                aria-controls="collapse9">
+                                제품의 소비기한은 얼마나 되나요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse9"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  소비기한은 포장 용기와 제품의 유형에 따라 달라집니다.
+                                  <br />
+                                  멸균팩 제품 : 두유 및 과채음료류 6개월, 멸균우유 10주~4개월
+                                  <br />
+                                  캔 제품 : 제품 유형 및 제조 조건에 따라 1년에서 최대 2년
+                                  <br />
+                                  최종 소비기한은 제품의 특성과 품목 유형, 유통 조건 등을 종합적으로 고려하여 별도 협의
+                                  후 결정됩니다.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 10 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse10"
+                                aria-expanded="false"
+                                aria-controls="collapse10">
+                                제품의 용량을 조절할 수 있나요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse10"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  당사는 현재 125ml부터 1000ml까지 다양한 용량의 제품 생산이 가능합니다. 설비 유형별
+                                  생산 가능 용량은 홈페이지의 Business&gt;용기유형 메뉴에서 자세히 확인하실 수 있습니다.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 11 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse11"
+                                aria-expanded="false"
+                                aria-controls="collapse11">
+                                두유에 사용되는 콩은 수입산으로 알고 있는데, 유전자재조합(GMO) 콩인가요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse11"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  아니요. 저희는 유전자재조합(GMO) 콩을 전혀 사용하지 않습니다.
+                                  <br />
+                                  현재 국내의 콩 생산량이 너무 적어 불가피하게 수입산 콩을 이용하고 있지만, 정부를 통해
+                                  수입된 비유전자재조합 콩을 사용하고 있습니다. 또한 모회사인 정식품 중앙연구소
+                                  안정성센터에서 GMO 분석 장비(Real Time PCR)를 통해 한 번 더 유전자재조합 여부를
+                                  검사합니다.
+                                  <br />
+                                  농약 잔류 검사도 함께 철저히 진행되므로 안심하고 드실 수 있습니다.
+                                  <br />
+                                  두유의 원료인 콩에 대하여 정부에서 보증하는 구분생산유통증명서를 발급받고 있습니다.
+                                </p>
+                                <p className="mt20">
+                                  ※ 구분 생산·유통 증명서란? 원료 종자의 구입, 생산, 보관, 선별, 운반, 선적 등 전 과정에
+                                  걸쳐 최종 제품 생산자 및 판매자가 인수하기까지 유전자재조합 농산물과 구분하여
+                                  관리하였음을 입증하는 서류입니다.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 12 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse12"
+                                aria-expanded="false"
+                                aria-controls="collapse12">
+                                보관 시 주의사항이 있나요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse12"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  당사에서 제조하는 제품은 살균 또는 멸균 처리된 제품으로, 직사광선을 피한 서늘한 곳에서
+                                  상온 보관이 가능합니다. 다만, 운반 및 보관 중 충격에 주의해 주시고, 제품 개봉 시에는
+                                  칼이나 가위 등 날카로운 도구 사용을 삼가 주세요.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 13 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse13"
+                                aria-expanded="false"
+                                aria-controls="collapse13">
+                                소량 생산도 가능한가요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse13"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  당사는 일정 규모 이상의 연속 생산을 기본으로 하고 있으나, 독창적인 아이디어가 실현될
+                                  수 있도록 가급적 유연하게 대응하고자 합니다. 따라서 자세한 내용은 홈페이지를 통해
+                                  상담을 요청해주시기 바랍니다. *메인화면에 용기별 발주관련 문의사항이 있습니다.{" "}
+                                  <a href="/">
+                                    <span className="btn01 mt50 f13">메인바로가기</span>
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accordion Item 14 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse14"
+                                aria-expanded="false"
+                                aria-controls="collapse14">
+                                제품 기획부터 생산까지의 리드타임은 얼마나 소요되나요?
+                              </button>
+                            </h2>
+                            {/* 20250929 수정 */}
+                            <div
+                              id="collapse14"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>
+                                  OEM: 대량생산 가능 여부 확인을 위해 시험생산을 거칩니다. 부자재(멸균팩) 리드타임을
+                                  포함해 최소 5개월 이상 소요됩니다.
+                                  <br />
+                                  ODM: OEM과 달리 개발부터 시작하기 때문에, 최소 6개월 이상 소요됩니다.
+                                </p>
+                              </div>
+                            </div>
+                            {/* //20250929 수정 */}
+                          </div>
+
+                          {/* Accordion Item 15 */}
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse15"
+                                aria-expanded="false"
+                                aria-controls="collapse15">
+                                재활용 가능한가요?
+                              </button>
+                            </h2>
+                            <div
+                              id="collapse15"
+                              className="accordion-collapse collapse"
+                              data-bs-parent="#accordionExamplee">
+                              <div className="accordion-body">
+                                <p>용기와 분리배출 방식에 따라 부분적으로 가능합니다.</p>
+                                <table cellSpacing="0" border="0" className="faqTable mt10">
+                                  <colgroup>
+                                    <col width="8%" />
+                                    <col width="14%" />
+                                    <col width="13%" />
+                                    <col width="25%" />
+                                    <col width="40%" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>용기</th>
+                                      <th>분리배출표시</th>
+                                      <th>배출 전 세척</th>
+                                      <th>배출 전 방식</th>
+                                      <th>주의사항</th>
+                                    </tr>
+                                    <tr>
+                                      <td>멸균팩</td>
+                                      <td>
+                                        <img src="/common/imgs/common/faq02.gif" alt="" />
+                                      </td>
+                                      <td>헹군 후 건조</td>
+                                      <td>
+                                        전용 수거함 또는 <br />
+                                        끝으로 묶어 배출
+                                      </td>
+                                      <td>
+                                        일반 종이와 구분하여 배출
+                                        <br />
+                                        빨대, 플라스틱 부착물 등 제거 후 배출 권장
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>알미늄</td>
+                                      <td>
+                                        <img src="/common/imgs/common/faq03.gif" alt="" />
+                                      </td>
+                                      <td>헹굼 권장</td>
+                                      <td>일반 재활용 수거함(캔류)</td>
+                                      <td>
+                                        빨대, 플라스틱 부착물 등<br /> 제거 후 배출 권장
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <p className="mt5">
+                                  ※ 멸균팩은 다중 재질로 이루어진 복합 적층 구조로, 일반 종이류와 달리 재활용을 위해서는
+                                  별도의 분리배출 방법이 필요합니다.
                                 </p>
                               </div>
                             </div>

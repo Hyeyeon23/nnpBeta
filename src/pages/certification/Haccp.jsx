@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Meta from "../../components/common/Meta";
 
 const Haccp = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const Haccp = () => {
   }, []);
   return (
     <>
+      <Meta title={"자연과사람들 식품안전인증현황 HACCP"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-12">
@@ -48,7 +50,7 @@ const Haccp = () => {
             </div>
             <div className="col-lg-6">
               <p className="text-right">
-                <img src="../common/imgs/company/haccp01.png" alt="haccp인증마크" />
+                <img src="/common/imgs/company/haccp01.png" alt="haccp인증마크" />
               </p>
             </div>
           </div>
@@ -163,7 +165,7 @@ const Haccp = () => {
                   <div
                     key={index}
                     className={`award-section__item item-${index + 1} p-relative rr-hover-reveal-item active`}>
-                    <a href="project-details.html">
+                    <a href="#!">
                       <div className="award-section__inner-item d-flex justify-content-between align-items-center">
                         <div className="award-section__content d-flex align-items-center">
                           <div className="award-section__year">

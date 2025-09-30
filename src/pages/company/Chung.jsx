@@ -1,8 +1,10 @@
 import React from "react";
+import Meta from "../../components/common/Meta";
 
 const Chung = () => {
   return (
     <>
+      <Meta title={"자연과사람들 관련사 정식품"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-6">
@@ -29,21 +31,34 @@ const Chung = () => {
           </div>
         </div>
 
-        <div className="row familyBox_top">
-          <div className="col-lg-4 mt100 wow bounceInLeft" data-wow-delay="0.5s">
+        {/* 2025-09-29 div추가, mView클래스추가 */}
+        <div className="wView">
+          <div className="row familyBox_top">
+            <div className="col-lg-4 mt100 wow bounceInLeft" data-wow-delay="0.5s">
+              <img
+                className="mt100 img100"
+                src="/common/imgs/company/dcf01.png"
+                alt="엄마와아이의 다정한모습, 행복한 가족모습"
+              />
+            </div>
+            <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="0.8s">
+              <img className="img100" src="/common/imgs/company/dcf02.jpg" alt="베지밀에이,비, 뼈에좋은칼슘두유3종" />
+            </div>
+            <div className="col-lg-3 mt100 wow bounceInRight wView" data-wow-delay="1.1s">
+              <img className="mt200 img100" src="/common/imgs/company/dcf03.jpg" alt="현미경사진" />
+            </div>
+          </div>
+        </div>
+        <div className="row mView">
+          <div className="col-lg-12">
             <img
               className="mt100 img100"
-              src="/common/imgs/company/dcf01.png"
+              src="/common/imgs/company/dcf01_m.png"
               alt="엄마와아이의 다정한모습, 행복한 가족모습"
             />
           </div>
-          <div className="col-lg-5 mt100 wow bounceInUp" data-wow-delay="1s">
-            <img className="img100" src="/common/imgs/company/dcf02.jpg" alt="베지밀에이,비, 뼈에좋은칼슘두유3종" />
-          </div>
-          <div className="col-lg-3 mt100 wow bounceInRight wView" data-wow-delay="1.5s">
-            <img className="mt200 img100" src="/common/imgs/company/dcf03.jpg" alt="현미경사진" />
-          </div>
         </div>
+        {/* //2025-09-29 wView div 추가 */}
       </section>
 
       <section>

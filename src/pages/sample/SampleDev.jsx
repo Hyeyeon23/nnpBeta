@@ -20,6 +20,7 @@ import Header from "../../components/common/Header";
 import CustomBox from "../../components/sample/CustomBox";
 
 import { imageTransfer } from "../../api/3D";
+import Meta from "../../components/common/Meta";
 const SampleDev = () => {
   const groupRef = useRef();
   const canvasRef = useRef(null); // 이미지 다운할 떄 씀
@@ -66,14 +67,32 @@ const SampleDev = () => {
 
   // 이미지 파일을 선택하는 함수
   const handleImageChange = (e) => {
+    // 값 가져오기
+    const token = localStorage.getItem("nnpToken");
+    if (!token) {
+      e.preventDefault();
+      const go = window.confirm("SNS 인증 후 사진을 업로드 해주세요. 인증 페이지로 이동하시겠습니까?");
+      if (go) {
+        // 로그인으로 이동 — 이전 경로 저장 (로그인 후 리다이렉트용)
+        window.location.href = "/auth";
+      }
+      return;
+    }
+
     const file = e.target.files?.[0]; // 선택된 파일
 
     if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("파일 크기가 5MB를 초과합니다.");
+        return;
+      }
       const url = URL.createObjectURL(file); // 파일을 URL로 변환
       console.log("handleImageChange = ", url);
 
       const savedUrl = imageTransfer(file);
       console.log("savedUrl = ", savedUrl);
+
+      //alert(savedUrl);
 
       switch (model) {
         case "PACK1000_Lightless":
@@ -333,7 +352,7 @@ const SampleDev = () => {
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
-
+      <Meta title="자연과사람들 3D"></Meta>
       <Header></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">

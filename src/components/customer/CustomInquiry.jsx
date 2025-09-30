@@ -132,7 +132,10 @@ const CustomInquiry = () => {
   return (
     <>
       <section className="contant1100 mt200">
-        <div className="row">
+        {" "}
+        {/* 2025-09-26 가장아래로 위치이동 mt200 추가 */}
+        <div className="row customproduct">
+          {/* 2025-09-26 customproduct 추가 */}
           <div className="col-lg-8">
             <p className="f70 fw600 grayn1 lh120">맞춤 상담</p>
             <p className="f70 fw600 grayn1 lh120 main_cs">

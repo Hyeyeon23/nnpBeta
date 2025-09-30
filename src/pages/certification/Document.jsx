@@ -1,8 +1,10 @@
 import React from "react";
+import Meta from "../../components/common/Meta";
 
 const Document = () => {
   return (
     <>
+      <Meta title={"자연과사람들 식품안전인증현황 인증서"}></Meta>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-12">
@@ -23,7 +25,7 @@ const Document = () => {
                     desc: "안전관리인증기준[HACCP] 적용 확인서",
                   },
                   { img: "n_haccp03_big.jpg", title: "가공두유", desc: "식품안전관리인증기준[HACCP]적용업소 확인서" },
-                  { img: "n_haccp04_big.jpg", title: "두류가공업", desc: "식품안전관리인증기준(HACCP)적용업소 인증서" },
+                  { img: "n_haccp04_big.jpg", title: "두류가공품", desc: "식품안전관리인증기준(HACCP)적용업소 인증서" },
                   { img: "n_haccp05_big.jpg", title: "과채주스", desc: "식품안전관리인증기준(HACCP)적용업소 인증서" },
                   { img: "n_haccp06_big.jpg", title: "과채음료", desc: "식품안전관리인증기준[HACCP] 적용 확인서" },
                   { img: "n_haccp07_big.jpg", title: "혼합음료", desc: "식품안전관리기준(HACCP)적용업소 인증서" },

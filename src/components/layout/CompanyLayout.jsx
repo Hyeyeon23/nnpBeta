@@ -66,7 +66,7 @@ const CompanyLayout = () => {
 
   return (
     <>
-      <Header></Header>
+      <Header color={"white"}></Header>
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>

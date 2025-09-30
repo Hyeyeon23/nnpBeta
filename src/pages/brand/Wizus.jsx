@@ -51,10 +51,13 @@ const Wizus = () => {
                 <div className="col-md-6">
                   <div className="project-section-2__content">
                     <p className="f40 fw600 grayn1 f_pp lh130">What is WIZUS?</p>
+                    {/* 20250929 수정 */}
                     <p className="f20 fw400 grayn1 mt30 lh150">
-                      2023년 첫 문을연 WIZUS는 자연과사람들의 HEALTH &뉴트리션 음료 전문 브랜드로, 다년간의 OEM 및 ODM
-                      경험으로 얻는 노하우로 직접 꼼꼼한 영양설계부터 생산까지 하고있습니다.
+                      2023년 첫 문을연 WIZUS는 자연과사람들의 HEALTH & 뉴트리션 음료 전문 브랜드로, 다년간의 OEM 및 ODM
+                      경험으로 얻은 노하우로 직접 꼼꼼한 영양설계부터 생산까지 하고있습니다.
                     </p>
+                    {/* //20250929 수정 */}
+
                     <div className="mt80">
                       <img src="/common/imgs/brand/wizus10.png" alt="위저스 마크" />
                     </div>
@@ -77,11 +80,13 @@ const Wizus = () => {
                       <br />
                       상큼한 레몬아이스티맛
                     </p>
+                    {/* <!-- 20250929 수정--> */}
                     <p className="f20 fw400 grayn1 mt30 lh150">
-                      아이스티의 시원함과 크리어한 워터타입으로
+                      아이스티의 시원함과 클리어한 워터타입으로
                       <br />
                       부담없는 단백질 보충
                     </p>
+                    {/* <!-- //20250929 수정--> */}
                     <div className="project-section-2__tag wizustag01">
                       <ul>
                         <li>#상큼한 게 땡길 때</li>
@@ -126,13 +131,16 @@ const Wizus = () => {
                           <p className="f16 fw400 grayn3">맑고 깔끔한 레몬 아이스티맛으로 물처럼 시원하게 마셔요.</p>
                         </li>
                       </ul>
+                      {/* 20250929 수정 */}
                       <ul>
                         <li>
                           <img src="/common/imgs/brand/wizus_ico03.png" alt="위져스 레몬제품" />
                         </li>
                         <li>
-                          <p className="f20 fw500 grayn1">상큼한 레몬 아이스티맛</p>
-                          <p className="f16 fw400 grayn3">맑고 깔끔한 레몬 아이스티맛으로 물처럼 시원하게 마셔요.</p>
+                          <p className="f20 fw500 grayn1">균형 잡힌 비타민 7종</p>
+                          <p className="f16 fw400 grayn3">
+                            비타민C, 비타민A, 나이아신을 포함해 우리 몸에 필요한 비타민 7종을 담았어요.
+                          </p>
                         </li>
                       </ul>
                       <ul>
@@ -140,10 +148,13 @@ const Wizus = () => {
                           <img src="/common/imgs/brand/wizus_ico04.png" alt="위져스 레몬제품" />
                         </li>
                         <li>
-                          <p className="f20 fw500 grayn1">상큼한 레몬 아이스티맛</p>
-                          <p className="f16 fw400 grayn3">맑고 깔끔한 레몬 아이스티맛으로 물처럼 시원하게 마셔요.</p>
+                          <p className="f20 fw500 grayn1">부담 없는 칼로리</p>
+                          <p className="f16 fw400 grayn3">
+                            80칼로리라는 낮은 칼로리로 부담 없이 18g의 단백질을 섭취해요.
+                          </p>
                         </li>
                       </ul>
+                      {/* //20250929 수정 */}
                     </div>
                   </div>
                 </div>
@@ -365,13 +376,15 @@ const Wizus = () => {
               <p className="f80 f_pp grayn5 lh100">A Drink for</p>
             </div>
             <div className="col-lg-6 wView">
+              {/* 20250929 수정 */}
               <p className="f20 lh140 grayn1">
-                ‘자연과 사람들’은 시대 변화와 라이프스타일에 맞춘
+                ‘자연과사람들’은 시대 변화와 라이프스타일에 맞춘
                 <br className="wView" />
                 다양한 브랜드 포트폴리오를 통해 폭넓고 자연스러운 음료 경험을
                 <br className="wView" />
                 제공하며, 앞으로도 지속적으로 그 영역을 확장해 나갈 것입니다.
               </p>
+              {/* //20250929 수정 */}
             </div>
           </div>
           <div className="row">

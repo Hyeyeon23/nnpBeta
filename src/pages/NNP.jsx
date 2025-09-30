@@ -35,10 +35,10 @@ const NNP = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="banner__content">
-                      <h1 className="rr-title-animation f_pp ttf grayn1 fw800">
+                      <h1 styleName="rr-title-animation f_pp ttf grayn1 fw800">
                         {" "}
-                        <span>You are the star,</span>
-                        <span className="arrow">
+                        <span className="f_pp">You are the star,</span>
+                        <span className="arrow wView inine-block">
                           <img
                             id="rotating-arrow"
                             className="rotate"
@@ -47,7 +47,7 @@ const NNP = () => {
                           />
                         </span>
                         <span className="video">
-                          <a className="video-popup" style={{ paddingRight: "14px" }}>
+                          <a className="video-popup">
                             <video
                               className="title-video"
                               data-delay="1.9"
@@ -60,10 +60,12 @@ const NNP = () => {
                               <source src="/common/imgs/video/1115035_Broadcast_Man_1280x720.mp4" type="video/mp4" />
                             </video>
                           </a>
-                          <span className="solutions rr-title-animation f_pp fw800">We set the stage.</span>
+                          <span className="solutions rr-title-animation f_pp fw800 ">
+                            <span className="wView">We set the stage.</span>
+                          </span>
                         </span>
                         <br />
-                        <span className="brand rr-title-animation f_pp italic">Nature & People</span>
+                        <span className="brand rr-title-animation f_pp italic wView">Nature & People</span>
                       </h1>
                     </div>
                   </div>
@@ -77,7 +79,7 @@ const NNP = () => {
                     보이지 않지만,
                     <br />
                     매일 당신 곁에 함께하는
-                    <br />
+                    <br class="wView" />
                     음료 회사
                   </p>
                   <p className="gray02 f45 fw500 mt50">Our Product</p>
@@ -95,19 +97,21 @@ const NNP = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="row">
-                <div className="col-lg-3 mt100 wow  bounceInLeft" data-wow-delay="0.5s">
-                  {" "}
-                  <img className="mt100" src="/common/imgs/common/main_op01.jpg" alt="요리육수전골" />{" "}
-                </div>
-                <div className="col-lg-5 mt100 wow  bounceInUp" data-wow-delay="1s">
-                  {" "}
-                  <img className="" src="/common/imgs/common/main_op02.jpg" alt="캔음료" />{" "}
-                </div>
-                <div className="col-lg-4 mt100 wow  bounceInRight" data-wow-delay="1.5s">
-                  {" "}
-                  <img className="mt30" src="/common/imgs/common/main_op03.png" alt="프로틴밀, 식혜" />{" "}
+              {/* <!-- 2025-09-29 div추가, mView클래스추가 --> */}
+              <div className="wView">
+                <div className="row">
+                  <div className="col-lg-3 mt100 wow  bounceInLeft" data-wow-delay="0.5s">
+                    {" "}
+                    <img className="mt100" src="/common/imgs/common/main_op01.jpg" alt="요리육수전골" />{" "}
+                  </div>
+                  <div className="col-lg-5 mt100 wow  bounceInUp" data-wow-delay="1s">
+                    {" "}
+                    <img className="" src="/common/imgs/common/main_op02.jpg" alt="캔음료" />{" "}
+                  </div>
+                  <div className="col-lg-4 mt100 wow  bounceInRight" data-wow-delay="1.5s">
+                    {" "}
+                    <img className="mt30" src="/common/imgs/common/main_op03.png" alt="프로틴밀, 식혜" />{" "}
+                  </div>
                 </div>
               </div>
             </section>
@@ -186,8 +190,8 @@ const NNP = () => {
 
             <section
               className="pb100 bg_graph services-section__area services-section section-space"
-              style={{ borderTop: "1px solid #f3f3f3" }}>
-              {/* 2025-09-23 mb100, 스타일추가 */}
+              style={{ borderTop: "1px solid #f3f3f3", overflowX: "hidden" }}>
+              {/* 2025-09-26 스타일수정 */}
               <div className="section contant1100">
                 <p className="f64 fw600 grayn1 lh120">
                   아이디어를 <br />
@@ -313,138 +317,140 @@ const NNP = () => {
                     </div>
                   </div>
                 </div>
+                {/* <!-- 2025-09-29 div wView 추가 --> */}
+                <div className="wView">
+                  <div className="row mt50 idea_thumb">
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb01.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb02.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb03.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb04.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb05.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb06.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb07.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb08.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb09.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb10.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb11.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11.jpg")}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <img
+                        src="/common/imgs/main/idea_thumb12.jpg"
+                        alt="image not found"
+                        onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12_on.jpg")}
+                        onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12.jpg")}
+                      />
+                    </div>
 
-                <div className="row mt50 idea_thumb">
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb01.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb01.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb02.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb02.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb03.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb03.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb04.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb04.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb05.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb05.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb06.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb06.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb07.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb07.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb08.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb08.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb09.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb09.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb10.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb10.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb11.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb11.jpg")}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <img
-                      src="/common/imgs/main/idea_thumb12.jpg"
-                      alt="image not found"
-                      onMouseOver={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12_on.jpg")}
-                      onMouseOut={(e) => (e.currentTarget.src = "/common/imgs/main/idea_thumb12.jpg")}
-                    />
-                  </div>
-
-                  <div className="col-md-12 center">
-                    <div className="project-section__content mt50">
-                      <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
-                        <a
-                          href="/dev"
-                          className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
-                          <span className="tp-btn-circle-text-2 text-left">
-                            3D{" "}
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M4.24268 13.3843L13.0108 4.61615"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M4.52539 4.61621H13.0107V13.1015"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                            <br /> 시작하기
-                          </span>
-                          <i className="tp-btn-circle-dot"></i>
-                        </a>
+                    <div className="col-md-12 center">
+                      <div className="project-section__content mt50">
+                        <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
+                          <a
+                            href="/dev"
+                            className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
+                            <span className="tp-btn-circle-text-2 text-left">
+                              3D{" "}
+                              <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M4.24268 13.3843L13.0108 4.61615"
+                                  stroke="white"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M4.52539 4.61621H13.0107V13.1015"
+                                  stroke="white"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                              <br /> 시작하기
+                            </span>
+                            <i className="tp-btn-circle-dot"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -457,7 +463,8 @@ const NNP = () => {
               style={{ border: "1px solid #e7e7e7", marginTop: "-6px" }}>
               {/* 2025-09-23 스타일 추가 */}
               <div className="container">
-                <div className="section__title-wrapper-2 text-center">
+                <div className="section__title-wrapper-2 text-center mt80m GreatDrink">
+                  {/* 2025-09-26 GreatDrink 클래스 추가 */}
                   <div className="section__title-wrapper-2-title">
                     <div className="fw700 f_pp f80">Behind Every Great Drink,</div>
                     <div className="fw200 f_pp f60 italic mt0 nnptitle">There’s a Thoughtful Partner.</div>
@@ -469,7 +476,8 @@ const NNP = () => {
                   <div className="project-section__border__shape"></div>
                   <div className="project-section__border__shape"></div>
                 </div>
-                <div className="row">
+                <div className="row main_pro">
+                  {/* 2025-09-26 main_pro 클래스 추가  */}
                   <div className="col-md-6">
                     <div className="project-section__item margin-bottom margin-right">
                       <div className="project-section__title__wrap hero">
@@ -594,7 +602,7 @@ const NNP = () => {
                       </div>
                     </div>
                   </div>
-
+                  {/* <!-- 2025-09-29 mt50m 제거 --> */}
                   <div className="col-md-6">
                     <div className="project-section__item margin-top margin-left">
                       <div className="project-section__title__wrap hero">
@@ -695,6 +703,51 @@ const NNP = () => {
                         </a>
                       </div>
                     </div>
+                    {/* 2025-09-29 추가 */}
+                    <div className="project-section__content margin-top margin-left mView">
+                      <p className="project-section__dec rr_title_anim f22 fw400 lh160">
+                        자연과사람들은 파티클 음료부터 두유,
+                        <br />
+                        식혜에 이르기까지 다양한 음료를 생산하며,
+                        <br />
+                        폭넓은 제조 역량과 기술력을 갖춘 신뢰받는 <br />
+                        식음료 제조 파트너입니다.
+                      </p>
+
+                      <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
+                        <a
+                          href="/business/products"
+                          className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
+                          <span className="tp-btn-circle-text-2">
+                            See{" "}
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M4.24268 13.3843L13.0108 4.61615"
+                                stroke="white"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M4.52539 4.61621H13.0107V13.1015"
+                                stroke="white"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            <br /> all Service
+                          </span>
+                          <i className="tp-btn-circle-dot"></i>
+                        </a>
+                      </div>
+                    </div>
+                    {/* //2025-09-29 추가 */}
                   </div>
                 </div>
               </div>
