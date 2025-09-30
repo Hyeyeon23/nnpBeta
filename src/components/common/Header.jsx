@@ -79,7 +79,9 @@ const Header = ({ color }) => {
     });
   }, []);
 
-  const oneDepMenu = () => {};
+  const oneDepMenu = (e) => {
+    e.preventDefault();
+  }; // 링크 이동 막기};
 
   const closeNav = () => {};
 
@@ -195,7 +197,7 @@ const Header = ({ color }) => {
                           </a>
                         </li>
                         <li className="gbg07">
-                          <a href="" target="_blank">
+                          <a href="" target="_blank" onClick={oneDepMenu}>
                             R&D
                           </a>
                         </li>
@@ -211,7 +213,9 @@ const Header = ({ color }) => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg08">
-                          <a href="">WIZUS</a>
+                          <a href="#" onClick={(e) => e.preventDefault()}>
+                            WIZUS
+                          </a>
                           <ul className="gnb_depth3">
                             <li>
                               {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
@@ -220,7 +224,9 @@ const Header = ({ color }) => {
                           </ul>
                         </li>
                         <li className="gbg09">
-                          <a href="">건강담은</a>
+                          <a href="#" onClick={(e) => e.preventDefault()}>
+                            건강담은
+                          </a>
                           <ul className="gnb_depth3">
                             <li>
                               <a href="/brand/healthy/sikhye">
@@ -284,7 +290,7 @@ const Header = ({ color }) => {
                       <dl className="full_box">
                         <dd>
                           <p className="full_logo">
-                            <a href="">
+                            <a href="#" onClick={(e) => e.preventDefault()}>
                               <img
                                 src="https://image.edaymall.com/common/dcf/vegemil/img/ico/logo_w.png"
                                 alt="정식품 CI"
@@ -492,7 +498,9 @@ const Header = ({ color }) => {
                       </li>
 
                       <li>
-                        <a href="/rnd/haccp">건강담은</a>
+                        <a href="#" onClick={(e) => e.preventDefault()}>
+                          건강담은
+                        </a>
                         <dl className="v_con_dl">
                           <dd>
                             {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
