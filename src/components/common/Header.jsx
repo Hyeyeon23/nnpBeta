@@ -121,11 +121,11 @@ const Header = ({ color }) => {
                                 인사말
                               </a>
                             </li>
-                            {/* <li>
+                            <li>
                               <a href="#!" onClick={() => linkTo("/about/history")}>
                                 회사연혁
                               </a>
-                            </li> */}
+                            </li>
                             <li>
                               {/* <a href="#!" onClick={() => linkTo("/about/vision")}> */}
                               <a href="/about/vision">비젼</a>
@@ -398,11 +398,11 @@ const Header = ({ color }) => {
                               인사말
                             </a>
                           </dd>
-                          {/* <dd>
+                          <dd>
                             <a href="#!" onClick={() => linkTo("/about/history")}>
                               회사연혁
                             </a>
-                          </dd> */}
+                          </dd>
                           <dd>
                             {/*   <a href="#!" onClick={() => linkTo("/about/vision")}> */}
                             <a href="/about/vision">비전</a>

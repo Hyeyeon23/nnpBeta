@@ -584,8 +584,20 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	/* --------------
 		//VISION
 	--------------- */
+	
 
-
+	/* --------------
+		HISTORY
+	--------------- */
+	.history_table {width:100%}
+	.history_table td {border-bottom:1px solid #DDDDDD; padding:30px 0; vertical-align:middle}
+	.history_table td:first-child{padding-top:15px}
+	.history_ul {position:relative; width:100%}
+	.history_ul li {width:100%; position:relative; display:inline-block; line-heighT:150%; padding:8px 0}
+	.history_ul div:first-child{float:left; width:14%; font-weighT:500; color:#333333; }
+	.history_ul div:nth-child(2){float:right; width:86%; padding-left:20px}
+	.f_left {float:left}
+	.f_right {float:right}
 	/* --------------
 		LOAD
 	--------------- */
@@ -1170,6 +1182,17 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.f90.fw700.grayn2.f_pp.italic.lh110 {font-size:40px !important;}
 	.f80.fw600.grayn1.lh110.mt30 {font-size:30px !important; }
 	.bg_city {background: url(../../common/imgs/company/bg_city.jpg) no-repeat scroll 0 0; background-size:auto  100%}
+
+
+	
+	/* --------------
+		HISTORY
+	--------------- */
+	.history_table td { vertical-align:top; }
+	.history_table td:first-child{padding-top:35px}
+	.history_ul div:first-child{float:left; width:20%; font-weighT:500; color:#333333; }
+	.history_ul div:nth-child(2){float:right; width:80%; padding-left:10px}
+
 
 	/* --------------
 		RECRUIT

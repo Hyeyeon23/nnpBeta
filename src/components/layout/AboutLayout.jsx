@@ -90,9 +90,11 @@ const AboutLayout = () => {
                                 인사말
                               </a>
                             </li>
-                            {/* <li className={`f20 ${section === "history" ? "active" : ""}`}>
-                              <a href="#!">회사연혁</a>
-                            </li> */}
+                            <li className={`f20 ${section === "history" ? "active" : ""}`}>
+                              <a href="#!" onClick={() => linkToSub("history")}>
+                                회사연혁
+                              </a>
+                            </li>{" "}
                             <li className={`f20 ${section === "vision" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("vision")}>
                                 비젼
