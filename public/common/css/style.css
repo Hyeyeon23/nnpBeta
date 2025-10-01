@@ -577,6 +577,10 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 		VISION
 	--------------- */
 	.bg_world {background: url(../../common/imgs/company/bg_world.jpg) no-repeat scroll 0 0; height:780px; background-size:100%}
+	.bg_city {background: url(../../common/imgs/company/bg_city.jpg) no-repeat scroll 0 0; height:auto; background-size:100%}
+	.city_line {border-bottom:1px solid #fff; padding-bottom:70px}
+	.bg_city .odometer.odometer-auto-theme, .odometer.odometer-theme-default { vertical-align:middle;}
+	.city_box {border:1px solid #fff; border-radius:20px; padding:20px}
 	/* --------------
 		//VISION
 	--------------- */
@@ -1165,6 +1169,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	--------------- */
 	.f90.fw700.grayn2.f_pp.italic.lh110 {font-size:40px !important;}
 	.f80.fw600.grayn1.lh110.mt30 {font-size:30px !important; }
+	.bg_city {background: url(../../common/imgs/company/bg_city.jpg) no-repeat scroll 0 0; background-size:auto  100%}
 
 	/* --------------
 		RECRUIT
