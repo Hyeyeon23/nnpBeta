@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from "react";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,7 +20,15 @@ const Wizus = () => {
         <div className="contant1760">
           <div className="row">
             <div className="col-md-12 mt100">
-              <Swiper modules={[Pagination]} pagination={{ clickable: true }} loop={true} className="ourBrandSwiper">
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                className="ourBrandSwiper">
                 <SwiperSlide>
                   <img src="/common/imgs/brand/wizus01.jpg" alt="위져스" />
                 </SwiperSlide>

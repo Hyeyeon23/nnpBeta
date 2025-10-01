@@ -178,7 +178,15 @@ const Header = ({ color }) => {
                           </ul>
                         </li>
                         <li className="gbg04">
-                          <a href="/recruit/info">채용정보</a>
+                          <a href="#!" onClick={oneDepMenu}>
+                            채용정보
+                          </a>
+                          <ul>
+                            <li>
+                              {" "}
+                              <a href="/recruit/info">채용공고</a>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
                     </div>
@@ -328,6 +336,13 @@ const Header = ({ color }) => {
               </a>
             </div>
             <ul className="m_h_right">
+              <div className="pack3D_motion">
+                <a href="/dev" onclick="oneDepMenu()" className="f_pp">
+                  <span>
+                    <img src="/common/imgs/common/pack-3d.gif" />
+                  </span>
+                </a>
+              </div>
               {/* 
               <li>
                 <div className="custom-sel ">
@@ -427,12 +442,12 @@ const Header = ({ color }) => {
                         <dl className="v_con_dl">
                           <dd>
                             <a href="#!" onClick={() => linkTo("/certification/haccp")}>
-                              haccp
+                              HACCP
                             </a>
                           </dd>
                           <dd>
                             <a href="#!" onClick={() => linkTo("/certification/fssc")}>
-                              fssc22000
+                              FSSC22000
                             </a>
                           </dd>
                           <dd>
@@ -447,7 +462,7 @@ const Header = ({ color }) => {
                         <a href="/recruit/info">채용정보</a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/recruit/info">채용정보</a>
+                            <a href="/recruit/info">채용공고</a>
                           </dd>
                         </dl>
                       </li>
@@ -506,7 +521,14 @@ const Header = ({ color }) => {
                       </li>
                       <li>
                         {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
-                        <a href="/brand/pb">자연과사람들이 만든</a>
+                        <a href="#" onClick={(e) => e.preventDefault()}>
+                          자연과사람들이 만든
+                        </a>
+                        <dl className="v_con_dl">
+                          <dd>
+                            <a href="/brand/pb">과일3종 드링크</a>
+                          </dd>
+                        </dl>
                       </li>
                     </ul>
                   </div>
