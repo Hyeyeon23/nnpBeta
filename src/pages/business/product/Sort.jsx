@@ -27,6 +27,7 @@ const Sort = () => {
       name: "두유액 생산",
       keywords: { pre: "콩의 영양을 담아", mid: "맞춤형 두유액", last: "우리나라 최소의 두유 기술력" },
       heroImg: "/common/imgs/business/pro01_01.jpg",
+      heroImgM: "/common/imgs/business/proT_01.jpg",
       images: {
         pre: "/common/imgs/business/pro01_02.jpg",
         mid: "/common/imgs/business/pro01_03.jpg",
@@ -56,6 +57,7 @@ const Sort = () => {
       name: "단백질 음료 생산",
       keywords: { pre: "#마시는단백질", mid: "#한팩으로", last: "#언제어디서나" },
       heroImg: "/common/imgs/business/pro02_01.jpg",
+      heroImgM: "/common/imgs/business/proT_02.jpg",
       images: {
         pre: "/common/imgs/business/pro02_02.jpg",
         mid: "/common/imgs/business/pro02_03.jpg",
@@ -80,6 +82,7 @@ const Sort = () => {
       name: "균형영양식 생산",
       keywords: { pre: "#영양가득", mid: "#건강습관", last: "#균형설계" },
       heroImg: "/common/imgs/business/pro03_01.jpg",
+      heroImgM: "/common/imgs/business/proT_03.jpg",
       images: {
         pre: "/common/imgs/business/pro03_02.jpg",
         mid: "/common/imgs/business/pro03_03.jpg",
@@ -106,6 +109,7 @@ const Sort = () => {
       name: "파티클 생산",
       keywords: { pre: "#씹는즐거움", mid: "#알갱이톡톡", last: "#재미있는식감" },
       heroImg: "/common/imgs/business/pro04_01.jpg",
+      heroImgM: "/common/imgs/business/proT_04.jpg",
       images: {
         pre: "/common/imgs/business/pro04_02.jpg",
         mid: "/common/imgs/business/pro04_03.jpg",
@@ -132,6 +136,7 @@ const Sort = () => {
       name: "식혜 생산",
       keywords: { pre: "#전통방식", mid: "#당도조절가능", last: "#밥알취향존중" },
       heroImg: "/common/imgs/business/pro05_01.jpg",
+      heroImgM: "/common/imgs/business/proT_05.jpg",
       images: {
         pre: "/common/imgs/business/pro05_02.jpg",
         mid: "/common/imgs/business/pro05_03.jpg",
@@ -158,6 +163,7 @@ const Sort = () => {
       name: "소스 생산",
       keywords: { pre: "#간편요리", mid: "#HMR", last: "#맛의완성" },
       heroImg: "/common/imgs/business/pro06_01.jpg",
+      heroImgM: "/common/imgs/business/proT_06.jpg",
       images: {
         pre: "/common/imgs/business/pro06_02.jpg",
         mid: "/common/imgs/business/pro06_03.jpg",
@@ -183,6 +189,7 @@ const Sort = () => {
       name: "멸균유 생산",
       keywords: { pre: "#멸균우유", mid: "#신선함그대로", last: "#상온보관" },
       heroImg: "/common/imgs/business/pro07_01.jpg",
+      heroImgM: "/common/imgs/business/proT_07.jpg",
       images: {
         pre: "/common/imgs/business/pro07_02.jpg",
         mid: "/common/imgs/business/pro07_03.jpg",
@@ -211,6 +218,7 @@ const Sort = () => {
       name: "주스 생산",
       keywords: { pre: "#과채음료", mid: "#과채주스", last: "#과일야채블렌딩" },
       heroImg: "/common/imgs/business/pro08_01.jpg",
+      heroImgM: "/common/imgs/business/proT_08.jpg",
       images: {
         pre: "/common/imgs/business/pro08_02.jpg",
         mid: "/common/imgs/business/pro08_03.jpg",
@@ -238,6 +246,7 @@ const Sort = () => {
       name: "커피 생산",
       keywords: { pre: "#RTD커피", mid: "#편리하게", last: "#다양한맛" },
       heroImg: "/common/imgs/business/pro09_01.jpg",
+      heroImgM: "/common/imgs/business/proT_01.jpg",
       images: {
         pre: "/common/imgs/business/pro09_02.jpg",
         mid: "/common/imgs/business/pro09_03.jpg",
@@ -348,9 +357,9 @@ const Sort = () => {
             <div className="container">
               <div className="project-client-details__list">
                 <ul className="project-client-details__list__item">
-                  <li>{data?.pre}</li>
-                  <li>{data?.mid}</li>
-                  <li>{data?.last}</li>
+                  <li>{data?.keywords.pre}</li>
+                  <li>{data?.keywords.mid}</li>
+                  <li>{data?.keywords.last}</li>
                 </ul>
               </div>
             </div>
@@ -367,7 +376,7 @@ const Sort = () => {
               />
             </div>
             <div className="mView">
-              <img class="img100 radius20" src={data?.heroImg} alt="두유병과 곡물들" />
+              <img class="img100 radius20" src={data?.heroImgM} alt="두유병과 곡물들" />
             </div>
           </section>
 
