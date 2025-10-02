@@ -493,7 +493,8 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	--------------- */
 	.mapWrapper .root_daum_roughmap {width: 100% !important;max-width: 100% !important;}
 	.contact-section__input textarea {padding-top:10px}
-
+	.contact-section__form .form-btn {padding:3px 27px 3px 4px; }
+	.baseBtn {padding:3px 27px 3px 4px; border:1px solid rgba(3, 6, 17, 0.14); border-radius:20px;padding:5px 20px}
 
 
 	/* --------------
@@ -1308,6 +1309,12 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.banner-2__content__shapes-shape-3 {top:160px}
 	.banner-2__area.ourbrand {padding-top:75px}
 	.contant1160 .award-section__wrap.brand_wrap .award-section__item {border-bottom:1px solid #ccc; }
+
+	/* --------------
+		CONTACT
+	--------------- */
+	.contant1160.contact_wrap {padding-left:0; padding-right:0; }
+	
 	
 	
 

@@ -323,30 +323,34 @@ const CustomInquiry = () => {
               </p>
             )}
           </div>
-
+          {/* <!-- 2025-10-02 클래스 추가 mt50 title-btn rr-btn btn-transparent form-btn -->  */}
           <center className={`${isMore === false ? "hidden" : ""}`}>
-            <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
+            <button
+              type="button"
+              className="mt50 title-btn rr-btn btn-transparent form-btn"
+              onClick={() => setIsMore(!isMore)}>
               <span>
                 <i className="fa-regular fa-arrow-right"></i>
               </span>
               닫기
             </button>{" "}
             &nbsp;&nbsp;
-            <button type="submit" className="nnp-btn rr-btn mt50" onClick={handleSubmit(onSubmit)}>
+            <button
+              type="submit"
+              className="mt50 title-btn rr-btn btn-transparent form-btn"
+              onClick={handleSubmit(onSubmit)}>
               <span>
                 <i className="fa-regular fa-arrow-right"></i>
               </span>
               보내기
             </button>
           </center>
+          {/* <!-- 2025-10-02 클래스 추가 mt50 title-btn rr-btn btn-transparent form-btn -->  */}
         </div>
 
         <center className={`${isMore === true ? "hidden" : ""}`}>
-          <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
-            <span>
-              <i className="fa-regular fa-arrow-right"></i>
-            </span>
-            More
+          <button type="button" className="mt50" onClick={() => setIsMore(!isMore)}>
+            <span className="baseBtn">More</span>
           </button>
         </center>
       </section>

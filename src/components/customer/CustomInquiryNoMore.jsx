@@ -143,7 +143,7 @@ const CustomInquiryNoMore = () => {
                         <div className="contact-section__input">
                           <input
                             type="text"
-                            placeholder="ex. (주)자연과사람들 영업부"
+                            placeholder="업체명"
                             {...register("comp", {
                               required: "  업체명은 필수 입력 항목입니다.",
                               maxLength: { value: 20, message: "업체명은 20자 이하로 입력해주세요." },
@@ -164,7 +164,7 @@ const CustomInquiryNoMore = () => {
                             className="mt20 order_input"
                             type="text"
                             style={{ width: "100%", padding: "8px" }}
-                            placeholder="ex. 02-123-4567"
+                            placeholder="연락처"
                             {...register("phone", { required: "연락처를 필수 입력 항목입니다. ", pattern: "" })}
                             aria-invalid={errors.phone ? "true" : "false"}
                           />
@@ -181,7 +181,7 @@ const CustomInquiryNoMore = () => {
                             className="mt20 order_input"
                             type="email"
                             style={{ width: "100%", padding: "8px" }}
-                            placeholder="ex. support@innp.co.kr"
+                            placeholder="이메일 "
                             {...register("email", {
                               required: "이메일 주소를 입력해주세요",
                               pattern: {
@@ -285,50 +285,24 @@ const CustomInquiryNoMore = () => {
 
                             <textarea
                               className="mt20 order_textarea"
-                              type="text"
                               placeholder="문의사항에 대한 내용을 작성해 주세요."
+                              defaultValue=""
+                              {...register("content", {
+                                required: { value: true, message: "문의사항에 대한 내용을 작성해주세요." },
+                                minLength: { value: 10, message: "내용은 10자 이상 입력해주세요" },
+                                maxLength: { value: 300, message: "내용은 300자 이하로 입력해주세요." },
+                              })}
+                              aria-invalid={errors.content ? "true" : "false"}
                             />
+                            {errors.content && (
+                              <p role="alert" className="ms-3 text-info text-sm">
+                                {errors.content.message}
+                              </p>
+                            )}
                           </div>
                         </div>
                       </div>
-                      <div className="col-sm-12">
-                        <div className="contact-section__input">
-                          <input
-                            type="text"
-                            placeholder="제목"
-                            {...register("title", {
-                              required: "제목은 필수 입력 항목입니다.",
-                              maxLength: { value: 50, message: "제목은 50자 이하로 입력해주세요." },
-                            })}
-                            aria-invalid={errors.title ? "true" : "false"}
-                          />
-                          {errors.comp && (
-                            <p role="alert" className="ms-3 text-info text-sm">
-                              {errors.comp.message}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-sm-12">
-                        <textarea
-                          className="order_textarea"
-                          placeholder="문의사항에 대한 내용을 작성해 주세요."
-                          defaultValue=""
-                          {...register("content", {
-                            required: { value: true, message: "문의사항에 대한 내용을 작성해주세요." },
-                            minLength: { value: 10, message: "내용은 10자 이상 입력해주세요" },
-                            maxLength: { value: 300, message: "내용은 300자 이하로 입력해주세요." },
-                          })}
-                          aria-invalid={errors.content ? "true" : "false"}
-                        />
-                        {errors.content && (
-                          <p role="alert" className="ms-3 text-info text-sm">
-                            {errors.content.message}
-                          </p>
-                        )}
-                      </div>
                     </div>
-
                     <center>
                       <button
                         type="submit"

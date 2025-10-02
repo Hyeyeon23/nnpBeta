@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:image" content="https://innp.co.kr/common/imgs/common/ogImage.jpg" />
     <!-- 2025-09-29 절대경로로 변경해서 넣어주세요 -->
-    <meta name="description" content="음료 OEM, ODM, PB, B2B 생산전문기업, 음료수출, 멸균팩, 살균팩, 캔생산전문기업" />
+
     <meta property="og:site_name" content="자연과사람들" />
-    <meta property="og:title" content="(주)자연과사람들 " />
+
     <meta property="og:url" content="https://www.innp.co.kr/" />
     <meta
       name="Keywords"
@@ -51,7 +51,7 @@
     <link href="/common/css/content.css" rel="stylesheet" />
     <link href="/common/css/reset.css" rel="stylesheet" />
     <title>대한민국 No.1 OEM 자연과사람들</title>
-    <script type="module" crossorigin src="/assets/index-ixb--a5i.js"></script>
+    <script type="module" crossorigin src="/assets/index-DxTVvQbP.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DGoAdr57.css">
   </head>
   <style>
@@ -82,6 +82,63 @@
         };w.__beusablerumclient__.load(a + "?url=" + encodeURIComponent(d.URL));
     })(window, document, "//rum.beusable.net/load/b161207e112311u833");
   </script>
+  <script>
+    (function () {
+      // 페이지별 메타 정보 매핑
+      const metaMap = {
+        "/about/ceo": {
+          title: "CEO 소개 | 우리 회사",
+          description: "우리 회사 CEO 소개 페이지입니다.",
+          image: "https://hypark0232.gabia.io/assets/ceo.jpg",
+        },
+        "/contact": {
+          title: "연락처 | 우리 회사",
+          description: "문의 및 연락처 페이지입니다.",
+          image: "https://hypark0232.gabia.io/assets/contact.jpg",
+        },
+        // 필요에 따라 더 추가
+      };
+
+      // 현재 경로 가져오기
+      const path = window.location.pathname;
+
+      // 해당 경로의 메타 정보 가져오기
+      const meta = metaMap[path];
+
+      if (!meta) return; // 매핑 없으면 종료
+
+      // <title> 변경
+      document.title = meta.title;
+
+      // <meta name="description"> 변경 또는 생성
+      let descTag = document.querySelector('meta[name="description"]');
+      if (!descTag) {
+        descTag = document.createElement("meta");
+        descTag.setAttribute("name", "description");
+        document.head.appendChild(descTag);
+      }
+      descTag.setAttribute("content", meta.description);
+
+      // Open Graph meta 태그 처리
+      const ogTags = {
+        "og:title": meta.title,
+        "og:description": meta.description,
+        "og:image": meta.image,
+        "og:url": window.location.href,
+      };
+
+      Object.entries(ogTags).forEach(([property, content]) => {
+        let tag = document.querySelector(`meta[property="${property}"]`);
+        if (!tag) {
+          tag = document.createElement("meta");
+          tag.setAttribute("property", property);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute("content", content);
+      });
+    })();
+  </script>
+
   <body>
     <div id="root"></div>
 
