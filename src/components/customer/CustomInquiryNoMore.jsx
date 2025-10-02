@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { postBizConsulting } from "../../api/client";
-const CustomInquiryOP = () => {
+const CustomInquiryNoMore = () => {
   const [isMore, setIsMore] = useState(false); // 더 보기 버튼 토글 기능
 
   const [type, setType] = useState(""); // 상담 유형
@@ -198,7 +198,7 @@ const CustomInquiryOP = () => {
                           )}
                         </div>
                       </div>
-
+                      {/* <!-- 2025-10-01 --> */}
                       <div class="col-sm-12 mt50 mb100">
                         <div className="section">
                           <p className="f22 fw400">상담 유형</p>
@@ -243,7 +243,7 @@ const CustomInquiryOP = () => {
                           )}
                         </div>
 
-                        <div id="moreSection" className={`${isMore === false ? "hidden" : ""}`}>
+                        <div id="moreSection">
                           <div className="section">
                             <p className="f22 fw400 mt50">발주량</p>
                             <input {...register("quantity")} type="hidden" value={"선택안함"} />
@@ -279,32 +279,17 @@ const CustomInquiryOP = () => {
                               </div>
                             </div>
                           </div>
+
                           <div className="section">
                             <p className="f22 fw400 mt50">상담 내용</p>
+
                             <textarea
                               className="mt20 order_textarea"
                               type="text"
                               placeholder="문의사항에 대한 내용을 작성해 주세요."
                             />
                           </div>
-                          <center className={`${isMore === false ? "hidden" : ""}`}>
-                            <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
-                              <span>
-                                <i className="fa-regular fa-arrow-right"></i>
-                              </span>
-                              닫기
-                            </button>{" "}
-                            &nbsp;&nbsp;
-                          </center>
                         </div>
-                        <center className={`${isMore === true ? "hidden" : ""}`}>
-                          <button type="button" className="nnp-btn rr-btn mt50" onClick={() => setIsMore(!isMore)}>
-                            <span>
-                              <i className="fa-regular fa-arrow-right"></i>
-                            </span>
-                            More
-                          </button>
-                        </center>
                       </div>
                       <div className="col-sm-12">
                         <div className="contact-section__input">
@@ -366,4 +351,4 @@ const CustomInquiryOP = () => {
   );
 };
 
-export default CustomInquiryOP;
+export default CustomInquiryNoMore;

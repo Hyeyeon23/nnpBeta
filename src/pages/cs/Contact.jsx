@@ -4,7 +4,7 @@ import Header from "../../components/common/Header";
 
 import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
-import CustomInquiryOP from "../../components/customer/CustomInquiryOp";
+import CustomInquiryNoMore from "../../components/customer/CustomInquiryNoMore";
 
 const Contact = () => {
   return (
@@ -40,7 +40,7 @@ const Contact = () => {
                 </div>
               </div>
             </section>
-            <CustomInquiryOP></CustomInquiryOP>
+            <CustomInquiryNoMore></CustomInquiryNoMore>
           </main>
           <div class="loading-form">
             <div class="sk-three-bounce">
