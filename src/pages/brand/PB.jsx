@@ -106,14 +106,8 @@ const PB = () => {
               <div className="row">
                 <div className="col-md-6">
                   <div className="project-section-2__content">
-                    <p className="f40 fw600 grayn1 f_pp lh130 mt20">
-                      Nothing Added. <br className="wView" /> Just Fruit!
-                    </p>
-                    <p className="f20 fw400 grayn1 mt30 lh150">
-                      자연에서 갓 따온 그 맛 그대로
-                      <br />
-                      매일의 건강을 위한 작은 습관
-                    </p>
+                    <p className="f40 fw600 grayn1 f_pp lh130 mt20">What is Made by NNP?</p>
+                    <p className="f20 fw400 grayn1 mt30 lh150">자연에서 갓 따온 그 맛 그대로</p>
 
                     <div className="wizus_icon mt40">
                       <ul>

@@ -275,7 +275,7 @@ const Container = () => {
                               </tr>
                               <tr>
                                 <th>음용형태</th>
-                                <td>cap</td>
+                                <td>CAP</td>
                               </tr>
                               <tr>
                                 <td colSpan={2} className="pt20">
@@ -422,10 +422,7 @@ const Container = () => {
                               <th>MOQ(ea)</th>
                               <td>500,000</td>
                             </tr>
-                            <tr>
-                              <th>부자재MOQ</th>
-                              <td>302,000</td>
-                            </tr>
+
                             <tr>
                               <th>포장입수</th>
                               <td>30입 TRAY, 30입 W/A</td>
@@ -524,7 +521,7 @@ const Container = () => {
             </section>
             <section className="blog10__area body-bg section-space-top section-space-bottom-160">
               <div className="container">
-                <p className="center f40 fw600 grayn1">자연과사람들 Beverage</p>
+                <p className="center f40 fw600 grayn1">자연과사람들 생상 품목</p>
                 <div className="blog10__filter mt70">
                   <button className="active" data-filter="*">
                     ALL

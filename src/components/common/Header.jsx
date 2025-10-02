@@ -238,7 +238,7 @@ const Header = ({ color }) => {
                         </li>
                         <li className="gbg09">
                           <a href="#" onClick={(e) => e.preventDefault()}>
-                            건강담은
+                            방방곡곡
                           </a>
                           <ul className="gnb_depth3">
                             <li>
@@ -250,10 +250,18 @@ const Header = ({ color }) => {
                           </ul>
                         </li>
                         <li className="gbg10">
-                          <a href="/brand/pb">
+                          <a href="#" onClick={(e) => e.preventDefault()}>
                             {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
                             자연과사람들이 만든
                           </a>
+                          <ul className="gnb_depth3">
+                            <li>
+                              <a href="/brand/pb">
+                                {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                                과일3종 드링크
+                              </a>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
                     </div>
@@ -512,7 +520,7 @@ const Header = ({ color }) => {
 
                       <li>
                         <a href="#" onClick={(e) => e.preventDefault()}>
-                          건강담은
+                          방방곡곡
                         </a>
                         <dl className="v_con_dl">
                           <dd>

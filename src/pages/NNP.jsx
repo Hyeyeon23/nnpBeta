@@ -121,7 +121,7 @@ const NNP = () => {
                 <div className="row">
                   <div className="col-lg-3 mt100 wow  bounceInLeft" data-wow-delay="0.5s">
                     {" "}
-                    <img className="mt100" src="/common/imgs/common/main_op01.jpg" alt="요리육수전골" />{" "}
+                    <img className="mt100" src="/common/imgs/common/main_op01.png" alt="요리육수전골" />{" "}
                   </div>
                   <div className="col-lg-5 mt100 wow  bounceInUp" data-wow-delay="1s">
                     {" "}
@@ -131,6 +131,15 @@ const NNP = () => {
                     {" "}
                     <img className="mt30" src="/common/imgs/common/main_op03.png" alt="프로틴밀, 식혜" />{" "}
                   </div>
+                </div>
+              </div>
+              <div class="row mView">
+                <div class="col-lg-12">
+                  <img
+                    class="mt100 img100"
+                    src="/common/imgs/common/main_op01_m.png"
+                    alt="자연과사람들에서 생산하는 요리육수, 캔음료, 프로틴밀, 식혜"
+                  />{" "}
                 </div>
               </div>
             </section>

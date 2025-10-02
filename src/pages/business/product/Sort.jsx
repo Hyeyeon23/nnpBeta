@@ -25,7 +25,7 @@ const Sort = () => {
       title: "자연과사람들 두유액",
       crumble: "두유액",
       name: "두유액 생산",
-      keywords: { pre: "콩의 영양을 담아", mid: "맞춤형 두유액", last: "우리나라 최소의 두유 기술력" },
+      keywords: { pre: "콩의 영양을 담아", mid: "맞춤형 두유액", last: "우리나라 최초의 두유 기술력" },
       heroImg: "/common/imgs/business/pro01_01.jpg",
       heroImgM: "/common/imgs/business/proT_01.jpg",
       images: {
@@ -432,8 +432,6 @@ const Sort = () => {
                           오랜 시간 사랑받은 식물성음료
                           <br />
                           국내 원조의 기술을 그대로
-                          <br />
-                          고형분 함량 최대 10%
                         </p>
                         <div className="mt70">
                           <span className="keyword">#두유액</span> <span className="keyword">#식물성음료</span>
@@ -582,7 +580,7 @@ const Sort = () => {
                         <p className="f23 fw400 grayn1 lh150 mt20">
                           맛과 건강을 고려한 과채주스
                           <br />
-                          과일 &middot; 채소 혼합 가능 <span className="more">More</span>
+                          RDT 형태 맞춤 생산 <span className="more">More</span>
                         </p>
                         <div className="mt70">
                           <span className="keyword">#주스</span> <span className="keyword">#과채주스</span>{" "}
