@@ -277,8 +277,22 @@ const CustomInquiryNoMore = () => {
                               </div>
                             </div>
                           </div>
-
-                          <div className="section">
+                          <div className="col-sm-12">
+                            <div className="contact-section__input">
+                              <input
+                                type="text"
+                                placeholder="제목"
+                                {...register("title", { required: "연락처를 필수 입력 항목입니다. ", pattern: "" })}
+                                aria-invalid={errors.title ? "true" : "false"}
+                              />
+                              {errors.title && (
+                                <p role="alert" className="ms-3 text-info text-sm">
+                                  필수 항목입니다. 입력해주세요
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                          <div className="col-12">
                             <p className="f22 fw400 mt50">상담 내용</p>
 
                             <textarea
