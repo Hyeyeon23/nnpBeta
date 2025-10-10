@@ -8,24 +8,34 @@ const CustomInquiry = () => {
   const [container, setContainer] = useState(""); // 용기 유형
   const [quantity, setQuantity] = useState(""); // 수량 밴드
   const [hasRecipe, setHasRecipe] = useState(""); // 레시피 유무
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     setValue,
+    getValues,
     reset,
   } = useForm({
     defaultValues: { content: "", comp: "", phone: "", email: "" },
   });
 
   const onSubmit = async (data) => {
+    setLoading(true);
+
+    const quantityTrimed = quantity.replace('<span class="f14">*MOQ</span>', "").trim();
+    console.log(quantityTrimed);
+
     setValue("type", type);
     setValue("container", container);
-    setValue("quantity", quantity);
+    setValue("quantity", quantityTrimed);
     setValue("hasRecipe", hasRecipe);
 
-    console.log("<onSubmit> data = ", data);
-    const resp = await postBizConsulting(data);
+    // 최신 데이터 다시 가져오기
+    const finalData = getValues();
+    console.log("<onSubmit> latestData =", finalData);
+    const resp = await postBizConsulting(finalData);
 
     if (resp.msg == "Success") {
       alert("문의가 접수되었습니다.");
@@ -34,6 +44,7 @@ const CustomInquiry = () => {
       setContainer("");
       setQuantity("");
       setHasRecipe("");
+      setLoading(false);
     }
   };
 
@@ -95,7 +106,7 @@ const CustomInquiry = () => {
       iconClass: "",
       dataType: "a",
     },
-    { value: "SIG200", display: '<span class="sig200"></span><br>SIG <br>200ml', iconClass: "iconBG02", dataType: "c" },
+    { value: "SIG200", display: '<span class="sig200"></span><br>SIG <br>200ml', iconClass: "iconBG02", dataType: "a" },
     {
       value: "TETRA1000",
       display: '<span class="tetra1000"></span><br>Tetra Pak <br>1000ml',
@@ -289,9 +300,14 @@ const CustomInquiry = () => {
             <input
               className="mt20 order_input"
               type="text"
-              style={{ width: "100%", padding: "8px" }}
-              placeholder="ex. 02-123-4567"
-              {...register("phone", { required: "연락처를 필수 입력 항목입니다. ", pattern: "" })}
+              placeholder="연락처"
+              {...register("phone", {
+                required: "연락처를 필수 입력 항목입니다. ",
+                pattern: {
+                  value: /^(?:\d{2,3}-?\d{3,4}-?\d{4})$/,
+                  message: "올바른 전화번호 형식이 아닙니다. <예시> 010-1234-5678 또는 02-1234-5678",
+                },
+              })}
               aria-invalid={errors.phone ? "true" : "false"}
             />
             {errors.phone && (
@@ -342,7 +358,7 @@ const CustomInquiry = () => {
               <span>
                 <i className="fa-regular fa-arrow-right"></i>
               </span>
-              보내기
+              {loading ? " 전송 중..." : "보내기"}
             </button>
           </center>
           {/* <!-- 2025-10-02 클래스 추가 mt50 title-btn rr-btn btn-transparent form-btn -->  */}
@@ -354,6 +370,24 @@ const CustomInquiry = () => {
           </button>
         </center>
       </section>
+      {/* 오버레이 스피너 */}
+      {loading && (
+        <div
+          style={{
+            position: "fixed",
+            top: "6700px",
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.3)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}>
+          <div className="spinner-border text-white" role="status" />
+        </div>
+      )}
     </>
   );
 };
