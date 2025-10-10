@@ -163,7 +163,6 @@ const CustomInquiryNoMore = () => {
                           <input
                             className="mt20 order_input"
                             type="text"
-                            style={{ width: "100%", padding: "8px" }}
                             placeholder="연락처"
                             {...register("phone", { required: "연락처를 필수 입력 항목입니다. ", pattern: "" })}
                             aria-invalid={errors.phone ? "true" : "false"}
@@ -180,7 +179,6 @@ const CustomInquiryNoMore = () => {
                           <input
                             className="mt20 order_input"
                             type="email"
-                            style={{ width: "100%", padding: "8px" }}
                             placeholder="이메일 "
                             {...register("email", {
                               required: "이메일 주소를 입력해주세요",
