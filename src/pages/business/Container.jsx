@@ -521,7 +521,7 @@ const Container = () => {
             </section>
             <section className="blog10__area body-bg section-space-top section-space-bottom-160">
               <div className="container">
-                <p className="center f40 fw600 grayn1">자연과사람들 생상 품목</p>
+                <p className="center f40 fw600 grayn1">자연과사람들 생산 품목</p>
                 <div className="blog10__filter mt70">
                   <button className="active" data-filter="*">
                     ALL

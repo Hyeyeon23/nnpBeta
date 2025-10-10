@@ -580,7 +580,7 @@ const Sort = () => {
                         <p className="f23 fw400 grayn1 lh150 mt20">
                           맛과 건강을 고려한 과채주스
                           <br />
-                          RDT 형태 맞춤 생산 <span className="more">More</span>
+                          과일 &middot; 채소 혼합 가능 <span className="more">More</span>
                         </p>
                         <div className="mt70">
                           <span className="keyword">#주스</span> <span className="keyword">#과채주스</span>{" "}
@@ -601,7 +601,7 @@ const Sort = () => {
                         <p className="f40 fw600 grayn1 lh150">커피 생산</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
                           블랙 &middot; 라떼 등 다채로운 레시피 <br />
-                          과일 &middot; 채소 혼합 가능 <span className="more">More</span>
+                          RDT 형태 맞춤 생산 <span className="more">More</span>
                         </p>
                         <div className="mt70">
                           <span className="keyword">#커피</span> <span className="keyword">#라떼</span>{" "}
