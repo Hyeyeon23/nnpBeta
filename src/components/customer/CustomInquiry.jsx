@@ -110,7 +110,7 @@ const CustomInquiry = () => {
     {
       value: "SIG250",
       display: '<span class="sig250"></span><br>SIG <br>250ml',
-      iconClass: "iconBG09 ",
+      iconClass: "iconBG09",
       dataType: "a",
     },
     {
@@ -145,6 +145,7 @@ const CustomInquiry = () => {
     setValue("container", container);
     setContainer(container);
     setQuantityType(quantityType);
+    setIsMore(true);
   };
   return (
     <>
