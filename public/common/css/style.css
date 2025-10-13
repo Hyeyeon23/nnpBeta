@@ -295,6 +295,7 @@
 	.radio-group > div > span {width:137px; height:140px;}
 	.tetra200 {background:url(../../common/imgs/common/tetra200.png) no-repeat 0 0;  background-size:cover; display:inline-block; text-align:center}
 	.sig200 {background:url(../../common/imgs/common/sig200.png) no-repeat 0 0;background-size:cover; display:inline-block; text-align:center}
+	.sig250 {background:url(../../common/imgs/common/sig250.png) no-repeat 0 0;background-size:cover; display:inline-block; text-align:center}
 	.tetra1000 {background:url(../../common/imgs/common/tetra1000.png) no-repeat 0 0;  background-size:cover; display:inline-block; text-align:center}
 	.tetra250Com {background:url(../../common/imgs/common//tetra250Com.png) no-repeat 0 0; background-size:cover; display:inline-block; text-align:center}
 	.tetra200Com {background:url(../../common/imgs/common/tetra200Com.png) no-repeat 0 0; background-size:cover; display:inline-block; text-align:center}
@@ -1136,6 +1137,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
     .login_btn_Box p{display:block}
 	.login_btn_Box p img {width:40%}
 	.login_btn_Box p:nth-child(2) {margin-left:0px; margin-top:20px}
+	.login_btn_Box p:nth-child(3) {margin-left:0px; margin-top:20px}
 	/* //3D */
 
 	

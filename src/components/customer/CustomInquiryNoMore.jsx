@@ -106,6 +106,12 @@ const CustomInquiryNoMore = () => {
     },
     { value: "SIG200", display: '<span class="sig200"></span><br>SIG <br>200ml', iconClass: "iconBG02", dataType: "a" },
     {
+      value: "SIG250",
+      display: '<span class="sig250"></span><br>SIG <br>250ml',
+      iconClass: "iconBG09 ",
+      dataType: "a",
+    },
+    {
       value: "TETRA1000",
       display: '<span class="tetra1000"></span><br>Tetra Pak <br>1000ml',
       iconClass: "iconBG03",
