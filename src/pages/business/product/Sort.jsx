@@ -18,6 +18,8 @@ const Sort = () => {
       duration: 500, // 애니메이션 속도
       smooth: true, // 부드럽게 이동
     });
+
+    setData(location.pathname.split("/")[3]);
   }, [location.pathname]); // 경로 변경될 때마다 실행
 
   const datas = {
