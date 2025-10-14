@@ -6,7 +6,6 @@ import Naver from "../components/sns/Naver";
 import Header from "../components/common/Header";
 import BrandHero from "../components/hero/BrandHero";
 import Google from "../components/sns/Google";
-import Google2 from "../components/sns/Google2";
 
 const AuthPage = () => {
   const navigate = useNavigate();
@@ -46,6 +45,7 @@ const AuthPage = () => {
                     <Kakao></Kakao>
                     <Naver></Naver>
                     <Google></Google>
+                    {/* <Google2></Google2> */}
                   </div>
                 </div>
               </div>

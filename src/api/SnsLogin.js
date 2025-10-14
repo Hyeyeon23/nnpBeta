@@ -42,19 +42,24 @@ export const validateToken = async () => {
     }
 }
 
-
-/*
- * Create form to request access token from Google's OAuth 2.0 server.
- */
-export const googleLogin = async (credential) => {
-
+export const googleLogin = async (accessToken) => {
     try {
-        const response = await axiosInstance.post("/auth/google/redirect", credential);
+
+        console.log("googleLogin2 accessTOken  = ", accessToken)
+        const response = await axiosInstance.post(
+            "/auth/google/redirect2",
+            accessToken,
+            {
+                headers: {
+                    "Content-Type": "text/plain",
+                }
+            },
+        )
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 인코딩 잘못돼서 넘어가는것때문에 개삽질함!! 
+        console.log(response);
         return response.data;
 
     } catch (error) {
         console.log(error);
     }
-
-
 }

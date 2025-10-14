@@ -1,36 +1,38 @@
-import { useEffect } from "react";
+import React, { lazy } from "react";
+import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
 import { googleLogin } from "../../api/SnsLogin";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
-const Google = () => {
-  const handleSuccess = async (credentialResponse) => {
-    console.log(credentialResponse.credential);
+function Google() {
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      console.log(tokenResponse.access_token);
 
-    const token = await googleLogin(credentialResponse.credential);
+      const token = await googleLogin(tokenResponse.access_token);
 
-    if (token) {
-      localStorage.setItem("nnpToken", token);
-      window.location.href = "/dev";
-    }
+      console.log("token = ", token);
 
-    // Process the credentialResponse, e.g., send it to your backend for verification
-  };
-
-  const handleError = () => {
-    console.log("Login Failed");
-  };
+      if (token) {
+        localStorage.setItem("nnpToken", token);
+        location.href = "/dev";
+      }
+    },
+    /* flow: "auth-code", */
+    onError: () => console.log("실패"),
+  });
 
   return (
+    <p>
+      <a href="#!" onClick={() => login()}>
+        <img src="/common/imgs/3d/btn_google.png" alt="google icon" />
+      </a>
+    </p>
+  );
+}
+
+export default function LoginSection() {
+  return (
     <GoogleOAuthProvider clientId="598983894979-791a1hhtt1042tpkbk7l01e4ducbn4uq.apps.googleusercontent.com">
-      {" "}
-      <p>
-        <a href="#!">
-          {/* <img src="/common/imgs/3d/btn_naver.png" alt="네이버로그인"></img> */}
-          <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
-        </a>
-      </p>
+      <Google />
     </GoogleOAuthProvider>
   );
-};
-
-export default Google;
+}
