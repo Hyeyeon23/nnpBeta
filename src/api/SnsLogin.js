@@ -26,7 +26,8 @@ export const validateToken = async () => {
 
         const response = await axiosInstance.get("/upload/token/check", "", {});
 
-        return response;
+        const token = new URL(window.location.href).searchParams.get("token");
+        return token;
 
     } catch (error) {
         if (error.response && error.response.status === 403 || error.response.status === 401) {
@@ -39,4 +40,21 @@ export const validateToken = async () => {
             return;
         }
     }
+}
+
+
+/*
+ * Create form to request access token from Google's OAuth 2.0 server.
+ */
+export const googleLogin = async (credential) => {
+
+    try {
+        const response = await axiosInstance.post("/auth/google/redirect", credential);
+        return response.data;
+
+    } catch (error) {
+        console.log(error);
+    }
+
+
 }

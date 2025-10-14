@@ -5,6 +5,8 @@ import Kakao from "../components/sns/Kakao";
 import Naver from "../components/sns/Naver";
 import Header from "../components/common/Header";
 import BrandHero from "../components/hero/BrandHero";
+import Google from "../components/sns/Google";
+import Google2 from "../components/sns/Google2";
 
 const AuthPage = () => {
   const navigate = useNavigate();
@@ -43,6 +45,7 @@ const AuthPage = () => {
                   <div className="col-lg-12 mt50 center login_btn_Box">
                     <Kakao></Kakao>
                     <Naver></Naver>
+                    <Google></Google>
                   </div>
                 </div>
               </div>
