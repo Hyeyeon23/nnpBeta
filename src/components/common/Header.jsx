@@ -177,11 +177,11 @@ const Header = ({ color }) => {
                             </li>
                           </ul>
                         </li>
-                        <li className="gbg04">
+                        <li className="gbg03">
                           <a href="#!" onClick={oneDepMenu}>
                             채용정보
                           </a>
-                          <ul>
+                          <ul className="gnb_depth3">
                             <li>
                               {" "}
                               <a href="/recruit/info">채용공고</a>
