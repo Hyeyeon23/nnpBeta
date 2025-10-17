@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/footer";
 import CustomInquiry from "../components/customer/CustomInquiry";
+import { ModalBasic } from "../components/modal/ModalBasic";
+import ModalMain from "../components/modal/ModalMain";
 const NNP = () => {
   useEffect(() => {
     /**
@@ -1067,6 +1069,7 @@ const NNP = () => {
           <Footer></Footer>
         </div>
       </div>
+      <ModalMain></ModalMain>
     </>
   );
 };

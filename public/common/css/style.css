@@ -76,8 +76,92 @@
 	.contant1100 {max-width:1100px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
 	.contant900 {max-width:900px; width:100%; padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 	#smooth-wrapper {overflow-x:hidden}
-	/* 3000 popup*/
-	.main-popup {position:absolute; top:110px; right:150px; z-index:100; height:480px;}
+	/* popup*/
+
+  .popup-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.45);
+    display: none; /* 기본 숨김 */
+    z-index: 9998;
+  }
+
+  /* 팝업 박스 */
+  .popup {
+    position: fixed;
+    width: min(92vw, 320px);
+   
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    z-index: 9999;
+    /* 모바일: 정중앙 */
+    bottom:5%; left:3%;
+    /* transform: translate(-50%, -50%); */
+  }
+  .popupimg img {border-radius: 10px 10px 0px 0px}
+
+ 
+  .popup__inner { padding: 20px 18px 12px;  background: #00afef; /* 핑크 톤 */ }
+  .popup__title {
+    font-size: 18px;  line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .popup__subtitle {
+    font-size: 12px; opacity: .85; letter-spacing: 0;
+    margin-bottom: 14px;
+  }
+  .popup__card {
+    background: rgba(255,255,255,.08);
+    border: 1px dashed rgba(255,255,255,.4);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .popup__truck { font-size: 13px; }
+  .popup__desc {
+    font-size: 13px; line-height: 1.55;
+    margin: 10px 0 8px;
+  }
+  .popup__period {
+    margin: 8px 0 2px;
+    font-size: 13px;
+  }
+  .popup__note {
+    font-size: 11px; opacity: .9; line-height: 1.45;
+  }
+
+  /* 하단 버튼 영역 */
+  .popup__actions {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(150,150,150,.25);
+	background:#fff; border-radius:0 0 10px 10px; border:1px solid #d3d3d3; border-top:0
+  }
+  .popup__btn {
+    appearance: none; border: 0; background: transparent;
+    color: #333; font-size: 13px; padding: 12px 10px;
+    cursor: pointer; 
+  }
+  .popup__btn + .popup__btn {
+    border-left: 1px solid rgba(150,150,150,.25);
+  }
+
+  /* X 버튼 */
+  .popup__close {
+    position: absolute; top: 8px; right: 8px;
+    width: 32px; height: 32px;
+    display: inline-grid; place-items: center;
+    background: rgba(0,0,0,.2);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none; color: #fff; font-size: 18px;
+  }
+
+  /* 표시 제어 */
+  .is-open .popup-overlay { display: block; }
+
+
+
 
 	/*---------------------------------------------
 	 * 3000 Header
@@ -643,9 +727,10 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.recruit_t_box table th {text-align:center; padding:15px 0; background:#EEF7FC; color:#333333; border-top:1px solid #707070; border-left:1px solid #CCCCCC; font-size:16px}
 	.recruit_t_box table th:first-child {border-left:0}
 	.recruit_t_box table td:first-child {border-left:0}
-	.recruit_t_box table:nth-child(2) th {border-left:1px solid #ccc}
-	.recruit_t_box table:nth-child(2) td {border-left:1px solid #ccc}
-	.recruit_t_box table td {background:#fff; border-left:1px solid #ccc;  padding:15px; text-align:center; min-height:170px; 
+	.recruit_t_box table:nth-child(1) {border-right:1px solid #ccc; }
+	.recruit_t_box table:nth-child(2) th {}
+	.recruit_t_box table:nth-child(2) td {}
+	.recruit_t_box table td {background:#fff; border-left:1px solid #ccc;  padding:12px; text-align:center; min-height:170px; 
 	font-size:14px; line-height:140%; color:#333333; border-top:1px solid #CCCCCC;}
 	.rec_txt p {width:100%; border-bottom:1px solid #848484 ; padding-bottom:20px; color:#333333; font-size:24px ;font-weight:500}
 	.rec_txt ul {padding-top:10px}
@@ -897,6 +982,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	
 	
 
+	
 	/* -------------
 	    MAIN
 	-------------- */
@@ -932,6 +1018,18 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.brand-section__area.brand-section.bg-white.mt100 {display:none}
 	.idea_thumb .col-md-3 {margin:0 !important; padding:0 !important; }
 
+	/*-------------
+	 Popup
+	-------------*/
+	
+	
+	
+
+	  .popup {
+		  top: 50%; left: 50%;
+		  transform: translate(-50%, -50%);
+		  width: 340px;
+		  }
 	/*--------------
 		MAIN > 신뢰
 	--------------*/
