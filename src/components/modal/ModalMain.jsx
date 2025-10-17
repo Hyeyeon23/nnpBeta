@@ -73,6 +73,7 @@ const ModalMain = () => {
       </div>
 
       {/* 공고 내용 끝 * (변동구간)*/}
+
       <div className="popup__actions">
         <button type="button" className="popup__btn" id="btnHide1d" onClick={setNnnPopupStamp}>
           1일 동안 보지 않음
