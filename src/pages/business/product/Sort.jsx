@@ -13,7 +13,7 @@ const Sort = () => {
   useEffect(() => {
     // 기존 jarallax destroy
     jarallax(document.querySelectorAll(".jarallax"), "destroy");
-
+    console.log("location.pathname useEffect");
     scroll.scrollToTop({
       duration: 500, // 애니메이션 속도
       smooth: true, // 부드럽게 이동
@@ -303,7 +303,7 @@ const Sort = () => {
       default:
         setData(null);
     }
-
+    console.log("type = ", type);
     // <main.js 재실행>라우트 변경 시마다
     const reloadMainScript = () => {
       const mainScript = document.createElement("script");
@@ -373,6 +373,7 @@ const Sort = () => {
               <div
                 className="about-section__thumb__wrapper-img jarallax"
                 data-background={data?.heroImg}
+                style={{ backgroundImage: `url(${data?.heroImg})` }}
                 speed={0.2}
                 alt={data?.alt.hero}
               />

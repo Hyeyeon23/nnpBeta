@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const ModalMain = () => {
   const [oepnState, setOpenState] = useState(false);
-  const START_TIME = new Date("2025-10-11").getTime();
-  const END_TIME = new Date("2025-10-16").getTime();
+  const START_TIME = new Date("2025-10-17").getTime();
+  const END_TIME = new Date("2025-11-02").getTime();
 
   useEffect(() => {
     const now = Date.now();
