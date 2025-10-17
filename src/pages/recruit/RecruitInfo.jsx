@@ -4,7 +4,7 @@ import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
 
 const RecruitInfo = () => {
-  const [isInProgress, setIsInProgress] = useState(true);
+  const [isInProgress, setIsInProgress] = useState(false);
   const [recruit, setRecruit] = useState("");
   useEffect(() => {
     /* 공고 html 불러옴 */

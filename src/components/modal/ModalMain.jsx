@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 const ModalMain = () => {
-  const [oepnState, setOpenState] = useState(true);
+  const [oepnState, setOpenState] = useState(false);
+  const START_TIME = new Date("2025-10-11").getTime();
+  const END_TIME = new Date("2025-10-16").getTime();
 
   useEffect(() => {
+    const now = Date.now();
+
     function isShow() {
       try {
+        if (START_TIME >= now || now >= END_TIME) {
+          return false;
+        }
         const stamp = Number(localStorage.getItem("NNP_POPUP_STAMP") || 0);
 
         return !(stamp && Date.now() < stamp);
@@ -14,7 +21,6 @@ const ModalMain = () => {
         return true;
       }
     }
-
     setOpenState(isShow());
   }, []);
 
