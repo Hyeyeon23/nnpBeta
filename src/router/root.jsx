@@ -203,6 +203,10 @@ const root = createBrowserRouter(
     { path: "/kr/RnD/History.aspx", element: <Navigate to="/" replace /> },
     { path: "/kr/Product/Trade.aspx", element: <Navigate to="/" replace /> },
     { path: "/kr/Customer/Support.aspx", element: <Navigate to="/" replace /> },
+
+    { path: "/en/Company/Info.aspx", element: <Navigate to="/about/vision/" replace /> },
+    { path: "/en/Product/pd_Can.aspx", element: <Navigate to="/business/containers/" replace /> },
+    { path: "/en/Product/Trade.aspx", element: <Navigate to="/" replace /> },
   ],
   {
     basename: import.meta.env.BASE_URL, // 깃허브 페이지스를 위한 설정
