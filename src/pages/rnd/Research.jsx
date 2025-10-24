@@ -39,6 +39,24 @@ const Research = () => {
 
   return (
     <>
+      {" "}
+      <style>{`
+    .swiper-slide {
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 18px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+      overflow: visible;
+      will-change: transform;
+      z-index: 1;
+    }
+  `}</style>
       <section>
         <div className="contant1160  mt100">
           <div className="row ">
@@ -86,43 +104,43 @@ const Research = () => {
                   data-year="2019"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2018.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2018.jpg')" }}
                   data-year="2018"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2017.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2017.jpg')" }}
                   data-year="2017"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2016.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2016.jpg')" }}
                   data-year="2016"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2015.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2015.jpg')" }}
                   data-year="2015"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2014.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2014.jpg')" }}
                   data-year="2014"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2013.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2013.jpg')" }}
                   data-year="2013"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2012.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2012.jpg')" }}
                   data-year="2012"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2011.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2011.jpg')" }}
                   data-year="2011"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2010.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2010.jpg')" }}
                   data-year="2010"></div>
                 <div
                   className="main-bg"
-                  style={{ backgroundImage: "url('common/imgs/business/bg2009.jpg')" }}
+                  style={{ backgroundImage: "url('/common/imgs/business/bg2009.jpg')" }}
                   data-year="2009"></div>
 
                 {/* <!-- 텍스트 --> */}
@@ -174,14 +192,14 @@ const Research = () => {
 								</ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2023.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2023.jpg')" }}></div>
                         <div className="year-label">2023</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2022"
-                        data-bg="common/imgs/business/bg2022.jpg"
+                        data-bg="/common/imgs/business/bg2022.jpg"
                         data-text='
 								  <h1>2022</h1>
 								  <ul>
@@ -192,14 +210,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2022.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2022.jpg')" }}></div>
                         <div className="year-label">2022</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2021"
-                        data-bg="common/imgs/business/bg2021.jpg"
+                        data-bg="/common/imgs/business/bg2021.jpg"
                         data-text='
 								  <h1>2021</h1>
 								  <ul>
@@ -210,14 +228,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2021.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2021.jpg')" }}></div>
                         <div className="year-label">2021</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2020"
-                        data-bg="common/imgs/business/bg2020.jpg"
+                        data-bg="/common/imgs/business/bg2020.jpg"
                         data-text='
 								  <h1>2020</h1>
 								  <ul>
@@ -228,14 +246,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2020.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2020.jpg')" }}></div>
                         <div className="year-label">2020</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2019"
-                        data-bg="common/imgs/business/bg2019.jpg"
+                        data-bg="/common/imgs/business/bg2019.jpg"
                         data-text='
 								  <h1>2019</h1>
 								  <ul>
@@ -246,14 +264,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2019.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2019.jpg')" }}></div>
                         <div className="year-label">2019</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2018"
-                        data-bg="common/imgs/business/bg2018.jpg"
+                        data-bg="/common/imgs/business/bg2018.jpg"
                         data-text='
 								  <h1>2018</h1>
 								  <ul>
@@ -274,14 +292,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2018.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2018.jpg')" }}></div>
                         <div className="year-label">2018</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2017"
-                        data-bg="common/imgs/business/bg2017.jpg"
+                        data-bg="/common/imgs/business/bg2017.jpg"
                         data-text='
 								  <h1>2017</h1>
 								  <ul>
@@ -297,14 +315,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2017.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2017.jpg')" }}></div>
                         <div className="year-label">2017</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2016"
-                        data-bg="common/imgs/business/bg2016.jpg"
+                        data-bg="/common/imgs/business/bg2016.jpg"
                         data-text='
 								  <h1>2016</h1>
 								  <ul>
@@ -317,14 +335,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2016.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2016.jpg')" }}></div>
                         <div className="year-label">2016</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2015"
-                        data-bg="common/imgs/business/bg2015.jpg"
+                        data-bg="/common/imgs/business/bg2015.jpg"
                         data-text='
 								  <h1>2015</h1>
 								  <ul>
@@ -340,14 +358,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2015.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2015.jpg')" }}></div>
                         <div className="year-label">2015</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2014"
-                        data-bg="common/imgs/business/bg2014.jpg"
+                        data-bg="/common/imgs/business/bg2014.jpg"
                         data-text='
 								  <h1>2014</h1>
 								  <ul>
@@ -357,14 +375,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2014.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2014.jpg')" }}></div>
                         <div className="year-label">2014</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2013"
-                        data-bg="common/imgs/business/bg2013.jpg"
+                        data-bg="/common/imgs/business/bg2013.jpg"
                         data-text='
 								  <h1>2013</h1>
 								  <ul>
@@ -374,14 +392,14 @@ const Research = () => {
 								  </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2013.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2013.jpg')" }}></div>
                         <div className="year-label">2013</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2012"
-                        data-bg="common/imgs/business/bg2012.jpg"
+                        data-bg="/common/imgs/business/bg2012.jpg"
                         data-text='
 								  <h1>2012</h1>
 								  <ul>
@@ -394,14 +412,14 @@ const Research = () => {
 								 </ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2012.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2012.jpg')" }}></div>
                         <div className="year-label">2012</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2011"
-                        data-bg="common/imgs/business/bg2011.jpg"
+                        data-bg="/common/imgs/business/bg2011.jpg"
                         data-text='
 								  <h1>2011</h1>
 								  <ul>
@@ -413,14 +431,14 @@ const Research = () => {
 								</ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2011.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2011.jpg')" }}></div>
                         <div className="year-label">2011</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2010"
-                        data-bg="common/imgs/business/bg2010.jpg"
+                        data-bg="/common/imgs/business/bg2010.jpg"
                         data-text='
 								  <h1>2010</h1>
 								  <ul>
@@ -433,14 +451,14 @@ const Research = () => {
 								</ul>'>
                         <div
                           className="thumb-img"
-                          style={{ backgroundImage: "url('common/imgs/business/bg2010.jpg')" }}></div>
+                          style={{ backgroundImage: "url('/common/imgs/business/bg2010.jpg')" }}></div>
                         <div className="year-label">2010</div>
                       </div>
 
                       <div
                         className="swiper-slide"
                         data-year="2009"
-                        data-bg="common/imgs/business/bg2009.jpg"
+                        data-bg="/common/imgs/business/bg2009.jpg"
                         data-text='
 								  <h1>2009</h1>
 								  <ul>

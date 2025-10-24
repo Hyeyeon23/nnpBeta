@@ -99,6 +99,11 @@ const RndLayout = () => {
                                 시설 및 장비현황
                               </a>
                             </li>
+                            <li className={`f20 ${section === "research" ? "active" : ""}`}>
+                              <a href="#!" onClick={() => linkToSub("research")}>
+                                연구현황
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </div>

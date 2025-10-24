@@ -914,7 +914,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.swiper-wrapper {
 	  overflow: visible !important;
 	  display: flex !important;
-	  align-items: center !important;
+	  align-items: center;
 	}
 
 	/* 썸네일 카드 */
