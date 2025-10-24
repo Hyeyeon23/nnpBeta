@@ -68,7 +68,7 @@ const ModalMain = () => {
         <p className="popup__desc">
           모집분야
           <br />
-          자재관리 / 품질관리(인증)
+          자재관리 / 품질관리(인증) / 인사 &middot; 총무
         </p>
 
         <p className="popup__desc">
