@@ -32,6 +32,12 @@ import Terms from "../pages/Terms";
 import AuthPage from "../pages/AuthPage";
 import BrandLayout from "../components/layout/BrandLayout";
 import RecruitInfo from "../pages/recruit/RecruitInfo";
+import RndLayout from "../components/layout/RndLayout";
+import Info from "../pages/rnd/Info";
+
+import Structure from "../pages/rnd/Structure";
+import Research from "../pages/rnd/Research";
+import Equipment from "../pages/rnd/Equipment";
 
 const Loading = <div>Loading..</div>;
 // lazy는 해당 모듈이 필요할때만 동적으로 로드하는 기능, Main 컴포넌트를 초기 번들에 포함하지 않고, 사용자가 해당 페이지에 접근할 때 비동기적으로 로드됨, 초기 로딩 속도를 줄이고 성능 최적화 효과가 있음
@@ -128,6 +134,21 @@ const root = createBrowserRouter(
           path: "product/:type",
           Component: Sort,
         },
+      ],
+    },
+
+    {
+      path: "rnd",
+      element: (
+        <Suspense fallback={Loading}>
+          <RndLayout></RndLayout>
+        </Suspense>
+      ),
+      children: [
+        { path: "info", Component: Info },
+        { path: "structure", Component: Structure },
+        { path: "equipment", Component: Equipment },
+        { path: "research", Component: Research },
       ],
     },
     {

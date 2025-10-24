@@ -210,9 +210,19 @@ const Header = ({ color }) => {
                           </a>
                         </li>
                         <li className="gbg07">
-                          <a href="#!" target="_blank" onClick={preparingAlert}>
-                            R&D
+                          <a href="/rnd/info" target="_blank" rel="noopener noreferrer">
+                            R&amp;D
                           </a>
+                          <ul className="gnb_depth3">
+                            <li>
+                              <a href="/rnd/info">연구소 소개</a>
+                            </li>
+                            <li>{/*   <a href="rnd_member.html">조직구성</a> */}</li>
+                            <li>{/* <a href="rnd_equipment.html">시설 및 장비현황</a> */}</li>
+                            <li>
+                              <a href="rnd_research.html">연구현황</a>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
                     </div>
@@ -494,6 +504,25 @@ const Header = ({ color }) => {
                       <li>
                         {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
                         <a href="/business/containers">용기유형</a>
+                      </li>
+                      <li className="gbg07">
+                        <a href="/rnd/info" target="_blank" rel="noopener noreferrer">
+                          R&amp;D
+                        </a>
+                        <ul className="gnb_depth3">
+                          <li>
+                            <a href="/rnd/info">연구소 소개</a>
+                          </li>
+                          {/*              <li>
+                            <a href="rnd_member.html">조직구성</a>
+                          </li>
+                          <li>
+                            <a href="rnd_equipment.html">시설 및 장비현황</a>
+                          </li>
+                          <li>
+                            <a href="rnd_research.html">연구현황</a>
+                          </li> */}
+                        </ul>
                       </li>
                     </ul>
                   </div>

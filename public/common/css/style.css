@@ -70,7 +70,7 @@
 	.contant100_01 {width:100%; padding-right: 0px;padding-left: 0px;margin-right: auto; margin-left: auto;} 
 	.contant1760 {max-width:1760px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto;}
 	.contant1520 {max-width:1520px;margin:0 auto;position:relative; padding-right: 15px;padding-left: 15px;}
-	.contant1460 {max-width:1460px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto;}
+	.contant1460 {max-width:1460px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto; margin-left: auto}
 	.contant1310 {max-width:1310px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
 	.contant1160 {max-width:1160px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
 	.contant1100 {max-width:1100px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
@@ -811,6 +811,227 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.cardWrap a:hover .cardBox p {color:#fff !important}
 	.cardWrap a:hover .cardBox .keyword {color:#fff !important; border:1px solid #fff}
 	.cardWrap a:hover .cardBox .more {background:#fff; color:#333; border:1px solid #fff}
+
+	/* --------------
+		RnD
+	--------------- */
+	.subTop_rnd {background: url(../../common/imgs/business/subTop_rnd.jpg) no-repeat scroll 0 0; background-size:cover;}
+	.rnd_line {border-bottom:1px solid #ccc; margin-bottom:20px }
+	.rndBox {box-shadow:2px 8px 11px -2px rgba(0,0,0,0.17); padding:30px; background:#fff }
+	.faq-section__content.rnd_member {margin-left:0}
+
+
+
+
+	/* ===== 메인 영역 ===== */
+	.main-visual {
+	  position: relative;
+	  width: 100%;
+	  height: 100vh;
+	  overflow: hidden;
+	}
+
+	/* 배경 */
+	.main-bg {
+	  position: absolute;
+	  inset: 0;
+	  background-size: cover;
+	  background-position: center;
+	  opacity: 0;
+	  transform: scale(1.1);
+	  transition: opacity 1.2s ease, transform 6s ease;
+	  z-index: 0; /* 👈 모든 배경은 0으로 고정 */
+}
+	.main-bg.active {
+	  opacity: 1;
+	  transform: scale(1);
+	  z-index: 0; /* 👈 여기도 0으로 강제 */
+	}
+
+	/* 텍스트 */
+	.main-text {
+	  position: absolute;
+	  top: 33%; /* ✨ 더 위로 이동 */
+	  left: 25%;
+	  transform: translateY(-50%);
+	  z-index: 2;
+	  text-align: left;
+	}
+	.main-text b {font-weight:500}
+	.main-text h1 {
+	  font-size: 80px;
+	  font-weight: 800;
+	  margin-bottom: 30px;
+	  color:#fff;
+	  opacity:0.8; position:relative
+	}
+	.main-text h1 { width:250px; position:relative; display:inline-block}
+	.main-text ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0; position:relative; display:inline-block; vertical-align:top
+	}
+	.main-text li {
+	  font-size: 20px;
+	  line-height: 1.6;
+	  margin-bottom: 5px;
+	  color:#fff
+	}
+	.main-text dl {position:relative}
+	.main-text dd {float:left}
+	.main-text dd:first-child {width:80px}
+	.main-text dd:nth-child(2) { width: calc(100% - 80px); }
+
+	.timeline-wrap dl {position:relative}
+	.timeline-wrap dd {float:left}
+	.timeline-wrap dd:first-child {width:80px}
+	.timeline-wrap dd:nth-child(2) { width: calc(100% - 80px); }
+
+	/* ===== 썸네일 영역 ===== */
+	.timeline-wrap {
+	  position: absolute;
+	  bottom: auto;
+	  top: 60%; /* ✨ 가운데 근처로 올림 */
+	  left: 50%;
+	  transform: translateX(-50%);
+	  width: 100%;
+	  height: auto;
+	  background: transparent; /* ✨ 배경 제거 */
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  z-index: 5;
+	  padding: 0 3%;
+	  box-sizing: border-box;
+	}
+
+	/* Swiper 기본 */
+	.swiper {
+	  width: 100%;
+	  height: 100%;
+	  overflow: visible !important;
+	}
+	.swiper-wrapper {
+	  overflow: visible !important;
+	  display: flex !important;
+	  align-items: center !important;
+	}
+
+	/* 썸네일 카드 */
+	.swiper-slide {
+	  width: 200px;
+	  height: 200px;
+	  border: 1px solid rgba(255, 255, 255, 0.7);
+	  border-radius: 18px;
+	  position: relative;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  opacity: 0.6;
+	  transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+	  overflow: visible;
+	  will-change: transform;
+	  z-index: 1;
+	}
+
+	/* 썸네일 이미지 */
+	.thumb-img {
+	  position: absolute;
+	  inset: 0;
+	  background-size: cover;
+	  background-position: center;
+	  border-radius: inherit;
+	  opacity: 0;
+	  transition: opacity 0.8s ease;
+	  z-index: 1;
+	  display: none;
+	}
+
+	/* 연도 텍스트 */
+	.year-label {
+	  position: relative;
+	  font-size: 22px;
+	  font-weight: 700;
+	  color: #fff;
+	  z-index: 2;
+	  pointer-events: none;
+	}
+
+	/* 기본: 모든 이미지 숨김 */
+	.swiper-slide .thumb-img {
+	  display: none;
+	  opacity: 0;
+	}
+
+	/* 활성 썸네일 1장만 이미지 표시 */
+	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .thumb-img {
+	  display: block;
+	  opacity: 1;
+	}
+
+	/* 활성 썸네일 강조 */
+	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) {
+	  border: 1px solid #fff;
+	  transform: scale(1.15);
+	  opacity: 1;
+	  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+	  z-index: 10;
+	}
+	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .year-label {
+	  display: none;
+	}
+
+	/* ✨ Hover 인터랙션 (PC 전용) */
+	@media (hover:hover) and (pointer:fine) {
+	  /* 모든 썸네일에 공통 hover 효과 */
+	  .thumbs-swiper .swiper-slide:hover {
+		transform: translateY(-6px) scale(1.08);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+		transition: transform 0.35s cubic-bezier(0.25, 1, 0.3, 1), box-shadow 0.35s;
+		z-index: 20;
+	  }
+
+	  /* 활성 썸네일 hover 시 좀 더 강조 */
+	  .thumbs-swiper .swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active):hover {
+		transform: translateY(-8px) scale(1.25);
+		box-shadow: 0 16px 48px rgba(255, 255, 255, 0.45);
+	  }
+
+	  /* hover 시 좌우 인접 카드 살짝 벌어지기 */
+	  .thumbs-swiper .swiper-slide:hover + .swiper-slide {
+		transform: translateX(25px);
+		transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+	  }
+	}
+
+	/* 버튼 숨김 */
+	.swiper-button-prev,
+	.swiper-button-next {
+	  display: none;
+	}
+
+	/* 반응형 */
+
+	.timeline-wrap .thumbs-swiper h1 {color:#fff !important;; border:1px solid red}
+	.timeline-wrap .thumbs-swiper ul li {color:#fff}
+
+
+	.main-visual::before {
+	  content: "";
+	  position: absolute;
+	  inset: 0; /* top, right, bottom, left 전부 0 */
+	  background: rgba(0, 0, 0, 0.3); /* ✨ 반투명 블랙 오버레이 */
+	  z-index: 1;
+	  pointer-events: none; /* 클릭 방해 X */
+	}
+
+
+
+	/**/
+
+
+
+	
 }
 
 
@@ -1172,6 +1393,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 
 
 
+
 	/* 3D */
 	.pack_wrap { position:relative; min-height:100vh; background:#f0f2f4;  overflow-x:hidden }
 	.pack_wrap .pack_ui { position:absolute; bottom:0%;left:50%;color:#fff;transform:translate(-50%, 0%); background:rgb(255, 255, 255, 1); border-radius:10px; padding:20px; 
@@ -1252,7 +1474,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.subTop .f66 {font-size:30px}
 	.subTop .f30 {font-size:14px}
 	.subNav { background:#fff; border-radius:50px; padding:8px 7px; display:inline-block; }
-	.subNav li {display:inline-block; margin:0 13px; padding:5px 0}
+	.subNav li {display:inline-block; margin:0 7px; padding:5px 0}
 	.subNav li.active {padding:4px 10px; border-radius:50px; background: linear-gradient(134deg,rgba(0, 175, 239, 1) 34%, rgba(109, 193, 85, 1) 76%); color:#fff}
 	.subNav li.active a {color:#fff}
 	.loadLine .col-md-12 {margin-bottom:30px; padding:10px 0 ; border:0}
@@ -1417,6 +1639,34 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 		CONTACT
 	--------------- */
 	.contant1160.contact_wrap {padding-left:0; padding-right:0; }
+
+
+	
+	/* --------------
+		RnD
+	--------------- */
+	.subTop_rnd {background: url(../../common/imgs/business/subTop_rnd.jpg) no-repeat scroll 0 0; background-size:cover;}
+	.rnd_line {border-bottom:1px solid #ccc; margin-bottom:20px }
+	.rndBox {box-shadow:2px 8px 11px -2px rgba(0,0,0,0.17); padding:15px; background:#fff }
+	.rnd_ill img {width:100px}
+
+
+	
+	  .main-text h1 {
+		font-size: 50px;
+
+	  }
+	  .swiper-slide {
+		width: 140px;
+		height: 140px;
+	  }
+	  .main-text { top: 32%; left:10% }
+	  .main-text dd {font-size:16px}
+	  .main-text dd:first-child {width:50px}
+	   .main-text dd:nth-child(2) { width: calc(100% - 50px); }
+	  .timeline-wrap { top: 62%; }
+	
+
 	
 	
 	
