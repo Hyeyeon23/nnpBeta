@@ -223,10 +223,14 @@ const Header = ({ color }) => {
                             <li>
                               <a href="/rnd/info">연구소 소개</a>
                             </li>
-                            <li>{/*   <a href="rnd_member.html">조직구성</a> */}</li>
-                            <li>{/* <a href="rnd_equipment.html">시설 및 장비현황</a> */}</li>
                             <li>
-                              <a href="rnd_research.html">연구현황</a>
+                              <a href="/rnd/structure">조직구성</a>
+                            </li>
+                            <li>
+                              <a href="/rnd/equipment">시설 및 장비현황</a>
+                            </li>
+                            <li>
+                              <a href="/rnd/research">연구현황</a>
                             </li>
                           </ul>
                         </li>
@@ -527,15 +531,15 @@ const Header = ({ color }) => {
                           <li>
                             <a href="/rnd/info">연구소 소개</a>
                           </li>
-                          {/*              <li>
-                            <a href="rnd_member.html">조직구성</a>
+                          <li>
+                            <a href="/rnd/structure">조직구성</a>
                           </li>
                           <li>
-                            <a href="rnd_equipment.html">시설 및 장비현황</a>
+                            <a href="/rnd/equipment">시설 및 장비현황</a>
                           </li>
                           <li>
-                            <a href="rnd_research.html">연구현황</a>
-                          </li> */}
+                            <a href="/rnd/research">연구현황</a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
