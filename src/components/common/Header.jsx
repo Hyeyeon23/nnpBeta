@@ -80,7 +80,9 @@ const Header = ({ color }) => {
       });
     });
 
-    if (location.pathname.indexOf("rnd") > -1) {
+    // pack3D 로고 세팅
+    const path = location.pathname;
+    if (path.indexOf("rnd") > -1 || path.indexOf("company") > -1) {
       setIsWhiteLogo(true);
     }
   }, []);
@@ -376,7 +378,11 @@ const Header = ({ color }) => {
                 <div className="pack3D_motion">
                   <a href="/dev" onclick="oneDepMenu()" className="f_pp">
                     <span>
-                      <img src="/common/imgs/common/pack-3d.gif" />
+                      {isWhiteLogo ? (
+                        <img src="/common/imgs/common/pack-3d-w.gif" alt="pack-3d" />
+                      ) : (
+                        <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                      )}
                     </span>
                   </a>
                 </div>
@@ -524,21 +530,32 @@ const Header = ({ color }) => {
                         <a href="/business/containers">용기유형</a>
                       </li>
                       <li className="gbg07">
-                        <a href="/rnd/info" target="_blank" rel="noopener noreferrer">
-                          R&amp;D
-                        </a>
                         <ul className="gnb_depth3">
                           <li>
-                            <a href="/rnd/info">연구소 소개</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/structure">조직구성</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/equipment">시설 및 장비현황</a>
-                          </li>
-                          <li>
-                            <a href="/rnd/research">연구현황</a>
+                            <a onClick={() => linkTo("/rnd/info")}> R&amp;D</a>
+                            <dl className="v_con_dl">
+                              <dd>
+                                <a href="#!" onClick={() => linkTo("/rnd/info")}>
+                                  연구소 소개
+                                </a>
+                              </dd>
+                              <dd>
+                                <a href="#!" onClick={() => linkTo("/rnd/structure")}>
+                                  조직구성
+                                </a>
+                              </dd>
+                              <dd>
+                                <a href="#!" onClick={() => linkTo("/rnd/equipment")}>
+                                  {/* <a href="/rnd/equipment"> */}
+                                  시설 및 장비현황
+                                </a>
+                              </dd>
+                              <dd>
+                                <a href="#!" onClick={() => linkTo("/rnd/research")}>
+                                  연구현황
+                                </a>
+                              </dd>
+                            </dl>
                           </li>
                         </ul>
                       </li>
