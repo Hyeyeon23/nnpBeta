@@ -913,7 +913,7 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	}
 	.swiper-wrapper {
 	  overflow: visible !important;
-	  display: flex !important;
+	  display: flex;
 	  align-items: center;
 	}
 

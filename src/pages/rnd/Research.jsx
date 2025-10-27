@@ -181,15 +181,15 @@ const Research = () => {
                       <div
                         className="swiper-slide"
                         data-year="2023"
-                        data-bg="common/imgs/business/bg2023.jpg"
+                        data-bg="/common/imgs/business/bg2023.jpg"
                         data-text='
-								  <h1>2023</h1>
-								  <ul>
-									<li><dl><dd>12월</dd><dd>베트남 수출용 "칼슘 호두와 아몬드" 출시</dd></dl></li>
-									<li><dl><dd>7월</dd><dd>아워홈 "Oh! 우리집 식혜" 출시</dd></dl></li>
-									<li><dl><dd>6월</dd><dd>청정원 "비타 딸기우유" 출시</dd></dl></li>
-									<li><dl><dd>5월</dd><dd>청정원 "멋있어 망고C" 출시</dd></dl></li>
-								</ul>'>
+                          <h1>2023</h1>
+                          <ul>
+                          <li><dl><dd>12월</dd><dd>베트남 수출용 "칼슘 호두와 아몬드" 출시</dd></dl></li>
+                          <li><dl><dd>7월</dd><dd>아워홈 "Oh! 우리집 식혜" 출시</dd></dl></li>
+                          <li><dl><dd>6월</dd><dd>청정원 "비타 딸기우유" 출시</dd></dl></li>
+                          <li><dl><dd>5월</dd><dd>청정원 "멋있어 망고C" 출시</dd></dl></li>
+                        </ul>'>
                         <div
                           className="thumb-img"
                           style={{ backgroundImage: "url('/common/imgs/business/bg2023.jpg')" }}></div>

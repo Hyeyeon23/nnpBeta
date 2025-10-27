@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ color }) => {
   const [isOpen, setIsOpen] = useState(false); // 피씨 사이드 네모네모 열고 닫기
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
+  const [isWhiteLogo, setIsWhiteLogo] = useState(false);
   const containerRef = useRef(null); // 토글할 요소들을 감싸는 부모 DOM 참조
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const linkTo = (path) => {
     navigate(path);
@@ -77,6 +79,10 @@ const Header = ({ color }) => {
         snap: true,
       });
     });
+
+    if (location.pathname.indexOf("rnd") > -1) {
+      setIsWhiteLogo(true);
+    }
   }, []);
 
   const oneDepMenu = (e) => {
@@ -304,7 +310,11 @@ const Header = ({ color }) => {
               <div className="pack3D_motion">
                 <a href="/dev" className="f_pp">
                   <span>
-                    <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                    {isWhiteLogo ? (
+                      <img src="/common/imgs/common/pack-3d-w.gif" alt="pack-3d" />
+                    ) : (
+                      <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                    )}
                   </span>
                 </a>
               </div>
@@ -325,7 +335,11 @@ const Header = ({ color }) => {
               <div className="pack3D_motion">
                 <a href="/dev" onClick={() => oneDepMenu()} className="f_pp">
                   <span>
-                    <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                    {isWhiteLogo ? (
+                      <img src="/common/imgs/common/pack-3d-w.gif" alt="pack-3d" />
+                    ) : (
+                      <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
+                    )}
                   </span>
                 </a>
               </div>
