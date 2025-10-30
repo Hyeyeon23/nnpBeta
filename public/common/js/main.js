@@ -1,22 +1,34 @@
 (function ($) {
   "use strict";
+
+  // ✅ GSAP 오류 방지 설정 (가장 상단에 추가)
+  if (typeof gsap !== "undefined") {
+    gsap.config({ nullTargetWarn: false });
+  } else {
+    console.warn("⚠️ GSAP is not loaded. Please include GSAP CDN before main.js");
+  }
+
   var windowOn = $(window);
 
+  /*-----------------------------------------------------------------------------------
+      Template Name: Faizen - Digital Agency HTML Template.
+      Author: RRDevs
+      Description: Digital Agency HTML Template.
+      Version: 1.0
+  -----------------------------------------------------------------------------------*/
 
-    /*-----------------------------------------------------------------------------------
+  /*======================================
+    Preloader activation
+  ========================================*/
 
-        Template Name: Faizen - Digital Agency HTML Template.
-        Author: RRDevs
-        Support: https://support.rrdevs.net
-        Description: Digital Agency HTML Template.
-        Version: 1.0
-        Developer: Soukhin khan (https://github.com/Soukhinkhan)
+  handleQuantityButtons();
 
-    -----------------------------------------------------------------------------------
+  $(document.body).on('updated_cart_totals', function() {
+    handleQuantityButtons();
+  });
 
-      /*======================================
-        Preloader activation
-        ========================================*/
+
+
     
         handleQuantityButtons();
     

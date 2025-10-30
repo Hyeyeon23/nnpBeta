@@ -66,7 +66,7 @@ const RecruitLayout = () => {
 
   return (
     <>
-      <Meta title={"자연과사람들 채용공고 "}></Meta>
+      <Meta title={"자연과사람들 채용정보 "}></Meta>
       <Header color={"white"}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div>

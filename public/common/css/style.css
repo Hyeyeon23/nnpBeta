@@ -605,9 +605,9 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.brand_round02 {background:#00AFEF; color:#fff; border-radius:30px; padding:4px 15px} 
 
 
-	.swiper.ourBrandSwiper {width: 100%;height: 100%; border-radius:20px; overflow:hidden }
-    .swiper.ourBrandSwiper .swiper-slide {text-align: center; font-size: 18px;display: flex;justify-content: center;align-items: center;}
-    .swiper.ourBrandSwiper .swiper-slide img {display: block;width: 100%; height: 100%;object-fit: cover; }
+	.swiper.ourBrandSwiper {width: 100%;height: 100%; border-radius:20px; overflow:hidden ; }
+    .swiper.ourBrandSwiper .swiper-slide {text-align: center; font-size: 18px;display: flex;justify-content: center;align-items: center; }
+    .swiper.ourBrandSwiper .swiper-slide img {display: block;width: 100%; height: 100%;object-fit: cover;  }
 	.swiper.ourBrandSwiper .swiper-pagination .swiper-pagination-bullet{background:#fff; border:1px solid #00ABF7; width:13px; height:13px; opacity:1}
 	.swiper.ourBrandSwiper .swiper-pagination .swiper-pagination-bullet-active {border:1px solid #00ABF7; background:#00ABF7; opacity:1}
 	.wizus_logo img {width:400px}
@@ -918,19 +918,19 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	}
 
 	/* Swiper 기본 */
-	.swiper {
+	.timeline-wrap .swiper {
 	  width: 100%;
 	  height: 100%;
 	  overflow: visible !important;
 	}
-	.swiper-wrapper {
+	.timeline-wrap .swiper-wrapper {
 	  overflow: visible !important;
 	  display: flex;
 	  align-items: center;
 	}
 
 	/* 썸네일 카드 */
-	.swiper-slide {
+	.timeline-wrap .swiper-slide {
 	  width: 200px;
 	  height: 200px;
 	  border: 1px solid rgba(255, 255, 255, 0.7);
@@ -947,7 +947,7 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	}
 
 	/* 썸네일 이미지 */
-	.thumb-img {
+	.timeline-wrap .thumb-img {
 	  position: absolute;
 	  inset: 0;
 	  background-size: cover;
@@ -960,7 +960,7 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	}
 
 	/* 연도 텍스트 */
-	.year-label {
+	.timeline-wrap .year-label {
 	  position: relative;
 	  font-size: 22px;
 	  font-weight: 700;
@@ -970,26 +970,26 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	}
 
 	/* 기본: 모든 이미지 숨김 */
-	.swiper-slide .thumb-img {
+	.timeline-wrap .swiper-slide .thumb-img {
 	  display: none;
 	  opacity: 0;
 	}
 
 	/* 활성 썸네일 1장만 이미지 표시 */
-	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .thumb-img {
+	.timeline-wrap .swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .thumb-img {
 	  display: block;
 	  opacity: 1;
 	}
 
 	/* 활성 썸네일 강조 */
-	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) {
+	.timeline-wrap .swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) {
 	  border: 1px solid #fff;
 	  transform: scale(1.15);
 	  opacity: 1;
 	  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
 	  z-index: 10;
 	}
-	.swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .year-label {
+	.timeline-wrap .swiper-slide:is(.swiper-slide-active, .swiper-slide-thumb-active) .year-label {
 	  display: none;
 	}
 
@@ -1017,8 +1017,8 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	}
 
 	/* 버튼 숨김 */
-	.swiper-button-prev,
-	.swiper-button-next {
+	.timeline-wrap .swiper-button-prev,
+	.timeline-wrap .swiper-button-next {
 	  display: none;
 	}
 
