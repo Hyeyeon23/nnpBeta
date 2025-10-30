@@ -821,6 +821,18 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.faq-section__content.rnd_member {margin-left:0}
 
 
+	/* --------------
+		채용
+	--------------- */
+	.person_recru ul {margin:0 auto; text-align:center}
+	.person_recru ul li {display:inline-block; text-align:center; padding:50px 0; width:150px; margin:10px 10px; border-radius:20px; -webkit-box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.38); 
+box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
+	.person_recru ul li p {margin-top:5px}
+	.star_txt {text-align:center; margin-top:30px}
+	.star_txt p {margin-top:10px; }
+	.star_txt p:first-child {border-bottom:1px solid #333; padding-bottom:10px}
+	.star_box img {width:14px}
+	.bg_personnel {background: url(../../common/imgs/company/bg_personnel.jpg) no-repeat scroll 0 0; background-size:cover;}
 
 
 	/* ===== 메인 영역 ===== */
@@ -1665,6 +1677,17 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	  .main-text dd:first-child {width:50px}
 	   .main-text dd:nth-child(2) { width: calc(100% - 50px); }
 	  .timeline-wrap { top: 62%; }
+
+
+	  /* -------------
+		채용
+	  -------------- */
+	.star_txt {text-align:center; margin-top:30px}
+	.star_txt p {margin-top:10px; }
+	.star_txt p:first-child {border-bottom:1px solid #333; padding-bottom:10px}
+	.star_box img {width:14px}
+	.person_recru ul li {width:100px; padding:27px 0}
+	.welfare_box .col-lg-4 { flex: 0 0 auto; width:33.333333333%}
 	
 
 	

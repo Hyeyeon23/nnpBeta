@@ -191,8 +191,19 @@ const Header = ({ color }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              {" "}
-                              <a href="/recruit/info">채용공고</a>
+                              <a href="#!" onClick={() => linkTo("/recruit/info")}>
+                                채용공고
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#!" onClick={() => linkTo("/certification/fssc")}>
+                                FSSC 22000
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#!" onClick={() => linkTo("/certification/document")}>
+                                인증서
+                              </a>
                             </li>
                           </ul>
                         </li>
