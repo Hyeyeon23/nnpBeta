@@ -196,13 +196,18 @@ const Header = ({ color }) => {
                               </a>
                             </li>
                             <li>
-                              <a href="#!" onClick={() => linkTo("/certification/fssc")}>
-                                FSSC 22000
+                              <a href="#!" onClick={() => linkTo("/recruit/policy")}>
+                                인사제도
                               </a>
                             </li>
                             <li>
-                              <a href="#!" onClick={() => linkTo("/certification/document")}>
-                                인증서
+                              <a href="#!" onClick={() => linkTo("/recruit/process")}>
+                                채용절차
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#!" onClick={() => linkTo("/recruit/benefit")}>
+                                복지제도
                               </a>
                             </li>
                           </ul>
@@ -517,7 +522,28 @@ const Header = ({ color }) => {
                         <a href="/recruit/info">채용정보</a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/recruit/info">채용공고</a>
+                            {/* <a href="/recruit/info"> */}
+                            <a href="#!" onClick={() => linkTo("/recruit/info")}>
+                              채용공고
+                            </a>
+                          </dd>
+                          <dd>
+                            {/* <a href="/recruit/info"> */}
+                            <a href="#!" onClick={() => linkTo("/recruit/policy")}>
+                              인사제도
+                            </a>
+                          </dd>
+                          <dd>
+                            {/* <a href="/recruit/info"> */}
+                            <a href="#!" onClick={() => linkTo("/recruit/process")}>
+                              채용절차
+                            </a>
+                          </dd>
+                          <dd>
+                            {/* <a href="/recruit/info"> */}
+                            <a href="#!" onClick={() => linkTo("/recruit/benefit")}>
+                              복지제도
+                            </a>
                           </dd>
                         </dl>
                       </li>
