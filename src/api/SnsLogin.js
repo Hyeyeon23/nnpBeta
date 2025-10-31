@@ -20,7 +20,7 @@ export const loginWithKakao = () => {
     });
 };
 
-export const validateToken = async () => {
+export const validateToken = async (token) => {
 
     try {
 
@@ -28,6 +28,41 @@ export const validateToken = async () => {
 
         const token = new URL(window.location.href).searchParams.get("token");
         return token;
+
+    } catch (error) {
+        if (error.response && error.response.status === 403 || error.response.status === 401) {
+
+            const go = window.confirm("SNS 인증 후 사진을 업로드 해주세요. 인증 페이지로 이동하시겠습니까?");
+            if (go) {
+                // 로그인으로 이동 — 이전 경로 저장 (로그인 후 리다이렉트용)
+                window.location.href = "/auth";
+            }
+            return;
+        }
+    }
+}
+
+/**
+ * 요상하게 동작하는 모바일 브라우저 대응, 토큰 체크 한번 더 
+ * @param {} token 
+ * @returns 
+ */
+export const validateTokenCheck = async (token) => {
+
+    try {
+
+        const response = await axiosInstance.post(
+            "/auth/valid/token",
+            token,
+            {
+                headers: {
+                    "Content-Type": "text/plain",
+                }
+            },
+        )
+
+        console.log("valid token check = ", response.data);
+        return response.data;
 
     } catch (error) {
         if (error.response && error.response.status === 403 || error.response.status === 401) {

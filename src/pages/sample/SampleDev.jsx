@@ -21,6 +21,7 @@ import CustomBox from "../../components/sample/CustomBox";
 
 import { imageTransfer } from "../../api/3D";
 import Meta from "../../components/common/Meta";
+import { validateToken, validateTokenCheck } from "../../api/SnsLogin";
 const SampleDev = () => {
   const groupRef = useRef();
   const canvasRef = useRef(null); // 이미지 다운할 떄 씀
@@ -66,10 +67,17 @@ const SampleDev = () => {
   console.log("image", image);
 
   // 이미지 파일을 선택하는 함수
-  const handleImageChange = (e) => {
-    // 값 가져오기
+  const handleImageChange = async (e) => {
+    // 토큰 검증 -- 남다르게 동작하는 모바일 브라우저 떄문에 클릭 change에만 추가
     const token = localStorage.getItem("nnpToken");
-    if (!token) {
+    console.log("뭐여", token);
+    var result = false;
+    if (token) {
+      result = await validateTokenCheck(token);
+    }
+    // 토큰 검증 --
+
+    if (!token || !result) {
       e.preventDefault();
       const go = window.confirm("SNS 인증 후 사진을 업로드 해주세요. 인증 페이지로 이동하시겠습니까?");
       if (go) {
