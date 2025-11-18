@@ -555,6 +555,11 @@ box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.02);}
 	.login_btn_Box p{display:inline-block; }
 	.login_btn_Box p:nth-child(2) {margin-left:0px}
 	.login_btn_Box p img {width:90%}
+	.downloadFile {position:relative; margin-top:20px; width:200px; }
+	.downloadFile p {margin-bottom:2px}
+	.downloadFile p a{border-radius:15px ; background:#898989; color:#fff; display:inline-block; padding:2px 10px; font-size:13px}
+	.downloadFile p a:hover {background:#212121; }
+	.downloadFile span {font-size:18px}
 	/* --------------
 			//3d
 	--------------- */
@@ -1409,7 +1414,7 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13);    }
 	/* 3D */
 	.pack_wrap { position:relative; min-height:100vh; background:#f0f2f4;  overflow-x:hidden }
 	.pack_wrap .pack_ui { position:absolute; bottom:0%;left:50%;color:#fff;transform:translate(-50%, 0%); background:rgb(255, 255, 255, 1); border-radius:10px; padding:20px; 
-		-webkit-box-shadow: none; box-shadow: none; width:96%; height:190px; border:1px solid #ccc}
+		-webkit-box-shadow: none; box-shadow: none; width:96%; height:200px; border:1px solid #ccc}
 	.packLight {position:relative}
 	.packLight li {float:left; width:49.5%;padding-right:10px }
 	.packColor {display:none}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { images3d } from "../../utils/imagesImport";
 import { scaleFrom100, scaleTo100 } from "../../utils/scaleHelpers";
 const CustomBox = ({
+  model,
   pin,
   changePinLight,
   horizon,
@@ -127,6 +128,7 @@ const CustomBox = ({
         <div className="toggle-box">
           <div className="toggle-content">
             <div className="pack_ui" style={{ pointerEvents: isPackUIPointerEvents }}>
+              <h1 className="f22">나만의 팩을 만들어 보세요</h1>
               <p className="f18 fw500 black">용기</p>
               <select className="mt-10 black w-auto " onChange={handleSelectModel}>
                 <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
@@ -141,6 +143,49 @@ const CustomBox = ({
                 <option value="CAN200">CAN_200ml (마일케어구수한맛)</option>
                 <option value="CAN238">CAN_238ml (방방곡곡식혜)</option>
               </select>
+              {/*  도면다운  */}
+              <div className="downloadFile">
+                <p>
+                  {model === "PACK1000_Lightless" && (
+                    <a href="/common/imgs/3d/dieline/01_tetra_1000ml (297X168).zip">
+                      <span>⬇️</span> TETRA_1000ml.zip
+                    </a>
+                  )}
+                  {model === "PACK200_mid" && (
+                    <a href="/common/imgs/3d/dieline/02_TETRA_200ml_mini (297X194).zip">📂 TETRA_200ml.zip</a>
+                  )}
+                  {model === "PACK200_CF" && (
+                    <a href="/common/imgs/3d/dieline/03_TETRA_200ml_compact flex (297X158).zip">
+                      📂 TETRA_200ml_compact.zip
+                    </a>
+                  )}
+                  {model === "PACK250_CF" && (
+                    <a href="/common/imgs/3d/dieline/04_TETRA_250ml_compact flex (297X158).zip">
+                      📂 TETRA_250ml_compact.zip
+                    </a>
+                  )}
+                  {model === "SIG120_mini" && (
+                    <a href="/common/imgs/3d/dieline/05_SIG_120ml_mini (297X168).zip">📂 SIG_120ml_mini.zip</a>
+                  )}
+                  {model === "SIG150_mini" && (
+                    <a href="/common/imgs/3d/dieline/06_SIG_150ml_mini (297X194).zip">📂 SIG_150ml_mini.zip</a>
+                  )}
+                  {model === "SIG200_mid" && (
+                    <a href="/common/imgs/3d/dieline/07_SIG_200ml_mid (297X194).zip">📂 SIG_200ml_mid.zip</a>
+                  )}
+                  {model === "CAN175" && (
+                    <a href="/common/imgs/3d/dieline/08_CAN_175ml (297X176).zip">📂 CAN_175ml.zip</a>
+                  )}
+                  {model === "CAN200" && (
+                    <a href="/common/imgs/3d/dieline/09_CAN_200ml (297X176).zip">📂 CAN_175ml.zip</a>
+                  )}
+                  {model === "CAN238" && (
+                    <a href="/common/imgs/3d/dieline/10_CAN_238ml (297X176).zip">📂 CAN_238ml.zip</a>
+                  )}
+                </p>
+              </div>
+              {/* //도면다운  */}
+
               <ul class="packLight">
                 <li>
                   <p class="f18 fw500 black mt40">조명1</p>

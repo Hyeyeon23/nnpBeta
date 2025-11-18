@@ -295,7 +295,7 @@ const Header = ({ color }) => {
                           <ul className="gnb_depth3">
                             <li>
                               <a href="/brand/pb">
-                                {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                                {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
                                 과일3종 드링크
                               </a>
                             </li>

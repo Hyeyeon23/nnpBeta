@@ -4,6 +4,7 @@ import FooterReact from "../common/FooterReact";
 import Header from "../common/Header";
 import BrandHero from "../hero/BrandHero";
 import Meta from "../common/Meta";
+import BrandHerodev from "../hero/BrandHerodev";
 
 const BrandLayout = () => {
   const location = useLocation();
@@ -55,6 +56,7 @@ const BrandLayout = () => {
         <div id="smooth-content" className="body-bg">
           <main>
             <BrandHero key={location}></BrandHero>
+            {/* <BrandHerodev path={location.pathname}></BrandHerodev> */}
             <Outlet></Outlet>
           </main>
           <FooterReact key={location}></FooterReact>

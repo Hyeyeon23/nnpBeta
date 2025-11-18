@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const ModalMain = () => {
   const [oepnState, setOpenState] = useState(false);
-  const START_TIME = new Date("2025-10-17").getTime();
-  const END_TIME = new Date("2025-11-02").getTime();
+  const START_TIME = new Date("2025-11-06").getTime();
+  const END_TIME = new Date("2025-11-16").getTime();
 
   useEffect(() => {
     const now = Date.now();
@@ -58,7 +58,7 @@ const ModalMain = () => {
 
         <a href="/recruit/info">
           <p className="popupimg">
-            <img src="/common/imgs/main/popup_recruit.jpg" alt="채용 공고 이미지" />
+            <img src="/common/imgs/main/popup_recruit2.png" alt="채용 공고 이미지" />
           </p>
           <div className="popup__card">
             <div className="popup__truck white f16 fw500">채용공고 바로가기</div>
@@ -68,13 +68,13 @@ const ModalMain = () => {
         <p className="popup__desc">
           모집분야
           <br />
-          자재관리 / 품질관리(인증) / 인사 &middot; 총무
+          총무부서
         </p>
 
         <p className="popup__desc">
           채용 기간
           <br />
-          2025.10.17(금) ~ 2025.11.02(일) 24:00
+          2025.11.06(목) ~ 2025.11.16(일) 24:00
         </p>
       </div>
 

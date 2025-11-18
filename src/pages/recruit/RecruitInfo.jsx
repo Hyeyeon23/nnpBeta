@@ -7,7 +7,7 @@ const RecruitInfo = ({ isInProgress }) => {
   const [recruit, setRecruit] = useState("");
   useEffect(() => {
     /* 공고 html 불러옴 */
-    fetch(window.location.origin + "/html/recruit_info/20251024.txt")
+    fetch(window.location.origin + "/html/recruit_info/20251106.txt")
       .then((res) => res.text())
       .then((data) => {
         console.log(data);
