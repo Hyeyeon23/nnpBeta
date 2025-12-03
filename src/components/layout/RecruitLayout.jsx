@@ -117,7 +117,7 @@ const RecruitLayout = () => {
               </div>
             </section>
 
-            <Outlet key={section} isInProgress={true}></Outlet>
+            <Outlet key={section} context={{ isInProgress: false }}></Outlet>
           </main>
           <FooterReact key={section}></FooterReact>
         </div>

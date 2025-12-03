@@ -212,6 +212,7 @@ const root = createBrowserRouter(
         </Suspense>
       ),
     },
+    /*
     {
       path: "*",
       element: (
@@ -220,6 +221,7 @@ const root = createBrowserRouter(
         </Suspense>
       ),
     },
+    */
     /* 옛날 닷넷 주소 변환  */
     { path: "/kr/Company/Recruit.aspx", element: <Navigate to="/recruit/info" replace /> },
 

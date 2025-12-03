@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
+import { useOutletContext } from "react-router-dom";
 
-const RecruitInfo = ({ isInProgress }) => {
+const RecruitInfo = () => {
   const [recruit, setRecruit] = useState("");
+  const { isInProgress } = useOutletContext();
   useEffect(() => {
     /* 공고 html 불러옴 */
     fetch(window.location.origin + "/html/recruit_info/20251106.txt")

@@ -152,35 +152,49 @@ const CustomBox = ({
                     </a>
                   )}
                   {model === "PACK200_mid" && (
-                    <a href="/common/imgs/3d/dieline/02_TETRA_200ml_mini (297X194).zip">📂 TETRA_200ml.zip</a>
+                    <a href="/common/imgs/3d/dieline/02_TETRA_200ml_mini (297X194).zip">
+                      <span>⬇️</span> TETRA_200ml.zip
+                    </a>
                   )}
                   {model === "PACK200_CF" && (
                     <a href="/common/imgs/3d/dieline/03_TETRA_200ml_compact flex (297X158).zip">
-                      📂 TETRA_200ml_compact.zip
+                      <span>⬇️</span> TETRA_200ml_compact.zip
                     </a>
                   )}
                   {model === "PACK250_CF" && (
                     <a href="/common/imgs/3d/dieline/04_TETRA_250ml_compact flex (297X158).zip">
-                      📂 TETRA_250ml_compact.zip
+                      <span>⬇️</span> TETRA_250ml_compact.zip
                     </a>
                   )}
                   {model === "SIG120_mini" && (
-                    <a href="/common/imgs/3d/dieline/05_SIG_120ml_mini (297X168).zip">📂 SIG_120ml_mini.zip</a>
+                    <a href="/common/imgs/3d/dieline/05_SIG_120ml_mini (297X168).zip">
+                      <span>⬇️</span> SIG_120ml_mini.zip
+                    </a>
                   )}
                   {model === "SIG150_mini" && (
-                    <a href="/common/imgs/3d/dieline/06_SIG_150ml_mini (297X194).zip">📂 SIG_150ml_mini.zip</a>
+                    <a href="/common/imgs/3d/dieline/06_SIG_150ml_mini (297X194).zip">
+                      <span>⬇️</span> SIG_150ml_mini.zip
+                    </a>
                   )}
                   {model === "SIG200_mid" && (
-                    <a href="/common/imgs/3d/dieline/07_SIG_200ml_mid (297X194).zip">📂 SIG_200ml_mid.zip</a>
+                    <a href="/common/imgs/3d/dieline/07_SIG_200ml_mid (297X194).zip">
+                      <span>⬇️</span> SIG_200ml_mid.zip
+                    </a>
                   )}
                   {model === "CAN175" && (
-                    <a href="/common/imgs/3d/dieline/08_CAN_175ml (297X176).zip">📂 CAN_175ml.zip</a>
+                    <a href="/common/imgs/3d/dieline/08_CAN_175ml (297X176).zip">
+                      <span>⬇️</span> CAN_175ml.zip
+                    </a>
                   )}
                   {model === "CAN200" && (
-                    <a href="/common/imgs/3d/dieline/09_CAN_200ml (297X176).zip">📂 CAN_175ml.zip</a>
+                    <a href="/common/imgs/3d/dieline/09_CAN_200ml (297X176).zip">
+                      <span>⬇️</span> CAN_175ml.zip
+                    </a>
                   )}
                   {model === "CAN238" && (
-                    <a href="/common/imgs/3d/dieline/10_CAN_238ml (297X176).zip">📂 CAN_238ml.zip</a>
+                    <a href="/common/imgs/3d/dieline/10_CAN_238ml (297X176).zip">
+                      <span>⬇️</span> CAN_238ml.zip
+                    </a>
                   )}
                 </p>
               </div>
