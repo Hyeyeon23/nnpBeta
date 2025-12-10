@@ -66,7 +66,8 @@ const BenefitInfo = () => {
               </p>
               <p className="fw500 f23">근로자의 날 선물</p>
               <p className="f18 fw400 grayn3 mt10 lh150">
-                혹시 모를 상황에 대비해 전 직원 대상 단체상해보험을 제공합니다.
+                감사의 마음을 담아서
+                <br /> 근로자의 날 소정의 선물을 준비했습니다.
               </p>
             </div>
           </div>

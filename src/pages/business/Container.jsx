@@ -816,7 +816,7 @@ const Container = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3 col-4 grid-item type04">
+                  {/* <div className="col-lg-3 col-4 grid-item type04">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
@@ -833,7 +833,7 @@ const Container = () => {
                       </div>
                       <p className="f18 grayn1 mt10 mt10m">빙그레 오늘의 과일 야채 사과</p>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="col-lg-3 col-4 grid-item type04">
                     <div className="blog1__item mb-30">
