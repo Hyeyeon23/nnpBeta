@@ -534,7 +534,7 @@ const Container = () => {
                   <button data-filter=".type06">CAN(stubby)</button>
                 </div>
 
-                <div className="row mb-minus-30 grid product">
+                <div className="row mb-minus-30 grid product ">
                   <div className="col-lg-3 col-4 grid-item type01 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
@@ -762,7 +762,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">빙그레 더단백 드링크 초코</p>
+                      <p className="f18 grayn1 mt10 mt10m">롯데웰푸드 이지프로틴 시리얼</p>
                     </div>
                   </div>
 
@@ -815,25 +815,6 @@ const Container = () => {
                       <p className="f18 grayn1 mt10 mt10m">빙그레 야채랑사과</p>
                     </div>
                   </div>
-
-                  {/* <div className="col-lg-3 col-4 grid-item type04">
-                    <div className="blog1__item mb-30">
-                      <div className="blog1__item-thumb">
-                        <img
-                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-오늘의-과일-야채-사과.jpg"
-                          alt="img not found"
-                        />
-                      </div>
-                      <div className="blog1__item-category mt20">
-                        <ul>
-                          <li>
-                            <span className="cb05">과채주스</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="f18 grayn1 mt10 mt10m">빙그레 오늘의 과일 야채 사과</p>
-                    </div>
-                  </div> */}
 
                   <div className="col-lg-3 col-4 grid-item type04">
                     <div className="blog1__item mb-30">
