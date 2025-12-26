@@ -1229,7 +1229,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 비타 딸기 우유</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 비타 딸기 우유</p>
                     </div>
                   </div>
                   <div className="col-lg-3 col-4 grid-item type02">
@@ -1244,7 +1244,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 비타 초코레떼 우유</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 비타 초코 우유</p>
                     </div>
                   </div>
 
@@ -1323,7 +1323,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 고마워 감귤C</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 고마워 감귤C</p>
                     </div>
                   </div>
 
@@ -1339,7 +1339,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 힘내 파인애플씨</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 힘내 파인애플C</p>
                     </div>
                   </div>
 
@@ -1355,7 +1355,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 사랑해 사과C</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 사랑해 사과C</p>
                     </div>
                   </div>
 
@@ -1371,7 +1371,7 @@ const Container = () => {
                           </li>
                         </ul>
                       </div>
-                      <p className="f18 grayn1 mt10 mt10m">청정원 최고야 포도씨C</p>
+                      <p className="f18 grayn1 mt10 mt10m">대상 최고야 포도C</p>
                     </div>
                   </div>
 
