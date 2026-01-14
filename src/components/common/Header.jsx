@@ -3,7 +3,6 @@ import $ from "jquery";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ color }) => {
-  const [isOpen, setIsOpen] = useState(false); // 피씨 사이드 네모네모 열고 닫기
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
   const [isWhiteLogo, setIsWhiteLogo] = useState(false);

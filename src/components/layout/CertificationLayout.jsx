@@ -3,7 +3,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/footer";
 import FooterReact from "../common/FooterReact";
-const CertificationLayout = () => {
+const CertificationLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -62,6 +62,58 @@ const CertificationLayout = () => {
     navigate("/certification/" + sub);
   };
 
+  if (lang === "ko")
+    return (
+      <>
+        <Header color={"white"}></Header>
+        <div id="smooth-wrapper" class="body-bg">
+          <div>
+            <main>
+              <section className="subTop_certification">
+                <div className="container">
+                  <div className="subTop">
+                    <div className="w80 centerH3">
+                      <div className="centerH3_inner">
+                        <p className="f36 fw600 lh100 white f_pp">Company</p>
+                        <p className="f66 fw600 lh100 white mt60">식품안전인증현황</p>
+                        <p className="f30 fw400 white lh150 mt40 mb100">
+                          글로벌 식품안전인증을 기반으로 품질 경쟁력을 강화하여, <br />
+                          안전성과 신뢰성을 갖춘 음료를 제공합니다.
+                        </p>
+
+                        <div className="tab-wrap">
+                          <div id="roundNav">
+                            <ul className="subNav">
+                              <li className={`f20 ${section === "haccp" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("haccp")}>
+                                  HACCP
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "fssc" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("fssc")}>
+                                  FSSC 22000
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "document" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("document")}>
+                                  인증서
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <Outlet key={section}></Outlet>
+            </main>
+            <FooterReact key={section}></FooterReact>
+          </div>
+        </div>
+      </>
+    );
   return (
     <>
       <Header color={"white"}></Header>
@@ -74,10 +126,10 @@ const CertificationLayout = () => {
                   <div className="w80 centerH3">
                     <div className="centerH3_inner">
                       <p className="f36 fw600 lh100 white f_pp">Company</p>
-                      <p className="f66 fw600 lh100 white mt60">식품안전인증현황</p>
+                      <p className="f66 fw600 lh100 white mt60">Food Safety Certifications</p>
                       <p className="f30 fw400 white lh150 mt40 mb100">
-                        글로벌 식품안전인증을 기반으로 품질 경쟁력을 강화하여, <br />
-                        안전성과 신뢰성을 갖춘 음료를 제공합니다.
+                        We strengthen our quality competitiveness through global food safety certifications, delivering
+                        beverages that ensure both safety and reliability.
                       </p>
 
                       <div className="tab-wrap">

@@ -6,7 +6,7 @@ import BrandHero from "../hero/BrandHero";
 import Meta from "../common/Meta";
 import BrandHerodev from "../hero/BrandHerodev";
 
-const BrandLayout = () => {
+const BrandLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const [title, setTitle] = useState("자연과 사람들 브랜드");
   useEffect(() => {
@@ -55,7 +55,7 @@ const BrandLayout = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content" className="body-bg">
           <main>
-            <BrandHero key={location}></BrandHero>
+            <BrandHero key={location} lang={lang}></BrandHero>
             {/* <BrandHerodev path={location.pathname}></BrandHerodev> */}
             <Outlet></Outlet>
           </main>

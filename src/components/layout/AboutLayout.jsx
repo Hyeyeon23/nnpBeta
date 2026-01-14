@@ -4,7 +4,7 @@ import Footer from "../common/footer";
 import Header from "../common/Header";
 import FooterReact from "../common/FooterReact";
 
-const AboutLayout = () => {
+const AboutLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -62,6 +62,67 @@ const AboutLayout = () => {
   const linkToSub = (sub) => {
     navigate("/about/" + sub);
   };
+  if (lang === "ko") {
+    return (
+      <>
+        <Header></Header>
+        <div id="smooth-wrapper" class="body-bg">
+          <div>
+            <main>
+              <section className="subTop_company">
+                <div className="container">
+                  <div className="subTop">
+                    <div className="w80 centerH3">
+                      <div className="centerH3_inner">
+                        <p className="f36 fw600 lh100 grayn3 f_pp">Company</p>
+                        <p className="f66 fw600 lh100 grayn1 mt60">자연과사람들 소개</p>
+                        <p className="f30 fw400 grayn1 lh150 mt40 mb100">
+                          ASEPTIC 음료 제조의 시작부터 끝까지 책임지는
+                          <br />
+                          대한민국 No.1 원스톱 OEM·ODM 전문 기업입니다.
+                        </p>
+
+                        <div className="tab-wrap">
+                          <div id="roundNav">
+                            <ul className="subNav">
+                              <li className={`f20 ${section === "ceo" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("ceo")}>
+                                  인사말
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "history" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("history")}>
+                                  회사연혁
+                                </a>
+                              </li>{" "}
+                              <li className={`f20 ${section === "vision" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("vision")}>
+                                  비젼
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "road" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("road")}>
+                                  오시는 길
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* //centerH3_inner */}
+                    </div>
+                    {/* //centerH3 */}
+                  </div>
+                </div>
+              </section>
+              <Outlet key={section}></Outlet>
+            </main>
+            <FooterReact key={section}></FooterReact>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -75,11 +136,10 @@ const AboutLayout = () => {
                   <div className="w80 centerH3">
                     <div className="centerH3_inner">
                       <p className="f36 fw600 lh100 grayn3 f_pp">Company</p>
-                      <p className="f66 fw600 lh100 grayn1 mt60">자연과사람들 소개</p>
+                      <p className="f66 fw600 lh100 grayn1 mt60">About Us</p>
                       <p className="f30 fw400 grayn1 lh150 mt40 mb100">
-                        ASEPTIC 음료 제조의 시작부터 끝까지 책임지는
-                        <br />
-                        대한민국 No.1 원스톱 OEM·ODM 전문 기업입니다.
+                        We are Korea’s leading one-stop OEM·ODM specialist,
+                        <br /> providing end-to-end aseptic beverage manufacturing solutions.
                       </p>
 
                       <div className="tab-wrap">
@@ -87,22 +147,22 @@ const AboutLayout = () => {
                           <ul className="subNav">
                             <li className={`f20 ${section === "ceo" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("ceo")}>
-                                인사말
+                                CEO Message
                               </a>
                             </li>
                             <li className={`f20 ${section === "history" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("history")}>
-                                회사연혁
+                                Company History
                               </a>
                             </li>{" "}
                             <li className={`f20 ${section === "vision" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("vision")}>
-                                비젼
+                                Vision
                               </a>
                             </li>
                             <li className={`f20 ${section === "road" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("road")}>
-                                오시는 길
+                                Location
                               </a>
                             </li>
                           </ul>

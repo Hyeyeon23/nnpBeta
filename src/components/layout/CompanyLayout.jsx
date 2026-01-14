@@ -4,7 +4,7 @@ import Header from "../common/Header";
 import Footer from "../common/footer";
 import FooterReact from "../common/FooterReact";
 
-const CompanyLayout = () => {
+const CompanyLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -64,6 +64,60 @@ const CompanyLayout = () => {
     navigate("/company/" + sub);
   };
 
+  if (lang === "ko") {
+    return (
+      <>
+        <Header color={"white"}></Header>
+        <div id="smooth-wrapper" class="body-bg">
+          <div>
+            <main>
+              <section className="subTop_family">
+                <div className="container">
+                  <div className="subTop">
+                    <div className="w80 centerH3">
+                      <div className="centerH3_inner">
+                        <p className="f36 fw600 lh100 white f_pp">Company</p>
+                        <p className="f66 fw600 lh100 white mt60">관계사</p>
+                        <p className="f30 fw400 white lh150 mt40 mb100">
+                          고객과 사회를 위한 가치 창출을 통해 <br />
+                          미래 성장을 이끌어갑니다.
+                        </p>
+
+                        <div className="tab-wrap">
+                          <div id="roundNav">
+                            <ul className="subNav">
+                              <li className={`f20 ${section === "chung" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("chung")}>
+                                  정식품
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "osse" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("osse")}>
+                                  오쎄
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "hyechun" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("hyechun")}>
+                                  (재단)혜춘장학회
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <Outlet></Outlet>
+            </main>
+            <FooterReact key={section}></FooterReact>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Header color={"white"}></Header>
@@ -76,10 +130,10 @@ const CompanyLayout = () => {
                   <div className="w80 centerH3">
                     <div className="centerH3_inner">
                       <p className="f36 fw600 lh100 white f_pp">Company</p>
-                      <p className="f66 fw600 lh100 white mt60">관계사</p>
+                      <p className="f66 fw600 lh100 white mt60">Partners</p>
                       <p className="f30 fw400 white lh150 mt40 mb100">
-                        고객과 사회를 위한 가치 창출을 통해 <br />
-                        미래 성장을 이끌어갑니다.
+                        We are leading future growth by <br />
+                        creating values for customers and society
                       </p>
 
                       <div className="tab-wrap">
@@ -87,17 +141,17 @@ const CompanyLayout = () => {
                           <ul className="subNav">
                             <li className={`f20 ${section === "chung" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("chung")}>
-                                정식품
+                                Dr. Chung’s Food
                               </a>
                             </li>
                             <li className={`f20 ${section === "osse" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("osse")}>
-                                오쎄
+                                OSSE
                               </a>
                             </li>
                             <li className={`f20 ${section === "hyechun" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("hyechun")}>
-                                (재단)혜춘장학회
+                                Hyechun Scholarship Foundation
                               </a>
                             </li>
                           </ul>
