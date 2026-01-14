@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "../../components/common/footer";
-import Header from "../../components/common/Header";
 
-import FooterReact from "../../components/common/FooterReact";
-import Meta from "../../components/common/Meta";
-import CustomInquiryNoMore from "../../components/customer/CustomInquiryNoMore";
+import Header from "../../../components/common/Header";
 
-const Contact = () => {
+import FooterReact from "../../../components/common/FooterReact";
+import Meta from "../../../components/common/Meta";
+import CustomInquiryNoMoreEN from "../../../components/customer/CustomInquiryNoMoreEN";
+
+const ContactEN = () => {
   return (
     <>
       <Meta title="자연과사람들 1:1문의"></Meta>
@@ -31,16 +31,16 @@ const Contact = () => {
                 </div>
                 <div className="center mt100">
                   <p className="f30 fw500 lh170 grayn1">
-                    자연과사람들에 문의사항이 있으신가요?
+                    Do you have a question for Nature & People?
                     <br />
-                    FAQ에서 못 찾으신 궁금증을 남겨주세요.
+                    If you couldn’t find your answer in the FAQ, please leave your inquiry below.
                     <br />
-                    빠른 답변을 받기 위해서 정확한 이메일 주소를 작성해 주세요.
+                    For a quick response, please ensure your email address is accurate.
                   </p>
                 </div>
               </div>
             </section>
-            <CustomInquiryNoMore></CustomInquiryNoMore>
+            <CustomInquiryNoMoreEN></CustomInquiryNoMoreEN>
           </main>
           <div class="loading-form">
             <div class="sk-three-bounce">
@@ -56,4 +56,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactEN;

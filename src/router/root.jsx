@@ -9,6 +9,7 @@ import ReceiveApiResponse from "../pages/util/ReceiveApiResponse";
 import Faq from "../pages/cs/Faq";
 import FaqEN from "../en/pages/cs/Faq";
 import Contact from "../pages/cs/Contact";
+import ContactEN from "../en//pages/cs/Contact";
 import Ceo from "../pages/about/Ceo";
 import CompanyLayout from "../components/layout/CompanyLayout";
 import Vision from "../pages/about/vision";
@@ -213,7 +214,7 @@ export function createRouter(lang, setLang) {
             path: "contact",
             element: (
               <Suspense fallback={Loading}>
-                <Contact />
+                {lang === "ko" ? <Contact lang={lang} setLang={setLang} /> : <ContactEN lang="en" setLang={setLang} />}
               </Suspense>
             ),
           },
