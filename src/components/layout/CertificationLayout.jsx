@@ -3,6 +3,9 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/footer";
 import FooterReact from "../common/FooterReact";
+import FooterReactEN from "../common/FooterReactEN";
+
+import HeaderEN from "../common/HeaderEN";
 const CertificationLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -116,7 +119,7 @@ const CertificationLayout = ({ lang, setLang }) => {
     );
   return (
     <>
-      <Header color={"white"}></Header>
+      <HeaderEN color={"white"}></HeaderEN>
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>
@@ -160,7 +163,7 @@ const CertificationLayout = ({ lang, setLang }) => {
             </section>
             <Outlet key={section}></Outlet>
           </main>
-          <FooterReact key={section}></FooterReact>
+          <FooterReactEN key={section}></FooterReactEN>
         </div>
       </div>
     </>

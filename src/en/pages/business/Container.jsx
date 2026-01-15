@@ -1875,7 +1875,7 @@ const Container = () => {
               </div>
             </section>
           </main>
-          <FooterReact></FooterReact>
+          <FooterReactEN></FooterReactEN>
         </div>
       </div>
     </>

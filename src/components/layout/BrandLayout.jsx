@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import FooterReact from "../common/FooterReact";
+import FooterReactEN from "../common/FooterReactEN";
+
 import Header from "../common/Header";
 import BrandHero from "../hero/BrandHero";
 import Meta from "../common/Meta";
 import BrandHerodev from "../hero/BrandHerodev";
+import HeaderEN from "../common/HeaderEN";
 
 const BrandLayout = ({ lang, setLang }) => {
   const location = useLocation();
@@ -51,7 +54,7 @@ const BrandLayout = ({ lang, setLang }) => {
   return (
     <>
       <Meta title={title}></Meta>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content" className="body-bg">
           <main>
@@ -59,7 +62,7 @@ const BrandLayout = ({ lang, setLang }) => {
             {/* <BrandHerodev path={location.pathname}></BrandHerodev> */}
             <Outlet></Outlet>
           </main>
-          <FooterReact key={location}></FooterReact>
+          <FooterReactEN key={location}></FooterReactEN>
         </div>
       </div>
     </>

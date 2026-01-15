@@ -4,6 +4,7 @@ import Header from "../../../../components/common/Header";
 import { useNavigate, useLocation } from "react-router-dom";
 import Meta from "../../../../components/common/Meta";
 import Footer from "../../../../components/common/footer";
+import FooterReactEN from "../../../../components/common/FooterReactEN";
 
 const ProductEN = () => {
   const navigate = useNavigate();
@@ -469,7 +470,7 @@ const ProductEN = () => {
           </main>
         </div>
       </div>
-      <Footer></Footer>
+      <FooterReactEN></FooterReactEN>
     </>
   );
 };

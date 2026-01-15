@@ -1,12 +1,14 @@
 import Header from "../../../components/common/Header";
 import FooterReact from "../../../components/common/FooterReact";
+import FooterReactEN from "../../../components/common/FooterReactEN";
 import Meta from "../../../components/common/Meta";
+import HeaderEN from "../../../components/common/HeaderEN";
 
 const FaqEN = ({ lang, setLang }) => {
   return (
     <>
       <Meta title="자연과사람들 자주묻는 질문"></Meta>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -319,7 +321,7 @@ const FaqEN = ({ lang, setLang }) => {
             </section>
           </main>
 
-          <FooterReact></FooterReact>
+          <FooterReactEN></FooterReactEN>
         </div>
       </div>
     </>

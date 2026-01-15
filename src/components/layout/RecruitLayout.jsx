@@ -3,7 +3,10 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../common/footer";
 import Header from "../common/Header";
 import FooterReact from "../common/FooterReact";
+import FooterReactEN from "../common/FooterReactEN";
+
 import Meta from "../common/Meta";
+import HeaderEN from "../common/HeaderEN";
 
 const RecruitLayout = ({ lang, setLang }) => {
   const location = useLocation();
@@ -129,7 +132,7 @@ const RecruitLayout = ({ lang, setLang }) => {
   return (
     <>
       <Meta title={"자연과사람들 채용정보 "}></Meta>
-      <Header color={"white"}></Header>
+      <HeaderEN color={"white"}></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>
@@ -181,7 +184,7 @@ const RecruitLayout = ({ lang, setLang }) => {
 
             <Outlet key={section} context={{ isInProgress: false }}></Outlet>
           </main>
-          <FooterReact key={section}></FooterReact>
+          <FooterReactEN key={section}></FooterReactEN>
         </div>
       </div>
     </>

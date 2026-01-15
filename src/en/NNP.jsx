@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 
 import Header from "../components/common/Header";
+import HeaderEN from "../components/common/HeaderEN";
 import Footer from "../components/common/footer";
+import FooterReactEN from "../components/common/FooterReactEN";
 import CustomInquiry from "../components/customer/CustomInquiry";
 
 import ModalMain from "../components/modal/ModalMain";
@@ -22,7 +24,7 @@ const NNPEN = () => {
   }, []);
   return (
     <>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <div id="smooth-content">
           <main>
@@ -1069,7 +1071,7 @@ const NNPEN = () => {
             </section>
             {/* //FAQ배너 2025-09-23 */}
           </main>
-          <Footer></Footer>
+          <FooterReactEN></FooterReactEN>
         </div>
       </div>
       <ModalMain></ModalMain>

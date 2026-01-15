@@ -3,14 +3,16 @@ import React from "react";
 import Header from "../../../components/common/Header";
 
 import FooterReact from "../../../components/common/FooterReact";
+import FooterReactEN from "../../../components/common/FooterReactEN";
 import Meta from "../../../components/common/Meta";
 import CustomInquiryNoMoreEN from "../../../components/customer/CustomInquiryNoMoreEN";
+import HeaderEN from "../../../components/common/HeaderEN";
 
 const ContactEN = () => {
   return (
     <>
       <Meta title="자연과사람들 1:1문의"></Meta>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -49,7 +51,7 @@ const ContactEN = () => {
               <div class="sk-child sk-bounce3"></div>
             </div>
           </div>
-          <FooterReact></FooterReact>
+          <FooterReactEN></FooterReactEN>
         </div>
       </div>
     </>

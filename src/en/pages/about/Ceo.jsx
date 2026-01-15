@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Odometer from "react-odometerjs";
 import Meta from "../../../components/common/Meta";
+import { ScrollTrigger } from "gsap/all";
 
 const CeoEN = () => {
   /**
@@ -9,6 +10,19 @@ const CeoEN = () => {
    */
   const [capital, setCapital] = useState(0);
   const [revenue, setRevenue] = useState(0);
+  const pageRef = useRef(null);
+
+  useEffect(() => {
+    if (pageRef.current && window.initImgReveal) {
+      window.initImgReveal(pageRef.current);
+    }
+
+    return () => {
+      if (window.ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // 컴포넌트 마운트 후 애니메이션 시작

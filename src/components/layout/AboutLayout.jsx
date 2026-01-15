@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Footer from "../common/footer";
 import Header from "../common/Header";
+import HeaderEN from "../common/HeaderEN";
 import FooterReact from "../common/FooterReact";
+import FooterReactEN from "../common/FooterReactEN";
 
 const AboutLayout = ({ lang, setLang }) => {
   const location = useLocation();
@@ -126,7 +127,7 @@ const AboutLayout = ({ lang, setLang }) => {
 
   return (
     <>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>
@@ -177,7 +178,7 @@ const AboutLayout = ({ lang, setLang }) => {
             </section>
             <Outlet key={section}></Outlet>
           </main>
-          <FooterReact key={section}></FooterReact>
+          <FooterReactEN key={section}></FooterReactEN>
         </div>
       </div>
     </>
