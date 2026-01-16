@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../components/common/footer";
-import Kakao from "../components/sns/Kakao";
-import Naver from "../components/sns/Naver";
-import Header from "../components/common/Header";
-import BrandHero from "../components/hero/BrandHero";
-import Google from "../components/sns/Google";
 
-const AuthPage = () => {
+import FooterEN from "../../components/common/footer";
+import Kakao from "../../components/sns/Kakao";
+import Naver from "../../components/sns/Naver";
+
+import Google from "../../components/sns/Google";
+import HeaderEN from "../../components/common/HeaderEN";
+
+const AuthPageEN = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const AuthPage = () => {
 
   return (
     <>
-      <Header></Header>
+      <HeaderEN></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -35,11 +36,7 @@ const AuthPage = () => {
                     <p className="center logo3D">
                       <img src="/common/imgs/3d/3d_logo.jpg" alt="" />
                     </p>
-                    <p className="grayn1 lh140 f23 fw400 center mt100">
-                      SNS 로그인으로
-                      <br />
-                      간편하게 인증후 이용해 보세요
-                    </p>
+                    <p class="grayn1 lh140 f23 fw400 center mt100">Simple access with social login</p>
                   </div>
                   <div className="col-lg-12 mt50 center login_btn_Box">
                     <Kakao></Kakao>
@@ -58,11 +55,11 @@ const AuthPage = () => {
               <div className="sk-child sk-bounce3"></div>
             </div>
           </div>
-          <Footer></Footer>
+          <FooterEN></FooterEN>
         </div>
       </div>
     </>
   );
 };
 
-export default AuthPage;
+export default AuthPageEN;

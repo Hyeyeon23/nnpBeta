@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, Navigate, ScrollRestoration } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import NNP from "../pages/nnp";
 import Sample from "../pages/sample/Sample";
 import Waiting from "../pages/waiting";
@@ -36,6 +36,7 @@ import PBEN from "../en/pages/brand/PB";
 import Personal from "../pages/Personal";
 import Terms from "../pages/Terms";
 import AuthPage from "../pages/AuthPage";
+import AuthPageEN from "../en/pages/AuthPage";
 import BrandLayout from "../components/layout/BrandLayout";
 import RecruitInfo from "../pages/recruit/RecruitInfo";
 import RndLayout from "../components/layout/RndLayout";
@@ -91,7 +92,7 @@ export function createRouter(lang, setLang) {
         path: "/auth",
         element: (
           <Suspense fallback={Loading}>
-            <AuthPage></AuthPage>
+            {lang === "ko" ? <AuthPage lang="ko" setLang={setLang} /> : <AuthPageEN lang="en" setLang={setLang} />}
           </Suspense>
         ),
       },

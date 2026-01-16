@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
-import Header from "../components/common/Header";
 import HeaderEN from "../components/common/HeaderEN";
-import Footer from "../components/common/footer";
+
 import FooterReactEN from "../components/common/FooterReactEN";
-import CustomInquiry from "../components/customer/CustomInquiry";
+
+import CustomInquiryEN from "../components/customer/CustomInquiryEN";
 
 import ModalMain from "../components/modal/ModalMain";
-const NNPEN = () => {
+const NNPEN = ({ lang, setLang }) => {
   useEffect(() => {
     /**
      * 동영상 로드후 재생 보장
@@ -24,7 +24,7 @@ const NNPEN = () => {
   }, []);
   return (
     <>
-      <HeaderEN></HeaderEN>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <div id="smooth-content">
           <main>
@@ -1051,20 +1051,20 @@ const NNPEN = () => {
             </section>
 
             {/* 맞춤상담 컴포넌트 */}
-            <CustomInquiry></CustomInquiry>
+            <CustomInquiryEN></CustomInquiryEN>
             {/* FAQ배너 2025-09-23 */}
             <section>
               <div className="contant1160 mb200">
                 <a href="/cs/contact">
                   <img
                     className="wView"
-                    src="/common/imgs/main/bnr_faq.png"
-                    alt="FAQ에서 못 찾으신 궁금증을 남겨주세요."
+                    src="/common/imgs/main/en_bnr_faq.png"
+                    alt="Please leave any questions you couldn’t find answers to in the FAQ."
                   />
                   <img
                     className="mView"
-                    src="/common/imgs/main/bnr_faq_mo.png"
-                    alt="FAQ에서 못 찾으신 궁금증을 남겨주세요."
+                    src="/common/imgs/main/en_bnr_faq_mo.png"
+                    alt="Please leave any questions you couldn’t find answers to in the FAQ."
                   />
                 </a>
               </div>

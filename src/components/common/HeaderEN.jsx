@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const HeaderEN = ({ color }) => {
+const HeaderEN = ({ color, lang, setLang }) => {
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
   const [isWhiteLogo, setIsWhiteLogo] = useState(false);
@@ -18,6 +18,8 @@ const HeaderEN = ({ color }) => {
   /**
    * 모바일 사이즈 네비게이션 토글 기능
    * 원리는 state 값에 따라서 css에 설정된 class 값 적용/해제
+   * 
+   * 
    * @param {*} key
    */
   const handleToggle = (key) => {
@@ -104,6 +106,7 @@ const HeaderEN = ({ color }) => {
         <div id="skipNav">
           <a href="#content">본문 바로가기</a>
         </div>
+
         <div id="header">
           {/* white 클래스 제적 */}
           <div className="bg"></div>
@@ -328,6 +331,9 @@ const HeaderEN = ({ color }) => {
               </ul>
             </nav>
             <div className="header-right">
+              <span>
+                <button onClick={() => setLang(lang === "ko" ? "en" : "ko")}>{lang === "ko" ? "EN" : "KO"}</button>
+              </span>
               <div className="pack3D_motion">
                 <a href="/dev" className="f_pp">
                   <span>

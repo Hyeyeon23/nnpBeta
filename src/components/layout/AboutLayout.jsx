@@ -127,7 +127,7 @@ const AboutLayout = ({ lang, setLang }) => {
 
   return (
     <>
-      <HeaderEN></HeaderEN>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>
