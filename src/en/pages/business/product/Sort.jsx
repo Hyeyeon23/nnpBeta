@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Meta from "../../../components/common/Meta";
-import FooterReact from "../../../components/common/FooterReact";
-import Header from "../../../components/common/Header";
+import Meta from "../../../../components/common/Meta";
+import FooterReactEN from "../../../../components/common/FooterReactEN";
+import HeaderEN from "../../../../components/common/HeaderEN";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { jarallax } from "jarallax";
 import { animateScroll as scroll } from "react-scroll";
 
-const Sort = () => {
+const SortEN = ({ lang, setLang }) => {
   const { type } = useParams();
   const [data, setData] = useState(null);
   const navigate = useNavigate();
@@ -24,10 +24,10 @@ const Sort = () => {
 
   const datas = {
     soy: {
-      title: "자연과사람들 두유액",
-      crumble: "두유액",
-      name: "두유액 생산",
-      keywords: { pre: "콩의 영양을 담아", mid: "맞춤형 두유액", last: "우리나라 최초의 두유 기술력" },
+      title: "Soy Milk Base Production",
+      crumble: " Soy Milk",
+      name: "Soy Milk Base Production",
+      keywords: { pre: "#utrition of Soybeans", mid: "#Customized", last: "#Korea’s First" },
       heroImg: "/common/imgs/business/pro01_01.jpg",
       heroImgM: "/common/imgs/business/proT_01.jpg",
       images: {
@@ -42,22 +42,16 @@ const Sort = () => {
         last: "매일두유",
       },
       descs: {
-        sec01: `오랜 시간 사랑받은 식물성음료
-                    <br />
-                    국내 원조의 기술을 그대로`,
-        sec02: ` 콩 본연의 맛과 영양을 살려내는 두유액 제조 기술을 보유하고 있습니다. 철저한 원재료 선별과 위생적인
-                    공정, 차별화된 레시피 개발을 통해 식물성 영양의 가치를 담아 전합니다.`,
-        sec03: `자연과사람들은 오랜 경험과 기술력을 바탕으로 <br className="wView" />
-                    파트너사에는 새로운 기획의 기회를, 소비자에게는 다양한 식물성 음료를 제공합니다.
-                    <br className="wView" />
-                    안전성과 신뢰를 바탕으로 식물성 음료 시장을 선도해 나가겠습니다.`,
+        sec01: `Plant-based beverages trusted for decades,<br/>built on Korea’s original soy milk technology`,
+        sec02: `We manufacture soy milk bases that preserve the natural taste and nutrition of soybeans. Through rigorous raw-material selection, hygienic processing, and differentiated recipe development, we deliver the value of plant-based nutrition.`,
+        sec03: `							Backed by long-standing know-how and technical capability, Nature & People creates new opportunities for our partners and a diverse range of plant-based beverages for consumers. We will continue to lead the plant-based beverage market with safety and trust at our core.`,
       },
     },
     protein: {
       title: "자연과사람들 단백질 음료",
-      crumble: "단백질",
-      name: "단백질 음료 생산",
-      keywords: { pre: "#마시는단백질", mid: "#한팩으로", last: "#언제어디서나" },
+      crumble: " Protein",
+      name: "Protein Drinks",
+      keywords: { pre: "#Drinkable", mid: "#In One Pack", last: "#Anytime, Anywhere" },
       heroImg: "/common/imgs/business/pro02_01.jpg",
       heroImgM: "/common/imgs/business/proT_02.jpg",
       images: {
@@ -72,17 +66,19 @@ const Sort = () => {
         last: "매일두유",
       },
       descs: {
-        sec01: `빠른 흡수부터 느린 소화까지<br>맞춤형 고단백 음료`,
-        sec02: `변화하는 소비자의 라이프스타일에 맞춰 고단백·저당 콘셉트의 단백질 음료를 제조하고 있습니다. 
-                    스포츠, 다이어트, 웰니스, 영양간식 등 여러 목적에 어울리는 레시피를 제안하며, 영양과 맛의 균형을 추구합니다.`,
-        sec03: `자연과사람들은 다양한 OEM &middot; ODM 경험을 기반으로 <br class="wView"> 최신 트렌드를 반영하고, 맞춤형 기획을 제안하여 <br class="wView">브랜드 가치와 경쟁력을 강화합니다.`,
+        sec01: `"From fast absorption to slow digestion, <br/>customized high-protein beverages"`,
+        sec02: `We manufacture high-protein, low-sugar protein drinks tailored to evolving consumer lifestyles. We propose recipes suited to sports, diet, wellness, and nutritious snacking, pursuing the right balance between nutrition and taste.`,
+        sec03: `
+							With extensive OEM/ODM experience, Nature &amp; People reflects the latest trends and proposes tailored planning to strengthen our partners’ brand value and competitiveness.
+
+							`,
       },
     },
     balance: {
       title: "자연과사람들 균형영양식",
-      crumble: "균형영양식",
-      name: "균형영양식 생산",
-      keywords: { pre: "#영양가득", mid: "#건강습관", last: "#균형설계" },
+      crumble: "Balanced Nutrition Formula",
+      name: "Balanced Nutrition Formula",
+      keywords: { pre: "#Nutrition-Focused", mid: "#Healthy Habits", last: "#Balanced Design" },
       heroImg: "/common/imgs/business/pro03_01.jpg",
       heroImgM: "/common/imgs/business/proT_03.jpg",
       images: {
@@ -97,19 +93,18 @@ const Sort = () => {
         last: "매일두유",
       },
       descs: {
-        sec01: `환자식 &middot; 시니어용 음료<br>균형 잡힌 영양설계`,
-        sec02: `자연과사람들은 환자와 시니어를 위한 균형 잡힌 영양식을 전문적으로 제조합니다.<br class="wView">영양 보충이 필요한 분들을 위해, 단백질·비타민·미네랄을 과학적으로 설계하여 안전하고 균형 잡힌 음료를 제공합니다.`,
-        sec03: `자연과사람들은 일상 속에서 필요한 영양을 <br class="wView">
-                        섭취할 수 있도록 전문적인 설계를 바탕으로 제조합니다. <br class="wView">
-                        B2B 파트너와 함께 다양한 연령과 생활환경을 고려한 제품을 기획하고, <br class="wView">
-                        OEM·ODM 방식을 통해 안정적으로 공급합니다.`,
+        sec01: `"Patient & senior nutrition beverages scientifically balanced nutrition"`,
+        sec02: `Nature & People specializes in balanced nutrition formulas for patients and seniors. For those who need nutritional support, we design protein, vitamins, and minerals scientifically to deliver safe, well-balanced beverages.`,
+        sec03: `
+							We manufacture based on professional formulation design so that essential daily nutrition can be consumed with confidence. Together with B2B partners, we plan products that consider diverse ages and living environments, and supply them reliably through OEM/ODM.
+							`,
       },
     },
     particle: {
-      title: "자연과사람들 파티클",
-      crumble: "파티클",
-      name: "파티클 생산",
-      keywords: { pre: "#씹는즐거움", mid: "#알갱이톡톡", last: "#재미있는식감" },
+      title: "Particle Drink",
+      crumble: " Particle Drink",
+      name: "Particle Drink",
+      keywords: { pre: "#Chewy", mid: "#Bouncy Inclusions", last: "#Fun Texture" },
       heroImg: "/common/imgs/business/pro04_01.jpg",
       heroImgM: "/common/imgs/business/proT_04.jpg",
       images: {
@@ -124,19 +119,17 @@ const Sort = () => {
         last: "매일두유",
       },
       descs: {
-        sec01: `알갱이가 들어가 <br>씹는 재미가 더해진 RTD 음료<br>코코넛젤리, 알로에 등`,
-        sec02: `파티클 음료는 젊은 소비자층을 중심으로 새로운 식감과 이색적인 즐거움을 제공하는 카테고리입니다. 
-                자연과사람들은 OEM·ODM 경험을 바탕으로 코코넛젤리, 알로에 등 다양한 파티클 음료를 유연하게 기획·공급합니다.`,
-        sec03: `입안 가득 퍼지는 이색적인 식감이 마시는 즐거움을 한층 더 넓혀줍니다. <br class="wView">
-							새로운 경험을 원하는 시장 흐름 속에서 <br class="wView">
-							독보적인 기술을 바탕으로 차별화된 가치를 선도해 나갑니다.`,
+        sec01: `"RTD beverages with inclusions for a chewy experience Coconut jelly, aloe, and more"`,
+        sec02: `Particle drinks are a category that offers new textures and unique enjoyment, especially among younger consumers. Leveraging our OEM/ODM experience, Nature & People flexibly plans and supplies particle beverages using coconut jelly, aloe, and other inclusions.`,
+        sec03: `A distinctive mouthfeel expands the enjoyment of drinking. In a market seeking new experiences, we lead differentiated value based on proprietary technology.
+`,
       },
     },
     sikhye: {
       title: "자연과사람들 식혜",
-      crumble: "식혜",
-      name: "식혜 생산",
-      keywords: { pre: "#전통방식", mid: "#당도조절가능", last: "#밥알취향존중" },
+      crumble: "Sikhye",
+      name: "Sikhye Manufacturing",
+      keywords: { pre: "#Traditional", mid: "#Sweetness Adjustable", last: "#Preference Respected" },
       heroImg: "/common/imgs/business/pro05_01.jpg",
       heroImgM: "/common/imgs/business/proT_05.jpg",
       images: {
@@ -151,19 +144,16 @@ const Sort = () => {
         last: "매일두유",
       },
       descs: {
-        sec01: `밥알이 살아있는 전통 식혜<br>저당 &middot; 저칼로리로 더욱 건강하게`,
-        sec02: `자연과사람들은 밥알이 살아있는 전통 식혜를 현대적 기술과 위생적인 공정을 통해 정직하게 만들어냅니다. 옛 방식 그대로의 구수한 풍미와 자연스러운 단맛은 유지하면서, 저당·저칼로리 레시피를 적용해 남녀노소 누구나 부담 없이 즐길 수 있도록 개발했습니다.`,
-        sec03: `전통 식혜의 매력을 살리면서도 현대 소비자의 라이프스타일을 반영하여  <br class="wView">
-                        밥알 유무의 선택과 당도 조절이 가능하도록 구현했습니다.  <br class="wView">
-                        이에 더해 캔 포장으로 오랜 보존기간과 휴대성을 높여
-                        언제 어디서나 즐길 수 있습니다. <br class="wView">`,
+        sec01: `Traditional Sikhye with real rice grains Healthier with low sugar & low calories`,
+        sec02: `Nature & People produces traditional Sikhye with intact rice grains through modern technology and hygienic processes. While preserving the natural sweetness of the traditional style, we developed low-sugar, low-calorie recipes that can be enjoyed with confidence by all ages.`,
+        sec03: `While retaining the appeal of traditional Sikhye, we reflect modern lifestyles by offering options with or without rice grains and adjustable sweetness. In addition, can packaging enhances portability and long shelf life so it can be enjoyed anytime, anywhere.`,
       },
     },
     sauce: {
       title: "자연과사람들 소스",
-      crumble: "소스",
-      name: "소스 생산",
-      keywords: { pre: "#간편요리", mid: "#HMR", last: "#맛의완성" },
+      crumble: "Sauce & Broth",
+      name: "Sauce & Broth",
+      keywords: { pre: "#Liquid", mid: "#HMR", last: "#Finishing Touch" },
       heroImg: "/common/imgs/business/pro06_01.jpg",
       heroImgM: "/common/imgs/business/proT_06.jpg",
       images: {
@@ -178,18 +168,16 @@ const Sort = () => {
         last: "담백한 채소육수와 요리",
       },
       descs: {
-        sec01: `활용도 높은 액상 육수<br>외식 &middot; HMR &middot; 급식 등 대용량`,
-        sec02: `소스와 육수는 외식업, 급식, 가정간편식(HMR) 각 분야에서 다양한 요리에 두루 활용됩니다. 자연과사람들은 액상 소스와 육수를 통해 조리의 편의성과 맛의 완성도를 높입니다.`,
-        sec03: `소스와 육수는 전반적으로 활용도가 높으며, <br class="wView">
-							풍미와 편의성을 갖춘 액상 형태로 다양하게 적용됩니다. <br class="wView">
-							대용량 운영에 적합하여 조리 효율성과 일관된 맛을 제공합니다.`,
+        sec01: `Versatile liquid broths Ideal for foodservice, HMR, and catering in large formats`,
+        sec02: `Sauces and broths are widely used across foodservice, institutional catering, and HMR (home meal replacement). Through liquid sauces and broths, Nature & People improves cooking convenience and elevates flavor consistency.`,
+        sec03: `Sauces and broths are highly versatile and can be applied in various ways in a convenient liquid format with rich flavor. Optimized for large-volume operations, they support cooking efficiency and consistent taste.`,
       },
     },
     sterilized: {
       title: "자연과사람들 멸균유",
-      crumble: "멸균유",
-      name: "멸균유 생산",
-      keywords: { pre: "#멸균우유", mid: "#신선함그대로", last: "#상온보관" },
+      crumble: "UHT Milk",
+      name: "UHT Milk",
+      keywords: { pre: "#UHT", mid: "#Freshness", last: "#Shelf-Stable" },
       heroImg: "/common/imgs/business/pro07_01.jpg",
       heroImgM: "/common/imgs/business/proT_07.jpg",
       images: {
@@ -204,21 +192,16 @@ const Sort = () => {
         last: "바나나맛 우유",
       },
       descs: {
-        sec01: `다양한 용량의 멸균 우유<br>상온 보관으로 오래오래`,
-        sec02: `자연과사람들은 UHT(초고온 멸균) 공정을 통해 안전하고 영양 손실을 최소화한 멸균유를 생산합니다.
-								상온 보관이 가능해 유통과 보관이 편리하며, 장기간 품질을 안정적으로 유지할 수 있습니다.
-								소용량부터 대용량, 급식·외식업까지 다양한 용량 맞춤 생산이 가능합니다.`,
-        sec03: `유통&middot;보관이 편리한 멸균유 솔루션으로 파트너사의 다양한 요구에 대응하며, <br class="wView">
-							안전성과 품질을 최우선으로 한 신뢰할 수 있는 공급 체계를 약속합니다. <br class="wView">
-							상온에서도 장기간 보관이 가능해 급식과 외식 산업 전반에서 폭넓게 활용되고, <br class="wView">
-							위생적인 공정과 철저한 품질 관리로 언제나 안심할 수 있는 제품을 제공합니다.`,
+        sec01: `"UHT milk in various sizes Shelf-stable for long-lasting convenience"`,
+        sec02: `Nature & People produces UHT (ultra-high temperature) milk with minimized nutrient loss and enhanced safety. Shelf-stable storage helps maintain quality for longer periods. Custom production is available in a wide range of sizes—from single-serve to large formats—for foodservice and institutional use.`,
+        sec03: `Our shelf-stable milk solutions support diverse partner requirements with convenient distribution and storage. Prioritizing safety and quality, we provide products you can trust—widely used across catering and foodservice—backed by hygienic processes and rigorous quality control.`,
       },
     },
     juice: {
       title: "자연과사람들 주스",
-      crumble: "주스",
-      name: "주스 생산",
-      keywords: { pre: "#과채음료", mid: "#과채주스", last: "#과일야채블렌딩" },
+      crumble: "Juice",
+      name: "Juice",
+      keywords: { pre: "#Fruit", mid: "#Vegetable", last: "#Blends" },
       heroImg: "/common/imgs/business/pro08_01.jpg",
       heroImgM: "/common/imgs/business/proT_08.jpg",
       images: {
@@ -233,20 +216,18 @@ const Sort = () => {
         last: "바나나맛 우유",
       },
       descs: {
-        sec01: `맛과 건강을 고려한 과채주스<br>과일&middot;채소 혼합 가능`,
-        sec02: `과일과 채소 원료를 바탕으로 브랜드 콘셉트에 맞는 다양한 레시피를 구현합니다. 요청사항을 폭넓게 반영할 수 있으며, 좋은 제품을 위해 함께 검토하고 신뢰할 수 있는 품질을 제공합니다.`,
-        sec03: `자연과사람들은 OEM&middot;ODM 전문성을 기반으로 <br class="wView">
-                        파트너사의 아이디어와 콘셉트를 충실히 반영한 음료를 제공합니다. <br class="wView">
-                        원료 배합과 레시피 조정에 유연하게 대응하며, 요청에 따라 적합한 대안도 함께 검토합니다. <br class="wView">
-                        안전한 공정을 거쳐 신뢰할 수 있는 품질을 제공하고, <br class="wView">
-                        브랜드가 원하는 방향으로 시장에 나아갈 수 있도록 지원합니다.`,
+        sec01: `Fruit & vegetable juices designed for taste and wellness Fruit–vegetable blending available`,
+        sec02: `Based on fruit and vegetable ingredients, we realize a wide range of recipes aligned with your brand concept. We can accommodate diverse requests, collaborate to optimize the product, and deliver reliable quality.
+
+`,
+        sec03: `As an OEM/ODM specialist, Nature & People faithfully reflects our partners’ ideas and concepts in finished beverages. We also review alternatives suited to the intended market and positioning. Through safe processing, we deliver reliable quality and support brands in bringing products to market as envisioned.`,
       },
     },
     coffee: {
       title: "자연과사람들 커피",
-      crumble: "커피",
-      name: "커피 생산",
-      keywords: { pre: "#RTD커피", mid: "#편리하게", last: "#다양한맛" },
+      crumble: "Coffee",
+      name: "Coffee Manufacturing",
+      keywords: { pre: "#RTD Coffee", mid: "#Convenient", last: "#Various Flavors" },
       heroImg: "/common/imgs/business/pro09_01.jpg",
       heroImgM: "/common/imgs/business/proT_01.jpg",
       images: {
@@ -261,12 +242,9 @@ const Sort = () => {
         last: "바나나맛 우유",
       },
       descs: {
-        sec01: `블랙&middot;라떼 등 다채로운 레시피<br>RTD 형태 맞춤 생산`,
-        sec02: `원두 본연의 풍미를 살리면서도 깔끔하고 안정적인 맛을 구현하며, RTD(Ready to Drink) 형태로 맞춤 생산이 가능합니다. OEM&middot;ODM을 통해 브랜드 콘셉트에 맞는 커피 라인업을 개발할 수 있어, 카페 전용&middot;소비자용 모두 대응할 수 있습니다.`,
-        sec03: `RTD 커피는 이제 간편하게 즐기는 데일리 음료로 자리 잡으며<br class="wView">
-							국내외 시장에서 꾸준히 성장하고 있습니다.<br class="wView">
-							자연과사람들은 OEM&middot;ODM 전문 제조사로서,<br class="wView">
-							파트너사의 니즈에 맞춘 레시피&middot;패키지&middot;유통 포맷을 신속하게 제공합니다.`,
+        sec01: `"A broad RTD lineup—from black to latte Customized RTD production"`,
+        sec02: `We deliver a clean and stable taste while preserving the intrinsic aroma and flavor of coffee beans, with customized production in RTD (ready-to-drink) formats. Through OEM/ODM, we can develop a coffee lineup aligned with your brand concept, supporting both café-dedicated and consumer channels.`,
+        sec03: `RTD coffee has become a convenient daily beverage and continues to grow steadily in domestic and global markets. As an OEM/ODM specialist, Nature & People quickly provides recipes, packaging options, and distribution formats tailored to partner needs.`,
       },
     },
   };
@@ -333,14 +311,14 @@ const Sort = () => {
   return (
     <>
       <Meta title={data?.title}></Meta>
-      <Header></Header>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <main>
           {/* breadcrumb area start */}
           <section className="breadcrumb-section__area breadcrumb-section breadcrumb-section-3 breadcrumb-section__space body-bg">
             <div className="container">
               <div className="breadcrumb__item">
-                <a href="product.html">제품유형</a>
+                <a href="product.html">Product Type</a>
                 <a href="product01.html">
                   <span>
                     <span className="clash">/</span>
@@ -387,7 +365,7 @@ const Sort = () => {
             <div className="contant1160">
               <div className="row">
                 <div className="col-md-7 col-12">
-                  <p className="f40 fw600 lh170 grayn1" dangerouslySetInnerHTML={{ __html: data?.descs.sec01 }}></p>
+                  <p className="f27  fw600 lh170 grayn1" dangerouslySetInnerHTML={{ __html: data?.descs.sec01 }}></p>
                 </div>
                 <div className="col-md-5 col-12 d-flex align-items-center justify-content-end">
                   <p
@@ -430,14 +408,13 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("soy")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">두유액 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Soy Milk</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          오랜 시간 사랑받은 식물성음료
-                          <br />
-                          국내 원조의 기술을 그대로
+                          "Plant-based beverages trusted for decades, built on Korea’s original soy milk technology"
+                          <span class="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#두유액</span> <span className="keyword">#식물성음료</span>
+                          <span class="keyword">#Soy Milk</span> <span class="keyword">#Plant-Based</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -451,14 +428,16 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("protein")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">단백질 음료 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Protein Drink</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          빠른 흡수부터 느린 소화까지 <br />
-                          맞춤형 고단백 음료 <span className="more">More</span>
+                          <p class="f23 fw400 grayn1 lh150 mt20">
+                            "From fast absorption to slow digestion, customized high-protein beverages"
+                            <span class="more">More</span>
+                          </p>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#고단백</span> <span className="keyword">#운동전후</span>{" "}
-                          <span className="keyword">#맞춤형</span>
+                          <span class="keyword">#High Protein</span> <span class="keyword">#Pre & Post</span>{" "}
+                          <span class="keyword">#Customized</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -472,14 +451,14 @@ const Sort = () => {
                   <a onClick={() => linkToSub("balance")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">균형영양식 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Balanced Nutrition Formula</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          환자식&middot;시니어용 음료
-                          <br />
-                          균형 잡힌 영양설계 <span className="more">More</span>
+                          "Patient & senior nutrition beverages scientifically balanced nutrition"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#균형영양식</span> <span className="keyword">#환자식</span>
+                          <span className="keyword">#Balanced Nutrition</span>&nbsp;&nbsp;
+                          <span className="keyword">#Medical Nutrition</span>{" "}
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -493,14 +472,14 @@ const Sort = () => {
                   <a onClick={() => linkToSub("particle")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">파티클 생산</p>
+                        <p class="f40 fw600 grayn1 lh150">Particle Drink</p>{" "}
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          알갱이가 들어가 씹는 재미가 더해진 <br />
-                          RTD 음료 코코넛젤리, 알로에 등 <span className="more">More</span>
+                          RTD beverages with inclusions for a chewy experience Coconut jelly, aloe, and more"{" "}
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#알갱이</span> <span className="keyword">#파티클</span>{" "}
-                          <span className="keyword">#코코넛</span>
+                          <span className="keyword">#Inclusions</span> <span class="keyword">#Particle</span>{" "}
+                          <span className="keyword">#Coconut</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -514,14 +493,14 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("sikhye")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">식혜 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Traditional</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          밥알이 살아있는 전통 식혜 <br />
-                          저당 &middot; 저칼로리로 더욱 건강하게 <span className="more">More</span>
+                          "Traditional Sikhye with real rice grains Healthier with low sugar & low calories"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#밥알</span> <span className="keyword">#전통음료</span>{" "}
-                          <span className="keyword">#저당</span>
+                          <span className="keyword">#Rice based beverage</span>{" "}
+                          <span className="keyword">#Traditional</span> <span className="keyword">#Low Sugar</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -535,14 +514,13 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("sauce")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">소스 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Sauce & Broth</p>{" "}
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          활용도 높은 액상 육수
-                          <br />
-                          외식 &middot; HMR &middot; 급식 등 대용량 <span className="more">More</span>
+                          "Versatile liquid broths Ideal for foodservice, HMR, and catering in large formats"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#대용량</span> <span className="keyword">#육수</span>{" "}
+                          <span className="keyword">#Large Format</span> <span className="keyword">#Broth</span>{" "}
                           <span className="keyword">#HMR</span>
                         </div>
                       </div>
@@ -557,15 +535,14 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("sterilized")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">멸균유 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">UHT Milk</p>{" "}
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          다양한 용량의 멸균 우유
-                          <br />
-                          상온 보관으로 오래오래 <span className="more">More</span>
+                          "UHT milk in various sizes Shelf-stable for long-lasting convenience"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#멸균유</span> <span className="keyword">#가공유</span>{" "}
-                          <span className="keyword">#상온보관</span>
+                          <span className="keyword">#UHT Milk</span> <span className="keyword">#Dairy</span>{" "}
+                          <span className="keyword">#Shelf-Stable</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -579,15 +556,14 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("juice")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">주스 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Juice</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          맛과 건강을 고려한 과채주스
-                          <br />
-                          과일 &middot; 채소 혼합 가능 <span className="more">More</span>
+                          "Fruit & vegetable juices designed for taste and wellness Fruit–vegetable blending available"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#주스</span> <span className="keyword">#과채주스</span>{" "}
-                          <span className="keyword">#맛건강</span>
+                          <span className="keyword">#Juice</span> <span className="keyword">#Fruit & Veg</span>{" "}
+                          <span className="keyword">#Taste & Wellness</span>
                         </div>
                       </div>
                       <div className="cardRight cardBox-img">
@@ -601,13 +577,13 @@ const Sort = () => {
                   <a href="#!" onClick={() => linkToSub("coffee")}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
-                        <p className="f40 fw600 grayn1 lh150">커피 생산</p>
+                        <p className="f40 fw600 grayn1 lh150">Coffee</p>
                         <p className="f23 fw400 grayn1 lh150 mt20">
-                          블랙 &middot; 라떼 등 다채로운 레시피 <br />
-                          RDT 형태 맞춤 생산 <span className="more">More</span>
+                          "SIG COMBIBLOC 125–250mL Choose from small sizes up to 250mL based on your business strategy"
+                          <span className="more">More</span>
                         </p>
                         <div className="mt70">
-                          <span className="keyword">#커피</span> <span className="keyword">#라떼</span>{" "}
+                          <span className="keyword">#Coffee</span> <span className="keyword">#Latte</span>{" "}
                           <span className="keyword">#RTD</span>
                         </div>
                       </div>
@@ -625,20 +601,24 @@ const Sort = () => {
           <section className="">
             <div className="contant1160 mb200">
               <a href="/cs/contact">
-                <img className="wView" src="/common/imgs/business/cs.png" alt="제품이나 서비스에 대해 문의가 있나요?" />
+                <img
+                  className="wView"
+                  src="/common/imgs/main/en_bnr_faq.png"
+                  alt="제품이나 서비스에 대해 문의가 있나요?"
+                />
                 <img
                   className="mView"
-                  src="/common/imgs/business/cs_mo.png"
+                  src="/common/imgs/main/en_bnr_faq_mo.png"
                   alt="제품이나 서비스에 대해 문의가 있나요?"
                 />
               </a>
             </div>
           </section>
         </main>
-        <FooterReact></FooterReact>
+        <FooterReactEN></FooterReactEN>
       </div>
     </>
   );
 };
 
-export default Sort;
+export default SortEN;

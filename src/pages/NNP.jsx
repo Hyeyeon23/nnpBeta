@@ -5,7 +5,7 @@ import Footer from "../components/common/footer";
 import CustomInquiry from "../components/customer/CustomInquiry";
 
 import ModalMain from "../components/modal/ModalMain";
-const NNP = () => {
+const NNP = ({ lang, setLang }) => {
   useEffect(() => {
     /**
      * 동영상 로드후 재생 보장
@@ -22,7 +22,7 @@ const NNP = () => {
   }, []);
   return (
     <>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div id="smooth-content">
           <main>

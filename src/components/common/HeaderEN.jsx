@@ -18,8 +18,8 @@ const HeaderEN = ({ color, lang, setLang }) => {
   /**
    * 모바일 사이즈 네비게이션 토글 기능
    * 원리는 state 값에 따라서 css에 설정된 class 값 적용/해제
-   * 
-   * 
+   *
+   *
    * @param {*} key
    */
   const handleToggle = (key) => {
@@ -332,7 +332,15 @@ const HeaderEN = ({ color, lang, setLang }) => {
             </nav>
             <div className="header-right">
               <span>
-                <button onClick={() => setLang(lang === "ko" ? "en" : "ko")}>{lang === "ko" ? "EN" : "KO"}</button>
+                <button
+                  onClick={() => {
+                    const nextLang = lang === "ko" ? "en" : "ko";
+                    localStorage.setItem("lang", nextLang);
+                    //setLang(nextLang);
+                    window.location.reload();
+                  }}>
+                  {lang === "ko" ? "EN" : "KO"}
+                </button>
               </span>
               <div className="pack3D_motion">
                 <a href="/dev" className="f_pp">

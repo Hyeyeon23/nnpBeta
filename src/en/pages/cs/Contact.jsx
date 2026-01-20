@@ -1,8 +1,5 @@
 import React from "react";
 
-import Header from "../../../components/common/Header";
-
-import FooterReact from "../../../components/common/FooterReact";
 import FooterReactEN from "../../../components/common/FooterReactEN";
 import Meta from "../../../components/common/Meta";
 import CustomInquiryNoMoreEN from "../../../components/customer/CustomInquiryNoMoreEN";

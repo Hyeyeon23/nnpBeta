@@ -91,9 +91,10 @@ const EquipmentEN = () => {
                         <tr>
                           <td colSpan={2}>
                             <p className="lh170 f20">
-                              용액중에 함유된 고형분의 함량에 따라 빛의 굴절율은 달라지게 되며, 이런 빛의 성질을 이용해
-                              제품중의 당도를 측정하는 기기입니다. 제품의 성상을 결정하는데 가장 중요한 요소가 당도이며,
-                              고객들 또한 이에 가장 민감하게 반응하여 당도가 제품선택의 기준이 되기도 합니다.
+                              As the solids content in a solution changes, so does its refractive index. This instrument
+                              uses that property to measure the Brix (sweetness) of products. Sweetness is one of the
+                              most critical factors defining product characteristics, and consumers are highly sensitive
+                              to it—often using Brix as a key selection criterion.
                             </p>
                           </td>
                         </tr>
@@ -133,8 +134,9 @@ const EquipmentEN = () => {
                         <tr>
                           <td colSpan={2}>
                             <p className="lh170 f20">
-                              원재료와 제품들의 단백질 함량을 측정하는 장비로서 단백질 원재료의 순도와 완제품의 단백질
-                              함량을 모니터링하여 원료 및 제품의 품질관리에 이용합니다.
+                              An instrument used to measure protein content in raw materials and finished products. By
+                              monitoring the purity of protein ingredients and the protein level of finished goods, it
+                              supports raw-material and product quality control.
                             </p>
                           </td>
                         </tr>

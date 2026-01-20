@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Header = ({ color }) => {
+const Header = ({ color, lang, setLang }) => {
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
   const [isWhiteLogo, setIsWhiteLogo] = useState(false);
@@ -329,6 +329,15 @@ const Header = ({ color }) => {
             </nav>
             <div className="header-right">
               <div className="pack3D_motion">
+                <button
+                  onClick={() => {
+                    const nextLang = lang === "ko" ? "en" : "ko";
+                    localStorage.setItem("lang", nextLang);
+                    // setLang(nextLang);
+                    window.location.reload();
+                  }}>
+                  {lang === "ko" ? "EN" : "KO"}
+                </button>
                 <a href="/dev" className="f_pp">
                   <span>
                     {isWhiteLogo ? (

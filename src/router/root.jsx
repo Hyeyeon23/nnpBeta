@@ -26,7 +26,9 @@ import Document from "../pages/certification/Document";
 import Product from "../pages/business/product/Product";
 import ProductEN from "../en/pages/business/product/Product";
 import Sort from "../pages/business/product/Sort";
+import SortEN from "../en/pages/business/product/Sort";
 import Container from "../pages/business/Container";
+import ContainerEN from "../en/pages/business/Container";
 import Wizus from "../pages/brand/Wizus";
 import WizusEN from "../en/pages/brand/Wizus";
 import Healthy from "../pages/brand/Healthy";
@@ -132,7 +134,7 @@ export function createRouter(lang, setLang) {
         path: "company",
         element: (
           <Suspense fallback={Loading}>
-            <CompanyLayout ang={lang} setLang={setLang}></CompanyLayout>
+            <CompanyLayout lang={lang} setLang={setLang}></CompanyLayout>
           </Suspense>
         ),
         children: [
@@ -162,21 +164,57 @@ export function createRouter(lang, setLang) {
           </Suspense>
         ),
         children: [
-          { path: "info", element: <RecruitInfo></RecruitInfo> },
-          { path: "policy", element: lang === "ko" ? <PolicyInfo /> : <PolicyInfoEN /> },
-          { path: "process", element: lang === "ko" ? <ProcessInfo /> : <ProcessInfoEN /> },
-          { path: "benefit", element: lang === "ko" ? <BenefitInfo /> : <BenefitInfoEN /> },
+          { path: "info", element: <RecruitInfo lang={lang} setLang={setLang}></RecruitInfo> },
+          {
+            path: "policy",
+            element:
+              lang === "ko" ? (
+                <PolicyInfo lang={lang} setLang={setLang} />
+              ) : (
+                <PolicyInfoEN lang={lang} setLang={setLang} />
+              ),
+          },
+          {
+            path: "process",
+            element:
+              lang === "ko" ? (
+                <ProcessInfo lang={lang} setLang={setLang} />
+              ) : (
+                <ProcessInfoEN lang={lang} setLang={setLang} />
+              ),
+          },
+          {
+            path: "benefit",
+            element:
+              lang === "ko" ? (
+                <BenefitInfo lang={lang} setLang={setLang} />
+              ) : (
+                <BenefitInfoEN lang={lang} setLang={setLang} />
+              ),
+          },
         ],
       },
       {
         path: "business",
         children: [
-          { path: "products", element: lang === "ko" ? <Product /> : <ProductEN /> },
+          {
+            path: "products",
+            element:
+              lang === "ko" ? <Product lang={lang} setLang={setLang} /> : <ProductEN lang={lang} setLang={setLang} />,
+          },
 
-          { path: "containers", Component: Container },
+          {
+            path: "containers",
+            element:
+              lang === "ko" ? (
+                <Container lang={lang} setLang={setLang} />
+              ) : (
+                <ContainerEN lang={lang} setLang={setLang} />
+              ),
+          },
           {
             path: "product/:type",
-            Component: Sort,
+            element: lang === "ko" ? <Sort lang={lang} setLang={setLang} /> : <SortEN lang={lang} setLang={setLang} />,
           },
         ],
       },
@@ -281,6 +319,6 @@ export function createRouter(lang, setLang) {
     ],
     {
       basename: import.meta.env.BASE_URL, // 깃허브 페이지스를 위한 설정
-    }
+    },
   );
 }

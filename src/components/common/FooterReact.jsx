@@ -67,7 +67,7 @@ const FooterReact = () => {
         });
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (

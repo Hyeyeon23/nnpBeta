@@ -4,7 +4,9 @@ import { useEffect, useMemo } from "react";
 import { useState } from "react";
 
 function App() {
-  const [lang, setLang] = useState("en"); // 여기
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem("lang") || "en";
+  });
   useEffect(() => {
     const scripts = [
       "/common/js/vendor/jquery-3.7.1.min.js",

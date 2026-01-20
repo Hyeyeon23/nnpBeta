@@ -3,10 +3,10 @@ import Header from "../../../../components/common/Header";
 
 import { useNavigate, useLocation } from "react-router-dom";
 import Meta from "../../../../components/common/Meta";
-import Footer from "../../../../components/common/footer";
+
 import FooterReactEN from "../../../../components/common/FooterReactEN";
 
-const ProductEN = () => {
+const ProductEN = ({ lang, setLang }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const linkToSub = (sub) => {
@@ -39,7 +39,7 @@ const ProductEN = () => {
   return (
     <>
       <Meta title={"자연과사람들 제품유형"}></Meta>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>
