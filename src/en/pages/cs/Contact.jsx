@@ -5,11 +5,11 @@ import Meta from "../../../components/common/Meta";
 import CustomInquiryNoMoreEN from "../../../components/customer/CustomInquiryNoMoreEN";
 import HeaderEN from "../../../components/common/HeaderEN";
 
-const ContactEN = () => {
+const ContactEN = ({ lang, setLang }) => {
   return (
     <>
       <Meta title="자연과사람들 1:1문의"></Meta>
-      <HeaderEN></HeaderEN>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>

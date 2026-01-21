@@ -6,7 +6,7 @@ import FooterReactEN from "../common/FooterReactEN";
 import Header from "../common/Header";
 import BrandHero from "../hero/BrandHero";
 import Meta from "../common/Meta";
-import BrandHerodev from "../hero/BrandHerodev";
+
 import HeaderEN from "../common/HeaderEN";
 
 const BrandLayout = ({ lang, setLang }) => {
@@ -51,10 +51,29 @@ const BrandLayout = ({ lang, setLang }) => {
       }
     };
   }, [location.pathname]);
+
+  if (lang === "ko") {
+    return (
+      <>
+        <Meta title={title}></Meta>
+        <Header lang={lang} setLang={setLang}></Header>
+        <div id="smooth-wrapper">
+          <div id="smooth-content" className="body-bg">
+            <main>
+              <BrandHero key={location} lang={lang}></BrandHero>
+              {/* <BrandHerodev path={location.pathname}></BrandHerodev> */}
+              <Outlet></Outlet>
+            </main>
+            <FooterReact key={location}></FooterReact>
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Meta title={title}></Meta>
-      <HeaderEN></HeaderEN>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content" className="body-bg">
           <main>

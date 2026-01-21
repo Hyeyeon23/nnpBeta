@@ -468,7 +468,7 @@ const NNPEN = ({ lang, setLang }) => {
                                   stroke-linejoin="round"
                                 />
                               </svg>
-                              <br /> 시작하기
+                              <br /> Start
                             </span>
                             <i className="tp-btn-circle-dot"></i>
                           </a>
@@ -525,7 +525,7 @@ const NNPEN = ({ lang, setLang }) => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">03</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/balance">균형영양식</a>
+                          <a href="/business/product/balance">Balanced Nutrition Formula</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
@@ -640,7 +640,7 @@ const NNPEN = ({ lang, setLang }) => {
                       <div className="project-section__title__wrap hero">
                         <span className="project-section__number">02</span>
                         <h3 className="project-section__title _split_text">
-                          <a href="/business/product/protein">단백질 음료</a>
+                          <a href="/business/product/protein">PROTEIN DRINK</a>
                         </h3>
                       </div>
                       <div className="project-section__thumb">
@@ -789,7 +789,7 @@ const NNPEN = ({ lang, setLang }) => {
               <div className="portfolio__big-inner overflow-hidden p-relative">
                 <img src="/common/imgs/main/mainBigbanner.jpg" alt="img not found" />
                 <div className="portfolio__big-inner-box">
-                  <b className="portfolio__big-inner-box-item white fff">OEM생산</b>
+                  <b className="portfolio__big-inner-box-item white fff">OEM</b>
                 </div>
 
                 <div className="tp-portfolio-area p-relative z-index-1 overflow-hidden">
@@ -939,7 +939,9 @@ const NNPEN = ({ lang, setLang }) => {
                             <h3 className="team-section__title">
                               <a href="/brand/wizus/greenlemon">WIZUS</a>
                             </h3>
-                            <p className="team-section__position">A delicious and enjoyable sports protein drink!</p>{" "}
+                            <p className="team-section__position">
+                              A delicious and enjoyable sports protein drink!
+                            </p>{" "}
                           </div>
                           <div className="team-section__social">
                             <a href="/brand/wizus/greenlemon">

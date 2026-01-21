@@ -327,40 +327,7 @@ const Header = ({ color, lang, setLang }) => {
                 </li>
               </ul>
             </nav>
-            <div className="header-right">
-              <div className="pack3D_motion">
-                <button
-                  onClick={() => {
-                    const nextLang = lang === "ko" ? "en" : "ko";
-                    localStorage.setItem("lang", nextLang);
-                    // setLang(nextLang);
-                    window.location.reload();
-                  }}>
-                  {lang === "ko" ? "EN" : "KO"}
-                </button>
-                <a href="/dev" className="f_pp">
-                  <span>
-                    {isWhiteLogo ? (
-                      <img src="/common/imgs/common/pack-3d-w.gif" alt="pack-3d" />
-                    ) : (
-                      <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
-                    )}
-                  </span>
-                </a>
-              </div>
-              {/*
-                <ul className="sub_area">
-                  <li>
-                    <div className="custom-sel">
-                      <select>
-                        <option value="ENG">ENG</option>
-                        <option value="KOR">KOR</option>
-                      </select>
-                    </div>
-                  </li>
-                </ul>
-                */}
-            </div>
+
             <div className="header-right">
               <div className="pack3D_motion">
                 <a href="/dev" onClick={() => oneDepMenu()} className="f_pp">
@@ -373,18 +340,22 @@ const Header = ({ color, lang, setLang }) => {
                   </span>
                 </a>
               </div>
-              {/*
-                <ul className="sub_area">
-                  <li>
-                    <div className="custom-sel">
-                      <select>
-                        <option value="ENG">ENG</option>
-                        <option value="KOR">KOR</option>
-                      </select>
-                    </div>
-                  </li>
-                </ul>
-                */}
+              <ul className="sub_area">
+                <li>
+                  <div className="custom-sel">
+                    <select
+                      value={lang === "ko" ? "KOR" : "ENG"}
+                      onChange={(e) => {
+                        const nextLang = e.target.value === "KOR" ? "ko" : "en";
+                        localStorage.setItem("lang", nextLang);
+                        window.location.reload();
+                      }}>
+                      <option value="ENG">ENG</option>
+                      <option value="KOR">KOR</option>
+                    </select>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -204,7 +204,7 @@ const CustomInquiryNoMore = () => {
                               required: "Required",
                               pattern: {
                                 value: "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/",
-                                message: "이메일 형식을 체크해주세요.",
+                                message: "Please check the email format.",
                               },
                             })}
                             aria-invalid={errors.mail ? "true" : "false"}
@@ -321,8 +321,8 @@ const CustomInquiryNoMore = () => {
                               defaultValue=""
                               {...register("content", {
                                 required: { value: true, message: "Required" },
-                                minLength: { value: 10, message: "내용은 10자 이상 입력해주세요" },
-                                maxLength: { value: 300, message: "내용은 300자 이하로 입력해주세요." },
+                                minLength: { value: 10, message: "Please enter at least 10 characters." },
+                                maxLength: { value: 300, message: "Please enter no more than 300 characters." },
                               })}
                               aria-invalid={errors.content ? "true" : "false"}
                             />
