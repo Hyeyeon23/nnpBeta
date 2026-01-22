@@ -22,7 +22,9 @@ import CustomBox from "../../components/sample/CustomBox";
 import { imageTransfer } from "../../api/3D";
 import Meta from "../../components/common/Meta";
 import { validateToken, validateTokenCheck } from "../../api/SnsLogin";
-const SampleDev = () => {
+import HeaderEN from "../../components/common/HeaderEN";
+import FooterReactEN from "../../components/common/FooterReactEN";
+const SampleDev = ({ lang, setLang }) => {
   const groupRef = useRef();
   const canvasRef = useRef(null); // 이미지 다운할 떄 씀
 
@@ -329,7 +331,7 @@ const SampleDev = () => {
           saveString(output, "model.gltf");
         }
       },
-      { binary: true }
+      { binary: true },
     );
   }
 
@@ -361,7 +363,12 @@ const SampleDev = () => {
         </svg>
       </div>
       <Meta title="자연과사람들 3D"></Meta>
-      <Header></Header>
+      {lang === "ko" ? (
+        <Header lang={lang} setLang={setLang}></Header>
+      ) : (
+        <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
+      )}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -526,7 +533,7 @@ const SampleDev = () => {
               </div>
             </section>
           </main>
-          <Footer></Footer>
+          {lang === "ko" ? <Footer></Footer> : <FooterReactEN></FooterReactEN>}
         </div>
       </div>
     </>

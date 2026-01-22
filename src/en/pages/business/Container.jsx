@@ -60,7 +60,7 @@ const ContainerEN = () => {
 
                 <div className="row contant1100">
                   <div className="col-md-12 mb50">
-                    <img src="../common/imgs/business/busi01.jpg" alt="멸균팩 제품" />
+                    <img src="/common/imgs/business/busi01.jpg" alt="멸균팩 제품" />
                   </div>
 
                   <div className="col-md-6">
@@ -134,7 +134,7 @@ const ContainerEN = () => {
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/tertamid.jpg" alt="tertamid" />
+                                <img src="/common/imgs/business/tertamid.jpg" alt="tertamid" />
                               </td>
                             </tr>
                           </table>
@@ -190,7 +190,7 @@ const ContainerEN = () => {
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/sig.jpg" alt="sig" />
+                                <img src="/common/imgs/business/sig.jpg" alt="sig" />
                               </td>
                             </tr>
                           </table>
@@ -206,12 +206,12 @@ const ContainerEN = () => {
                             </colgroup>
                             <tr>
                               <td colSpan={2}>
-                                <p className="f22 fw400 grayn1">대용량 음료</p>
+                                <p className="f22 fw400 grayn1">Large Capacity Beverage</p>
                               </td>
                             </tr>
                             <tr>
                               <td colSpan={2}>
-                                <p className="f40 fw600 mt10 pb20 grayn1">SIG COMBIBLOC</p>
+                                <p className="f40 fw600 mt10 pb20 grayn1">TETRA EDGE</p>
                               </td>
                             </tr>
                             <tr>
@@ -242,7 +242,7 @@ const ContainerEN = () => {
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/tetra1000.jpg" alt="sig" />
+                                <img src="/common/imgs/business/tetra1000.jpg" alt="sig" />
                               </td>
                             </tr>
                           </table>
@@ -263,7 +263,7 @@ const ContainerEN = () => {
                             </colgroup>
                             <tr>
                               <td colSpan={2}>
-                                <p className="f22 fw400 grayn1">프리미엄 멸균팩</p>
+                                <p className="f22 fw400 grayn1">Premium Aseptic Pack</p>
                               </td>
                             </tr>
                             <tr>
@@ -299,7 +299,7 @@ const ContainerEN = () => {
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/tetraPE.jpg" alt="sig" />
+                                <img src="/common/imgs/business/tetraPE.jpg" alt="sig" />
                               </td>
                             </tr>
                           </table>
@@ -398,7 +398,7 @@ const ContainerEN = () => {
 
                 <div className="row contant1100">
                   <div className="col-md-12 mb50">
-                    <img src="../common/imgs/business/busi02.jpg" alt="캔 제품" />
+                    <img src="/common/imgs/business/busi02.jpg" alt="캔 제품" />
                   </div>
 
                   <div className="col-md-6">
@@ -458,7 +458,7 @@ const ContainerEN = () => {
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/can01.jpg" alt="canslim" />
+                                <img src="/common/imgs/business/can01.jpg" alt="canslim" />
                               </td>
                             </tr>
                           </table>
@@ -479,7 +479,7 @@ const ContainerEN = () => {
                             </colgroup>
                             <tr>
                               <td colSpan={2}>
-                                <p className="f22 fw400 grayn1">한 손에 꽉 찬 용량</p>
+                                <p className="f22 fw400 grayn1">Full-bodied size</p>
                               </td>
                             </tr>
                             <tr>
@@ -500,11 +500,11 @@ const ContainerEN = () => {
                                 Packaging <br />
                                 Material
                               </th>
-                              <td>24입 TRAY, 24입 W/A, 12입 GIFT</td>
+                              <td>24 TRAY, 24 W/A, 12 GIFT </td>
                             </tr>
                             <tr>
                               <td colSpan={2} className="pt20">
-                                <img src="../common/imgs/business/can02.jpg" alt="canstubby" />
+                                <img src="/common/imgs/business/can02.jpg" alt="canstubby" />
                               </td>
                             </tr>
                           </table>
@@ -543,7 +543,9 @@ const ContainerEN = () => {
                         <div className="services__tab__title f45 fw600">
                           CAN(stubby) <span className="gra">238, 350ml</span>
                           <br />
-                          <span className="f20 fw400 grayn1 mt20">식혜등의 대용량 캔에 적합한 사이즈</span>
+                          <span className="f20 fw400 grayn1 mt20">
+                            Sizes suitable for larger canned beverages such as Sikhye
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -573,7 +575,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-200ml-mid_서울우유-협동조합(검은깨검은콩).jpg"
+                          src="/common/imgs/thum/TetraPack-200ml-mid_서울우유-협동조합(검은깨검은콩).jpg"
                           alt="img not found"
                         />
                       </div>
@@ -594,7 +596,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb ">
                         <img
-                          src="../common/imgs/thum/TetraPack-200ml-mid_서울우유-협동조합(원두밀).jpg"
+                          src="/common/imgs/thum/TetraPack-200ml-mid_서울우유-협동조합(원두밀).jpg"
                           alt="img not found"
                         />
                       </div>
@@ -615,7 +617,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type01">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-검은콩.jpg" alt="img not found">
+      <img src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-검은콩.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -629,7 +631,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type01">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-아호검.jpg" alt="img not found">
+      <img src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-아호검.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -643,7 +645,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type01">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-플레인.jpg" alt="img not found">
+      <img src="/common/imgs/thum/TetraPack-200ml-mid_자연과사람들두유-플레인.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -658,7 +660,7 @@ const ContainerEN = () => {
                   <div className="col-lg-3 col-4 grid-item type01">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-200ml-mid_파스퇴르.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-200ml-mid_파스퇴르.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
@@ -674,7 +676,7 @@ const ContainerEN = () => {
                   <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200250mLA3CompactFlex케어웰_rth400.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200250mLA3CompactFlex케어웰_rth400.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
@@ -691,7 +693,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type04 ">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/200250mLA3-Compact-Flex_케어웰-구수한맛.jpg" alt="img not found">
+      <img src="/common/imgs/thum/200250mLA3-Compact-Flex_케어웰-구수한맛.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -706,7 +708,7 @@ const ContainerEN = () => {
                   <div className="col-lg-3 col-4 grid-item type04 ">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_케어웰-디엠.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_케어웰-디엠.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
@@ -723,7 +725,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_그린비아-프로틴밀-초코.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_그린비아-프로틴밀-초코.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -742,7 +744,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_그린비아-프로틴밀-아호.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_그린비아-프로틴밀-아호.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -763,7 +765,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_위져스-프로틴에잇-녹차.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_위져스-프로틴에잇-녹차.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -782,7 +784,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_위져스-프로틴에잇-레몬아이스티.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_위져스-프로틴에잇-레몬아이스티.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -800,7 +802,7 @@ const ContainerEN = () => {
                   <div className="col-lg-3 col-4 grid-item type04">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_더단백초코.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_더단백초코.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
@@ -817,7 +819,7 @@ const ContainerEN = () => {
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex이지프로틴-시리얼.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex이지프로틴-시리얼.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -835,10 +837,7 @@ const ContainerEN = () => {
                   <div className="col-lg-3 col-4 grid-item type04">
                     <div className="blog1__item mb-30">
                       <div className="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_이지프로틴_초코.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_이지프로틴_초코.jpg" alt="img not found" />
                       </div>
                       <div className="blog1__item-category mt20">
                         <ul>
@@ -855,7 +854,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type04">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_프쌤-바나나.jpg" alt="img not found">
+      <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_프쌤-바나나.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -870,7 +869,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type04">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-야채랑사과.jpg" alt="img not found">
+      <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-야채랑사과.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -885,7 +884,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type04">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-오늘의-과일-야채-사과.jpg" alt="img not found">
+      <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-오늘의-과일-야채-사과.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -900,7 +899,7 @@ const ContainerEN = () => {
 <div class="col-lg-3 col-4 grid-item type04">
   <div class="blog1__item mb-30">
     <div class="blog1__item-thumb">
-      <img src="../common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-오늘의-과일-야채-ABC.jpg" alt="img not found">
+      <img src="/common/imgs/thum/200250mL-A3-Compact-Flex_빙그레-오늘의-과일-야채-ABC.jpg" alt="img not found">
     </div>
     <div class="blog1__item-category mt20">
       <ul>
@@ -916,7 +915,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_닥터바리스타-버터커피.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_닥터바리스타-버터커피.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -934,7 +933,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/200250mL-A3-Compact-Flex_소이비랩-저당두유.jpg"
+                          src="/common/imgs/thum/200250mL-A3-Compact-Flex_소이비랩-저당두유.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -951,7 +950,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1000ml-edge_그린비아-디엠.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_그린비아-디엠.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -966,7 +965,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1000ml-edge_그린비아-티에프.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_그린비아-티에프.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -982,7 +981,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_그린비아-화이바-엣지-1000.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_그린비아-화이바-엣지-1000.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1000,7 +999,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_케어웰-어드벤스-1000.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_케어웰-어드벤스-1000.jpg"
                           alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
@@ -1016,9 +1015,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_매일두유-99.9.jpg"
-                          alt="img not found"></img>
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_매일두유-99.9.jpg" alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1034,7 +1031,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-사골.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-사골.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1052,7 +1049,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-전골.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-전골.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1070,7 +1067,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-해물.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_풀무원-요리육수-해물.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1087,10 +1084,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_검은콩고칼슘_엣지.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_검은콩고칼슘_엣지.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1107,10 +1101,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_아몬드와호두_엣지.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_아몬드와호두_엣지.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1125,10 +1116,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_진한콩국물_검은콩.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_진한콩국물_검은콩.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1143,7 +1131,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1000ml-edge_진한콩국물.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_진한콩국물.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1159,7 +1147,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_베지밀_에이_엣지.jpg"
+                          src="/common/imgs/thum/TetraPack-1000ml-edge_베지밀_에이_엣지.jpg"
                           alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
@@ -1175,7 +1163,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1.jpg" alt="img not found"></img>
+                        <img src="/common/imgs/thum/TetraPack-1.jpg" alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1190,9 +1178,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_담백한채소육수.jpg"
-                          alt="img not found"></img>
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_담백한채소육수.jpg" alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1207,9 +1193,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_시원한채소육수.jpg"
-                          alt="img not found"></img>
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_시원한채소육수.jpg" alt="img not found"></img>
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1224,7 +1208,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1000ml-edge_구수한사골육수.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_구수한사골육수.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1239,7 +1223,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/TetraPack-1000ml-edge_그린덴마크-귀리.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_그린덴마크-귀리.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1254,10 +1238,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type03">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/TetraPack-1000ml-edge_그린덴마크-아몬드.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/TetraPack-1000ml-edge_그린덴마크-아몬드.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1273,7 +1254,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_딸기맛우유.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_딸기맛우유.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1288,7 +1269,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_바나나맛우유.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_바나나맛우유.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1304,7 +1285,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_비타-초코-우유.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_비타-초코-우유.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1320,7 +1301,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_그린비아-키즈모아.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_그린비아-키즈모아.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1335,7 +1316,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_야채가득V19.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_야채가득V19.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1350,7 +1331,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_따옴오가닉-사과비트.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_따옴오가닉-사과비트.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1366,7 +1347,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mini_따옴오가닉-오렌지브로콜리.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mini_따옴오가닉-오렌지브로콜리.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1383,7 +1364,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_고마워-감귤C.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_고마워-감귤C.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1398,7 +1379,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_힘내-파인애플씨.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_힘내-파인애플씨.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1413,7 +1394,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_사랑해-사과C.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_사랑해-사과C.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1429,7 +1410,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mini_최고야-포도씨C.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mini_최고야-포도씨C.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1445,7 +1426,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mini_담백한베지밀에이-검은콩두유.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mini_담백한베지밀에이-검은콩두유.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1463,7 +1444,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mini_달콤한베지밀비-검은콩두유.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mini_달콤한베지밀비-검은콩두유.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1481,7 +1462,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_빅썬-사과.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_빅썬-사과.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1496,7 +1477,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_내사랑-오렌지-드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_내사랑-오렌지-드링크.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1511,7 +1492,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_내사랑-사과-드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_내사랑-사과-드링크.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1527,7 +1508,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_내사랑-포도-드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_내사랑-포도-드링크.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1542,10 +1523,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img
-                          src="../common/imgs/thum/SIG-Combibloc-mid_웰치-오렌지망고-드링크.jpg"
-                          alt="img not found"
-                        />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_웰치-오렌지망고-드링크.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1560,7 +1538,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item  type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_웰치-포도-드링크.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_웰치-포도-드링크.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1576,7 +1554,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mid_과일이꼭꼭씹히는애플망고두유.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mid_과일이꼭꼭씹히는애플망고두유.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1595,7 +1573,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mid_검은콩과-검은참깨-베지밀-두유.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mid_검은콩과-검은참깨-베지밀-두유.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1612,7 +1590,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_케어웰-어드밴스200.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_케어웰-어드밴스200.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1627,7 +1605,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type02">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/SIG-Combibloc-mid_케어웰-당뇨식.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/SIG-Combibloc-mid_케어웰-당뇨식.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1643,7 +1621,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mid_그린비아-플러스케어-당뇨식.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mid_그린비아-플러스케어-당뇨식.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1662,7 +1640,7 @@ const ContainerEN = () => {
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
                         <img
-                          src="../common/imgs/thum/SIG-Combibloc-mid_그린비아-플러스케어-화이바.jpg"
+                          src="/common/imgs/thum/SIG-Combibloc-mid_그린비아-플러스케어-화이바.jpg"
                           alt="img not found"
                         />
                       </div>
@@ -1679,7 +1657,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-고단백-솔루션.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-고단백-솔루션.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1694,7 +1672,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-마일드케어.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-마일드케어.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1709,7 +1687,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-알디플러스.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-알디플러스.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1725,7 +1703,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-디엠.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-디엠.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1740,7 +1718,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-티에프.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-티에프.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1755,7 +1733,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-알디.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-알디.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1770,7 +1748,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_그린비아-화이바.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_그린비아-화이바.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1786,7 +1764,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item   type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_싼타페-헤이즐넛향.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_싼타페-헤이즐넛향.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1802,7 +1780,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item   type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_토레타.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_토레타.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1818,7 +1796,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item   type05">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/200-DIA_파워에이드-마운틴블라스트.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/200-DIA_파워에이드-마운틴블라스트.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1834,7 +1812,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type06">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/202-DIA_큰집식혜.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/202-DIA_큰집식혜.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1849,7 +1827,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type06">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/202-DIA_노브랜드식혜.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/202-DIA_노브랜드식혜.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>
@@ -1864,7 +1842,7 @@ const ContainerEN = () => {
                   <div class="col-lg-3 col-4 grid-item type06">
                     <div class="blog1__item mb-30">
                       <div class="blog1__item-thumb">
-                        <img src="../common/imgs/thum/202-DIA_Oh!-우리집-식혜.jpg" alt="img not found" />
+                        <img src="/common/imgs/thum/202-DIA_Oh!-우리집-식혜.jpg" alt="img not found" />
                       </div>
                       <div class="blog1__item-category mt20">
                         <ul>

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem("lang") || "en";
+    return localStorage.getItem("nnplang") || "ko";
   });
   useEffect(() => {
     const scripts = [

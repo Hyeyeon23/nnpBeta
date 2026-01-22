@@ -340,14 +340,14 @@ const Header = ({ color, lang, setLang }) => {
                   </span>
                 </a>
               </div>
-              <ul className="sub_area">
+              {/*  <ul className="sub_area">
                 <li>
                   <div className="custom-sel">
                     <select
                       value={lang === "ko" ? "KOR" : "ENG"}
                       onChange={(e) => {
                         const nextLang = e.target.value === "KOR" ? "ko" : "en";
-                        localStorage.setItem("lang", nextLang);
+                        localStorage.setItem("nnplang", nextLang);
                         window.location.reload();
                       }}>
                       <option value="ENG">ENG</option>
@@ -355,7 +355,7 @@ const Header = ({ color, lang, setLang }) => {
                     </select>
                   </div>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>

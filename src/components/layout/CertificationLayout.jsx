@@ -150,7 +150,7 @@ const CertificationLayout = ({ lang, setLang }) => {
                             </li>
                             <li className={`f20 ${section === "document" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("document")}>
-                                인증서
+                                Certificates
                               </a>
                             </li>
                           </ul>

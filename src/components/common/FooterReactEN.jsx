@@ -67,7 +67,7 @@ const FooterReact = () => {
         });
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -239,7 +239,7 @@ const FooterReact = () => {
               <div className="person">
                 <ul>
                   <li>
-                    <a href="/terms">Terms and Conditions</a> <a href="/personal">Personal Information Policy</a>
+                    {/* <a href="/terms">Terms and Conditions</a> <a href="/personal">Personal Information Policy</a> */}
                   </li>
                 </ul>
               </div>
