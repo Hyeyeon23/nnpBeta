@@ -23,8 +23,8 @@
 	.centerH2 {position:absolute; top:50%;left:50%;color:#fff; transform:translate(-50%,-50%); /* width:1200px */}
 	
 	.centerH3 {position:absolute;display:table;top:0;left:0;width:100%;height:100%}
-    .centerH3 .centerH3_inner{display:table-cell;text-align:center;vertical-align:middle}
-
+    .centerH3 .centerH3_inner{display:table-cell;text-align:center;vertical-align:middle; }
+	.f30.fw400.white.lh150.mt40.mb100 {max-width:800px; width:80%; margin:0 auto}
 
 
 
@@ -264,6 +264,7 @@
 	header.white h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp_white.png) !important;  }
 	header.white #header.open h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp.png) !important;  }
 	header.white #gnb > ul > li > a{color:#fff;}
+    .custom-sel {background:#333; border-radius:20px; padding:2px 4px; color:#fff }
 	header.white #header .custom-sel select  {color:#fff }
 	header.white #header .custom-sel select option {color:#333 }
 
@@ -302,7 +303,8 @@
 	dl.full_box dd.full_dep div.fd_title {width:320px}
 
 	.custom-sel {vertical-align:top; margin-left:30px }
-	.custom-sel select {border:0; color:#333; background:none; cursor:pointer;  border-radius:20px; margin-top:0px; }
+	.custom-sel select {border:0; color:#fff; background:none; cursor:pointer;  border-radius:20px; margin-top:0px; }
+	.custom-sel select option {color:#333}
 	.custom-sel.gray select {border:0; color:#aeaeae; background:none; }
 	
 	.btn_fullMenu {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu.png) ; width:40px;height:40px; display:inline-block;   background-size:40px 40px; position:relative; cursor:pointer;}
@@ -1220,6 +1222,8 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13); min-height:170px; vertical-align:
 	.m_header ul.m_h_right li.btnOpen img {width:33px}
 	header.white .m_header .custom-sel select  {color:#fff }
 	.custom-sel {margin-left:0}
+
+	 .custom-sel {background:#333; border-radius:20px; padding:2px 4px; color:#fff; font-size:11px }
 	
 	
 

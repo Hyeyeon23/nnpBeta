@@ -78,8 +78,9 @@ const StructureEN = () => {
                     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExamplee">
                       <div className="accordion-body">
                         <p>
-                          모든 제품에 대해 식품공전에 의거하여 세균, 대장균, 효모 등 정확하고 신속한 미생물 검사를
-                          실행하고 있으며 제품 불량에 대한 원인규명을 위해 분리동정도 병행하고 있습니다.
+                          We conduct accurate and rapid microbiological testing for bacteria, E. coli, yeast, and more
+                          on all products in accordance with the Food Code. Additionally, we perform isolation and
+                          identification to determine the causes of product defects.
                         </p>
                       </div>
                     </div>
@@ -100,8 +101,8 @@ const StructureEN = () => {
                     <div id="collapse3" className="accordion-collapse collapse" data-bs-parent="#accordionExamplee">
                       <div className="accordion-body">
                         <p>
-                          원부자재가 입고되면 품질안전연구실에서 시험성적서 및 수량, 유통기한 여부 등을 확인하여 품질
-                          안정성을 확보 후 사용합니다.
+                          Upon the arrival of raw materials, the Quality & Safety Laboratory verifies test reports,
+                          quantities, and expiration dates to ensure quality stability before use.
                         </p>
                       </div>
                     </div>
@@ -121,7 +122,10 @@ const StructureEN = () => {
                     </h2>
                     <div id="collapse4" className="accordion-collapse collapse" data-bs-parent="#accordionExamplee">
                       <div className="accordion-body">
-                        <p>밀코스캔, 디지털당도계, 밀도계 등 설계된 규격 확인을 위한 다양한 기기를 갖추고 있습니다.</p>
+                        <p>
+                          We are equipped with various instruments, such as MilkoScan, digital refractometers, and
+                          density meters, to verify compliance with designed specifications.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -184,8 +188,8 @@ const StructureEN = () => {
                     <div id="collapse6" className="accordion-collapse collapse" data-bs-parent="#accordionExamplee2">
                       <div className="accordion-body">
                         <p>
-                          두유 및 일반음료 등을 개발하고 있으며 더 많은 연구와 투자로 더욱 더 좋은 제품을 개발하기 위해
-                          노력하고 있습니다.
+                          We develop soy milk and general beverages, and we are committed to creating superior products
+                          through continuous research and increased investment.
                         </p>
                       </div>
                     </div>

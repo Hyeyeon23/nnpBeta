@@ -282,26 +282,16 @@ const SortEN = ({ lang, setLang }) => {
         setData(null);
     }
     console.log("type = ", type);
+
     // <main.js 재실행>라우트 변경 시마다
-    const reloadMainScript = () => {
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
+    const timer = setTimeout(() => {
+      const script = document.createElement("script");
+      script.src = "/common/js/main.js?ts=" + Date.now();
+      script.async = false;
+      document.body.appendChild(script);
+    }, 0);
 
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    };
-
-    // main.js 재로드
-    const cleanup = reloadMainScript();
-
-    // <main.js 재실행>
-
-    return cleanup;
+    return () => clearTimeout(timer);
   }, [type]);
 
   const linkToSub = (sub) => {

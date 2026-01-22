@@ -5,10 +5,8 @@ function Lang({ setLang }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const next = (localStorage.getItem("nnplang") || "en") === "en" ? "ko" : "en";
-
-    localStorage.setItem("nnplang", next);
-    setLang(next);
+    localStorage.setItem("nnplang", "en");
+    setLang("en");
     navigate("/", { replace: true });
   }, []);
 
