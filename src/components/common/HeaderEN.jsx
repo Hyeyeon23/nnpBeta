@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { useLocation, useNavigate } from "react-router-dom";
+import LangSelector from "./LangSelector";
+import LangSelectorMo from "./LangSelectorMo";
 
 const HeaderEN = ({ color, lang, setLang }) => {
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
@@ -345,18 +347,7 @@ const HeaderEN = ({ color, lang, setLang }) => {
               </div>
               <ul className="sub_area">
                 <li>
-                  <div className="custom-sel">
-                    <select
-                      value={lang === "ko" ? "KOR" : "ENG"}
-                      onChange={(e) => {
-                        const nextLang = e.target.value === "KOR" ? "ko" : "en";
-                        localStorage.setItem("nnplang", nextLang);
-                        window.location.reload();
-                      }}>
-                      <option value="ENG">ENG</option>
-                      <option value="KOR">KOR</option>
-                    </select>
-                  </div>
+                  <LangSelector lang={lang}></LangSelector>
                 </li>
               </ul>
             </div>
@@ -385,16 +376,11 @@ const HeaderEN = ({ color, lang, setLang }) => {
                   </a>
                 </div>
               </li>
-              {/* 
+
               <li>
-                <div className="custom-sel ">
-                  <select id="globalLang" onchange="changeLang();return false">
-                    <option value="KOR">KOR</option>
-                    <option value="ENG">ENG</option> 
-                  </select>
-                </div>
+                <LangSelectorMo lang={lang}></LangSelectorMo>
               </li>
-              */}
+
               <li className="btnOpen">
                 <span style={{ cursor: "pointer" }} onClick={() => setIsOpenm(true)}></span>
               </li>
