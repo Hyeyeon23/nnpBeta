@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const LangSelector = ({ lang }) => {
+const LangSelector = ({ lang, setLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
 
@@ -27,6 +27,7 @@ const LangSelector = ({ lang }) => {
             <span
               onClick={() => {
                 localStorage.setItem("nnplang", "en");
+                setLang("en");
                 location.reload();
               }}>
               EN
@@ -35,6 +36,7 @@ const LangSelector = ({ lang }) => {
             <span
               onClick={() => {
                 localStorage.setItem("nnplang", "ko");
+                setLang("ko");
                 location.reload();
               }}>
               KR

@@ -1,10 +1,15 @@
 import React from "react";
-import Meta from "../../../components/common/Meta";
+
+import MetaEN from "../../../components/common/MetaEN";
 
 const DocumentEN = () => {
   return (
     <>
-      <Meta title={"자연과사람들 식품안전인증현황 인증서"}></Meta>
+      <MetaEN
+        title={"Nature & People Food Safety Certifications"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>{" "}
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-12">
@@ -12,7 +17,6 @@ const DocumentEN = () => {
           </div>
         </div>
       </section>
-
       <section className="team-section__area team-section team-section-2 overflow-hidden body-bg section-space">
         <div className="team-section">
           <div className="container">

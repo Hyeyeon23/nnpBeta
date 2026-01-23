@@ -1,8 +1,13 @@
 import React from "react";
-
+import MetaEN from "../../../components/common/MetaEN";
 const HistoryEN = () => {
   return (
     <section>
+      <MetaEN
+        title={"Nature & People History"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <div className="contant1100 mt100 mb200">
         <div className="row">
           <div className="col-md-12">

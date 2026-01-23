@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/common/Header";
-import FooterReact from "../../components/common/FooterReact";
-import Meta from "../../components/common/Meta";
+
+import MetaEN from "../../../components/common/MetaEN";
 import { useOutletContext } from "react-router-dom";
 
 const RecruitInfo = () => {
@@ -19,6 +18,11 @@ const RecruitInfo = () => {
 
   return (
     <>
+      <MetaEN
+        title={"Nature & People Recruit Info"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       {isInProgress == false ? (
         <section className="contant1100 mt200 mb200">
           <div className="content1100">

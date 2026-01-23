@@ -1,13 +1,15 @@
-import Header from "../../../components/common/Header";
-import FooterReact from "../../../components/common/FooterReact";
 import FooterReactEN from "../../../components/common/FooterReactEN";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 import HeaderEN from "../../../components/common/HeaderEN";
 
 const FaqEN = ({ lang, setLang }) => {
   return (
     <>
-      <Meta title="자연과사람들 자주묻는 질문"></Meta>
+      <MetaEN
+        title={"Nature & People Products FAQ"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>{" "}
       <HeaderEN></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">

@@ -113,7 +113,7 @@ const HeaderEN = ({ color, lang, setLang }) => {
           {/* white 클래스 제적 */}
           <div className="bg"></div>
           <div className="wView">
-            <h1 className="logo">
+            <h1 className="logo en">
               <a href="/" title="정식품 CI"></a>
             </h1>
             <nav id="gnb">
@@ -359,7 +359,7 @@ const HeaderEN = ({ color, lang, setLang }) => {
             {/* <!-- 수정 --> */}
             <div className="m_h_left">
               <a href="/">
-                <span></span>
+                <span class="en"></span>
               </a>
             </div>
             <ul className="m_h_right">
@@ -430,8 +430,8 @@ const HeaderEN = ({ color, lang, setLang }) => {
                             </a>
                           </dd>
                           <dd>
-                            {/*   <a href="#!" onClick={() => linkTo("/about/vision")}> */}
-                            <a href="/about/vision">Vision</a>
+                            <a href="#!" onClick={() => linkTo("/about/vision")} />
+                            {/* <a href="/about/vision">Vision</a> */}
                           </dd>
                           <dd>
                             <a href="#!" onClick={() => linkTo("/about/road")}>

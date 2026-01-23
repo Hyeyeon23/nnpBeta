@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Odometer from "react-odometerjs";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 import { ScrollTrigger } from "gsap/all";
 
 const CeoEN = () => {
@@ -35,7 +35,11 @@ const CeoEN = () => {
   }, []);
   return (
     <>
-      <Meta title={"자연과사람들 인사말"}></Meta>
+      <MetaEN
+        title={"Nature & People CEO"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <section>
         <div className="contant1160 mb200 mt100">
           <div className="row ">

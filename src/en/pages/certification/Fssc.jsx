@@ -1,10 +1,14 @@
 import React from "react";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 
 const FsscEN = () => {
   return (
     <>
-      <Meta title={"자연과사람들 식품안전인증현황 FSSC 22000"}></Meta>
+      <MetaEN
+        title={"Nature & People FSSC"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <section className="contant1100 mt200">
         <div className="row">
           <div className="col-lg-12">

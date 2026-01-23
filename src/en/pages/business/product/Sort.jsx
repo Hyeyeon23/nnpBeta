@@ -24,7 +24,7 @@ const SortEN = ({ lang, setLang }) => {
 
   const datas = {
     soy: {
-      title: "Soy Milk Base Production",
+      title: "Nature & People Soy Milk",
       crumble: " Soy Milk",
       name: "Soy Milk Base Production",
       keywords: { pre: "#utrition of Soybeans", mid: "#Customized", last: "#Korea’s First" },
@@ -48,7 +48,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     protein: {
-      title: "자연과사람들 단백질 음료",
+      title: "Nature & People Protein Drinks",
       crumble: " Protein",
       name: "Protein Drinks",
       keywords: { pre: "#Drinkable", mid: "#In One Pack", last: "#Anytime, Anywhere" },
@@ -75,7 +75,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     balance: {
-      title: "자연과사람들 균형영양식",
+      title: "Nature & People Balanced Nutrition Formula",
       crumble: "Balanced Nutrition Formula",
       name: "Balanced Nutrition Formula",
       keywords: { pre: "#Nutrition-Focused", mid: "#Healthy Habits", last: "#Balanced Design" },
@@ -101,7 +101,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     particle: {
-      title: "Particle Drink",
+      title: "Nature & People Particle Drink",
       crumble: " Particle Drink",
       name: "Particle Drink",
       keywords: { pre: "#Chewy", mid: "#Bouncy Inclusions", last: "#Fun Texture" },
@@ -126,7 +126,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     sikhye: {
-      title: "자연과사람들 식혜",
+      title: " Nature & People Sikhye",
       crumble: "Sikhye",
       name: "Sikhye Manufacturing",
       keywords: { pre: "#Traditional", mid: "#Sweetness Adjustable", last: "#Preference Respected" },
@@ -150,7 +150,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     sauce: {
-      title: "자연과사람들 소스",
+      title: "Nature & People Sauce & Broth",
       crumble: "Sauce & Broth",
       name: "Sauce & Broth",
       keywords: { pre: "#Liquid", mid: "#HMR", last: "#Finishing Touch" },
@@ -174,7 +174,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     sterilized: {
-      title: "자연과사람들 멸균유",
+      title: "Nature & People UHT Milk",
       crumble: "UHT Milk",
       name: "UHT Milk",
       keywords: { pre: "#UHT", mid: "#Freshness", last: "#Shelf-Stable" },
@@ -198,7 +198,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     juice: {
-      title: "자연과사람들 주스",
+      title: "Nature & People Juice",
       crumble: "Juice",
       name: "Juice",
       keywords: { pre: "#Fruit", mid: "#Vegetable", last: "#Blends" },
@@ -224,7 +224,7 @@ const SortEN = ({ lang, setLang }) => {
       },
     },
     coffee: {
-      title: "자연과사람들 커피",
+      title: "Nature & People Coffee",
       crumble: "Coffee",
       name: "Coffee Manufacturing",
       keywords: { pre: "#RTD Coffee", mid: "#Convenient", last: "#Various Flavors" },

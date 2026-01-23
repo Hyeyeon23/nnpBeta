@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "../../../../components/common/Header";
 
 import { useNavigate, useLocation } from "react-router-dom";
-import Meta from "../../../../components/common/Meta";
+import MetaEN from "../../../../components/common/MetaEN";
 
 import FooterReactEN from "../../../../components/common/FooterReactEN";
 import HeaderEN from "../../../../components/common/HeaderEN";
@@ -39,7 +39,11 @@ const ProductEN = ({ lang, setLang }) => {
 
   return (
     <>
-      <Meta title={"자연과사람들 제품유형"}></Meta>
+      <MetaEN
+        title={"Korea's No.1 OEM, Nature & People"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <div>

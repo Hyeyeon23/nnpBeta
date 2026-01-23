@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import MetaEN from "../../../components/common/MetaEN";
 const ResearchEN = () => {
   useEffect(() => {
     // Swiper 스크립트가 이미 HTML에 포함되어 있다고 가정
@@ -39,7 +39,11 @@ const ResearchEN = () => {
 
   return (
     <>
-      {" "}
+      <MetaEN
+        title={"Nature & People R&D Research"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>{" "}
       <style>{`
     .swiper-slide {
       width: 200px;

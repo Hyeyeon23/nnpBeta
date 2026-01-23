@@ -21,6 +21,7 @@ import CustomBox from "../../components/sample/CustomBox";
 
 import { imageTransfer } from "../../api/3D";
 import Meta from "../../components/common/Meta";
+import MetaEN from "../../components/common/MetaEN";
 import { validateToken, validateTokenCheck } from "../../api/SnsLogin";
 import HeaderEN from "../../components/common/HeaderEN";
 import FooterReactEN from "../../components/common/FooterReactEN";
@@ -362,6 +363,7 @@ const SampleDev = ({ lang, setLang }) => {
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
+      {lang === "ko" ? <Meta title="자연과사람들 3D"></Meta> : <MetaEN title="Nature & People 3D"></MetaEN>}
       <Meta title="자연과사람들 3D"></Meta>
       {lang === "ko" ? (
         <Header lang={lang} setLang={setLang}></Header>

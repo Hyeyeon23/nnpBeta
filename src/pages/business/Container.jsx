@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "../../components/common/Header";
 import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
-const Container = () => {
+const Container = ({ lang, setLang }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       const mainScript = document.createElement("script");
@@ -24,7 +24,7 @@ const Container = () => {
   return (
     <>
       <Meta title={"자연과사람들 용기유형"}></Meta>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>

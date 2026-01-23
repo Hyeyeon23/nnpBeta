@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import HeaderEN from "../components/common/HeaderEN";
 
 import FooterReactEN from "../components/common/FooterReactEN";
+import MetaEN from "../components/common/MetaEN";
 
 import CustomInquiryEN from "../components/customer/CustomInquiryEN";
 
@@ -25,6 +26,11 @@ const NNPEN = ({ lang, setLang }) => {
   return (
     <>
       <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
+      <MetaEN
+        title={"Korea's No.1 OEM, Nature & People"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <div id="smooth-wrapper" className="body-bg">
         <div id="smooth-content">
           <main>

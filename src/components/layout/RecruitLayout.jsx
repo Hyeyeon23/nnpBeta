@@ -5,6 +5,7 @@ import Header from "../common/Header";
 import FooterReact from "../common/FooterReact";
 import FooterReactEN from "../common/FooterReactEN";
 
+import MetaEN from "../common/MetaEN";
 import Meta from "../common/Meta";
 import HeaderEN from "../common/HeaderEN";
 
@@ -71,7 +72,7 @@ const RecruitLayout = ({ lang, setLang }) => {
     return (
       <>
         <Meta title={"자연과사람들 채용정보 "}></Meta>
-        <Header color={"white"}></Header>
+        <Header color={"white"} lang={lang} setLang={setLang}></Header>
         <div id="smooth-wrapper" className="body-bg">
           <div>
             <main>
@@ -131,8 +132,12 @@ const RecruitLayout = ({ lang, setLang }) => {
   }
   return (
     <>
-      <Meta title={"자연과사람들 채용정보 "}></Meta>
-      <HeaderEN color={"white"}></HeaderEN>
+      <HeaderEN color={"white"} lang={lang} setLang={setLang}></HeaderEN>
+      <MetaEN
+        title={"Korea's No.1 OEM, Nature & People"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>

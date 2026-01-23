@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Power2 } from "gsap";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 
 import Odometer from "react-odometerjs";
 
@@ -27,7 +27,7 @@ const VisionEN = () => {
       },
       {
         threshold: 0.2, // 화면에 20% 보일 때 트리거
-      }
+      },
     );
 
     if (odometerRef.current) observer.observe(odometerRef.current);
@@ -101,12 +101,16 @@ const VisionEN = () => {
           });
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
     <>
-      <Meta title={"자연과사람들 비젼"}></Meta>
+      <MetaEN
+        title={"Nature & People Vision"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <section ref={containerRef}>
         <div className="contant1160 mt100">
           <div className="row">

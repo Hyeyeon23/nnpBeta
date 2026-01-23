@@ -1,8 +1,14 @@
 import React from "react";
 
+import MetaEN from "../../../components/common/MetaEN";
 const ProcessInfoEN = () => {
   return (
     <>
+      <MetaEN
+        title={"Nature & People Recruit Process"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <div className="body-bg">
         <section className="contant1100 pt200 pb200">
           <div className="row">

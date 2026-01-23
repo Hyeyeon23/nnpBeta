@@ -68,7 +68,7 @@ const CertificationLayout = ({ lang, setLang }) => {
   if (lang === "ko")
     return (
       <>
-        <Header color={"white"}></Header>
+        <Header color={"white"} lang={lang} setLang={setLang}></Header>
         <div id="smooth-wrapper" class="body-bg">
           <div>
             <main>
@@ -119,7 +119,7 @@ const CertificationLayout = ({ lang, setLang }) => {
     );
   return (
     <>
-      <HeaderEN color={"white"}></HeaderEN>
+      <HeaderEN color={"white"} lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>

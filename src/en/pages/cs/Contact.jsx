@@ -1,14 +1,18 @@
 import React from "react";
 
 import FooterReactEN from "../../../components/common/FooterReactEN";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 import CustomInquiryNoMoreEN from "../../../components/customer/CustomInquiryNoMoreEN";
 import HeaderEN from "../../../components/common/HeaderEN";
 
 const ContactEN = ({ lang, setLang }) => {
   return (
     <>
-      <Meta title="자연과사람들 1:1문의"></Meta>
+      <MetaEN
+        title={"Nature & People Customer Consultation"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">

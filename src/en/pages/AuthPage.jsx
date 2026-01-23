@@ -7,6 +7,7 @@ import Naver from "../../components/sns/Naver";
 
 import Google from "../../components/sns/Google";
 import HeaderEN from "../../components/common/HeaderEN";
+import MetaEN from "../../components/common/MetaEN";
 
 const AuthPageEN = () => {
   const navigate = useNavigate();
@@ -26,6 +27,11 @@ const AuthPageEN = () => {
   return (
     <>
       <HeaderEN></HeaderEN>
+      <MetaEN
+        title={"Nature & People SNS Login"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>

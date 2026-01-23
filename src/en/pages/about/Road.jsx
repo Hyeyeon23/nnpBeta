@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Meta from "../../../components/common/Meta";
+import MetaEN from "../../../components/common/MetaEN";
 
 const RoadEN = () => {
   useEffect(() => {
@@ -21,7 +21,11 @@ const RoadEN = () => {
   }, []);
   return (
     <>
-      <Meta title={"자연과사람들 오시는 길"}></Meta>
+      <MetaEN
+        title={"Nature & People Load"}
+        description={
+          "Specialized in beverage OEM, ODM, Private Label, and B2B manufacturing, including exports. We expertly produce Aseptic Cartons, Gable Tops, and Cans."
+        }></MetaEN>
       <section>
         <div className="contant1160 mb200">
           {/* 서울사무소 */}

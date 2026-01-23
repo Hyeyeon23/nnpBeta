@@ -5,6 +5,7 @@ import FooterReact from "../common/FooterReact";
 import FooterReactEN from "../common/FooterReactEN";
 
 import HeaderEN from "../common/HeaderEN";
+import MetaEN from "../common/MetaEN";
 
 const RndLayout = ({ lang, setLang }) => {
   const location = useLocation();
@@ -67,7 +68,8 @@ const RndLayout = ({ lang, setLang }) => {
   if (lang === "ko") {
     return (
       <>
-        <Header color={"white"}></Header>
+        <Header color={"white"} lang={lang} setLang={setLang}></Header>
+
         <div id="smooth-wrapper" class="body-bg">
           <div>
             <main>
@@ -128,7 +130,8 @@ const RndLayout = ({ lang, setLang }) => {
 
   return (
     <>
-      <HeaderEN color={"white"}></HeaderEN>
+      <HeaderEN color={"white"} lang={lang} setLang={setLang}></HeaderEN>
+
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>

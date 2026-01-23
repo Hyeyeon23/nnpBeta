@@ -171,6 +171,12 @@
 	#header h1.logo {position:absolute;top:20px;left:80px; z-index: 100;}
 	#header h1.logo a {display:block;width:150px;height:50px;background:url(../../common/imgs/logo/logo_nnp.png) no-repeat 0 0;background-size:100% ;   }
 	#header h1.logo a img {width:100%}
+
+	#header h1.logo.en {position:absolute;top:20px;left:80px; z-index: 100;}
+	#header h1.logo.en a {display:block;width:150px;height:50px;background:url(../../common/imgs/logo/en_logo_nnp.png) no-repeat 0 0;background-size:100% ;   }
+	#header h1.logo.en a img {width:100%}
+
+
 	#header .header-right {position:absolute;top:24px;right:80px; z-index: 100;}
 	#header .header-right ul.sub_area {margin-top:6px; float:right }
 	#header .header-right ul.sub_area > li {display:inline-block; margin-left:20px; vertical-align:middle;  }
@@ -258,11 +264,18 @@
 	/* 3000 Default : white */
 	header.gray { /* background-color: #fff; */ }
 	header.gray h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp.png);   }
+	header.gray h1.logo.en a {background-image:url(../../common/imgs/logo/en_logo_nnp.png);   }
 	header.gray #gnb > ul > li > a{color:#333; }
 
 	header.white { /* background-color: #fff; */}
 	header.white h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp_white.png) !important;  }
 	header.white #header.open h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp.png) !important;  }
+
+	header.white h1.logo.en a {background-image:url(../../common/imgs/logo/en_logo_nnp_white.png) !important;  }
+	header.white #header.open h1.logo.en a {background-image:url(../../common/imgs/logo/en_logo_nnp.png) !important;  }
+
+
+
 	header.white #gnb > ul > li > a{color:#fff;}
     .custom-sel { border-radius:20px; padding:2px 4px; color:#333 }
 	header.white #header .custom-sel select  {color:#333 }
@@ -335,6 +348,7 @@
 	#header.open {height: 90px; border-bottom: none; background-color: #fff; background-repeat: no-repeat; background-position: right bottom; overflow: hidden; border-bottom: 1px solid #ddd; box-shadow: 0 5px 5px rgba(100,100,100,.05); z-index: 1500;}
 	#header.open .bg{width: 100%; height: 91px; position: absolute; left: 0; top: 0; background: #fff; border-bottom: 1px solid #ddd;}
 	#header.open h1.logo a {background-image:url(../../common/imgs/logo/logo_nnp.png) ;   }
+	#header.open h1.logo.en a {background-image:url(../../common/imgs/logo/en_logo_nnp.png) ;   }
 	#header.open #gnb > ul > li > a{color: #333;}
 	/* 3000 Default : fullMenu */
 	.overlay {height: 0;width: 100%;position: fixed;z-index: 1;top: 0;left: 0;background-color: #222222;background-color: rgba(34,34,34, 1);overflow-y: hidden;transition: 0.5s;}
@@ -1135,6 +1149,7 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13); min-height:170px; vertical-align:
 	.contant1160 {max-width:1100px; width:100%;  padding-right:15px;padding-left:15px;}
 	/* 1760 header */
 	#header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
+	#header h1.logo.en {position:absolute;top:20px;left:20px; z-index: 100;}
 	#header .header-right {position:absolute;top:24px;right:20px; z-index: 100; }
 	
 
@@ -1339,6 +1354,10 @@ box-shadow: 2px 0px 15px 1px rgba(0,0,0,0.13); min-height:170px; vertical-align:
 	.m_header .m_h_left {position:relative; float:left; margin:10px 0 0 10px}
 	.m_header .m_h_left span {background: url(../../common/imgs/logo/logo_nnp.png) no-repeat  0 0px; width:95px; height:30px;  display:inline-block; background-size:95px;  margin-top:4px}
 	header.white .m_header .m_h_left span {background: url(../../common/imgs/logo/logo_nnp_white.png) no-repeat  0 0px; width:95px; height:30px;  display:inline-block; background-size:95px;  margin-top:4px}
+
+	.m_header .m_h_left span.en {background: url(../../common/imgs/logo/en_logo_nnp.png) no-repeat  0 0px; width:95px; height:30px;  display:inline-block; background-size:95px;  margin-top:4px}
+	header.white .m_header .m_h_left span.en {background: url(../../common/imgs/logo/en_logo_nnp_white.png) no-repeat  0 0px; width:95px; height:30px;  display:inline-block; background-size:95px;  margin-top:4px}
+
 
 	.m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px; }
 	.m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}

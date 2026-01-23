@@ -343,9 +343,9 @@ const Header = ({ color, lang, setLang }) => {
                 </a>
               </div>
               <ul className="sub_area">
-                {/* <li>
-                  <LangSelector lang={lang}></LangSelector>
-                </li> */}
+                <li>
+                  <LangSelector lang={lang} setLang={setLang}></LangSelector>
+                </li>
               </ul>
             </div>
           </div>
@@ -374,9 +374,9 @@ const Header = ({ color, lang, setLang }) => {
                 </div>
               </li>
 
-              {/* <li>
+              <li>
                 <LangSelectorMo lang={lang}></LangSelectorMo>
-              </li> */}
+              </li>
               <li className="btnOpen">
                 <span style={{ cursor: "pointer" }} onClick={() => setIsOpenm(true)}></span>
               </li>
