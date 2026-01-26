@@ -5,6 +5,7 @@ import Footer from "../components/common/footer";
 import CustomInquiry from "../components/customer/CustomInquiry";
 
 import ModalMain from "../components/modal/ModalMain";
+import HeaderEN from "../../components/common/HeaderEN";
 const NNP = ({ lang, setLang }) => {
   useEffect(() => {
     /**
@@ -22,7 +23,7 @@ const NNP = ({ lang, setLang }) => {
   }, []);
   return (
     <>
-      <Header lang={lang} setLang={setLang}></Header>
+      <HeaderEN lang={lang} setLang={setLang}></HeaderEN>
       <div id="smooth-wrapper" className="body-bg">
         <div id="smooth-content">
           <main>

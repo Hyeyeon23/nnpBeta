@@ -347,7 +347,7 @@ const HeaderEN = ({ color, lang, setLang }) => {
               </div>
               <ul className="sub_area">
                 <li>
-                  <LangSelector lang={lang}></LangSelector>
+                  <LangSelector lang={lang} setLang={setLang}></LangSelector>
                 </li>
               </ul>
             </div>

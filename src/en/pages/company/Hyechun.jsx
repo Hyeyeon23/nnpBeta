@@ -16,7 +16,7 @@ const HyechunEN = () => {
               for Future Talent
             </p>
             <p className="mt50 family_dcf_logo">
-              <img src="../common/imgs/company/hcsf01.png" alt="혜춘장학회 로고" />
+              <img src="/common/imgs/company/hcsf01.png" alt="혜춘장학회 로고" />
             </p>
           </div>
           <div className="col-lg-5">
