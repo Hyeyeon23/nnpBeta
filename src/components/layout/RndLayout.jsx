@@ -2,8 +2,12 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import FooterReact from "../common/FooterReact";
+import FooterReactEN from "../common/FooterReactEN";
 
-const RndLayout = () => {
+import HeaderEN from "../common/HeaderEN";
+import MetaEN from "../common/MetaEN";
+
+const RndLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -61,10 +65,73 @@ const RndLayout = () => {
   const linkToSub = (sub) => {
     navigate("/rnd/" + sub);
   };
+  if (lang === "ko") {
+    return (
+      <>
+        <Header color={"white"} lang={lang} setLang={setLang}></Header>
+
+        <div id="smooth-wrapper" class="body-bg">
+          <div>
+            <main>
+              <section className="subTop_rnd">
+                <div className="container">
+                  <div className="subTop">
+                    <div className="w80 centerH3">
+                      <div className="centerH3_inner">
+                        <p className="f36 fw600 lh100 white f_pp">Business</p>
+                        <p className="f66 fw600 lh100 white mt60">R&D</p>
+                        <p className="f30 fw400 white lh150 mt40 mb100">
+                          ㈜자연과사람들 식품안전연구소는 경쟁력 있는
+                          <br />
+                          종합식품회사로 성장하기 위한 도약을 준비하고 있습니다.
+                        </p>
+
+                        <div className="tab-wrap">
+                          <div id="roundNav">
+                            <ul className="subNav">
+                              <li className={`f20 ${section === "info" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("info")}>
+                                  인사말
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "structure" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("structure")}>
+                                  조직구성
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "equipment" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("equipment")}>
+                                  시설 및 장비현황
+                                </a>
+                              </li>
+                              <li className={`f20 ${section === "research" ? "active" : ""}`}>
+                                <a href="#!" onClick={() => linkToSub("research")}>
+                                  연구현황
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* //centerH3_inner */}
+                    </div>
+                    {/* //centerH3 */}
+                  </div>
+                </div>
+              </section>
+              <Outlet key={section}></Outlet>
+            </main>
+            <FooterReact key={section}></FooterReact>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
-      <Header color={"white"}></Header>
+      <HeaderEN color={"white"} lang={lang} setLang={setLang}></HeaderEN>
+
       <div id="smooth-wrapper" class="body-bg">
         <div>
           <main>
@@ -76,9 +143,8 @@ const RndLayout = () => {
                       <p className="f36 fw600 lh100 white f_pp">Business</p>
                       <p className="f66 fw600 lh100 white mt60">R&D</p>
                       <p className="f30 fw400 white lh150 mt40 mb100">
-                        ㈜자연과사람들 식품안전연구소는 경쟁력 있는
-                        <br />
-                        종합식품회사로 성장하기 위한 도약을 준비하고 있습니다.
+                        The Food Safety Research Institute of Nature & People is laying the foundation for our growth
+                        into a competitive, comprehensive food company.
                       </p>
 
                       <div className="tab-wrap">
@@ -86,22 +152,22 @@ const RndLayout = () => {
                           <ul className="subNav">
                             <li className={`f20 ${section === "info" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("info")}>
-                                인사말
+                                Introduction to the R&D
                               </a>
                             </li>
                             <li className={`f20 ${section === "structure" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("structure")}>
-                                조직구성
+                                Organizational Map
                               </a>
                             </li>
                             <li className={`f20 ${section === "equipment" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("equipment")}>
-                                시설 및 장비현황
+                                Facilities & Equipment
                               </a>
                             </li>
                             <li className={`f20 ${section === "research" ? "active" : ""}`}>
                               <a href="#!" onClick={() => linkToSub("research")}>
-                                연구현황
+                                Research Activities
                               </a>
                             </li>
                           </ul>
@@ -116,7 +182,7 @@ const RndLayout = () => {
             </section>
             <Outlet key={section}></Outlet>
           </main>
-          <FooterReact key={section}></FooterReact>
+          <FooterReactEN key={section}></FooterReactEN>
         </div>
       </div>
     </>

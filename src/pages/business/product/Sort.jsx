@@ -6,7 +6,7 @@ import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom"
 import { jarallax } from "jarallax";
 import { animateScroll as scroll } from "react-scroll";
 
-const Sort = () => {
+const Sort = ({ lang, setLang }) => {
   const { type } = useParams();
   const [data, setData] = useState(null);
   const navigate = useNavigate();
@@ -333,7 +333,7 @@ const Sort = () => {
   return (
     <>
       <Meta title={data?.title}></Meta>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <main>
           {/* breadcrumb area start */}

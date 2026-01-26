@@ -6,11 +6,11 @@ import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
 import CustomInquiryNoMore from "../../components/customer/CustomInquiryNoMore";
 
-const Contact = () => {
+const Contact = ({ lang, setLang }) => {
   return (
     <>
       <Meta title="자연과사람들 1:1문의"></Meta>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>

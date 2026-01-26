@@ -4,7 +4,7 @@ import Footer from "../../../components/common/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import Meta from "../../../components/common/Meta";
 
-const Product = () => {
+const Product = ({ lang, setLang }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const linkToSub = (sub) => {
@@ -37,7 +37,7 @@ const Product = () => {
   return (
     <>
       <Meta title={"자연과사람들 제품유형"}></Meta>
-      <Header></Header>
+      <Header lang={lang} setLang={setLang}></Header>
       <div id="smooth-wrapper" className="body-bg">
         <div>
           <main>

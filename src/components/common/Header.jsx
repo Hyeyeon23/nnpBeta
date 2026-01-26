@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import { useLocation, useNavigate } from "react-router-dom";
+import LangSelector from "./LangSelector";
+import LangSelectorMo from "./LangSelectorMo";
 
-const Header = ({ color }) => {
-  const [isOpen, setIsOpen] = useState(false); // 피씨 사이드 네모네모 열고 닫기
+const Header = ({ color, lang, setLang }) => {
   const [isOpenm, setIsOpenm] = useState(false); // 모바일 네모네모 열고 닫기
   const [isOpenMInner, setIsOepnMInner] = useState(false);
   const [isWhiteLogo, setIsWhiteLogo] = useState(false);
@@ -328,31 +329,7 @@ const Header = ({ color }) => {
                 </li>
               </ul>
             </nav>
-            <div className="header-right">
-              <div className="pack3D_motion">
-                <a href="/dev" className="f_pp">
-                  <span>
-                    {isWhiteLogo ? (
-                      <img src="/common/imgs/common/pack-3d-w.gif" alt="pack-3d" />
-                    ) : (
-                      <img src="/common/imgs/common/pack-3d.gif" alt="pack-3d" />
-                    )}
-                  </span>
-                </a>
-              </div>
-              {/*
-                <ul className="sub_area">
-                  <li>
-                    <div className="custom-sel">
-                      <select>
-                        <option value="ENG">ENG</option>
-                        <option value="KOR">KOR</option>
-                      </select>
-                    </div>
-                  </li>
-                </ul>
-                */}
-            </div>
+
             <div className="header-right">
               <div className="pack3D_motion">
                 <a href="/dev" onClick={() => oneDepMenu()} className="f_pp">
@@ -365,18 +342,11 @@ const Header = ({ color }) => {
                   </span>
                 </a>
               </div>
-              {/*
-                <ul className="sub_area">
-                  <li>
-                    <div className="custom-sel">
-                      <select>
-                        <option value="ENG">ENG</option>
-                        <option value="KOR">KOR</option>
-                      </select>
-                    </div>
-                  </li>
-                </ul>
-                */}
+              <ul className="sub_area">
+                <li>
+                  <LangSelector lang={lang} setLang={setLang}></LangSelector>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -403,16 +373,10 @@ const Header = ({ color }) => {
                   </a>
                 </div>
               </li>
-              {/* 
+
               <li>
-                <div className="custom-sel ">
-                  <select id="globalLang" onchange="changeLang();return false">
-                    <option value="KOR">KOR</option>
-                    <option value="ENG">ENG</option> 
-                  </select>
-                </div>
+                <LangSelectorMo lang={lang}></LangSelectorMo>
               </li>
-              */}
               <li className="btnOpen">
                 <span style={{ cursor: "pointer" }} onClick={() => setIsOpenm(true)}></span>
               </li>

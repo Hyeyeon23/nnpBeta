@@ -128,20 +128,20 @@ const CustomBox = ({
         <div className="toggle-box">
           <div className="toggle-content">
             <div className="pack_ui" style={{ pointerEvents: isPackUIPointerEvents }}>
-              <h1 className="f22">나만의 팩을 만들어 보세요</h1>
-              <p className="f18 fw500 black">용기</p>
+              <h1 className="f22">Create your own package</h1>
+              <p className="f18 fw500 black">Container</p>
               <select className="mt-10 black w-auto " onChange={handleSelectModel}>
-                <option value="PACK1000_Lightless">테트라 1000ml (채소육수)</option>
+                <option value="PACK1000_Lightless">Tetra 1000ml </option>
                 {/* <option value="PACK1000_WOOD">PACK1000_WOOD</option> */}
-                <option value="PACK200_mid">테트라_200ml_mid (베지밀비)</option>
-                <option value="PACK200_CF">테트라_200ml_compact_flex (영양케어)</option>
-                <option value="PACK250_CF">테트라_250ml_compact_flex (프로틴밀)</option>
-                <option value="SIG120_mini">SIG_120ml_mini (에브릿)</option>
-                <option value="SIG150_mini">SIG_150ml_mini (프로틴케어미니)</option>
-                <option value="SIG200_mid">SIG_200ml_mid (베지밀비)</option>
-                <option value="CAN175">CAN_175ml (사과드링크)</option>
-                <option value="CAN200">CAN_200ml (마일케어구수한맛)</option>
-                <option value="CAN238">CAN_238ml (방방곡곡식혜)</option>
+                <option value="PACK200_mid">Tetra_200ml_mid</option>
+                <option value="PACK200_CF">Tetra_200ml_compact_flex</option>
+                <option value="PACK250_CF">Tetra_250ml_compact_flex</option>
+                <option value="SIG120_mini">SIG_120ml_mini</option>
+                <option value="SIG150_mini">SIG_150ml_mini</option>
+                <option value="SIG200_mid">SIG_200ml_mid</option>
+                <option value="CAN175">CAN_175ml</option>
+                <option value="CAN200">CAN_200ml</option>
+                <option value="CAN238">CAN_238ml</option>
               </select>
               {/*  도면다운  */}
               <div className="downloadFile">
@@ -202,7 +202,7 @@ const CustomBox = ({
 
               <ul class="packLight">
                 <li>
-                  <p class="f18 fw500 black mt40">조명1</p>
+                  <p class="f18 fw500 black mt40">Lighting 1</p>
                   <div class="slider-container mt10">
                     <input
                       type="range"
@@ -217,7 +217,7 @@ const CustomBox = ({
                   </div>
                 </li>
                 <li>
-                  <p class="f18 fw500 black mt40">조명2</p>
+                  <p class="f18 fw500 black mt40">Lighting 2</p>
                   <div class="slider-container mt10">
                     <input
                       type="range"
@@ -233,7 +233,7 @@ const CustomBox = ({
               </ul>
               {/* 팩날개 */}
               <div className="packColor">
-                <p className="f18 fw500 black mt40">팩 날개 색상</p>
+                <p className="f18 fw500 black mt40">Pack Wing Color</p>
                 <div className="container_color mt10">
                   <div
                     className="eyedropper"
@@ -273,14 +273,14 @@ const CustomBox = ({
               </div>
               {/* 팩날개  끝 */}
               <div class="wView">
-                <p class="f18 fw500 black mt40 clear mt80m">파일 첨부</p>
+                <p class="f18 fw500 black mt40 clear mt80m">Upload File</p>
                 <div id="drop-area" class="mt10" onDrop={handleDrop} onDragOver={handlePreventDefault}>
                   <input type="file" id="fileElem" accept="image/*" onChange={handleImageChange} hidden />
                   <label for="fileElem" id="drop-label">
                     <img src={images3d["file.png"]} alt="upload icon" />
                   </label>
                 </div>
-                <div id="upload-status">파일을 첨부해주세요.</div>
+                <div id="upload-status">Please upload a file.</div>
               </div>
             </div>
           </div>

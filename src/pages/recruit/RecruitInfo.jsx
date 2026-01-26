@@ -4,7 +4,7 @@ import FooterReact from "../../components/common/FooterReact";
 import Meta from "../../components/common/Meta";
 import { useOutletContext } from "react-router-dom";
 
-const RecruitInfo = () => {
+const RecruitInfo = ({ lang, setLang }) => {
   const [recruit, setRecruit] = useState("");
   const { isInProgress } = useOutletContext();
   useEffect(() => {
@@ -22,7 +22,9 @@ const RecruitInfo = () => {
       {isInProgress == false ? (
         <section className="contant1100 mt200 mb200">
           <div className="content1100">
-            <p className="f20 fw500 lh150 grayn1 center">현재 진행중인 채용공고가 없습니다.</p>
+            <p className="f20 fw500 lh150 grayn1 center">
+              {lang === "ko" ? "현재 진행중인 채용공고가 없습니다." : "We currently have no job openings available."}
+            </p>
           </div>
         </section>
       ) : (

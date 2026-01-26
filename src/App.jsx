@@ -1,8 +1,12 @@
 import { RouterProvider } from "react-router-dom";
-import root from "./router/root";
-import { useEffect } from "react";
+import { createRouter } from "./router/root";
+import { useEffect, useMemo } from "react";
+import { useState } from "react";
 
 function App() {
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem("nnplang") || "ko";
+  });
   useEffect(() => {
     const scripts = [
       "/common/js/vendor/jquery-3.7.1.min.js",
@@ -34,6 +38,7 @@ function App() {
       "/common/js/vendor/text-animation.min.js",
       "/common/js/vendor/scripts.js",
       "/common/js/main.js",
+      "/common/js/mainFunc.js",
     ];
 
     scripts.forEach((src) => {
@@ -43,11 +48,11 @@ function App() {
       document.body.appendChild(s);
     });
   }, []);
-
+  const root = useMemo(() => createRouter(lang, setLang), [lang]);
   return (
     <>
       {" "}
-      <RouterProvider router={root}></RouterProvider>
+      <RouterProvider router={root} context={{ lang, setLang }}></RouterProvider>
     </>
   );
 }
