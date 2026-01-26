@@ -12,8 +12,6 @@ const AboutLayout = ({ lang, setLang }) => {
 
   const section = location.pathname.split("/").pop(); // "vision" 또는 "ceo"
   useEffect(() => {
-    console.log(section);
-
     // <main.js 재실행>라우트 변경 시마다
     const reloadMainScript = () => {
       console.log(section);
@@ -30,11 +28,11 @@ const AboutLayout = ({ lang, setLang }) => {
     };
 
     // main.js 재로드
-    const cleanup = reloadMainScript();
+    //const cleanup = reloadMainScript();
 
     // <main.js 재실행>
 
-    return cleanup;
+    //return cleanup;
   }, [location, section]);
 
   useEffect(() => {

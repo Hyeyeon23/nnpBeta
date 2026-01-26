@@ -42,24 +42,24 @@ const BrandLayout = ({ lang, setLang }) => {
   }, [lang, location.pathname]);
 
   // ✅ effect는 "외부 시스템(main.js)"만 담당
-  useEffect(() => {
-    const existingScripts = document.querySelectorAll('script[src="/common/js/main.js"]');
+  // useEffect(() => {
+  //   const existingScripts = document.querySelectorAll('script[src="/common/js/main.js"]');
 
-    existingScripts.forEach((script) => {
-      script.parentNode.removeChild(script);
-    });
+  //   existingScripts.forEach((script) => {
+  //     script.parentNode.removeChild(script);
+  //   });
 
-    const mainScript = document.createElement("script");
-    mainScript.src = "/common/js/main.js";
-    mainScript.async = false;
-    document.body.appendChild(mainScript);
+  //   const mainScript = document.createElement("script");
+  //   mainScript.src = "/common/js/main.js";
+  //   mainScript.async = false;
+  //   document.body.appendChild(mainScript);
 
-    return () => {
-      if (document.body.contains(mainScript)) {
-        document.body.removeChild(mainScript);
-      }
-    };
-  }, [location.pathname]);
+  //   return () => {
+  //     if (document.body.contains(mainScript)) {
+  //       document.body.removeChild(mainScript);
+  //     }
+  //   };
+  // }, [location.pathname]);
 
   const isKo = lang === "ko";
 

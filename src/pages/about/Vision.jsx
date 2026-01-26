@@ -7,7 +7,6 @@ import Meta from "../../components/common/Meta";
 
 import Odometer from "react-odometerjs";
 
-gsap.registerPlugin(ScrollTrigger);
 const Vision = () => {
   const containerRef = useRef();
   const [production, setProduction] = useState(0);
@@ -27,7 +26,7 @@ const Vision = () => {
       },
       {
         threshold: 0.2, // 화면에 20% 보일 때 트리거
-      }
+      },
     );
 
     if (odometerRef.current) observer.observe(odometerRef.current);
@@ -45,11 +44,18 @@ const Vision = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
   useGSAP(
     () => {
-      // 첫 번째 타입의 이미지 애니메이션
-      document.querySelectorAll(".img_anim_reveal-React").forEach((element) => {
+      const elements = gsap.utils.toArray(".img_anim_reveal, .img_anim_reveal-2", containerRef.current);
+
+      elements.forEach((element) => {
         const image = element.querySelector("img");
+        if (!image) return;
+
+        // 타입 분기
+        const isType2 = element.classList.contains("img_anim_reveal-2");
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
@@ -57,57 +63,46 @@ const Vision = () => {
           },
         });
 
-        tl.set(element, {
-          autoAlpha: 1,
-        })
-          .from(element, {
-            xPercent: -200,
-            duration: 1.5,
-            ease: Power2.out,
-          })
-          .from(image, {
-            xPercent: 100,
-            scale: 1.3,
-            duration: 1.5,
-            delay: -1.5,
-            ease: Power2.out,
-          });
-      });
+        tl.set(element, { autoAlpha: 1 });
 
-      // 두 번째 타입의 이미지 애니메이션
-      document.querySelectorAll(".img_anim_reveal-2-React").forEach((element) => {
-        const image = element.querySelector("img");
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: element,
-            start: "top 70%",
-          },
-        });
-
-        tl.set(element, {
-          autoAlpha: 1,
-        })
-          .from(element, {
+        if (isType2) {
+          // 두 번째 타입
+          tl.from(element, {
             xPercent: 220,
             duration: 1.5,
-            ease: Power2.out,
-          })
-          .from(image, {
+            ease: "power2.out",
+          }).from(image, {
             xPercent: 100,
             scale: 1.2,
             duration: 1.5,
             delay: -1.5,
-            ease: Power2.out,
+            ease: "power2.out",
           });
+        } else {
+          // 기본 타입
+          tl.from(element, {
+            xPercent: -200,
+            duration: 1.5,
+            ease: "power2.out",
+          }).from(image, {
+            xPercent: 100,
+            scale: 1.3,
+            duration: 1.5,
+            delay: -1.5,
+            ease: "power2.out",
+          });
+        }
       });
+
+      ScrollTrigger.refresh();
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
     <>
       <Meta title={"자연과사람들 비젼"}></Meta>
-      <section ref={containerRef}>
+      <section>
         <div className="contant1160 mt100">
           <div className="row">
             <div className="col-lg-12">
@@ -124,7 +119,9 @@ const Vision = () => {
         </div>
       </section>
 
-      <section className="about-section__area about-section section-space-bottom-160 overflow-hidden">
+      <section
+        className="about-section__area about-section section-space-bottom-160 overflow-hidden"
+        ref={containerRef}>
         {/* 2025-09-29 wView클래스추가, 모바일 DIV추가 */}
         <div className="container wView">
           <div className="row mt100">

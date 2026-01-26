@@ -270,8 +270,10 @@ const Header = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
-                              <a href="/brand/wizus/greenlemon">녹차/레몬</a>
+                              <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                                {/* <a href="/brand/wizus/greenlemon"> */}
+                                녹차/레몬
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -281,22 +283,22 @@ const Header = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/brand/healthy/sikhye">
-                                {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                              {/* <a href="/brand/healthy/sikhye"> */}
+                              <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
                                 식혜
                               </a>
                             </li>
                           </ul>
                         </li>
                         <li className="gbg10">
-                          <a href="#" onClick={(e) => e.preventDefault()}>
-                            {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
+                          {/* <a href="#" onClick={(e) => e.preventDefault()}> */}
+                          <a href="#!" onClick={() => linkTo("/brand/pb")}>
                             자연과사람들이 만든
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/brand/pb">
-                                {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
+                              {/* <a href="/brand/pb"> */}
+                              <a href="#!" onClick={() => linkTo("/brand/pb")}>
                                 과일3종 드링크
                               </a>
                             </li>
@@ -577,8 +579,10 @@ const Header = ({ color, lang, setLang }) => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
-                            <a href="/brand/wizus/greenlemon">녹차 / 레몬</a>
+                            <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                              {/* <a href="/brand/wizus/greenlemon"> */}
+                              녹차 / 레몬
+                            </a>
                           </dd>
                         </dl>
                       </li>
@@ -589,14 +593,16 @@ const Header = ({ color, lang, setLang }) => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
-                            <a href="/brand/healthy/sikhye">식혜</a>
+                            <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
+                              {/* <a href="/brand/healthy/sikhye">*/}
+                              식혜
+                            </a>
                           </dd>
                         </dl>
                       </li>
                       <li>
-                        {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
-                        <a href="#" onClick={(e) => e.preventDefault()}>
+                        <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                          {/* <a href="#" onClick={(e) => e.preventDefault()}> */}
                           자연과사람들이 만든
                         </a>
                         <dl className="v_con_dl">

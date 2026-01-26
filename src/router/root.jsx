@@ -126,7 +126,9 @@ export function createRouter(lang, setLang) {
         path: "about",
         element: (
           <Suspense fallback={Loading}>
-            <AboutLayout lang={lang} setLang={setLang}></AboutLayout>
+            <Layout>
+              <AboutLayout lang={lang} setLang={setLang}></AboutLayout>
+            </Layout>
           </Suspense>
         ),
         children: [
@@ -140,7 +142,9 @@ export function createRouter(lang, setLang) {
         path: "company",
         element: (
           <Suspense fallback={Loading}>
-            <CompanyLayout lang={lang} setLang={setLang}></CompanyLayout>
+            <Layout>
+              <CompanyLayout lang={lang} setLang={setLang}></CompanyLayout>
+            </Layout>
           </Suspense>
         ),
         children: [
@@ -153,7 +157,9 @@ export function createRouter(lang, setLang) {
         path: "certification",
         element: (
           <Suspense fallback={Loading}>
-            <CertificationLayout lang={lang} setLang={setLang}></CertificationLayout>
+            <Layout>
+              <CertificationLayout lang={lang} setLang={setLang}></CertificationLayout>
+            </Layout>
           </Suspense>
         ),
         children: [
@@ -166,7 +172,9 @@ export function createRouter(lang, setLang) {
         path: "recruit",
         element: (
           <Suspense fallback={Loading}>
-            <RecruitLayout lang={lang} setLang={setLang}></RecruitLayout>
+            <Layout>
+              <RecruitLayout lang={lang} setLang={setLang}></RecruitLayout>
+            </Layout>
           </Suspense>
         ),
         children: [
@@ -206,7 +214,15 @@ export function createRouter(lang, setLang) {
           {
             path: "products",
             element:
-              lang === "ko" ? <Product lang={lang} setLang={setLang} /> : <ProductEN lang={lang} setLang={setLang} />,
+              lang === "ko" ? (
+                <Layout>
+                  <Product lang={lang} setLang={setLang} />
+                </Layout>
+              ) : (
+                <Layout>
+                  <ProductEN lang={lang} setLang={setLang} />
+                </Layout>
+              ),
           },
 
           {
@@ -243,7 +259,9 @@ export function createRouter(lang, setLang) {
         path: "brand",
         element: (
           <Suspense fallback={Loading}>
-            <BrandLayout lang={lang} setLang={setLang}></BrandLayout>
+            <Layout>
+              <BrandLayout lang={lang} setLang={setLang}></BrandLayout>
+            </Layout>
           </Suspense>
         ),
         children: [

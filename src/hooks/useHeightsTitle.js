@@ -1,59 +1,48 @@
-jQuery(function ($) {
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
 
-    $(document).ready(function () {
-
+function useHeightTitles(deps = []) {
+    useLayoutEffect(() => {
         "use strict";
-        HeightTitles();
-    });
 
-
-
-    /*--------------------------------------------------
-    Function Height Titles
-    ---------------------------------------------------*/
-
-    function HeightTitles() {
-
+        /* ------------------------------
+           generateSpans (원본 그대로)
+        ------------------------------ */
         function generateSpans(selector) {
             const elements = document.querySelectorAll(selector);
 
             elements.forEach((element) => {
                 const text = element.textContent.trim();
-                const words = text.split(' ');
+                const words = text.split(" ");
 
-                let finalHTML = ''; // Empty span at the beginning
+                let finalHTML = "";
 
                 words.forEach((word, index) => {
-                    finalHTML += '<div>'; // Open a div for each word
+                    finalHTML += "<div>";
                     for (let i = 0; i < word.length; i++) {
-                        finalHTML += `<span>${word[i]}</span>`; // Wrap each letter in a span
+                        finalHTML += `<span>${word[i]}</span>`;
                     }
-                    finalHTML += '</div>'; // Close the div for each word
+                    finalHTML += "</div>";
 
                     if (index !== words.length - 1) {
-                        finalHTML += '<div><span></span></div>'; // Empty span and a div between words
+                        finalHTML += "<div><span></span></div>";
                     }
                 });
-
-                finalHTML += ''; // Empty span at the end
 
                 element.innerHTML = finalHTML;
             });
         }
 
-        generateSpans('.height-title .hero-title');
-        generateSpans('.height-title .next-hero-title');
-        generateSpans('.height-title .slide-hero-title');
-        generateSpans('.fixed-title');
+        generateSpans(".height-title .hero-title");
+        generateSpans(".height-title .next-hero-title");
+        generateSpans(".height-title .slide-hero-title");
+        generateSpans(".fixed-title");
 
-
+        /* ------------------------------
+           applyHoverEffect (원본 그대로)
+        ------------------------------ */
         function applyHoverEffect(selector) {
             const spans = document.querySelectorAll(selector);
-
-            spans.forEach((span) => {
-                span.originalScaleY = 1;
-                span.addEventListener('mousemove', handleMouseMove);
-            });
 
             function handleMouseMove(e) {
                 const hoveredSpan = e.target;
@@ -67,13 +56,15 @@ jQuery(function ($) {
                 if (mouseX < center) {
                     scale = (scaleFactor + 1) + (scaleFactor * mouseX) / center;
                 } else {
-                    scale = (scaleFactor + 1) + (scaleFactor * (rect.width - mouseX)) / center;
+                    scale =
+                        (scaleFactor + 1) +
+                        (scaleFactor * (rect.width - mouseX)) / center;
                 }
 
                 gsap.to(hoveredSpan, {
                     scaleY: scale,
                     duration: 0.5,
-                    ease: 'power4.out',
+                    ease: "power4.out",
                 });
 
                 const spansArray = Array.from(spans);
@@ -86,11 +77,13 @@ jQuery(function ($) {
                     let distanceFromMouse = Math.abs(rect.left - e.clientX);
                     distanceFromMouse = Math.min(distanceFromMouse, center);
 
-                    const scalePrev = 1 + (scaleFactor * (center - distanceFromMouse)) / center;
+                    const scalePrev =
+                        1 + (scaleFactor * (center - distanceFromMouse)) / center;
+
                     gsap.to(prevSpan, {
                         scaleY: scalePrev,
                         duration: 0.5,
-                        ease: 'power4.out',
+                        ease: "power4.out",
                     });
                 }
 
@@ -98,36 +91,53 @@ jQuery(function ($) {
                     let distanceFromMouse = Math.abs(rect.right - e.clientX);
                     distanceFromMouse = Math.min(distanceFromMouse, center);
 
-                    const scaleNext = 1 + (scaleFactor * (center - distanceFromMouse)) / center;
+                    const scaleNext =
+                        1 + (scaleFactor * (center - distanceFromMouse)) / center;
+
                     gsap.to(nextSpan, {
                         scaleY: scaleNext,
                         duration: 0.5,
-                        ease: 'power4.out',
+                        ease: "power4.out",
                     });
                 }
             }
 
-            spans.forEach((span) => {
-                span.addEventListener('mouseleave', handleMouseLeave);
-            });
-
             function handleMouseLeave() {
                 spans.forEach((span) => {
                     gsap.to(span, {
-                        scaleY: span.originalScaleY,
+                        scaleY: 1,
                         duration: 0.5,
-                        ease: 'power4.out',
+                        ease: "power4.out",
                     });
                 });
             }
+
+            spans.forEach((span) => {
+                span.addEventListener("mousemove", handleMouseMove);
+                span.addEventListener("mouseleave", handleMouseLeave);
+            });
+
+            // cleanup
+            return () => {
+                spans.forEach((span) => {
+                    span.removeEventListener("mousemove", handleMouseMove);
+                    span.removeEventListener("mouseleave", handleMouseLeave);
+                });
+            };
         }
 
-        applyHoverEffect('.height-title .hero-title span');
-        applyHoverEffect('.height-title .next-hero-title span');
+        const cleanups = [];
+        cleanups.push(
+            applyHoverEffect(".height-title .hero-title span")
+        );
+        cleanups.push(
+            applyHoverEffect(".height-title .next-hero-title span")
+        );
 
+        return () => {
+            cleanups.forEach((fn) => fn && fn());
+        };
+    }, deps);
+}
 
-    }
-
-
-});
-
+export default useHeightTitles;

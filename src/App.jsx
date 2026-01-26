@@ -37,8 +37,8 @@ function App() {
       "/common/js/vendor/imagesloaded.pkgd.min.js",
       "/common/js/vendor/text-animation.min.js",
       "/common/js/vendor/scripts.js",
-      "/common/js/main.js",
-      "/common/js/mainFunc.js",
+      // "/common/js/main.js",
+      // "/common/js/mainFunc.js",
     ];
 
     scripts.forEach((src) => {

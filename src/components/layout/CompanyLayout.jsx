@@ -26,11 +26,11 @@ const CompanyLayout = ({ lang, setLang }) => {
     };
 
     // main.js 재로드
-    const cleanup = reloadMainScript();
+    //const cleanup = reloadMainScript();
 
     // <main.js 재실행>
 
-    return cleanup;
+    //return cleanup;
   }, [location]);
 
   // 스크롤 관련 로직을 위한 별도의 useEffect

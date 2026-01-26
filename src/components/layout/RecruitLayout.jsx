@@ -37,7 +37,7 @@ const RecruitLayout = ({ lang, setLang }) => {
 
     // <main.js 재실행>
 
-    return cleanup;
+    //return cleanup;
   }, [location, section]);
 
   useEffect(() => {
