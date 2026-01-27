@@ -303,6 +303,7 @@ const SortEN = ({ lang, setLang }) => {
             <div className="about-section__thumb__wrapper wView">
               <div
                 className="about-section__thumb__wrapper-img jarallax"
+                key={data?.heroImg} // setData시 img 태그 재사용 x -> 다시 그리고 jallax 걸리도록
                 data-background={data?.heroImg}
                 style={{ backgroundImage: `url(${data?.heroImg})` }}
                 speed={0.2}

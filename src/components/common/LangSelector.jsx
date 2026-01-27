@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const LangSelector = ({ lang, setLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const onClickOutside = (e) => {
@@ -14,6 +16,17 @@ const LangSelector = ({ lang, setLang }) => {
     return () => document.removeEventListener("click", onClickOutside);
   }, []);
 
+  const changeLang = (nextLang) => {
+    localStorage.setItem("nnplang", nextLang);
+    setLang(nextLang);
+    setIsOpen(false);
+
+    // 🔥 니가 원하는 바로 그 "새로고침"
+    if (location.pathname === "/") {
+      window.location.reload();
+    }
+  };
+
   return (
     <div className="custom-sel">
       <div id="langSelector" ref={ref} className={`lang-container ${isOpen ? "active" : ""}`}>
@@ -24,23 +37,9 @@ const LangSelector = ({ lang, setLang }) => {
 
         <div className="lang-dropdown">
           {lang === "ko" ? (
-            <span
-              onClick={() => {
-                localStorage.setItem("nnplang", "en");
-                setLang("en");
-                location.reload();
-              }}>
-              EN
-            </span>
+            <span onClick={() => changeLang("en")}>EN</span>
           ) : (
-            <span
-              onClick={() => {
-                localStorage.setItem("nnplang", "ko");
-                setLang("ko");
-                location.reload();
-              }}>
-              KR
-            </span>
+            <span onClick={() => changeLang("ko")}>KR</span>
           )}
         </div>
       </div>
