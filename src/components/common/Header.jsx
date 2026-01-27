@@ -225,12 +225,14 @@ const Header = ({ color, lang, setLang }) => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg05">
-                          {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
-                          <a href="/business/products">제품유형</a>
+                          <a href="#!" onClick={() => linkTo("/business/products")}>
+                            {/* <a href="/business/products"> */}
+                            제품유형
+                          </a>
                         </li>
                         <li className="gbg06">
-                          <a href="/business/containers">
-                            {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
+                          {/* <a href="/business/containers"> */}
+                          <a href="#!" onClick={() => linkTo("/business/containers")}>
                             용기유형
                           </a>
                         </li>
@@ -240,16 +242,24 @@ const Header = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/rnd/info">연구소 소개</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/info")}>
+                                연구소 소개
+                              </a>
                             </li>
                             <li>
-                              <a href="/rnd/structure">조직구성</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/structure")}>
+                                조직구성
+                              </a>
                             </li>
                             <li>
-                              <a href="/rnd/equipment">시설 및 장비현황</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/equipment")}>
+                                시설 및 장비현황
+                              </a>
                             </li>
                             <li>
-                              <a href="/rnd/research">연구현황</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/research")}>
+                                연구현황
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -525,12 +535,16 @@ const Header = ({ color, lang, setLang }) => {
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
-                        <a href="/business/products">제품유형</a>
+                        <a href="#!" onClick={() => linkTo("/business/products")}>
+                          {/* <a href="/business/products"> */}
+                          제품유형
+                        </a>
                       </li>
                       <li>
-                        {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
-                        <a href="/business/containers">용기유형</a>
+                        <a href="#!" onClick={() => linkTo("/business/containers")}>
+                          {/* <a href="/business/containers"> */}
+                          용기유형
+                        </a>
                       </li>
                       <li className="gbg07">
                         <ul className="gnb_depth3">

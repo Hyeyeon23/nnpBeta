@@ -27,6 +27,8 @@
     "gsap": "^3.13.0",
     "html2canvas": "^1.4.1",
     "i18next": "^25.7.4",
+    "imagesloaded": "^5.0.0",
+    "isotope-layout": "^3.0.6",
     "jarallax": "^2.2.1",
     "jquery": "^3.6.0",
     "jquery-collapse": "^1.1.2",

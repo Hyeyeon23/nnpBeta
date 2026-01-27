@@ -11,29 +11,6 @@ const AboutLayout = ({ lang, setLang }) => {
   const navigate = useNavigate();
 
   const section = location.pathname.split("/").pop(); // "vision" 또는 "ceo"
-  useEffect(() => {
-    // <main.js 재실행>라우트 변경 시마다
-    const reloadMainScript = () => {
-      console.log(section);
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
-
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    };
-
-    // main.js 재로드
-    //const cleanup = reloadMainScript();
-
-    // <main.js 재실행>
-
-    //return cleanup;
-  }, [location, section]);
 
   useEffect(() => {
     const roundNav = document.getElementById("roundNav");

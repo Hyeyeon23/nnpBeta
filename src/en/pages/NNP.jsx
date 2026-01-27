@@ -8,6 +8,12 @@ import ModalMain from "../components/modal/ModalMain";
 import HeaderEN from "../../components/common/HeaderEN";
 const NNP = ({ lang, setLang }) => {
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/common/js/main.js";
+    script.async = false;
+    document.body.appendChild(script);
+  }, []);
+  useEffect(() => {
     /**
      * 동영상 로드후 재생 보장
      */

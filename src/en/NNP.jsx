@@ -10,6 +10,16 @@ import CustomInquiryEN from "../components/customer/CustomInquiryEN";
 import ModalMain from "../components/modal/ModalMain";
 const NNPEN = ({ lang, setLang }) => {
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/common/js/main.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
     /**
      * 동영상 로드후 재생 보장
      */

@@ -12,7 +12,7 @@ export default function useSplitTextHero() {
         console.log("useSplitTextHero run");
 
         if (!window.SplitText) {
-            console.error("❌ SplitText 없음");
+            console.error(" SplitText 없음");
             return;
         }
 
@@ -24,7 +24,7 @@ export default function useSplitTextHero() {
                 const textEl = hero.querySelector("._split_text");
                 if (!textEl) return;
 
-                // 🔥 이미 쪼개진 경우 원복
+                //  이미 쪼개진 경우 원복
                 if (textEl._split) {
                     textEl._split.revert();
                 }
@@ -47,7 +47,8 @@ export default function useSplitTextHero() {
                 tl.from(split.chars, {
                     opacity: 0,
                     y: 50,
-                    duration: 1,
+                    rotation: 1,
+                    duration: 2,
                     ease: "back.out(1.7)",
                     stagger: 0.05,
                 });

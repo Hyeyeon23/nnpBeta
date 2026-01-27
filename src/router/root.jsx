@@ -229,14 +229,27 @@ export function createRouter(lang, setLang) {
             path: "containers",
             element:
               lang === "ko" ? (
-                <Container lang={lang} setLang={setLang} />
+                <Layout>
+                  <Container lang={lang} setLang={setLang} />
+                </Layout>
               ) : (
-                <ContainerEN lang={lang} setLang={setLang} />
+                <Layout>
+                  <ContainerEN lang={lang} setLang={setLang} />
+                </Layout>
               ),
           },
           {
             path: "product/:type",
-            element: lang === "ko" ? <Sort lang={lang} setLang={setLang} /> : <SortEN lang={lang} setLang={setLang} />,
+            element:
+              lang === "ko" ? (
+                <Layout>
+                  <Sort lang={lang} setLang={setLang} />
+                </Layout>
+              ) : (
+                <Layout>
+                  <SortEN lang={lang} setLang={setLang} />
+                </Layout>
+              ),
           },
         ],
       },
@@ -245,7 +258,9 @@ export function createRouter(lang, setLang) {
         path: "rnd",
         element: (
           <Suspense fallback={Loading}>
-            <RndLayout lang={lang} setLang={setLang}></RndLayout>
+            <Layout>
+              <RndLayout lang={lang} setLang={setLang}></RndLayout>
+            </Layout>
           </Suspense>
         ),
         children: [
@@ -277,7 +292,15 @@ export function createRouter(lang, setLang) {
             path: "contact",
             element: (
               <Suspense fallback={Loading}>
-                {lang === "ko" ? <Contact lang={lang} setLang={setLang} /> : <ContactEN lang="en" setLang={setLang} />}
+                {lang === "ko" ? (
+                  <Layout>
+                    <Contact lang={lang} setLang={setLang} />
+                  </Layout>
+                ) : (
+                  <Layout>
+                    <ContactEN lang="en" setLang={setLang} />
+                  </Layout>
+                )}
               </Suspense>
             ),
           },
@@ -285,7 +308,15 @@ export function createRouter(lang, setLang) {
             path: "faq",
             element: (
               <Suspense fallback={Loading}>
-                {lang === "ko" ? <Faq lang={lang} setLang={setLang} /> : <FaqEN lang="en" setLang={setLang} />}
+                {lang === "ko" ? (
+                  <Layout>
+                    <Faq lang={lang} setLang={setLang} />
+                  </Layout>
+                ) : (
+                  <Layout>
+                    <FaqEN lang="en" setLang={setLang} />
+                  </Layout>
+                )}
               </Suspense>
             ),
           },

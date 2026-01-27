@@ -41,6 +41,9 @@ function App() {
       // "/common/js/mainFunc.js",
     ];
 
+    if (window.location.pathname === "/") {
+      scripts.push("/common/js/main.js");
+    }
     scripts.forEach((src) => {
       const s = document.createElement("script");
       s.src = src;
@@ -48,6 +51,7 @@ function App() {
       document.body.appendChild(s);
     });
   }, []);
+
   const root = useMemo(() => createRouter(lang, setLang), [lang]);
   return (
     <>

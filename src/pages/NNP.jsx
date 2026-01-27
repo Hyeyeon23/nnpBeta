@@ -7,6 +7,12 @@ import CustomInquiry from "../components/customer/CustomInquiry";
 import ModalMain from "../components/modal/ModalMain";
 const NNP = ({ lang, setLang }) => {
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/common/js/main.js";
+    script.async = false;
+    document.body.appendChild(script);
+  }, []);
+  useEffect(() => {
     /**
      * 동영상 로드후 재생 보장
      */

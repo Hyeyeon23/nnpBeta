@@ -10,28 +10,6 @@ import HeaderEN from "../common/HeaderEN";
 const CompanyLayout = ({ lang, setLang }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  useEffect(() => {
-    // <main.js 재실행>라우트 변경 시마다
-    const reloadMainScript = () => {
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
-
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    };
-
-    // main.js 재로드
-    //const cleanup = reloadMainScript();
-
-    // <main.js 재실행>
-
-    //return cleanup;
-  }, [location]);
 
   // 스크롤 관련 로직을 위한 별도의 useEffect
   useEffect(() => {
