@@ -100,8 +100,6 @@ const HeaderEN = ({ color, lang, setLang }) => {
     return;
   };
 
-  const closeNav = () => {};
-
   return (
     <>
       <header className={color ? color : "gray"}>
@@ -139,8 +137,10 @@ const HeaderEN = ({ color, lang, setLang }) => {
                               </a>
                             </li>
                             <li>
-                              {/* <a href="#!" onClick={() => linkTo("/about/vision")}> */}
-                              <a href="/about/vision">Vision</a>
+                              <a href="#!" onClick={() => linkTo("/about/vision")}>
+                                {/* <a href="/about/vision"> */}
+                                Vision
+                              </a>
                             </li>
                             <li>
                               <a href="#!" onClick={() => linkTo("/about/road")}>
@@ -228,31 +228,44 @@ const HeaderEN = ({ color, lang, setLang }) => {
                     <div className="inner">
                       <ul className="gnb_depth2">
                         <li className="gbg05">
-                          {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
-                          <a href="/business/products">Product Type</a>
+                          <a href="#!" onClick={() => linkTo("/business/products")}>
+                            {/* <a href="/business/products"> */}
+                            Product Type
+                          </a>
                         </li>
                         <li className="gbg06">
-                          <a href="/business/containers">
-                            {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
+                          {/* <a href="/business/containers"> */}
+                          <a href="#!" onClick={() => linkTo("/business/containers")}>
                             Container Type
                           </a>
                         </li>
                         <li className="gbg07">
-                          <a href="/rnd/info" target="_blank" rel="noopener noreferrer">
+                          <a href="#!" onClick={() => linkTo("/rnd/info")}>
                             R&amp;D
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/rnd/info">About Us</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/info")}>
+                                About Us
+                              </a>
                             </li>
                             <li>
-                              <a href="/rnd/structure">Organizational Map</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/structure")}>
+                                {/* <a href="/rnd/structure"> */}
+                                Organizational Map
+                              </a>
                             </li>
                             <li>
-                              <a href="/rnd/equipment">Facilities & Equipment</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/structure")}>
+                                Facilities & Equipment
+                              </a>
+                              {/* <a href="/rnd/equipment">Facilities & Equipment</a> */}
                             </li>
                             <li>
-                              <a href="/rnd/research">Research Activities</a>
+                              <a href="#!" onClick={() => linkTo("/rnd/structure")}>
+                                Research Activities
+                              </a>
+                              {/* <a href="/rnd/research">Research Activities</a> */}
                             </li>
                           </ul>
                         </li>
@@ -273,8 +286,9 @@ const HeaderEN = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
-                              <a href="/brand/wizus/greenlemon">Lemon/Green Tea</a>
+                              <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                                Lemon/Green Tea
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -284,8 +298,8 @@ const HeaderEN = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/brand/healthy/sikhye">
-                                {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
+                              {/* <a href="/brand/healthy/sikhye"> */}
+                              <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
                                 Sikhye
                               </a>
                             </li>
@@ -298,8 +312,8 @@ const HeaderEN = ({ color, lang, setLang }) => {
                           </a>
                           <ul className="gnb_depth3">
                             <li>
-                              <a href="/brand/pb">
-                                {/* <a href="#!" onClick={() => linkTo("/brand/pb")}> */}
+                              {/* <a href="/brand/pb"> */}
+                              <a href="#!" onClick={() => linkTo("/brand/pb")}>
                                 Fruit Drinks
                               </a>
                             </li>
@@ -527,12 +541,16 @@ const HeaderEN = ({ color, lang, setLang }) => {
                   <div className="v_content">
                     <ul className="v_con_ul">
                       <li>
-                        {/* <a href="#!" onClick={() => linkTo("/business/products")}> */}
-                        <a href="/business/products">Product Type</a>
+                        <a href="#!" onClick={() => linkTo("/business/products")}>
+                          Product Type
+                        </a>
+                        {/* <a href="/business/products">Product Type</a> */}
                       </li>
                       <li>
-                        {/* <a href="#!" onClick={() => linkTo("/business/containers")}> */}
-                        <a href="/business/containers">Container Type</a>
+                        <a href="#!" onClick={() => linkTo("/business/containers")}>
+                          Container Type
+                        </a>
+                        {/* <a href="/business/containers">Container Type</a> */}
                       </li>
                       <li className="gbg07">
                         <ul className="gnb_depth3">
@@ -581,8 +599,10 @@ const HeaderEN = ({ color, lang, setLang }) => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            {/* <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}> */}
-                            <a href="/brand/wizus/greenlemon">Lemon/Green Tea </a>
+                            <a href="#!" onClick={() => linkTo("/brand/wizus/greenlemon")}>
+                              Lemon/Green Tea{" "}
+                            </a>
+                            {/* <a href="/brand/wizus/greenlemon">Lemon/Green Tea </a> */}
                           </dd>
                         </dl>
                       </li>
@@ -593,8 +613,10 @@ const HeaderEN = ({ color, lang, setLang }) => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
-                            <a href="/brand/healthy/sikhye">Sikhye</a>
+                            <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}>
+                              Sikhye
+                            </a>
+                            {/* <a href="/brand/healthy/sikhye">Sikhye</a> */}
                           </dd>
                         </dl>
                       </li>
@@ -605,7 +627,9 @@ const HeaderEN = ({ color, lang, setLang }) => {
                         </a>
                         <dl className="v_con_dl">
                           <dd>
-                            <a href="/brand/pb">Fruit Drinks</a>
+                            <a href="#!" onClick={() => linkTo("/brand/pb")}>
+                              Fruit Drinks
+                            </a>
                           </dd>
                         </dl>
                       </li>

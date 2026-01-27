@@ -13,7 +13,6 @@ const Product = ({ lang, setLang }) => {
   const linkToSub = (sub) => {
     navigate("/business/product/" + sub);
   };
-  const location = useLocation();
 
   useSplitTextHero();
   useGSAP(() => {

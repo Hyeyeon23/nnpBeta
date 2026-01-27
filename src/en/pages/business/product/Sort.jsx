@@ -5,298 +5,261 @@ import HeaderEN from "../../../../components/common/HeaderEN";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { jarallax } from "jarallax";
 import { animateScroll as scroll } from "react-scroll";
-
-const SortEN = ({ lang, setLang }) => {
-  const { type } = useParams();
-  const [data, setData] = useState(null);
-  const navigate = useNavigate();
-  useEffect(() => {
-    // 기존 jarallax destroy
-    jarallax(document.querySelectorAll(".jarallax"), "destroy");
-    console.log("location.pathname useEffect");
-    scroll.scrollToTop({
-      duration: 500, // 애니메이션 속도
-      smooth: true, // 부드럽게 이동
-    });
-
-    setData(location.pathname.split("/")[3]);
-  }, [location.pathname]); // 경로 변경될 때마다 실행
-
-  const datas = {
-    soy: {
-      title: "Nature & People Soy Milk",
-      crumble: " Soy Milk",
-      name: "Soy Milk Base Production",
-      keywords: { pre: "#utrition of Soybeans", mid: "#Customized", last: "#Korea’s First" },
-      heroImg: "/common/imgs/business/pro01_01.jpg",
-      heroImgM: "/common/imgs/business/proT_01.jpg",
-      images: {
-        pre: "/common/imgs/business/pro01_02.jpg",
-        mid: "/common/imgs/business/pro01_03.jpg",
-        last: "/common/imgs/business/pro01_04.jpg",
-      },
-      alt: {
-        hero: "대두와 두유",
-        pre: "두유병과 곡물들",
-        mid: "정식품 베지밀 에이 비 제품",
-        last: "매일두유",
-      },
-      descs: {
-        sec01: `Plant-based beverages trusted for decades,<br/>built on Korea’s original soy milk technology`,
-        sec02: `We manufacture soy milk bases that preserve the natural taste and nutrition of soybeans. Through rigorous raw-material selection, hygienic processing, and differentiated recipe development, we deliver the value of plant-based nutrition.`,
-        sec03: `							Backed by long-standing know-how and technical capability, Nature & People creates new opportunities for our partners and a diverse range of plant-based beverages for consumers. We will continue to lead the plant-based beverage market with safety and trust at our core.`,
-      },
+import useSwiper from "../../../../hooks/useSwiper";
+import { testimonialSwiperOptions } from "../../../../hooks/testimonialSwiperOptions ";
+import { destroyJarallax, initJarallax } from "../../../../hooks/useJallax";
+const datas = {
+  soy: {
+    title: "Nature & People Soy Milk",
+    crumble: " Soy Milk",
+    name: "Soy Milk Base Production",
+    keywords: { pre: "#utrition of Soybeans", mid: "#Customized", last: "#Korea’s First" },
+    heroImg: "/common/imgs/business/pro01_01.jpg",
+    heroImgM: "/common/imgs/business/proT_01.jpg",
+    images: {
+      pre: "/common/imgs/business/pro01_02.jpg",
+      mid: "/common/imgs/business/pro01_03.jpg",
+      last: "/common/imgs/business/pro01_04.jpg",
     },
-    protein: {
-      title: "Nature & People Protein Drinks",
-      crumble: " Protein",
-      name: "Protein Drinks",
-      keywords: { pre: "#Drinkable", mid: "#In One Pack", last: "#Anytime, Anywhere" },
-      heroImg: "/common/imgs/business/pro02_01.jpg",
-      heroImgM: "/common/imgs/business/proT_02.jpg",
-      images: {
-        pre: "/common/imgs/business/pro02_02.jpg",
-        mid: "/common/imgs/business/pro02_03.jpg",
-        last: "/common/imgs/business/pro02_04.jpg",
-      },
-      alt: {
-        hero: "대두와 두유",
-        pre: "두유병과 곡물들",
-        mid: "정식품 베지밀 에이 비 제품",
-        last: "매일두유",
-      },
-      descs: {
-        sec01: `"From fast absorption to slow digestion, <br/>customized high-protein beverages"`,
-        sec02: `We manufacture high-protein, low-sugar protein drinks tailored to evolving consumer lifestyles. We propose recipes suited to sports, diet, wellness, and nutritious snacking, pursuing the right balance between nutrition and taste.`,
-        sec03: `
+    alt: {
+      hero: "대두와 두유",
+      pre: "두유병과 곡물들",
+      mid: "정식품 베지밀 에이 비 제품",
+      last: "매일두유",
+    },
+    descs: {
+      sec01: `Plant-based beverages trusted for decades,<br/>built on Korea’s original soy milk technology`,
+      sec02: `We manufacture soy milk bases that preserve the natural taste and nutrition of soybeans. Through rigorous raw-material selection, hygienic processing, and differentiated recipe development, we deliver the value of plant-based nutrition.`,
+      sec03: `							Backed by long-standing know-how and technical capability, Nature & People creates new opportunities for our partners and a diverse range of plant-based beverages for consumers. We will continue to lead the plant-based beverage market with safety and trust at our core.`,
+    },
+  },
+  protein: {
+    title: "Nature & People Protein Drinks",
+    crumble: " Protein",
+    name: "Protein Drinks",
+    keywords: { pre: "#Drinkable", mid: "#In One Pack", last: "#Anytime, Anywhere" },
+    heroImg: "/common/imgs/business/pro02_01.jpg",
+    heroImgM: "/common/imgs/business/proT_02.jpg",
+    images: {
+      pre: "/common/imgs/business/pro02_02.jpg",
+      mid: "/common/imgs/business/pro02_03.jpg",
+      last: "/common/imgs/business/pro02_04.jpg",
+    },
+    alt: {
+      hero: "대두와 두유",
+      pre: "두유병과 곡물들",
+      mid: "정식품 베지밀 에이 비 제품",
+      last: "매일두유",
+    },
+    descs: {
+      sec01: `"From fast absorption to slow digestion, <br/>customized high-protein beverages"`,
+      sec02: `We manufacture high-protein, low-sugar protein drinks tailored to evolving consumer lifestyles. We propose recipes suited to sports, diet, wellness, and nutritious snacking, pursuing the right balance between nutrition and taste.`,
+      sec03: `
 							With extensive OEM/ODM experience, Nature &amp; People reflects the latest trends and proposes tailored planning to strengthen our partners’ brand value and competitiveness.
 
 							`,
-      },
     },
-    balance: {
-      title: "Nature & People Balanced Nutrition Formula",
-      crumble: "Balanced Nutrition Formula",
-      name: "Balanced Nutrition Formula",
-      keywords: { pre: "#Nutrition-Focused", mid: "#Healthy Habits", last: "#Balanced Design" },
-      heroImg: "/common/imgs/business/pro03_01.jpg",
-      heroImgM: "/common/imgs/business/proT_03.jpg",
-      images: {
-        pre: "/common/imgs/business/pro03_02.jpg",
-        mid: "/common/imgs/business/pro03_03.jpg",
-        last: "/common/imgs/business/pro03_04.jpg",
-      },
-      alt: {
-        hero: "대두와 두유",
-        pre: "두유병과 곡물들",
-        mid: "정식품 베지밀 에이 비 제품",
-        last: "매일두유",
-      },
-      descs: {
-        sec01: `"Patient & senior nutrition beverages scientifically balanced nutrition"`,
-        sec02: `Nature & People specializes in balanced nutrition formulas for patients and seniors. For those who need nutritional support, we design protein, vitamins, and minerals scientifically to deliver safe, well-balanced beverages.`,
-        sec03: `
+  },
+  balance: {
+    title: "Nature & People Balanced Nutrition Formula",
+    crumble: "Balanced Nutrition Formula",
+    name: "Balanced Nutrition Formula",
+    keywords: { pre: "#Nutrition-Focused", mid: "#Healthy Habits", last: "#Balanced Design" },
+    heroImg: "/common/imgs/business/pro03_01.jpg",
+    heroImgM: "/common/imgs/business/proT_03.jpg",
+    images: {
+      pre: "/common/imgs/business/pro03_02.jpg",
+      mid: "/common/imgs/business/pro03_03.jpg",
+      last: "/common/imgs/business/pro03_04.jpg",
+    },
+    alt: {
+      hero: "대두와 두유",
+      pre: "두유병과 곡물들",
+      mid: "정식품 베지밀 에이 비 제품",
+      last: "매일두유",
+    },
+    descs: {
+      sec01: `"Patient & senior nutrition beverages scientifically balanced nutrition"`,
+      sec02: `Nature & People specializes in balanced nutrition formulas for patients and seniors. For those who need nutritional support, we design protein, vitamins, and minerals scientifically to deliver safe, well-balanced beverages.`,
+      sec03: `
 							We manufacture based on professional formulation design so that essential daily nutrition can be consumed with confidence. Together with B2B partners, we plan products that consider diverse ages and living environments, and supply them reliably through OEM/ODM.
 							`,
-      },
     },
-    particle: {
-      title: "Nature & People Particle Drink",
-      crumble: " Particle Drink",
-      name: "Particle Drink",
-      keywords: { pre: "#Chewy", mid: "#Bouncy Inclusions", last: "#Fun Texture" },
-      heroImg: "/common/imgs/business/pro04_01.jpg",
-      heroImgM: "/common/imgs/business/proT_04.jpg",
-      images: {
-        pre: "/common/imgs/business/pro04_02.jpg",
-        mid: "/common/imgs/business/pro04_03.jpg",
-        last: "/common/imgs/business/pro04_04.jpg",
-      },
-      alt: {
-        hero: "파티클 있는 음료와 과일들",
-        pre: "두유병과 곡물들",
-        mid: "정식품 베지밀 에이 비 제품",
-        last: "매일두유",
-      },
-      descs: {
-        sec01: `"RTD beverages with inclusions for a chewy experience Coconut jelly, aloe, and more"`,
-        sec02: `Particle drinks are a category that offers new textures and unique enjoyment, especially among younger consumers. Leveraging our OEM/ODM experience, Nature & People flexibly plans and supplies particle beverages using coconut jelly, aloe, and other inclusions.`,
-        sec03: `A distinctive mouthfeel expands the enjoyment of drinking. In a market seeking new experiences, we lead differentiated value based on proprietary technology.
+  },
+  particle: {
+    title: "Nature & People Particle Drink",
+    crumble: " Particle Drink",
+    name: "Particle Drink",
+    keywords: { pre: "#Chewy", mid: "#Bouncy Inclusions", last: "#Fun Texture" },
+    heroImg: "/common/imgs/business/pro04_01.jpg",
+    heroImgM: "/common/imgs/business/proT_04.jpg",
+    images: {
+      pre: "/common/imgs/business/pro04_02.jpg",
+      mid: "/common/imgs/business/pro04_03.jpg",
+      last: "/common/imgs/business/pro04_04.jpg",
+    },
+    alt: {
+      hero: "파티클 있는 음료와 과일들",
+      pre: "두유병과 곡물들",
+      mid: "정식품 베지밀 에이 비 제품",
+      last: "매일두유",
+    },
+    descs: {
+      sec01: `"RTD beverages with inclusions for a chewy experience Coconut jelly, aloe, and more"`,
+      sec02: `Particle drinks are a category that offers new textures and unique enjoyment, especially among younger consumers. Leveraging our OEM/ODM experience, Nature & People flexibly plans and supplies particle beverages using coconut jelly, aloe, and other inclusions.`,
+      sec03: `A distinctive mouthfeel expands the enjoyment of drinking. In a market seeking new experiences, we lead differentiated value based on proprietary technology.
 `,
-      },
     },
-    sikhye: {
-      title: " Nature & People Sikhye",
-      crumble: "Sikhye",
-      name: "Sikhye Manufacturing",
-      keywords: { pre: "#Traditional", mid: "#Sweetness Adjustable", last: "#Preference Respected" },
-      heroImg: "/common/imgs/business/pro05_01.jpg",
-      heroImgM: "/common/imgs/business/proT_05.jpg",
-      images: {
-        pre: "/common/imgs/business/pro05_02.jpg",
-        mid: "/common/imgs/business/pro05_03.jpg",
-        last: "/common/imgs/business/pro05_04.jpg",
-      },
-      alt: {
-        hero: "파티클 있는 음료와 과일들",
-        pre: "두유병과 곡물들",
-        mid: "정식품 베지밀 에이 비 제품",
-        last: "매일두유",
-      },
-      descs: {
-        sec01: `Traditional Sikhye with real rice grains Healthier with low sugar & low calories`,
-        sec02: `Nature & People produces traditional Sikhye with intact rice grains through modern technology and hygienic processes. While preserving the natural sweetness of the traditional style, we developed low-sugar, low-calorie recipes that can be enjoyed with confidence by all ages.`,
-        sec03: `While retaining the appeal of traditional Sikhye, we reflect modern lifestyles by offering options with or without rice grains and adjustable sweetness. In addition, can packaging enhances portability and long shelf life so it can be enjoyed anytime, anywhere.`,
-      },
+  },
+  sikhye: {
+    title: " Nature & People Sikhye",
+    crumble: "Sikhye",
+    name: "Sikhye Manufacturing",
+    keywords: { pre: "#Traditional", mid: "#Sweetness Adjustable", last: "#Preference Respected" },
+    heroImg: "/common/imgs/business/pro05_01.jpg",
+    heroImgM: "/common/imgs/business/proT_05.jpg",
+    images: {
+      pre: "/common/imgs/business/pro05_02.jpg",
+      mid: "/common/imgs/business/pro05_03.jpg",
+      last: "/common/imgs/business/pro05_04.jpg",
     },
-    sauce: {
-      title: "Nature & People Sauce & Broth",
-      crumble: "Sauce & Broth",
-      name: "Sauce & Broth",
-      keywords: { pre: "#Liquid", mid: "#HMR", last: "#Finishing Touch" },
-      heroImg: "/common/imgs/business/pro06_01.jpg",
-      heroImgM: "/common/imgs/business/proT_06.jpg",
-      images: {
-        pre: "/common/imgs/business/pro06_02.jpg",
-        mid: "/common/imgs/business/pro06_03.jpg",
-        last: "/common/imgs/business/pro06_04.jpg",
-      },
-      alt: {
-        hero: "파티클 있는 음료와 과일들",
-        pre: "풀무원 요리육수 전골",
-        mid: "반죽에 토마토소스",
-        last: "담백한 채소육수와 요리",
-      },
-      descs: {
-        sec01: `Versatile liquid broths Ideal for foodservice, HMR, and catering in large formats`,
-        sec02: `Sauces and broths are widely used across foodservice, institutional catering, and HMR (home meal replacement). Through liquid sauces and broths, Nature & People improves cooking convenience and elevates flavor consistency.`,
-        sec03: `Sauces and broths are highly versatile and can be applied in various ways in a convenient liquid format with rich flavor. Optimized for large-volume operations, they support cooking efficiency and consistent taste.`,
-      },
+    alt: {
+      hero: "파티클 있는 음료와 과일들",
+      pre: "두유병과 곡물들",
+      mid: "정식품 베지밀 에이 비 제품",
+      last: "매일두유",
     },
-    sterilized: {
-      title: "Nature & People UHT Milk",
-      crumble: "UHT Milk",
-      name: "UHT Milk",
-      keywords: { pre: "#UHT", mid: "#Freshness", last: "#Shelf-Stable" },
-      heroImg: "/common/imgs/business/pro07_01.jpg",
-      heroImgM: "/common/imgs/business/proT_07.jpg",
-      images: {
-        pre: "/common/imgs/business/pro07_02.jpg",
-        mid: "/common/imgs/business/pro07_03.jpg",
-        last: "/common/imgs/business/pro07_04.jpg",
-      },
-      alt: {
-        hero: "파티클 있는 음료와 과일들",
-        pre: "유제품을 만드는 과정",
-        mid: "파스퇴르 무항생제 바른목장스",
-        last: "바나나맛 우유",
-      },
-      descs: {
-        sec01: `"UHT milk in various sizes Shelf-stable for long-lasting convenience"`,
-        sec02: `Nature & People produces UHT (ultra-high temperature) milk with minimized nutrient loss and enhanced safety. Shelf-stable storage helps maintain quality for longer periods. Custom production is available in a wide range of sizes—from single-serve to large formats—for foodservice and institutional use.`,
-        sec03: `Our shelf-stable milk solutions support diverse partner requirements with convenient distribution and storage. Prioritizing safety and quality, we provide products you can trust—widely used across catering and foodservice—backed by hygienic processes and rigorous quality control.`,
-      },
+    descs: {
+      sec01: `Traditional Sikhye with real rice grains Healthier with low sugar & low calories`,
+      sec02: `Nature & People produces traditional Sikhye with intact rice grains through modern technology and hygienic processes. While preserving the natural sweetness of the traditional style, we developed low-sugar, low-calorie recipes that can be enjoyed with confidence by all ages.`,
+      sec03: `While retaining the appeal of traditional Sikhye, we reflect modern lifestyles by offering options with or without rice grains and adjustable sweetness. In addition, can packaging enhances portability and long shelf life so it can be enjoyed anytime, anywhere.`,
     },
-    juice: {
-      title: "Nature & People Juice",
-      crumble: "Juice",
-      name: "Juice",
-      keywords: { pre: "#Fruit", mid: "#Vegetable", last: "#Blends" },
-      heroImg: "/common/imgs/business/pro08_01.jpg",
-      heroImgM: "/common/imgs/business/proT_08.jpg",
-      images: {
-        pre: "/common/imgs/business/pro08_02.jpg",
-        mid: "/common/imgs/business/pro08_03.jpg",
-        last: "/common/imgs/business/pro08_04.jpg",
-      },
-      alt: {
-        hero: "다양한 주스류 생산이 가능합니다.",
-        pre: "유제품을 만드는 과정",
-        mid: "파스퇴르 무항생제 바른목장스",
-        last: "바나나맛 우유",
-      },
-      descs: {
-        sec01: `Fruit & vegetable juices designed for taste and wellness Fruit–vegetable blending available`,
-        sec02: `Based on fruit and vegetable ingredients, we realize a wide range of recipes aligned with your brand concept. We can accommodate diverse requests, collaborate to optimize the product, and deliver reliable quality.
+  },
+  sauce: {
+    title: "Nature & People Sauce & Broth",
+    crumble: "Sauce & Broth",
+    name: "Sauce & Broth",
+    keywords: { pre: "#Liquid", mid: "#HMR", last: "#Finishing Touch" },
+    heroImg: "/common/imgs/business/pro06_01.jpg",
+    heroImgM: "/common/imgs/business/proT_06.jpg",
+    images: {
+      pre: "/common/imgs/business/pro06_02.jpg",
+      mid: "/common/imgs/business/pro06_03.jpg",
+      last: "/common/imgs/business/pro06_04.jpg",
+    },
+    alt: {
+      hero: "파티클 있는 음료와 과일들",
+      pre: "풀무원 요리육수 전골",
+      mid: "반죽에 토마토소스",
+      last: "담백한 채소육수와 요리",
+    },
+    descs: {
+      sec01: `Versatile liquid broths Ideal for foodservice, HMR, and catering in large formats`,
+      sec02: `Sauces and broths are widely used across foodservice, institutional catering, and HMR (home meal replacement). Through liquid sauces and broths, Nature & People improves cooking convenience and elevates flavor consistency.`,
+      sec03: `Sauces and broths are highly versatile and can be applied in various ways in a convenient liquid format with rich flavor. Optimized for large-volume operations, they support cooking efficiency and consistent taste.`,
+    },
+  },
+  sterilized: {
+    title: "Nature & People UHT Milk",
+    crumble: "UHT Milk",
+    name: "UHT Milk",
+    keywords: { pre: "#UHT", mid: "#Freshness", last: "#Shelf-Stable" },
+    heroImg: "/common/imgs/business/pro07_01.jpg",
+    heroImgM: "/common/imgs/business/proT_07.jpg",
+    images: {
+      pre: "/common/imgs/business/pro07_02.jpg",
+      mid: "/common/imgs/business/pro07_03.jpg",
+      last: "/common/imgs/business/pro07_04.jpg",
+    },
+    alt: {
+      hero: "파티클 있는 음료와 과일들",
+      pre: "유제품을 만드는 과정",
+      mid: "파스퇴르 무항생제 바른목장스",
+      last: "바나나맛 우유",
+    },
+    descs: {
+      sec01: `"UHT milk in various sizes Shelf-stable for long-lasting convenience"`,
+      sec02: `Nature & People produces UHT (ultra-high temperature) milk with minimized nutrient loss and enhanced safety. Shelf-stable storage helps maintain quality for longer periods. Custom production is available in a wide range of sizes—from single-serve to large formats—for foodservice and institutional use.`,
+      sec03: `Our shelf-stable milk solutions support diverse partner requirements with convenient distribution and storage. Prioritizing safety and quality, we provide products you can trust—widely used across catering and foodservice—backed by hygienic processes and rigorous quality control.`,
+    },
+  },
+  juice: {
+    title: "Nature & People Juice",
+    crumble: "Juice",
+    name: "Juice",
+    keywords: { pre: "#Fruit", mid: "#Vegetable", last: "#Blends" },
+    heroImg: "/common/imgs/business/pro08_01.jpg",
+    heroImgM: "/common/imgs/business/proT_08.jpg",
+    images: {
+      pre: "/common/imgs/business/pro08_02.jpg",
+      mid: "/common/imgs/business/pro08_03.jpg",
+      last: "/common/imgs/business/pro08_04.jpg",
+    },
+    alt: {
+      hero: "다양한 주스류 생산이 가능합니다.",
+      pre: "유제품을 만드는 과정",
+      mid: "파스퇴르 무항생제 바른목장스",
+      last: "바나나맛 우유",
+    },
+    descs: {
+      sec01: `Fruit & vegetable juices designed for taste and wellness Fruit–vegetable blending available`,
+      sec02: `Based on fruit and vegetable ingredients, we realize a wide range of recipes aligned with your brand concept. We can accommodate diverse requests, collaborate to optimize the product, and deliver reliable quality.
 
 `,
-        sec03: `As an OEM/ODM specialist, Nature & People faithfully reflects our partners’ ideas and concepts in finished beverages. We also review alternatives suited to the intended market and positioning. Through safe processing, we deliver reliable quality and support brands in bringing products to market as envisioned.`,
-      },
+      sec03: `As an OEM/ODM specialist, Nature & People faithfully reflects our partners’ ideas and concepts in finished beverages. We also review alternatives suited to the intended market and positioning. Through safe processing, we deliver reliable quality and support brands in bringing products to market as envisioned.`,
     },
-    coffee: {
-      title: "Nature & People Coffee",
-      crumble: "Coffee",
-      name: "Coffee Manufacturing",
-      keywords: { pre: "#RTD Coffee", mid: "#Convenient", last: "#Various Flavors" },
-      heroImg: "/common/imgs/business/pro09_01.jpg",
-      heroImgM: "/common/imgs/business/proT_01.jpg",
-      images: {
-        pre: "/common/imgs/business/pro09_02.jpg",
-        mid: "/common/imgs/business/pro09_03.jpg",
-        last: "/common/imgs/business/pro09_04.jpg",
-      },
-      alt: {
-        hero: "커피를 로스팅하는 모습",
-        pre: "유제품을 만드는 과정",
-        mid: "파스퇴르 무항생제 바른목장스",
-        last: "바나나맛 우유",
-      },
-      descs: {
-        sec01: `"A broad RTD lineup—from black to latte Customized RTD production"`,
-        sec02: `We deliver a clean and stable taste while preserving the intrinsic aroma and flavor of coffee beans, with customized production in RTD (ready-to-drink) formats. Through OEM/ODM, we can develop a coffee lineup aligned with your brand concept, supporting both café-dedicated and consumer channels.`,
-        sec03: `RTD coffee has become a convenient daily beverage and continues to grow steadily in domestic and global markets. As an OEM/ODM specialist, Nature & People quickly provides recipes, packaging options, and distribution formats tailored to partner needs.`,
-      },
+  },
+  coffee: {
+    title: "Nature & People Coffee",
+    crumble: "Coffee",
+    name: "Coffee Manufacturing",
+    keywords: { pre: "#RTD Coffee", mid: "#Convenient", last: "#Various Flavors" },
+    heroImg: "/common/imgs/business/pro09_01.jpg",
+    heroImgM: "/common/imgs/business/proT_01.jpg",
+    images: {
+      pre: "/common/imgs/business/pro09_02.jpg",
+      mid: "/common/imgs/business/pro09_03.jpg",
+      last: "/common/imgs/business/pro09_04.jpg",
     },
-  };
+    alt: {
+      hero: "커피를 로스팅하는 모습",
+      pre: "유제품을 만드는 과정",
+      mid: "파스퇴르 무항생제 바른목장스",
+      last: "바나나맛 우유",
+    },
+    descs: {
+      sec01: `"A broad RTD lineup—from black to latte Customized RTD production"`,
+      sec02: `We deliver a clean and stable taste while preserving the intrinsic aroma and flavor of coffee beans, with customized production in RTD (ready-to-drink) formats. Through OEM/ODM, we can develop a coffee lineup aligned with your brand concept, supporting both café-dedicated and consumer channels.`,
+      sec03: `RTD coffee has become a convenient daily beverage and continues to grow steadily in domestic and global markets. As an OEM/ODM specialist, Nature & People quickly provides recipes, packaging options, and distribution formats tailored to partner needs.`,
+    },
+  },
+};
+const SortEN = ({ lang, setLang }) => {
+  const { type } = useParams();
+  const [data, setData] = useState(datas[type]);
 
+  useSwiper(".testmonial2-slide-active", testimonialSwiperOptions);
   useEffect(() => {
-    switch (type) {
-      case "soy":
-        setData(datas.soy);
-        break;
-      case "protein":
-        setData(datas.protein);
-        break;
-      case "balance":
-        setData(datas.balance);
-        break;
-      case "particle":
-        setData(datas.particle);
-        break;
-      case "sikhye":
-        setData(datas.sikhye);
-        break;
-      case "sauce":
-        setData(datas.sauce);
-        break;
-      case "sterilized":
-        setData(datas.sterilized);
-        break;
-      case "juice":
-        setData(datas.juice);
-        break;
-      case "coffee":
-        setData(datas.coffee);
-        break;
-      default:
-        setData(null);
-    }
-    console.log("type = ", type);
+    if (!data?.heroImg) return;
 
-    // <main.js 재실행>라우트 변경 시마다
-    const timer = setTimeout(() => {
-      const script = document.createElement("script");
-      script.src = "/common/js/main.js?ts=" + Date.now();
-      script.async = false;
-      document.body.appendChild(script);
-    }, 0);
+    destroyJarallax(".jarallax");
 
-    return () => clearTimeout(timer);
-  }, [type]);
+    const t = setTimeout(() => {
+      initJarallax(".jarallax", 0.2);
+    }, 1);
 
-  const linkToSub = (sub) => {
-    navigate("/business/product/" + sub);
-  };
+    return () => {
+      clearTimeout(t);
+      destroyJarallax(".jarallax");
+    };
+  }, [data]);
+  useEffect(() => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: true,
+    });
+  }, [data]);
+
   console.log(data);
   return (
     <>
@@ -395,7 +358,7 @@ const SortEN = ({ lang, setLang }) => {
             <div className="swiper testmonial2-slide-active">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("soy")}>
+                  <a href="#!" onClick={() => setData(datas["soy"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Soy Milk</p>
@@ -415,7 +378,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("protein")}>
+                  <a href="#!" onClick={() => setData(datas["protein"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Protein Drink</p>
@@ -438,7 +401,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a onClick={() => linkToSub("balance")}>
+                  <a onClick={() => setData(datas["balance"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Balanced Nutrition Formula</p>
@@ -459,7 +422,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a onClick={() => linkToSub("particle")}>
+                  <a onClick={() => setData(datas["particle"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p class="f40 fw600 grayn1 lh150">Particle Drink</p>{" "}
@@ -480,7 +443,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("sikhye")}>
+                  <a href="#!" onClick={() => setData(datas["sikhye"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Traditional</p>
@@ -501,7 +464,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("sauce")}>
+                  <a href="#!" onClick={() => setData(datas["sauce"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Sauce & Broth</p>{" "}
@@ -522,7 +485,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("sterilized")}>
+                  <a href="#!" onClick={() => setData(datas["sterilized"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">UHT Milk</p>{" "}
@@ -543,7 +506,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("juice")}>
+                  <a href="#!" onClick={() => setData(datas["juice"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Juice</p>
@@ -564,7 +527,7 @@ const SortEN = ({ lang, setLang }) => {
                 </div>
 
                 <div className="swiper-slide">
-                  <a href="#!" onClick={() => linkToSub("coffee")}>
+                  <a href="#!" onClick={() => setData(datas["coffee"])}>
                     <div className="cardBox d-flex">
                       <div className="cardLeft">
                         <p className="f40 fw600 grayn1 lh150">Coffee</p>

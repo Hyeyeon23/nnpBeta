@@ -1,41 +1,50 @@
-import React, { useEffect } from "react";
-import Header from "../../../../components/common/Header";
-
-import { useNavigate, useLocation } from "react-router-dom";
+import gsap from "gsap";
+import { useNavigate } from "react-router-dom";
 import MetaEN from "../../../../components/common/MetaEN";
 
 import FooterReactEN from "../../../../components/common/FooterReactEN";
 import HeaderEN from "../../../../components/common/HeaderEN";
+import { SplitText } from "gsap/SplitText";
+import useSplitTextHero from "../../../../hooks/useSplitTextHero";
+import { useGSAP } from "@gsap/react";
 
 const ProductEN = ({ lang, setLang }) => {
   const navigate = useNavigate();
-  const location = useLocation();
+
   const linkToSub = (sub) => {
     navigate("/business/product/" + sub);
   };
 
-  useEffect(() => {
-    // <main.js 재실행>라우트 변경 시마다
-    const reloadMainScript = () => {
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
+  useSplitTextHero();
+  useGSAP(() => {
+    // GSAP title animation
+    const splitTitleLines = gsap.utils.toArray(".rr_title_anim");
+    splitTitleLines.forEach((splitTextLine) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: splitTextLine,
+          start: "top 90%",
+          end: "bottom 60%",
+          scrub: false,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      });
 
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    };
-
-    // main.js 재로드
-    const cleanup = reloadMainScript();
-
-    // <main.js 재실행>
-
-    return cleanup;
-  }, [location]);
+      const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+      gsap.set(splitTextLine, { perspective: 400 });
+      itemSplitted.split({ type: "lines" });
+      tl.from(itemSplitted.lines, {
+        duration: 1,
+        delay: 0.3,
+        opacity: 0,
+        rotationX: -80,
+        force3D: true,
+        transformOrigin: "top center -50",
+        stagger: 0.1,
+      });
+    });
+  });
 
   return (
     <>

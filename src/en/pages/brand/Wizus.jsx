@@ -7,9 +7,27 @@ import "swiper/css/autoplay";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLocation } from "react-router-dom";
+import { useLayoutEffect, useRef } from "react";
+import useProjectPanelPin from "../../../hooks/useProjectPanelPin";
+import useHoverReveal from "../../../hooks/useHoverReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 const WizusEN = () => {
+  const location = useLocation();
+
+  const pageRef = useRef(null);
+  useProjectPanelPin(pageRef);
+  useHoverReveal([location.pathname]);
+  useLayoutEffect(() => {
+    document.querySelectorAll(".rr-hover-reveal-bg[data-background]").forEach((el) => {
+      const bg = el.getAttribute("data-background");
+      el.style.backgroundImage = `url(${bg})`;
+      el.style.backgroundSize = "cover";
+      el.style.backgroundRepeat = "no-repeat";
+      el.style.backgroundPosition = "center";
+    });
+  }, [location.pathname]);
   return (
     <>
       {/* Brand Swiper section */}
@@ -40,7 +58,9 @@ const WizusEN = () => {
           </div>
         </div>
       </section>
-      <section className="project-section-2__area project-section-2  section-space-top-160 section-space-bottom-160 brandCard">
+      <section
+        ref={pageRef}
+        className="project-section-2__area project-section-2  section-space-top-160 section-space-bottom-160 brandCard">
         <div className="container">
           <div className="section__title-wrapper section__title-wrapper-3 hero">
             <div className="wizus_logo">

@@ -4,30 +4,27 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { useLocation } from "react-router-dom";
+import { useLayoutEffect, useRef } from "react";
+import useProjectPanelPin from "../../../hooks/useProjectPanelPin";
+import useHoverReveal from "../../../hooks/useHoverReveal";
 
 const PBEN = () => {
-  // useEffect(() => {
-  //   // <main.js 재실행>라우트 변경 시마다
-  //   const reloadMainScript = () => {
-  //     const mainScript = document.createElement("script");
-  //     mainScript.src = "/common/js/main.js";
-  //     mainScript.async = false;
-  //     document.body.appendChild(mainScript);
+  const location = useLocation();
 
-  //     return () => {
-  //       if (mainScript && document.body.contains(mainScript)) {
-  //         document.body.removeChild(mainScript);
-  //       }
-  //     };
-  //   };
+  const pageRef = useRef(null);
+  useProjectPanelPin(pageRef);
+  useHoverReveal([location.pathname]);
+  useLayoutEffect(() => {
+    document.querySelectorAll(".rr-hover-reveal-bg[data-background]").forEach((el) => {
+      const bg = el.getAttribute("data-background");
+      el.style.backgroundImage = `url(${bg})`;
+      el.style.backgroundSize = "cover";
+      el.style.backgroundRepeat = "no-repeat";
+      el.style.backgroundPosition = "center";
+    });
+  }, [location.pathname]);
 
-  //   // main.js 재로드
-  //   const cleanup = reloadMainScript();
-
-  //   // <main.js 재실행>
-
-  //   return cleanup;
-  // }, []);
   return (
     <>
       {/* Brand Swiper section */}
@@ -61,7 +58,9 @@ const PBEN = () => {
           </div>
         </div>
       </section>
-      <section className="project-section-2__area project-section-2 section-space-top-160 section-space-bottom-160 brandCard">
+      <section
+        ref={pageRef}
+        className="project-section-2__area project-section-2 section-space-top-160 section-space-bottom-160 brandCard">
         <div className="container">
           <div className="section__title-wrapper section__title-wrapper-3 hero">
             <div className="wizus_logo">

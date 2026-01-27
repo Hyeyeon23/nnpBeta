@@ -3,25 +3,40 @@ import React, { useEffect } from "react";
 import MetaEN from "../../../components/common/MetaEN";
 import HeaderEN from "../../../components/common/HeaderEN";
 import FooterReactEN from "../../../components/common/FooterReactEN";
+import { destroyIsotope, filterIsotope, initIsotope } from "../../../hooks/useIsotope";
 const ContainerEN = ({ lang, setLang }) => {
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      const mainScript = document.createElement("script");
-      mainScript.src = "/common/js/main.js";
-      mainScript.async = false;
-      document.body.appendChild(mainScript);
+    // DOM 안정화 후 init
+    const t = setTimeout(() => {
+      initIsotope(".grid");
+    }, 0);
 
-      // cleanup 함수
-      return () => {
-        if (mainScript && document.body.contains(mainScript)) {
-          document.body.removeChild(mainScript);
-        }
-      };
-    }, 500); // 500ms 지연
+    // 이벤트 바인딩 (jQuery 없이)
+    const filterWrap = document.querySelector(".blog10__filter");
 
-    return () => clearTimeout(timeoutId);
+    const onClick = (e) => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+
+      const filterValue = btn.getAttribute("data-filter");
+
+      filterIsotope(filterValue);
+
+      // active 클래스 처리
+      btn.parentElement.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
+      btn.classList.add("active");
+
+      e.preventDefault();
+    };
+
+    filterWrap?.addEventListener("click", onClick);
+
+    return () => {
+      clearTimeout(t);
+      filterWrap?.removeEventListener("click", onClick);
+      destroyIsotope();
+    };
   }, []);
-
   return (
     <>
       <MetaEN
