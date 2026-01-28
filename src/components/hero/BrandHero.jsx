@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLocation } from "react-router-dom";
@@ -11,7 +11,7 @@ const BrandHero = ({ lang }) => {
   const captionRef = useRef(null);
   const location = useLocation();
 
-  // 🔥 SPA 네비게이션 대응
+  //  글자 마우스 갖다대면 우아앙 하고 번지듯 퍼지는 효과
   useHeightTitles([location.pathname]);
 
   if (lang === "ko") {

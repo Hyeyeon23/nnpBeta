@@ -14,8 +14,10 @@ const Healthy = () => {
   const location = useLocation();
 
   const pageRef = useRef(null);
+  // 스크롤에 어느 지점 오면 카드 고정/겹치는 효과
   useProjectPanelPin(pageRef);
-  useHoverReveal([location.pathname]);
+
+  useHoverReveal(".rr-hover-reveal-item", [location.pathname]);
   useLayoutEffect(() => {
     document.querySelectorAll(".rr-hover-reveal-bg[data-background]").forEach((el) => {
       const bg = el.getAttribute("data-background");

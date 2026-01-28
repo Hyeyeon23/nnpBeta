@@ -136,8 +136,10 @@ const Header = ({ color, lang, setLang }) => {
                               </a>
                             </li>
                             <li>
-                              {/* <a href="#!" onClick={() => linkTo("/about/vision")}> */}
-                              <a href="/about/vision">비젼</a>
+                              <a href="#!" onClick={() => linkTo("/about/vision")}>
+                                {/* <a href="/about/vision"> */}
+                                비젼
+                              </a>
                             </li>
                             <li>
                               <a href="#!" onClick={() => linkTo("/about/road")}>
@@ -258,7 +260,7 @@ const Header = ({ color, lang, setLang }) => {
                             </li>
                             <li>
                               <a href="#!" onClick={() => linkTo("/rnd/research")}>
-                                연구현황
+                                현황
                               </a>
                             </li>
                           </ul>

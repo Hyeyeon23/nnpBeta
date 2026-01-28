@@ -20,7 +20,7 @@ const Wizus = () => {
 
   const pageRef = useRef(null);
   useProjectPanelPin(pageRef);
-  useHoverReveal([location.pathname]);
+  useHoverReveal(".rr-hover-reveal-item", [location.pathname]);
   useLayoutEffect(() => {
     document.querySelectorAll(".rr-hover-reveal-bg[data-background]").forEach((el) => {
       const bg = el.getAttribute("data-background");
