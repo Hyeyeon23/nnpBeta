@@ -7,6 +7,27 @@ function App() {
   const [lang, setLang] = useState(() => {
     return localStorage.getItem("nnplang") || "ko";
   });
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem("nnplang");
+    if (savedLang) return;
+
+    fetch("https://ipwho.is/")
+      .then((res) => {
+        if (!res.ok) throw new Error("network error");
+        return res.json();
+      })
+      .then((data) => {
+        console.log("data.country_code = " + data.country_code);
+        const nextLang = data.country_code === "KR" ? "ko" : "en";
+        setLang(nextLang);
+        localStorage.setItem("nnplang", nextLang);
+      })
+      .catch((err) => {
+        console.warn("IP 체크 실패, 기본 언어 유지", err);
+      });
+  }, []);
+
   useEffect(() => {
     const scripts = [
       "/common/js/vendor/jquery-3.7.1.min.js",
