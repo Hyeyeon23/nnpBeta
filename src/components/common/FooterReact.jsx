@@ -155,7 +155,7 @@ const FooterReact = () => {
                     <li>
                       <a href="/brand/healthy/sikhye">
                         {/* <a href="#!" onClick={() => linkTo("/brand/healthy/sikhye")}> */}
-                        <i className="fa-solid fa-period"></i>자연담은
+                        <i className="fa-solid fa-period"></i>방방곡곡
                       </a>
                     </li>
                     <li>

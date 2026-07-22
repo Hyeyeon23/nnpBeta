@@ -157,7 +157,7 @@ const Wizus = () => {
                         </li>
                         <li>
                           <p className="f20 fw500 grayn1">단백질 18g 함유</p>
-                          <p className="f16 fw400 grayn3">맑고 깔끔한 레몬 아이스티맛으로 물처럼 시원하게 마셔요.</p>
+                          <p className="f16 fw400 grayn3">하루 권장량 평균 20~30%의 단백질을 함유해 간편하게 섭취 가능해요.</p>
                         </li>
                       </ul>
                       {/* 20250929 수정 */}
