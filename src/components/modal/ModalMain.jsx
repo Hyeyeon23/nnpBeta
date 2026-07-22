@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const ModalMain = () => {
   const [oepnState, setOpenState] = useState(false);
-  const START_TIME = new Date("2025-11-06").getTime();
-  const END_TIME = new Date("2025-11-16").getTime();
+  const START_TIME = new Date("2026-07-22").getTime();
+  const END_TIME = new Date("2026-07-30").getTime();
 
   useEffect(() => {
     const now = Date.now();
@@ -44,41 +44,32 @@ const ModalMain = () => {
       aria-labelledby="popupTitle"
       aria-describedby="popupDesc"
       hidden={!oepnState}>
-      <button className="popup__close" id="btnClose1" aria-label="닫기" onClick={() => setOpenState(false)}>
+      <button className="popup__close" id="btnClose1" aria-label="닫기" onClick={() => setOpenState(true)}>
         ×
       </button>
       {/* 공고 내용 시작 (변동구간)*/}
 
-      <div className="popup__inner">
-        <div className="popup__title" id="popupTitle">
-          2025년 신입사원 수시 채용
-        </div>
-
-        <div className="popup__subtitle">대한민국 No.1 OEM 자연과사람들</div>
-
-        <a href="/recruit/info">
+      {/* 원산지 팝업 IMG */}
+      <div className="popup__inner" style={{ padding: 0, background: "#fff" }}>
+        <a href="/notice" target="_blank" rel="noopener noreferrer">
           <p className="popupimg">
-            <img src="/common/imgs/main/popup_recruit2.png" alt="채용 공고 이미지" />
+            <img src="/common/imgs/main/popup_origin.jpg" alt="대두 원산지 표기와 관련하여 안내" />
           </p>
+        </a>
+        {/* 채용팝업 TXT
+        <div className="popup__title" id="popupTitle">2025년 신입사원 수시 채용</div>
+        <div className="popup__subtitle">대한민국 No.1 OEM 자연과사람들</div>
+        <a href="recruit_info.html">
+          <p className="popupimg"><img src="common/imgs/main/popup_recruit2.png" alt="" /></p>
           <div className="popup__card">
             <div className="popup__truck white f16 fw500">채용공고 바로가기</div>
           </div>
         </a>
-
-        <p className="popup__desc">
-          모집분야
-          <br />
-          총무부서
-        </p>
-
-        <p className="popup__desc">
-          채용 기간
-          <br />
-          2025.11.06(목) ~ 2025.11.16(일) 24:00
-        </p>
+        <p className="popup__desc">모집분야<br />총무부서</p>
+        <p className="popup__desc">채용 기간<br />2025.11.06(목) ~ 2025.11.16(일) 24:00한</p>
+        // 채용팝업 TXT */}
       </div>
-
-      {/* 공고 내용 끝 * (변동구간)*/}
+      {/* //원산지 팝업 IMG */}
 
       <div className="popup__actions">
         <button type="button" className="popup__btn" id="btnHide1d" onClick={setNnnPopupStamp}>
